@@ -72,7 +72,7 @@ public class DispatcherAction extends HttpServlet {
 
 			String view = sa.executeAction(request, response);
 			RequestDispatcher rd = request.getRequestDispatcher(view);
-			rd.forward(request, response);
+			rd.forward(request, response);			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

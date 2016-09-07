@@ -8,7 +8,8 @@ public class MainAction implements SuperAction {
 	@Override
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+	    
+		return "/jsp/menu/main.jsp";
 	}
 
 }
