@@ -1,4 +1,4 @@
-# XYZ-Mart
+# Ga Na Da - Mart
 
 KH정보교육원
 
