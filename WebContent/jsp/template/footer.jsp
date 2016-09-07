@@ -12,7 +12,7 @@
 		<td><a href="">회원가입</a></td>
 		<td><a href="">주문결제</a></td>
 		<td></td>
-		<td><a href=""> image1,</a> <a href=""> image2,</a> <a href="">
+		<td><a href=""> <img src="/XYZ-Mart/img/twit.png"></a> <a href=""> image2,</a> <a href="">
 				image3,</a> <a href=""> image4</a></td>
 	</tr>
 	<tr>
