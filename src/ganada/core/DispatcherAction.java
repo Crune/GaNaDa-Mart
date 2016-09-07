@@ -1,4 +1,4 @@
-package xyz.core;
+package ganada.core;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import xyz.action.*;
+import ganada.action.*;
 
 public class DispatcherAction extends HttpServlet {
 

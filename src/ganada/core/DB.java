@@ -1,4 +1,4 @@
-package xyz.core;
+package ganada.core;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
