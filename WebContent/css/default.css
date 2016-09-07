@@ -8,3 +8,14 @@ body {
     font-family: "Nanum Gothic", sans-serif;
 	font-weight: 600;
 }
+img.bg {
+    width: 100%;
+}
+.bg_img {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0 !important;
+    vertical-align: middle;
+    border: 0;
+}
