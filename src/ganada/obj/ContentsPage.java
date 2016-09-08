@@ -1,4 +1,4 @@
-package ganada.vo;
+package ganada.obj;
 
 import java.util.List;
 

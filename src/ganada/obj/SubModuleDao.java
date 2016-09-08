@@ -1,4 +1,4 @@
-package ganada.dao;
+package ganada.obj;
 
 public class SubModuleDao {
 
