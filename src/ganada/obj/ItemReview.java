@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class ItemReview {
 	private int num; //게시글 번호
-	private int number;//게시한 상품등록번호
+	private int itemnum;//게시한 상품등록번호
 	private String writer;//작성자
 	private String subject;//제목
 	private String mail;//e-mail
@@ -23,11 +23,11 @@ public class ItemReview {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public int getNumber() {
-		return number;
+	public int getItemnum() {
+		return itemnum;
 	}
-	public void setNumber(int number) {
-		this.number = number;
+	public void setItemnum(int itemnum) {
+		this.itemnum = itemnum;
 	}
 	public String getWriter() {
 		return writer;
