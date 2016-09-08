@@ -3,20 +3,20 @@ package ganada.obj;
 import java.sql.Timestamp;
 
 public class ItemReview {
-	private int num; //°Ô½Ã±Û ¹øÈ£
-	private int itemnum;//°Ô½ÃÇÑ »óÇ°µî·Ï¹øÈ£
-	private String writer;//ÀÛ¼ºÀÚ
-	private String subject;//Á¦¸ñ
+	private int num; //ê²Œì‹œê¸€ ë²ˆí˜¸
+	private int itemnum;//ê²Œì‹œí•œ ìƒí’ˆë“±ë¡ë²ˆí˜¸
+	private String writer;//ì‘ì„±ì
+	private String subject;//ì œëª©
 	private String mail;//e-mail
-	private String content;//³»¿ë
-	private int star;//º°Á¡
-	private String passwd;//ºñ¹Ğ¹øÈ£
-	private int readcount;//Á¶È¸¼ö
+	private String content;//ë‚´ìš©
+	private int star;//ë³„ì 
+	private String passwd;//ë¹„ë°€ë²ˆí˜¸
+	private int readcount;//ì¡°íšŒìˆ˜
 	private String ip;//ip
-	private Timestamp reg_date;//µî·ÏÀÏ
-	private int ref;//°Ô½Ã±Û ±×·ì¹øÈ£
-	private int re_step;//°Ô½Ã±Û °èÃş Á¤·Ä ¹øÈ£
-	private int re_level;//°Ô½Ã±Û °èÃş ¹øÈ£
+	private Timestamp reg_date;//ë“±ë¡ì¼
+	private int ref;//ê²Œì‹œê¸€ ê·¸ë£¹ë²ˆí˜¸
+	private int re_step;//ê²Œì‹œê¸€ ê³„ì¸µ ì •ë ¬ ë²ˆí˜¸
+	private int re_level;//ê²Œì‹œê¸€ ê³„ì¸µ ë²ˆí˜¸
 	public int getNum() {
 		return num;
 	}
