@@ -73,14 +73,6 @@ public class AccountDao {
 				account.setPasswd_phone(db.getString("PASSWD_PHONE"));
 				account.setSecurity(db.getInt("SECURITY"));
 				
-				
-				
-				
-				
-				
-				
-				
-				
 				account.setReg_date(db.getTimestamp("reg_date"));
 			    }
 			} catch (Exception ex) {
