@@ -35,7 +35,6 @@ public class DispatcherAction extends HttpServlet {
 	try {
 	    f = new FileReader(path);
 	    p.load(f);
-	    System.out.println("Prop : " + p + "\r\n");
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
@@ -80,11 +79,13 @@ public class DispatcherAction extends HttpServlet {
 	    String url = "";
 	    url = headerAction.executeAction(request, response);
 	    session.setAttribute("urlHeader", (String)url);
+
 	    url = footerAction.executeAction(request, response);
 	    session.setAttribute("urlFooter", (String)url);
 	    
 	    String view = sa.executeAction(request, response);
 	    RequestDispatcher rd = request.getRequestDispatcher(view);
+	    
 	    rd.forward(request, response);
 	} catch (Exception e) {
 	    e.printStackTrace();

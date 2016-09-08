@@ -4,24 +4,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class MainAction implements SuperAction {
+public class MainAction extends HaveSubAction {
 
-    private static MainImageAction imgAction = new MainImageAction();
-    private static SubModuleAction subAction = new SubModuleAction();
+    MainAction() {
+	actions.put("urlImg", new MainImageAction());
+	actions.put("urlSub", new SubModuleAction());
+    }
 
-    @Override
-    public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	// TODO Auto-generated method stub
-
+    public String exe(HttpServletRequest request, HttpServletResponse response) {
 	HttpSession session = request.getSession();
 	session.setAttribute("pageTitle", "메인화면 입니다");
 	session.setAttribute("menu", "0");
-	
-	String url = "";
-	url = imgAction.executeAction(request, response);
-	session.setAttribute("urlImg", (String)url);
-	url = subAction.executeAction(request, response);
-	session.setAttribute("urlSub", (String)url);
 
 	return "/jsp/menu/main.jsp";
     }
