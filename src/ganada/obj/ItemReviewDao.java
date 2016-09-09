@@ -133,8 +133,48 @@ public class ItemReviewDao {
 		return x;
 	}
 
-	// 특정 상품에 대해 작성한 review의 수
-
+	// 특정 상품번호로 review 
+	 public ItemReview getReview(int itemnum) throws Exception {
+			DB db = new DB();
+			ItemReview review = null;
+			int x = 0;
+			try {
+			    db.S("*", "REVIEW", "ITEMNUM=?").var(itemnum).exe();
+			    if (db.next()) {
+				review = new ItemReview();
+				review.setNum(db.getInt("num"));
+				review.setItemnum(db.getInt("itemnum"));
+				review.setItemname(db.getString("itemname"));
+				review.setWriter(db.getString("writer"));
+				review.setSubject(db.getString("subject"));
+				review.setLik(db.getInt("lik"));
+				review.setBad(db.getInt("bad"));
+				review.setSiz(db.getInt("siz"));
+				review.setComfortable(db.getInt("comfortable"));
+				review.setWid(db.getInt("wid"));
+				review.setDura(db.getInt("dura"));
+				review.setItemsize(db.getString("itemsize"));
+				review.setWei(db.getString("wei"));
+				review.setHei(db.getString("hei"));
+				review.setAge(db.getString("age"));
+				review.setMail(db.getString("mail"));
+				review.setContent(db.getString("content"));
+				review.setStar(db.getInt("star"));
+				review.setPasswd(db.getString("passwd"));
+				review.setReadcount(db.getInt("readcount"));
+				review.setIp(db.getString("ip"));
+				review.setReg_date(db.getTimestamp("reg_date"));
+				review.setRef(db.getInt("ref"));
+				review.setRe_step(db.getInt("re_step"));
+				review.setRe_level(db.getInt("re_level"));
+			    }
+			} catch (Exception ex) {
+			    ex.printStackTrace();
+			} finally {
+			    db.finalize();
+			}
+			return review;
+		    }
 	public int getArticleCount(int itemnum) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
