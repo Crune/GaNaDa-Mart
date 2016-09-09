@@ -1,17 +1,7 @@
 package ganada.obj;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-
 import ganada.obj.ProductDao;
+import ganada.core.*;
 import ganada.obj.Product;
 
 public class ProductDao {
@@ -24,167 +14,111 @@ public class ProductDao {
 	    private ProductDao() {
 	    }
 		
-		private Connection getConnection()throws Exception{
-			Context ctx = new InitialContext();						
-			Context env = (Context)ctx.lookup("java:comp/env");		
-			DataSource ds = (DataSource)env.lookup("jdbc/orcl");	
-			Connection conn = ds.getConnection();		
-			return conn;
-		}
-		
-		public List getArticles() throws Exception{
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			List articleList=null;
+		public Product getProduct(String num) throws Exception {
+			DB db = new DB();
+			Product product = null;
 			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement("select * from prouct");
-						rs = pstmt.executeQuery();
-						if (rs.next()) {
-							articleList = new ArrayList(); 
-							while(rs.next()){ 			
-								Product article= new Product();
-								article.setNum(rs.getInt("num"));
-								article.setName(rs.getString("name"));
-								article.setPrice(rs.getInt("price"));
-								article.setDiscount(rs.getInt("discount"));
-								article.setColor(rs.getString("color"));
-								article.setStock(rs.getInt("Stock"));
-								article.setStoread(rs.getString("storead"));
-								article.setImage(rs.getString("image"));
-								article.setStar(rs.getInt("star"));
-								article.setRecommend(rs.getInt("recommend"));
-								article.setInfo(rs.getString("info"));
-								article.setDeliveryinfo(rs.getString("deliveryinfo"));
-								article.setNote(rs.getString("note"));
-								article.setAsinfo(rs.getString("asinfo"));
-								article.setReg_date(rs.getTimestamp("reg_date"));
-								
-								articleList.add(article); 
-							}
-						}
-			} catch(Exception ex) {
-				ex.printStackTrace();
+			    db.S("*", "product", "num=?").var(num).exe();
+			    if (db.next()) {
+			    	product = new Product();
+			    	product.setNum(db.getInt("num"));
+			    	product.setPasswd(db.getString("passwd"));
+			    	product.setName(db.getString("name"));
+			    	product.setPrice(db.getInt("price"));
+			    	product.setDiscount(db.getInt("dscount"));
+			    	product.setColor(db.getString("color"));
+			    	product.setPd_size(db.getString("pd_size"));
+			    	product.setStock(db.getInt("stock"));
+			    	product.setStoread(db.getString("storead"));
+			    	product.setImage(db.getString("image"));
+			    	product.setStar(db.getInt("star"));
+			    	product.setRecommend(db.getInt("recommend"));
+			    	product.setInfo(db.getString("info"));
+			    	product.setDeliveryinfo(db.getString("deliveryinfo"));
+			    	product.setNote(db.getString("note"));
+			    	product.setAsinfo(db.getString("asinfo"));
+			    	product.setReg_date(db.getTimestamp("reg_date"));
+			    }
+			} catch (Exception ex) {
+			    ex.printStackTrace();
 			} finally {
-				if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-				if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-				if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+			    db.finalize();
 			}
-			return articleList;
-		}
+			return product;
+		    }
 		
-		public void insertArticle(Product article){		//관리자가 상품을 등록할 때 사용
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			try{
-				conn = getConnection();		
-				String sql="insert into product values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, article.getNum());		
-				pstmt.setString(2, article.getPasswd());
-				pstmt.setString(3, article.getName());	
-				pstmt.setInt(4, article.getPrice());	
-				pstmt.setInt(5, article.getDiscount());
-				pstmt.setString(6, article.getColor());
-				pstmt.setString(7, article.getSize());
-				pstmt.setInt(8, article.getStock());
-				pstmt.setString(9, article.getStoread());
-				pstmt.setString(10, article.getImage());
-				pstmt.setInt(11, article.getStar());
-				pstmt.setInt(12, article.getRecommend());
-				pstmt.setString(13, article.getInfo());
-				pstmt.setString(14, article.getDeliveryinfo());	
-				pstmt.setString(15, article.getNote());	
-				pstmt.setString(16, article.getAsinfo());		
-				pstmt.executeUpdate();
-			}catch(Exception e){			
-				e.printStackTrace();
-			}finally{
-				if(pstmt != null){try{pstmt.close();}catch(SQLException s){}}
-				if(conn != null){try{conn.close();}catch(SQLException s){}}
-			}
-		}		
+		 public void insertProduct(Product article) {
+		        DB db = new DB();
+		        DB.Insert sql = db.new Insert("product");
+		        
+		        try {
+		            sql.inSql("num", "product_seq.NEXTVAL");
+		            sql.in("num", article.getNum());
+		            sql.in("passwd", article.getPasswd());
+		            sql.in("name", article.getName());
+		            sql.in("price", article.getPrice());
+		            sql.in("discount", article.getDiscount());
+		            sql.in("color", article.getColor());
+		            sql.in("pd_size", article.getPd_size());
+		            sql.in("stock", article.getStock());
+		            sql.in("storead", article.getStoread());
+		            sql.in("image", article.getImage());
+		            sql.in("star", article.getStar());
+		            sql.in("recommend", article.getRecommend());
+		            sql.in("info", article.getInfo());
+		            sql.in("deliveryinfo", article.getDeliveryinfo());
+		            sql.in("note", article.getNote());
+		            sql.in("asinfo", article.getAsinfo());
+		            		            
+		            sql.inSql("REG_DATE", "sysdate");
+		            sql.run();
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        } finally {
+		            db.finalize();
+		        }
+		        
+		    }
 		
-		public int updateArticle(Product article) throws Exception {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs= null;
-			String dbpasswd="";
-			String sql="";
-			int x=-1;
-			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(
-				"select passwd from product where num = ?");
-				pstmt.setInt(1, article.getNum());
-				rs = pstmt.executeQuery();
-				if(rs.next()){
-					dbpasswd= rs.getString("passwd"); 
-					if(dbpasswd.equals(article.getPasswd())){
-						sql="update product set passwd=?,name=?,price=?,discount=?,color=?,size=?,stock=?,storead=?,image=?,star=?,recommend=?,info=?,deliveryinfo=?,note=?,asinfo=? where num=?";
-						pstmt = conn.prepareStatement(sql);		
-						pstmt.setString(1, article.getPasswd());
-						pstmt.setString(2, article.getName());	
-						pstmt.setInt(3, article.getPrice());	
-						pstmt.setInt(4, article.getDiscount());
-						pstmt.setString(5, article.getColor());
-						pstmt.setString(6, article.getSize());
-						pstmt.setInt(7, article.getStock());
-						pstmt.setString(8, article.getStoread());
-						pstmt.setString(9, article.getImage());
-						pstmt.setInt(10, article.getStar());
-						pstmt.setInt(11, article.getRecommend());
-						pstmt.setString(12, article.getInfo());
-						pstmt.setString(13, article.getDeliveryinfo());	
-						pstmt.setString(14, article.getNote());	
-						pstmt.setString(15, article.getAsinfo());	
-						pstmt.setInt(16, article.getNum());
-						pstmt.executeUpdate();
-						x= 1;
-					}else{
-						x= 0;
-					}
+		 public void updateProduct(Product product) throws Exception {
+				DB db = new DB();
+				DB.Update sql = db.new Update("product");
+				try {
+				    sql.setWhere("num", product.getNum());
+				    sql.set("passwd", product.getPasswd());
+		            sql.set("name", product.getName());
+		            sql.set("price", product.getPrice());
+		            sql.set("discount", product.getDiscount());
+		            sql.set("color", product.getColor());
+		            sql.set("pd_size", product.getPd_size());
+		            sql.set("stock", product.getStock());
+		            sql.set("storead", product.getStoread());
+		            sql.set("image", product.getImage());
+		            sql.set("star", product.getStar());
+		            sql.set("recommend", product.getRecommend());
+		            sql.set("info", product.getInfo());
+		            sql.set("deliveryinfo", product.getDeliveryinfo());
+		            sql.set("note", product.getNote());
+		            sql.set("asinfo", product.getAsinfo());
+				    sql.run();
+				} catch (Exception ex) {
+				    ex.printStackTrace();
+				} finally {
+				    db.finalize();
 				}
-			} catch(Exception ex) {
-				ex.printStackTrace();
-			} finally {
-				if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-				if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-				if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-			}
-			return x;
 		}
 		
-		public int deleteArticle(int num, String passwd) throws Exception {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs= null;
-			String dbpasswd="";
-			int x=-1;
-			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(
-				"select passwd from product where num = ?");
-				pstmt.setInt(1, num);
-				rs = pstmt.executeQuery();
-				if(rs.next()){
-					dbpasswd= rs.getString("passwd");
-					if(dbpasswd.equals(passwd)){
-						pstmt = conn.prepareStatement("delete from product where num=?");
-						pstmt.setInt(1, num);
-						pstmt.executeUpdate();
-						x= 1; 
-					}else
-						x= 0; 
+		 public int deleteProduct(String num) throws Exception {
+				DB db = new DB();
+				int x = -1;
+				try {
+				    db.D("product", "num=?").var(num).exe();
+				    x = 1;
+				} catch (Exception e) {
+				    e.printStackTrace();
+				} finally {
+				    db.finalize();
 				}
-			} catch(Exception ex) {
-				ex.printStackTrace();
-			} finally {
-				if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-				if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-				if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-			}
-			return x;
-		}
+				return x;
+		 }
 }
