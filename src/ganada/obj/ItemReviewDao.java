@@ -68,7 +68,7 @@ public class ItemReviewDao {
 					+ "lik,bad,siz,comfortable,wid,"
 					+ "dura,itemsize,wei,hei,age,"
 					+ "mail,content,star,passwd,readcount,"
-					+ "ip,reg_date,REF,RE_STEP,RE_LEVEL) values(review_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+					+ "ip,reg_date,REF,RE_STEP,RE_LEVEL) values(review_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, article.getItemnum());
 			pstmt.setString(2, article.getItemname());
