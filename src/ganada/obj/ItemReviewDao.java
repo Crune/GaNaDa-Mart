@@ -9,15 +9,15 @@ import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-public class ItemDBReview {
+public class ItemReviewDao {
 
-	private static ItemDBReview instance = new ItemDBReview();
+	private static ItemReviewDao instance = new ItemReviewDao();
 
-	public static ItemDBReview getInstance(){
+	public static ItemReviewDao getInstance(){
 		return instance;
 	}
 
-	private ItemDBReview(){}
+	private ItemReviewDao(){}
 	
 	private Connection getConnection() throws Exception{
 		Context initCtx = new InitialContext();
