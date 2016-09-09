@@ -23,7 +23,6 @@ public class BannerHTMLDao {
 	    sql.in("HTML", banner.getHtml());
 	    sql.inSql("REG_DATE", "sysdate");
 	    sql.run();
-	    System.out.println(banner);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	} finally {

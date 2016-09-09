@@ -274,7 +274,7 @@ public class ItemDBReview {
 		int x = -1;
 		try{
 			conn = getConnection();
-			sql="select passwd from review where num = ?");
+			sql="select passwd from review where num = ?";
 			pstmt.setInt(1,  article.getNum());
 			rs = pstmt.executeQuery();
 			if(rs.next()){

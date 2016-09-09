@@ -7,7 +7,7 @@ import org.junit.*;
 public class BannerHTMLTest extends DBTester {
     public static BannerHTML bannerOrg;
 
-    @Ignore("no need test") @BeforeClass
+    @BeforeClass
     public static void init() {
 	bannerOrg = new BannerHTML();
 	bannerOrg.setName("TEST");
@@ -15,7 +15,7 @@ public class BannerHTMLTest extends DBTester {
 	bannerOrg.setHtml("<BR/>");
     }
 
-    @Test
+    @Ignore("no need test") @Test
     public void testInsertBanner() {
 	BannerHTMLDao dao = BannerHTMLDao.getInstance();
 	try {
