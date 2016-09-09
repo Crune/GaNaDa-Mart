@@ -39,6 +39,9 @@ public class ContentsPage {
         this.info = info;
     }
 
+    public HashMap<Integer, String> bannerMap() {
+        return banners;
+    }
     public String getBanners() {
         String result = "";
         boolean isFirst = true;

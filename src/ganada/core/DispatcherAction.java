@@ -28,81 +28,84 @@ public class DispatcherAction extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-	String path = config.getInitParameter("propertiesPath");
-	path = config.getServletContext().getRealPath(path);
-	Properties p = new Properties();
-	FileReader f = null;
-	try {
-	    f = new FileReader(path);
-	    p.load(f);
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
+        String path = config.getInitParameter("propertiesPath");
+        path = config.getServletContext().getRealPath(path);
+        Properties p = new Properties();
+        FileReader f = null;
+        try {
+            f = new FileReader(path);
+            p.load(f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-	for (Object key : p.keySet()) {
-	    String value = p.getProperty((String) key);
-	    try {
-		Class<?> actionClass = Class.forName(value);
-		Object instance = actionClass.newInstance();
-		map.put((String) key, (SuperAction) instance);
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
-	}
+        for (Object key : p.keySet()) {
+            String value = p.getProperty((String) key);
+            try {
+                Class actionClass = Class.forName(value);
+                Object instance = actionClass.newInstance();
+                System.out.println("DispatcherAction.init.instance:" + instance.toString());
+                map.put((String) key, (SuperAction) instance);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
-	    throws ServletException, IOException {
-	try {
+            throws ServletException, IOException {
+        try {
 
-	    String path = request.getContextPath();
-	    String uri = request.getRequestURI();
-	    if (uri.indexOf(path) == 0) // sub domain check
-		uri = uri.substring(path.length());
+            String path = request.getContextPath();
+            String uri = request.getRequestURI();
+            if (uri.indexOf(path) == 0) // sub domain check
+                uri = uri.substring(path.length());
 
-	    SuperAction sa = map.get(uri);
-	    sa = (sa == null) ? notFoundAction : sa;
+            System.out.println("DispatcherAction.service.uri:" + uri);
 
-	    // START - Data Binding
-	    HashMap<String, Object> model = new HashMap<String, Object>();
-	    model.put("session", request.getSession());
-	    if (sa instanceof DataBinding) {
-		prepareRequestData(request, model, (DataBinding) sa);
-	    }
-	    for (String key : model.keySet()) {
-		request.setAttribute(key, model.get(key));
-	    }
-	    // END - Data Binding
+            SuperAction sa = map.get(uri);
+            sa = (sa == null) ? notFoundAction : sa;
 
-	    HttpSession session = request.getSession();	    
-	    String url = "";
-	    url = headerAction.executeAction(request, response);
-	    session.setAttribute("urlHeader", (String)url);
+            // START - Data Binding
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            model.put("session", request.getSession());
+            if (sa instanceof DataBinding) {
+                prepareRequestData(request, model, (DataBinding) sa);
+            }
+            for (String key : model.keySet()) {
+                request.setAttribute(key, model.get(key));
+            }
+            // END - Data Binding
 
-	    url = footerAction.executeAction(request, response);
-	    session.setAttribute("urlFooter", (String)url);
-	    
-	    String view = sa.executeAction(request, response);
-	    RequestDispatcher rd = request.getRequestDispatcher(view);
-	    
-	    rd.forward(request, response);
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
+            HttpSession session = request.getSession();
+            String url = "";
+            url = headerAction.executeAction(request, response);
+            session.setAttribute("urlHeader", (String) url);
+
+            url = footerAction.executeAction(request, response);
+            session.setAttribute("urlFooter", (String) url);
+
+            String view = sa.executeAction(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher(view);
+
+            rd.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void prepareRequestData(HttpServletRequest request, HashMap<String, Object> model, DataBinding dataBinding)
-	    throws Exception {
-	Object[] dataBinders = dataBinding.getDataBinders();
-	String dataName = null;
-	Class<?> dataType = null;
-	Object dataObj = null;
-	for (int i = 0; i < dataBinders.length; i += 2) {
-	    dataName = (String) dataBinders[i];
-	    dataType = (Class<?>) dataBinders[i + 1];
-	    dataObj = ServletRequestDataBinder.bind(request, dataType, dataName);
-	    model.put(dataName, dataObj);
-	}
+            throws Exception {
+        Object[] dataBinders = dataBinding.getDataBinders();
+        String dataName = null;
+        Class<?> dataType = null;
+        Object dataObj = null;
+        for (int i = 0; i < dataBinders.length; i += 2) {
+            dataName = (String) dataBinders[i];
+            dataType = (Class<?>) dataBinders[i + 1];
+            dataObj = ServletRequestDataBinder.bind(request, dataType, dataName);
+            model.put(dataName, dataObj);
+        }
     }
 }

@@ -18,7 +18,7 @@ public class ContentsPageTest extends DBTester {
     public void test() {
 	ContentsPageDao dao = ContentsPageDao.getInstance();
 	ContentsPage modOrg = new ContentsPage();	
-    ContentsPage getmodOrg = new ContentsPage(); 
+    ContentsPage getModOrg = new ContentsPage(); 
 	try {	   
 	    modOrg.setCode("1"); 
 	    modOrg.setName("1"+pageOrg.getName());
@@ -26,7 +26,7 @@ public class ContentsPageTest extends DBTester {
 	    modOrg.setBanners(pageOrg.getBanners());
 	    modOrg.addBanner("2");
 	    dao.updatePage(modOrg);
-	    getmodOrg = dao.getPage("1");
+	    getModOrg = dao.getPage("1");
         dao.insertPage(pageOrg);
 	    //dao.deletePage("2");
 	    
