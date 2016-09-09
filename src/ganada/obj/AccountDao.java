@@ -71,6 +71,7 @@ public class AccountDao {
 				account.setPasswd_phone(db.getString("PASSWD_PHONE"));
 				account.setSecurity(db.getInt("SECURITY"));
 				
+<<<<<<< HEAD
 				
 				
 				
@@ -80,6 +81,8 @@ public class AccountDao {
 				
 				
 				
+=======
+>>>>>>> branch 'master' of https://github.com/Crune/GaNaDa-Mart.git
 				account.setReg_date(db.getTimestamp("reg_date"));
 			    }
 			} catch (Exception ex) {

@@ -23,10 +23,13 @@ public class Account {
 	private String passwd_phone;
 	private Integer security;
 	private Timestamp reg_date;
+<<<<<<< HEAD
 	public void setCode(String code) {
 		this.code = code;
 	}
 	private String code;
+=======
+>>>>>>> branch 'master' of https://github.com/Crune/GaNaDa-Mart.git
 	
 	public String getName() {
 		return name;
@@ -143,6 +146,7 @@ public class Account {
 		this.security = security;
 	}
 	public Timestamp getReg_date() {
+<<<<<<< HEAD
 		return reg_date;
 	}
 	public void setReg_date(Timestamp reg_date) {
@@ -153,5 +157,12 @@ public class Account {
 		return null;
 	}
 	
+=======
+	    return reg_date;
+	}
+	public void setReg_date(Timestamp reg_date) {
+	    this.reg_date = reg_date;
+	}
+>>>>>>> branch 'master' of https://github.com/Crune/GaNaDa-Mart.git
 }
 		

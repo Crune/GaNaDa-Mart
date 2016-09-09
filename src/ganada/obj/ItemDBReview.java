@@ -299,6 +299,25 @@ public class ItemDBReview {
 	}
 		return x;
 }
-	
+	public int deleteArticle(int num){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int x = -1;
+		try{
+			conn = getConnection();
+			
+			pstmt = conn.prepareStatement("delete from review where num=?");
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			x = 1;
+		}catch(Exception ex){ ex.printStackTrace(); }
+		finally{
+			if(rs != null)try{ rs.close();}catch(SQLException ex){}
+			if(pstmt != null)try{ pstmt.close();}catch(SQLException ex){}
+			if(conn != null)try{ conn.close();}catch(SQLException ex){}
+		}
+		return x;
+	}
 
 }
