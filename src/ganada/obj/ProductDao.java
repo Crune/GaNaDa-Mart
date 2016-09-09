@@ -32,62 +32,34 @@ public class ProductDao {
 			return conn;
 		}
 		
-		public void insertItem(Product product){		//관리자가 상품을 등록할 때 사용
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			try{
-				conn = getConnection();		
-				String sql="insert into item values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";				//?=��ġȦ��				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, product.getNum());		
-				pstmt.setString(2, product.getPasswd());	
-				pstmt.setString(3, product.getName());	
-				pstmt.setString(4, product.getSize());
-				pstmt.setString(5, product.getColor());
-				pstmt.setInt(6, product.getColorcount());
-				pstmt.setString(7, product.getImage());
-				pstmt.setString(8, product.getGender());
-				pstmt.setString(9, product.getType());
-				pstmt.setString(10, product.getBrand());
-				pstmt.setString(11, product.getWidth());
-				pstmt.setInt(12, product.getRecommend());
-				pstmt.setInt(13, product.getSellcount());
-				pstmt.setInt(14, product.getStock());
-				pstmt.setInt(15, product.getPrice());
-				pstmt.setString(16, product.getInfo());
-				pstmt.setString(17, product.getDeliveryinfo());	
-				pstmt.setString(18, product.getNote());	
-				pstmt.setString(19, product.getAsinfo());		
-				pstmt.executeUpdate();
-			}catch(Exception e){			
-				e.printStackTrace();
-			}finally{
-				if(pstmt != null){try{pstmt.close();}catch(SQLException s){}}
-				if(conn != null){try{conn.close();}catch(SQLException s){}}
-			}
-		}
-		
-		public List getArticles(int start, int end) throws Exception{
+		public List getArticles() throws Exception{
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			List articleList=null;
 			try {
 				conn = getConnection();
-				pstmt = conn.prepareStatement(
-						"select num,name,r "
-						+
-						"from (select num,name r " +
-						"from (select * from item order by num asc) order by item asc ) where r >= ? and r <= ? ");
-						pstmt.setInt(1, start); 
-						pstmt.setInt(2, end); 
-
+				pstmt = conn.prepareStatement("select * from prouct");
 						rs = pstmt.executeQuery();
 						if (rs.next()) {
-							articleList = new ArrayList(end); 
-							while(rs.next()){ 			//결과가 있어야 이 메서드가 실행되기 때문에 do로 사용해도 에러가 나지 않는다
+							articleList = new ArrayList(); 
+							while(rs.next()){ 			
 								Product article= new Product();
 								article.setNum(rs.getInt("num"));
 								article.setName(rs.getString("name"));
+								article.setPrice(rs.getInt("price"));
+								article.setDiscount(rs.getInt("discount"));
+								article.setColor(rs.getString("color"));
+								article.setStock(rs.getInt("Stock"));
+								article.setStoread(rs.getString("storead"));
+								article.setImage(rs.getString("image"));
+								article.setStar(rs.getInt("star"));
+								article.setRecommend(rs.getInt("recommend"));
+								article.setInfo(rs.getString("info"));
+								article.setDeliveryinfo(rs.getString("deliveryinfo"));
+								article.setNote(rs.getString("note"));
+								article.setAsinfo(rs.getString("asinfo"));
+								article.setReg_date(rs.getTimestamp("reg_date"));
 								
 								articleList.add(article); 
 							}
@@ -102,58 +74,39 @@ public class ProductDao {
 			return articleList;
 		}
 		
-		public Product getArticle(int num) throws Exception {		//추천수1늘리고 db의 정보를 dto에저장    미완성
+		public void insertArticle(Product article){		//관리자가 상품을 등록할 때 사용
 			Connection conn = null;
 			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			Product article=null;
-			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(
-				"update item set readcount=readcount+1 where num = ?"); 
-				pstmt.setInt(1, num);
+			try{
+				conn = getConnection();		
+				String sql="insert into product values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, article.getNum());		
+				pstmt.setString(2, article.getPasswd());
+				pstmt.setString(3, article.getName());	
+				pstmt.setInt(4, article.getPrice());	
+				pstmt.setInt(5, article.getDiscount());
+				pstmt.setString(6, article.getColor());
+				pstmt.setString(7, article.getSize());
+				pstmt.setInt(8, article.getStock());
+				pstmt.setString(9, article.getStoread());
+				pstmt.setString(10, article.getImage());
+				pstmt.setInt(11, article.getStar());
+				pstmt.setInt(12, article.getRecommend());
+				pstmt.setString(13, article.getInfo());
+				pstmt.setString(14, article.getDeliveryinfo());	
+				pstmt.setString(15, article.getNote());	
+				pstmt.setString(16, article.getAsinfo());		
 				pstmt.executeUpdate();
-				pstmt = conn.prepareStatement("select * from item where num = ?"); 
-				pstmt.setInt(1, num);
-				rs = pstmt.executeQuery();
-				if (rs.next()) {
-					article = new Product();
-					article.setNum(rs.getInt("num"));
-					article.setName(rs.getString("name"));
-				}
-			} catch(Exception ex) {
-				ex.printStackTrace();
-			} finally {
-				if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-				if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-				if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+			}catch(Exception e){			
+				e.printStackTrace();
+			}finally{
+				if(pstmt != null){try{pstmt.close();}catch(SQLException s){}}
+				if(conn != null){try{conn.close();}catch(SQLException s){}}
 			}
-			return article;
-		}
+		}		
 		
-		public int getArticleCount() throws Exception {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			int x=0;
-			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement("select count(*) from item");	//테이블의 갯수count(*)
-				rs = pstmt.executeQuery();
-				if (rs.next()) {
-					x= rs.getInt(1); 		//1번컬럼있는 테이블의 갯수를 x에 대입
-				}
-			} catch(Exception ex) {
-				ex.printStackTrace();
-			} finally {
-				if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-				if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-				if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-			}
-			return x; 
-		}
-		
-		public int updateItem(Product article) throws Exception {
+		public int updateArticle(Product article) throws Exception {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs= null;
@@ -163,17 +116,30 @@ public class ProductDao {
 			try {
 				conn = getConnection();
 				pstmt = conn.prepareStatement(
-				"select passwd from item where num = ?");
+				"select passwd from product where num = ?");
 				pstmt.setInt(1, article.getNum());
 				rs = pstmt.executeQuery();
 				if(rs.next()){
 					dbpasswd= rs.getString("passwd"); 
 					if(dbpasswd.equals(article.getPasswd())){
-						sql="update item set name=?,passwd=? where num=?";
-						pstmt = conn.prepareStatement(sql);
-						pstmt.setString(1, article.getName());
-						pstmt.setString(2, article.getPasswd());
-						pstmt.setInt(3, article.getNum());
+						sql="update product set passwd=?,name=?,price=?,discount=?,color=?,size=?,stock=?,storead=?,image=?,star=?,recommend=?,info=?,deliveryinfo=?,note=?,asinfo=? where num=?";
+						pstmt = conn.prepareStatement(sql);		
+						pstmt.setString(1, article.getPasswd());
+						pstmt.setString(2, article.getName());	
+						pstmt.setInt(3, article.getPrice());	
+						pstmt.setInt(4, article.getDiscount());
+						pstmt.setString(5, article.getColor());
+						pstmt.setString(6, article.getSize());
+						pstmt.setInt(7, article.getStock());
+						pstmt.setString(8, article.getStoread());
+						pstmt.setString(9, article.getImage());
+						pstmt.setInt(10, article.getStar());
+						pstmt.setInt(11, article.getRecommend());
+						pstmt.setString(12, article.getInfo());
+						pstmt.setString(13, article.getDeliveryinfo());	
+						pstmt.setString(14, article.getNote());	
+						pstmt.setString(15, article.getAsinfo());	
+						pstmt.setInt(16, article.getNum());
 						pstmt.executeUpdate();
 						x= 1;
 					}else{
@@ -190,7 +156,7 @@ public class ProductDao {
 			return x;
 		}
 		
-		public int deleteItem(int num, String passwd) throws Exception {
+		public int deleteArticle(int num, String passwd) throws Exception {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs= null;
@@ -199,13 +165,13 @@ public class ProductDao {
 			try {
 				conn = getConnection();
 				pstmt = conn.prepareStatement(
-				"select passwd from item where num = ?");
+				"select passwd from product where num = ?");
 				pstmt.setInt(1, num);
 				rs = pstmt.executeQuery();
 				if(rs.next()){
 					dbpasswd= rs.getString("passwd");
 					if(dbpasswd.equals(passwd)){
-						pstmt = conn.prepareStatement("delete from item where num=?");
+						pstmt = conn.prepareStatement("delete from product where num=?");
 						pstmt.setInt(1, num);
 						pstmt.executeUpdate();
 						x= 1; 
@@ -221,5 +187,4 @@ public class ProductDao {
 			}
 			return x;
 		}
-		
 }
