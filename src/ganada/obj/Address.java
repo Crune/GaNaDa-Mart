@@ -2,51 +2,68 @@ package ganada.obj;
 
 public class Address {
 
-	private String Post;//우편번호
-	private String Address1; //시,군,
-	private String Recipient; //받는사람
-	private String Name;      //이름
-	private String Phone;     //전화번호
+	private String zipcode;
+	private String sido; 
+	private String sigungu;
+	private String emd;
+	private String ri;
+	private String recipient; //받는사람
+	private String name;      //이름
+	private String phone;     //전화번호
 	private String message;
-	
-	public String getPost() {
-		return Post;
+	public String getZipcode() {
+		return zipcode;
 	}
-	public void setPost(String post) {
-		Post = post;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
-	public String getAddress1() {
-		return Address1;
+	public String getSido() {
+		return sido;
 	}
-	public void setAddress1(String address1) {
-		Address1 = address1;
+	public void setSido(String sido) {
+		this.sido = sido;
 	}
-	
-	
+	public String getSigungu() {
+		return sigungu;
+	}
+	public void setSigungu(String sigungu) {
+		this.sigungu = sigungu;
+	}
+	public String getEmd() {
+		return emd;
+	}
+	public void setEmd(String emd) {
+		this.emd = emd;
+	}
+	public String getRi() {
+		return ri;
+	}
+	public void setRi(String ri) {
+		this.ri = ri;
+	}
 	public String getRecipient() {
-		return Recipient;
+		return recipient;
 	}
 	public void setRecipient(String recipient) {
-		Recipient = recipient;
-	}
-	public String getmessage() {
-		return message;
-	}
-	public void setmessage(String message) {
-		message = message;
+		this.recipient = recipient;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
-
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 }
-
+	
