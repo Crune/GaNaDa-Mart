@@ -11,6 +11,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import ganada.core.DB;
+import ganada.core.DB.Insert;
+import ganada.core.DB.Update;
+
 public class ItemReviewDao {
 
 	private static ItemReviewDao instance = new ItemReviewDao();
@@ -29,92 +33,70 @@ public class ItemReviewDao {
 		return ds.getConnection();
 	}
 
-	public void insertArticle(ItemReview article) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int num = article.getNum();
-		int ref = article.getRef();
-		int re_step = article.getRe_step();
-		int re_level = article.getRe_level();
-		int number = 0;
-		String sql = "";
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement("select max(num) from review");
-			rs = pstmt.executeQuery();
+    public void insert(ItemReview article) {
+        DB db = new DB();
+        DB.Insert in = db.new Insert("review");
+        DB.Update up = db.new Update("review");
 
-			if (rs.next()) {
-				number = rs.getInt(1) + 1;
-			} else {
-				number = 1;
-			}
+        int num = article.getNum();
+        int ref = article.getRef();
+        int re_step = article.getRe_step();
+        int re_level = article.getRe_level();
+        int number = 0;
+        
+        try {
+            db.S("max(num)", "review").exe();
 
-			if (num != 0) {
-				sql = "update review set re_step=re_step+1 where ref=? and re_step>?";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, ref);
-				pstmt.setInt(2, re_step);
-				pstmt.executeUpdate();
-				re_step = re_step + 1;
-				re_level = re_level + 1;
-			} else {
-				ref = number;
-				re_step = 0;
-				re_level = 0;
-			}
+            if (db.next()) {
+                number = db.exe().getInt(1) + 1;
+            } else {
+                number = 1;
+            }
 
-			sql = "insert into review(num,itemnum,itemname,writer,subject,"
-					+ "lik,bad,siz,comfortable,wid,"
-					+ "dura,itemsize,wei,hei,age,"
-					+ "mail,content,star,passwd,readcount,"
-					+ "ip,reg_date,REF,RE_STEP,RE_LEVEL) values(review_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, article.getItemnum());
-			pstmt.setString(2, article.getItemname());
-			pstmt.setString(3, article.getWriter());
-			pstmt.setString(4, article.getSubject());
-			pstmt.setInt(5, article.getLik());
-			pstmt.setInt(6, article.getBad());
-			pstmt.setInt(7, article.getSiz());
-			pstmt.setInt(8, article.getComfortable());
-			pstmt.setInt(9, article.getWid());
-			pstmt.setInt(10, article.getDura());
-			pstmt.setString(11, article.getItemsize());
-			pstmt.setString(12, article.getWei());
-			pstmt.setString(13, article.getHei());
-			pstmt.setString(14, article.getAge());
-			pstmt.setString(15, article.getMail());
-			pstmt.setString(16, article.getContent());
-			pstmt.setInt(17, article.getStar());
-			pstmt.setString(18, article.getPasswd());
-			pstmt.setInt(19, article.getReadcount());
-			pstmt.setString(20, article.getIp());
-			pstmt.setTimestamp(21, article.getReg_date());
-			pstmt.setInt(22, article.getRef());
-			pstmt.setInt(23, article.getRe_step());
-			pstmt.setInt(24, article.getRe_level());
-			pstmt.executeUpdate();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
-		}
-	}
+            if (num != 0) {
+                up.setWhereCondition("ref=? and re_step>?").setWhere(ref).setWhere(re_step);
+                up.setSql("re_step", "re_step+1").run();
+                re_step = re_step + 1;
+                re_level = re_level + 1;
+            } else {
+                ref = number;
+                re_step = 0;
+                re_level = 0;
+            }        
+            in.inSql("num", "review_seq.NEXTVAL");
+            in.in("itemnum", article.getItemnum());
+            in.in("itemname", article.getItemname());
+            in.in("writer", article.getWriter());
+            in.in("subject", article.getSubject());
+            in.in("lik",article.getLik());
+            in.in("bad", article.getBad());
+            in.in("siz", article.getSiz());
+            in.in("comfortable", article.getComfortable());
+            in.in("wid", article.getWid());
+            in.in("dura", article.getDura());
+            in.in("itemsize", article.getItemsize());
+            in.in("wei", article.getWei());
+            in.in("hei", article.getHei());
+            in.in("age", article.getAge());
+            in.in("mail", article.getMail());
+            in.in("content", article.getContent());
+            in.in("star", article.getStar());
+            in.in("passwd", article.getPasswd());
+            in.in("readcount", article.getReadcount());
+            in.in("ip", article.getIp());
+            in.in("ref", article.getRef());
+            in.in("re_step", article.getRe_step());
+            in.in("re_level", article.getRe_level());
+            in.inSql("REG_DATE", "sysdate");
+            in.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.finalize();
+        }
+        
+    }
+
 
 	// review에 저장된 전체 글의 수
 	public int getArticleCount() throws Exception {

@@ -36,7 +36,7 @@ public class ItemReviewTest extends DBTester {
 	public void test() {
 		ItemReviewDao dao = ItemReviewDao.getInstance();
 		try {
-		    dao.insertArticle(ItemReviewOrg);
+		    dao.insert(ItemReviewOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
