@@ -6,24 +6,29 @@ public class Product {
 	private int num;				//상품번호	
 	private String passwd;			//글비밀번호
 	private String name;			//상품이름
-	private String size;			//상품크기
-	private String color;			//상품색
-	private int colorcount;			//상품색종류		
-	private String image;			//상품이미지
-	private String gender;			//상품설명
-	private String type;			//상품타입
-	private String brand;			//상품브랜드
-	private String width;			//발볼크기		
-	private int recommend;			//추천수		
-	private int sellcount;			//판매량		
-	private int stock;				//재고
 	private int price;				//가격
+	private int discount;			//할인가격
+	private String color;			//상품색 (color=image.png/color=image.png/color=image.png...)
+	private String size;			//상품크기		
+	private int stock;				//재고
+	private String storead;			//매장위치
+	//private String imageright;	//상품우측이미지
+	//private String imageleft;		//상품좌측이미지
+	//private String imagebot;		//상품하단이미지
+	//private String imagetop;		//상품상단이미지
+	private String image;			//상품이미지 (imageright.png/imageleft.png/imagebot.png/imagetop.png/image.png)
+	private int star;				//별점
+	private int recommend;			//추천수
 	private String info;			//상품정보
 	private String deliveryinfo;	//배송정보
 	private String note;			//유의사항
 	private String asinfo;			//AS정보
 	private Timestamp reg_date;		//등록날짜
-	
+	//private int sellcount;		//판매량
+	//private String gender;		//상품성별
+	//private String type;			//상품타입
+	//private String brand;			//상품브랜드
+	//private String width;			//발볼크기	
 	public int getNum() {
 		return num;
 	}
@@ -42,11 +47,17 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSize() {
-		return size;
+	public int getPrice() {
+		return price;
 	}
-	public void setSize(String size) {
-		this.size = size;
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
 	}
 	public String getColor() {
 		return color;
@@ -54,53 +65,11 @@ public class Product {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public int getColorcount() {
-		return colorcount;
+	public String getSize() {
+		return size;
 	}
-	public void setColorcount(int colorcount) {
-		this.colorcount = colorcount;
-	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getBrand() {
-		return brand;
-	}
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-	public String getWidth() {
-		return width;
-	}
-	public void setWidth(String width) {
-		this.width = width;
-	}
-	public int getRecommend() {
-		return recommend;
-	}
-	public void setRecommend(int recommend) {
-		this.recommend = recommend;
-	}
-	public int getSellcount() {
-		return sellcount;
-	}
-	public void setSellcount(int sellcount) {
-		this.sellcount = sellcount;
+	public void setSize(String size) {
+		this.size = size;
 	}
 	public int getStock() {
 		return stock;
@@ -108,11 +77,29 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	public int getPrice() {
-		return price;
+	public String getStoread() {
+		return storead;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setStoread(String storead) {
+		this.storead = storead;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getStar() {
+		return star;
+	}
+	public void setStar(int star) {
+		this.star = star;
+	}
+	public int getRecommend() {
+		return recommend;
+	}
+	public void setRecommend(int recommend) {
+		this.recommend = recommend;
 	}
 	public String getInfo() {
 		return info;
