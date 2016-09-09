@@ -10,6 +10,7 @@ public class CartTest extends DBTester{
 	@Test
 	public void init() {
 		CartOrg = new Cart();
+		CartOrg.setCart_id("sss");
 		CartOrg.setItem_num("123");
 		CartOrg.setItem_cl("red");
 		CartOrg.setItem_size("250");
@@ -18,7 +19,7 @@ public class CartTest extends DBTester{
 	
     }
 	 @Test
-	    public void test() {
+	    public void testInsertCart() {
 		CartDao dao = CartDao.getInstance();
 		try {
 		    dao.insertCart(CartOrg);
@@ -26,4 +27,17 @@ public class CartTest extends DBTester{
 		    e.printStackTrace();
 		}
 	    }
+	 
+	 @Test
+	    public void testGetCart() {
+		CartDao dao = CartDao.getInstance();
+		Cart getVO;
+		try {
+		    getVO = dao.getCart("0");
+		    assertEquals(getVO.getCart_id(), CartOrg.getCart_id());
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
+	    }
+
 }
