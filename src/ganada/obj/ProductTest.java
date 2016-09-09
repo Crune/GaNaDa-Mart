@@ -14,14 +14,14 @@ public class ProductTest extends DBTester {
     	productOrg = new Product();
     	productOrg.setName("TEST");
     	productOrg.setInfo("테스트 입니다.");
-    	productOrg.setHtml("<BR/>");
+    	productOrg.setPasswd("<BR/>");
     }
 
     @Test
     public void testInsertProduct() {
 	ProductDao dao = ProductDao.getInstance();
 	try {
-	    dao.insertActicle(productOrg);
+	    dao.insertArticle(productOrg);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
