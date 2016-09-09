@@ -11,8 +11,8 @@ public class ItemReviewTest extends DBTester {
     @BeforeClass
     public static void init() {
     	ItemReviewOrg = new ItemReview();
-    	ItemReviewOrg.setItemname("나이키 티엠포 레거시 II FG");
-    	ItemReviewOrg.setItemnum(4);
+    	ItemReviewOrg.setItemname("나이키 티엠포 제니오 II 레더 TF");
+    	ItemReviewOrg.setItemnum(6);
     	ItemReviewOrg.setWriter("writer");
     	ItemReviewOrg.setSubject("편해요");
     	ItemReviewOrg.setLik(1);
@@ -29,6 +29,7 @@ public class ItemReviewTest extends DBTester {
     	ItemReviewOrg.setContent("편하고 좋아요 착화감도 좋고 무게도 가볍습니다 최고의 축구화예요");
     	ItemReviewOrg.setStar(5);
     	ItemReviewOrg.setPasswd("1111");
+    	ItemReviewOrg.setIp("12345");
     	
     }
 
