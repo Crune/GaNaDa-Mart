@@ -39,17 +39,15 @@ import ganada.core.*;
     	
     	try {
     		conn = getConnection();
-    		sql= "insert into cart (item_image, item_name, item_cl, item_size, item_price, item_cnt, item_total)" + 
-    	         "values (?,?,?,?,?,?,?)";
+    		sql= "insert into cart (item_num, item_cl, item_size, item_cnt, item_total)" + 
+    	         "values (?,?,?,?,?)";
     		pstmt = conn.prepareStatement(sql);
     		
-    		pstmt.setString (1, cart.getItem_image()); //상품이미지
-    		pstmt.setString (2, cart.getItem_name()); //상품이름
-    		pstmt.setString (3, cart.getItem_cl()); //상품색상
-    		pstmt.setString (4, cart.getItem_size()); //상품사이즈
-    		pstmt.setInt (5, cart.getItem_price()); //상품금액
-    		pstmt.setInt (6, cart.getItem_cnt()); //상품수량
-    		pstmt.setInt (7, cart.getItem_total()); //합계금액
+    		pstmt.setString (1, cart.getItem_num()); //상품번호
+    		pstmt.setString (2, cart.getItem_cl()); //상품색상
+    		pstmt.setString (3, cart.getItem_size()); //상품사이즈
+    		pstmt.setInt (4, cart.getItem_cnt()); //상품수량
+    		pstmt.setInt (5, cart.getItem_total()); //합계금액
     		
     		pstmt.executeUpdate();
     	}catch(Exception ex) {
@@ -148,11 +146,9 @@ import ganada.core.*;
             while (rs.next()) {
            	 cart = new Cart();
            	 
-           	cart.setItem_image(rs.getString("item_image")); 
-           	cart.setItem_name(rs.getString("item_name"));
-           	cart.setItem_cl(rs.getString("item_name"));
+           	cart.setItem_num(rs.getString("item_num")); 
+           	cart.setItem_cl(rs.getString("item_cl"));
            	cart.setItem_size(rs.getString("item_size"));
-           	cart.setItem_price(rs.getInt("item_price"));
            	cart.setItem_cnt(rs.getInt("item_cnt"));
            	cart.setItem_total(rs.getInt("item_total"));
            	
