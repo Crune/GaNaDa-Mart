@@ -8,6 +8,16 @@ public class ItemReview {
 	private int itemnum;//게시한 상품등록번호
 	private String writer;//작성자
 	private String subject;//제목
+	private int lik;
+	private int bad;
+	private int siz;
+	private int comfortable;
+	private int wid;
+	private int dura;
+	private String itemsize;
+	private String wei;
+	private String hei;
+	private String age;
 	private String mail;//e-mail
 	private String content;//내용
 	private int star;//별점
@@ -24,17 +34,17 @@ public class ItemReview {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public int getItemnum() {
-		return itemnum;
-	}
-	public void setItemnum(int itemnum) {
-		this.itemnum = itemnum;
-	}
 	public String getItemname() {
 		return itemname;
 	}
 	public void setItemname(String itemname) {
 		this.itemname = itemname;
+	}
+	public int getItemnum() {
+		return itemnum;
+	}
+	public void setItemnum(int itemnum) {
+		this.itemnum = itemnum;
 	}
 	public String getWriter() {
 		return writer;
@@ -47,6 +57,66 @@ public class ItemReview {
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
+	}
+	public int getLik() {
+		return lik;
+	}
+	public void setLik(int lik) {
+		this.lik = lik;
+	}
+	public int getBad() {
+		return bad;
+	}
+	public void setBad(int bad) {
+		this.bad = bad;
+	}
+	public int getSiz() {
+		return siz;
+	}
+	public void setSiz(int siz) {
+		this.siz = siz;
+	}
+	public int getComfortable() {
+		return comfortable;
+	}
+	public void setComfortable(int comfortable) {
+		this.comfortable = comfortable;
+	}
+	public int getWid() {
+		return wid;
+	}
+	public void setWid(int wid) {
+		this.wid = wid;
+	}
+	public int getDura() {
+		return dura;
+	}
+	public void setDura(int dura) {
+		this.dura = dura;
+	}
+	public String getItemsize() {
+		return itemsize;
+	}
+	public void setItemsize(String itemsize) {
+		this.itemsize = itemsize;
+	}
+	public String getWei() {
+		return wei;
+	}
+	public void setWei(String wei) {
+		this.wei = wei;
+	}
+	public String getHei() {
+		return hei;
+	}
+	public void setHei(String hei) {
+		this.hei = hei;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
 	}
 	public String getMail() {
 		return mail;
@@ -109,4 +179,5 @@ public class ItemReview {
 		this.re_level = re_level;
 	}
 
+	
 }

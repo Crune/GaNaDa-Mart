@@ -1,12 +1,6 @@
 package ganada.obj;
 
-import static org.junit.Assert.*;
-
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
-
-import ganada.core.DB;
+import org.junit.*;
 
 public class ContentsPageTest extends DBTester {
     
@@ -23,9 +17,19 @@ public class ContentsPageTest extends DBTester {
     @Test
     public void test() {
 	ContentsPageDao dao = ContentsPageDao.getInstance();
-	ContentsPage page = new ContentsPage();	
-	try {
-	    dao.insertPage(pageOrg);	    
+	ContentsPage modOrg = new ContentsPage();	
+    ContentsPage getModOrg = new ContentsPage(); 
+	try {	   
+	    modOrg.setCode("1"); 
+	    modOrg.setName("1"+pageOrg.getName());
+	    modOrg.setInfo("1"+pageOrg.getInfo());
+	    modOrg.setBanners(pageOrg.getBanners());
+	    modOrg.addBanner("2");
+	    dao.updatePage(modOrg);
+	    getModOrg = dao.getPage("1");
+        dao.insertPage(pageOrg);
+	    //dao.deletePage("2");
+	    
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}

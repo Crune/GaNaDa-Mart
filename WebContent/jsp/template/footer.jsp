@@ -12,8 +12,8 @@
 		<td><a href="">회원가입</a></td>
 		<td><a href="">주문결제</a></td>
 		<td></td>
-		<td><a href=""> <img src="/XYZ-Mart/img/twit.png"></a> <a href=""> image2,</a> <a href="">
-				image3,</a> <a href=""> image4</a></td>
+		<td><a href=""> <img src="./img/twit.png"></a> <a href=""> <img src="./img/face.png"></a> <a href="">
+				<img src="./img/youtub.png"></a> <a href=""> <img src="./img/insta.png"></a></td>
 	</tr>
 	<tr>
 		<td></td>
