@@ -1,5 +1,7 @@
 package ganada.obj;
 
+import java.sql.Timestamp;
+
 public class Account {
 	private String name;
 	private String email;
@@ -20,6 +22,11 @@ public class Account {
 	private String sms_check;
 	private String passwd_phone;
 	private Integer security;
+	private Timestamp reg_date;
+	public void setCode(String code) {
+		this.code = code;
+	}
+	private String code;
 	
 	public String getName() {
 		return name;
@@ -135,4 +142,16 @@ public class Account {
 	public void setSecurity(Integer security) {
 		this.security = security;
 	}
+	public Timestamp getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Timestamp reg_date) {
+		this.reg_date = reg_date;
+	}
+	public Object getCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
+		

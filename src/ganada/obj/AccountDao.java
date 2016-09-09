@@ -22,8 +22,7 @@ public class AccountDao {
 			    sql.in("NAME", account.getName());
 			    sql.in("EMAIL", account.getEmail());
 			    sql.in("PASSWD", account.getPasswd());
-			    sql.in("PASSWD1", account.getPasswd1());
-			    sql.in("birthday", account.getBirthday());
+			    			    sql.in("birthday", account.getBirthday());
 			    sql.in("birthday1", account.getBirthday1());
 			    sql.in("birthday2", account.getBirthday2());
 			    sql.in("lunisolar", account.getLunisolar());
@@ -57,7 +56,6 @@ public class AccountDao {
 				account.setName(db.getString("NAME"));
 				account.setEmail(db.getString("EMAIL"));
 				account.setPasswd(db.getString("PASSWD"));
-				account.setPasswd1(db.getString("PASSWD1"));
 				account.setBirthday(db.getString("BIRTHDAY"));
 				account.setBirthday1(db.getString("BIRTHDAY1"));
 				account.setBirthday2(db.getString("BIRTHDAY2"));
@@ -81,6 +79,7 @@ public class AccountDao {
 				
 				
 				
+				
 				account.setReg_date(db.getTimestamp("reg_date"));
 			    }
 			} catch (Exception ex) {
@@ -91,15 +90,39 @@ public class AccountDao {
 			return account;
 		    }
 
-		    public void updateBanner(BannerHTML banner) throws Exception {
+		    public void updateAccount(Account account) throws Exception {
 			DB db = new DB();
 			DB.Update sql = db.new Update("BANNER");
 			try {
-			    sql.setWhere("CODE", banner.getCode());
-
-			    sql.set("NAME", banner.getName());
-			    sql.set("INFO", banner.getInfo());
-			    sql.set("HTML", banner.getHtml());
+			    sql.setWhere("CODE", account.getCode());
+        	    sql.set("NAME", account.getName());
+			    sql.set("EMAIL", account.getEmail());
+			    sql.set("PASSWD", account.getPasswd());
+			    sql.set("BIRTHDAY", account.getBirthday());
+			    sql.set("BIRTHDAY1", account.getBirthday1());
+			    sql.set("BIRTHDAY2", account.getBirthday2());
+			    sql.set("LUNISOLAR", account.getLunisolar());
+			    sql.set("GENDER", account.getGender());
+			    sql.set("CONTACT", account.getContact());
+			    sql.set("CONTACT1", account.getContact1());
+			    sql.set("CONTACT2", account.getContact2());
+			    sql.set("PHONE", account.getPhone());
+			    sql.set("PHONE1", account.getPhone1());
+			    sql.set("PHONE2", account.getPhone2());
+			    sql.set("SMS_CHECK", account.getSms_check());
+			    sql.set("PASSWD_PHONE", account.getPasswd_phone());
+			    sql.set("SECURITY", account.getSecurity());
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
 			    sql.run();
 			} catch (Exception ex) {
 			    ex.printStackTrace();
@@ -112,7 +135,7 @@ public class AccountDao {
 			DB db = new DB();
 			int x = -1;
 			try {
-			    db.D("BANNER", "CODE=?").var(code).exe();
+			    db.D("ACCOUNT", "CODE=?").var(code).exe();
 			    x = 1;
 			} catch (Exception e) {
 			    e.printStackTrace();
