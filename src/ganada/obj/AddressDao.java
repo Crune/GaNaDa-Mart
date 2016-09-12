@@ -50,20 +50,6 @@ public class AddressDao {
 			    	address.setName(db.getString("NAME"));
 			    	address.setPhone(db.getString("PHONE"));
 			    	address.setMessage(db.getString("MESSAGE"));
-				
-				
-
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			
 			    }
 			} catch (Exception ex) {
 			    ex.printStackTrace();
@@ -84,19 +70,7 @@ public class AddressDao {
 			    sql.set("RECIPIENT", address.getRecipient());
 			    sql.set("NAME", address.getName());
 			    sql.set("PHONE", address.getPhone());
-			    sql.set("MESSAGE", address.getMessage());
-			 
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
+			    sql.set("MESSAGE", address.getMessage()); 			    
 			    sql.run();
 			} catch (Exception ex) {
 			    ex.printStackTrace();

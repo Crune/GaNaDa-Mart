@@ -7,10 +7,11 @@ public class Address {
 	private String sigungu;
 	private String emd;
 	private String ri;
-	private String recipient; //¹Þ´Â»ç¶÷
-	private String name;      //ÀÌ¸§
-	private String phone;     //ÀüÈ­¹øÈ£
+	private String recipient; //ï¿½Þ´Â»ï¿½ï¿½
+	private String name;      //ï¿½Ì¸ï¿½
+	private String phone;     //ï¿½ï¿½È­ï¿½ï¿½È£
 	private String message;
+	
 	public String getZipcode() {
 		return zipcode;
 	}
