@@ -11,21 +11,21 @@ public class ItemReviewTest extends DBTester {
     @BeforeClass
     public static void init() {
     	ItemReviewOrg = new ItemReview();
-    	ItemReviewOrg.setItemname("나이키 티엠포 제니오 II 레더 TF");
-    	ItemReviewOrg.setItemnum(6);
-    	ItemReviewOrg.setWriter("writer");
-    	ItemReviewOrg.setSubject("편해요");
+    	ItemReviewOrg.setItemname("나이키 머큐리얼 벨로체 III AG- PRO");
+    	ItemReviewOrg.setItemnum(45);
+    	ItemReviewOrg.setWriter("anonymous");
+    	ItemReviewOrg.setSubject("착화감이 좋아요");
     	ItemReviewOrg.setLik(1);
     	ItemReviewOrg.setBad(-1);
     	ItemReviewOrg.setSiz(0);
     	ItemReviewOrg.setComfortable(1);
     	ItemReviewOrg.setWid(0);
     	ItemReviewOrg.setDura(1);
-    	ItemReviewOrg.setItemsize("240");
-    	ItemReviewOrg.setWei("45kg");
-    	ItemReviewOrg.setHei("160cm");
-    	ItemReviewOrg.setAge("30세");
-    	ItemReviewOrg.setMail("kkk@gmail.com");
+    	ItemReviewOrg.setItemsize("250");
+    	ItemReviewOrg.setWei("55kg");
+    	ItemReviewOrg.setHei("175cm");
+    	ItemReviewOrg.setAge("32세");
+    	ItemReviewOrg.setMail("jjg@gmail.com");
     	ItemReviewOrg.setContent("편하고 좋아요 착화감도 좋고 무게도 가볍습니다 최고의 축구화예요");
     	ItemReviewOrg.setStar(5);
     	ItemReviewOrg.setPasswd("1111");

@@ -1,6 +1,6 @@
 package ganada.obj;
 
-import java.sql.Connection;
+import ganada.core.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,12 +26,7 @@ public class ItemReviewDao {
 	private ItemReviewDao() {
 	}
 
-	private Connection getConnection() throws Exception {
-		Context initCtx = new InitialContext();
-		Context envCtx = (Context) initCtx.lookup("java:comp/env");
-		DataSource ds = (DataSource) envCtx.lookup("jdbc/orcl");
-		return ds.getConnection();
-	}
+	
 
     public void insert(ItemReview article) {
         DB db = new DB();
@@ -98,40 +93,7 @@ public class ItemReviewDao {
     }
 
 
-	// review에 저장된 전체 글의 수
-	public int getArticleCount() throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int x = 0;
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from review");
-			rs = pstmt.executeQuery();
-
-			if (rs.next())
-				x = rs.getInt(1);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
-		}
-		return x;
-	}
+	
 
 	// 특정 상품번호로 review 
 	 public ItemReview getReview(int itemnum) throws Exception {
@@ -245,114 +207,8 @@ public class ItemReviewDao {
 	}
 
 	//nike엔 수정이 없음...
-	public ItemReview updateGetArticle(int num) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ItemReview article = null;
-		try {
-			conn = getConnection();
 
-			pstmt = conn.prepareStatement("select * from review where num = ?");
-			pstmt.setInt(1, num);
-			rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				article = new ItemReview();
-				article.setNum(rs.getInt("num"));
-				article.setItemnum(rs.getInt("itemnum"));
-				article.setItemname(rs.getString("itemname"));
-				article.setWriter(rs.getString("writer"));
-				article.setSubject(rs.getString("subject"));
-				article.setLik(rs.getInt("lik"));
-				article.setBad(rs.getInt("bad"));
-				article.setSiz(rs.getInt("siz"));
-				article.setComfortable(rs.getInt("comfortable"));
-				article.setWid(rs.getInt("wid"));
-				article.setDura(rs.getInt("dura"));
-				article.setItemsize(rs.getString("itemsize"));
-				article.setWei(rs.getString("wei"));
-				article.setHei(rs.getString("hei"));
-				article.setAge(rs.getString("age"));
-				article.setMail(rs.getString("mail"));
-				article.setContent(rs.getString("content"));
-				article.setStar(rs.getInt("star"));
-				article.setPasswd(rs.getString("passwd"));
-				article.setReadcount(rs.getInt("readcount"));
-				article.setIp(rs.getString("ip"));
-				article.setReg_date(rs.getTimestamp("reg_date"));
-				article.setRef(rs.getInt("ref"));
-				article.setRe_step(rs.getInt("re_step"));
-				article.setRe_level(rs.getInt("re_level"));
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
-		}
-		return article;
-	}
-
-	public int updateArticle(ItemReview article) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String dbpasswd = "";
-		String sql = "";
-		int x = -1;
-		try {
-			conn = getConnection();
-			sql = "select passwd from review where num = ?";
-			pstmt.setInt(1, article.getNum());
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				dbpasswd = rs.getString("passwd");
-				if (dbpasswd.equals(article.getPasswd())) {
-					sql = "update review set content=? where num=?";
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, article.getContent());
-					pstmt.setInt(2, article.getNum());
-					pstmt.executeUpdate();
-					x = 1;
-				} else {
-					x = 0;
-				}
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
-		}
-		return x;
-	}
 
 	public int deleteArticle(int num) {
 		DB db = new DB();
