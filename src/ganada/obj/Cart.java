@@ -1,14 +1,13 @@
 package ganada.obj;
 
-import java.sql.Timestamp;
-
 public class Cart {
-	private String cart_id; // 장바구니 아이디
+	private String cart_id; // 장바구니 아이디(메인키)
 	private String item_num; //상품번호
 	private String item_cl; //상품색상
 	private String item_size; //상품사이즈
 	private int item_cnt; //상품수량
 	private int item_total; //합계금액
+	
 	public String getCart_id() {
 		return cart_id;
 	}
@@ -45,6 +44,8 @@ public class Cart {
 	public void setItem_total(int item_total) {
 		this.item_total = item_total;
 	}
-		
+	
+	
 	
 }
+	
