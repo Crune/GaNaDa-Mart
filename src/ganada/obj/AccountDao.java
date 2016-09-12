@@ -22,7 +22,8 @@ public class AccountDao {
 			    sql.in("NAME", account.getName());
 			    sql.in("EMAIL", account.getEmail());
 			    sql.in("PASSWD", account.getPasswd());
-			    			    sql.in("birthday", account.getBirthday());
+			    sql.in("ID", account.getId());
+			    sql.in("birthday", account.getBirthday());
 			    sql.in("birthday1", account.getBirthday1());
 			    sql.in("birthday2", account.getBirthday2());
 			    sql.in("lunisolar", account.getLunisolar());
@@ -56,32 +57,21 @@ public class AccountDao {
 				account.setName(db.getString("NAME"));
 				account.setEmail(db.getString("EMAIL"));
 				account.setPasswd(db.getString("PASSWD"));
-				account.setBirthday(db.getString("BIRTHDAY"));
-				account.setBirthday1(db.getString("BIRTHDAY1"));
-				account.setBirthday2(db.getString("BIRTHDAY2"));
+				account.setId(db.getString("id"));
+				account.setBirthday1(db.getInt("BIRTHDAY"));
+				account.setBirthday1(db.getInt("BIRTHDAY1"));
+				account.setBirthday2(db.getInt("BIRTHDAY2"));
 				account.setLunisolar(db.getInt("LUNISOLAR"));
-				account.setGender(db.getString("GENDER"));
-				account.setContact(db.getString("CONTACT"));
-				account.setContact1(db.getString("CONTACT1"));
-				account.setContact2(db.getString("CONTACT2"));
-				account.setPhone(db.getString("PHONE"));
-				account.setPhone1(db.getString("PHONE1"));
-				account.setPhone2(db.getString("PHONE2"));
-				account.setSms_check(db.getString("SMS_CHECK"));
-				account.setPasswd_phone(db.getString("PASSWD_PHONE"));
+				account.setGender(db.getInt("GENDER"));
+				account.setContact(db.getInt("CONTACT"));
+				account.setContact1(db.getInt("CONTACT1"));
+				account.setContact2(db.getInt("CONTACT2"));
+				account.setPhone(db.getInt("PHONE"));
+				account.setPhone1(db.getInt("PHONE1"));
+				account.setPhone2(db.getInt("PHONE2"));
+				account.setSms_check(db.getInt("SMS_CHECK"));
+				account.setPasswd_phone(db.getInt("PASSWD_PHONE"));
 				account.setSecurity(db.getInt("SECURITY"));
-				
-
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
 				account.setReg_date(db.getTimestamp("reg_date"));
 			    }
 			} catch (Exception ex) {
@@ -94,11 +84,12 @@ public class AccountDao {
 
 		    public void updateAccount(Account account) throws Exception {
 			DB db = new DB();
-			DB.Update sql = db.new Update("BANNER");
+			DB.Update sql = db.new Update("ACCOUNT");
 			try {
 			    sql.setWhere("CODE", account.getCode());
         	    sql.set("NAME", account.getName());
 			    sql.set("EMAIL", account.getEmail());
+			    sql.set("ID", account.getId());
 			    sql.set("PASSWD", account.getPasswd());
 			    sql.set("BIRTHDAY", account.getBirthday());
 			    sql.set("BIRTHDAY1", account.getBirthday1());
@@ -133,7 +124,7 @@ public class AccountDao {
 			}
 		    }
 
-		    public int deleteBanner(String code) throws Exception {
+		    public int deleteAccount(String code) throws Exception {
 			DB db = new DB();
 			int x = -1;
 			try {
