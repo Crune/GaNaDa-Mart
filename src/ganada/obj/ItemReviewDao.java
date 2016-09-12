@@ -175,177 +175,76 @@ public class ItemReviewDao {
 			}
 			return review;
 		    }
+	 //상품번호의 리뷰 카운트...
 	public int getArticleCount(int itemnum) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		DB db = new DB();
+		ItemReview review = null;
 		int x = 0;
 
 		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from review where itemnum=" + itemnum);
+			db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe();
 
-			rs = pstmt.executeQuery();
-
-			if (rs.next())
-				x = rs.getInt(1);
+			if (db.next())
+				x = db.getInt("1");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			db.finalize();
 		}
 		return x;
 	}
-
-	public List<ItemReview> getArticles(int count) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		List<ItemReview> articleList = null;
-		try {
-			conn = getConnection();
-
-			pstmt = conn.prepareStatement("select * from review order by ref desc, re_step asc");
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				articleList = new ArrayList<ItemReview>(count);
-				do {
-					ItemReview article = new ItemReview();
-					article.setNum(rs.getInt("num"));
-					article.setItemnum(rs.getInt("itemnum"));
-					article.setItemname(rs.getString("itemname"));
-					article.setWriter(rs.getString("writer"));
-					article.setSubject(rs.getString("subject"));
-					article.setLik(rs.getInt("lik"));
-					article.setBad(rs.getInt("bad"));
-					article.setSiz(rs.getInt("siz"));
-					article.setComfortable(rs.getInt("comfortable"));
-					article.setWid(rs.getInt("wid"));
-					article.setDura(rs.getInt("dura"));
-					article.setItemsize(rs.getString("itemsize"));
-					article.setWei(rs.getString("wei"));
-					article.setHei(rs.getString("hei"));
-					article.setAge(rs.getString("age"));
-					article.setMail(rs.getString("mail"));
-					article.setContent(rs.getString("content"));
-					article.setStar(rs.getInt("star"));
-					article.setPasswd(rs.getString("passwd"));
-					article.setReadcount(rs.getInt("readcount"));
-					article.setIp(rs.getString("ip"));
-					article.setReg_date(rs.getTimestamp("reg_date"));
-					article.setRef(rs.getInt("ref"));
-					article.setRe_step(rs.getInt("re_step"));
-					article.setRe_level(rs.getInt("re_level"));
-
-					articleList.add(article);
-				} while (rs.next());
-
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
-		}
-		return articleList;
-	}
-
+//특정 상품에 대해 작성한 리뷰를 지정한 수만큼 얻어냄
 	public List<ItemReview> getArticles(int count, int itemnum) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+
+		DB db = new DB();
 		List<ItemReview> articleList = null;
 
 		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(
-					"select * from review where itemnum=" + itemnum + "order by ref desc, re_step asc");
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
+			//db.sql("select * from review where itemnum=" + itemnum + "order by ref desc, re_step asc").exe();
+			db.S("*","review","where itemnum="+itemnum, "order by ref desc, re_step asc").exe();
+			if (db.next()) {
 				articleList = new ArrayList<ItemReview>(count);
 				do {
 					ItemReview article = new ItemReview();
-					article.setNum(rs.getInt("num"));
-					article.setItemnum(rs.getInt("itemnum"));
-					article.setItemname(rs.getString("itemname"));
-					article.setWriter(rs.getString("writer"));
-					article.setSubject(rs.getString("subject"));
-					article.setLik(rs.getInt("lik"));
-					article.setBad(rs.getInt("bad"));
-					article.setSiz(rs.getInt("siz"));
-					article.setComfortable(rs.getInt("comfortable"));
-					article.setWid(rs.getInt("wid"));
-					article.setDura(rs.getInt("dura"));
-					article.setItemsize(rs.getString("itemsize"));
-					article.setWei(rs.getString("wei"));
-					article.setHei(rs.getString("hei"));
-					article.setAge(rs.getString("age"));
-					article.setMail(rs.getString("mail"));
-					article.setContent(rs.getString("content"));
-					article.setStar(rs.getInt("star"));
-					article.setPasswd(rs.getString("passwd"));
-					article.setReadcount(rs.getInt("readcount"));
-					article.setIp(rs.getString("ip"));
-					article.setReg_date(rs.getTimestamp("reg_date"));
-					article.setRef(rs.getInt("ref"));
-					article.setRe_step(rs.getInt("re_step"));
-					article.setRe_level(rs.getInt("re_level"));
+					article.setNum(db.getInt("num"));
+					article.setItemnum(db.getInt("itemnum"));
+					article.setItemname(db.getString("itemname"));
+					article.setWriter(db.getString("writer"));
+					article.setSubject(db.getString("subject"));
+					article.setLik(db.getInt("lik"));
+					article.setBad(db.getInt("bad"));
+					article.setSiz(db.getInt("siz"));
+					article.setComfortable(db.getInt("comfortable"));
+					article.setWid(db.getInt("wid"));
+					article.setDura(db.getInt("dura"));
+					article.setItemsize(db.getString("itemsize"));
+					article.setWei(db.getString("wei"));
+					article.setHei(db.getString("hei"));
+					article.setAge(db.getString("age"));
+					article.setMail(db.getString("mail"));
+					article.setContent(db.getString("content"));
+					article.setStar(db.getInt("star"));
+					article.setPasswd(db.getString("passwd"));
+					article.setReadcount(db.getInt("readcount"));
+					article.setIp(db.getString("ip"));
+					article.setReg_date(db.getTimestamp("reg_date"));
+					article.setRef(db.getInt("ref"));
+					article.setRe_step(db.getInt("re_step"));
+					article.setRe_level(db.getInt("re_level"));
 
 					articleList.add(article);
-				} while (rs.next());
+				} while (db.next());
 
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			db.finalize();
 		}
 		return articleList;
 	}
 
+	//nike엔 수정이 없음...
 	public ItemReview updateGetArticle(int num) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -456,35 +355,15 @@ public class ItemReviewDao {
 	}
 
 	public int deleteArticle(int num) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		DB db = new DB();
 		int x = -1;
 		try {
-			conn = getConnection();
-
-			pstmt = conn.prepareStatement("delete from review where num=?");
-			pstmt.setInt(1, num);
-			pstmt.executeUpdate();
+			db.D("REVIEW", "NUM=?").var(num).exe();
 			x = 1;
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			db.finalize();
 		}
 		return x;
 	}
