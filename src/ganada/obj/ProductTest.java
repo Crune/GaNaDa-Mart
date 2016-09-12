@@ -11,8 +11,7 @@ public class ProductTest extends DBTester {
 
     @BeforeClass
     public static void init() {
-    	productOrg = new Product();
-    	productOrg.setNum(1);   	
+    	productOrg = new Product(); 	
     	productOrg.setPasswd("글비밀번호");
     	productOrg.setName("상품명");
     	productOrg.setPrice(1);

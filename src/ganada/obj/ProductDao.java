@@ -53,7 +53,6 @@ public class ProductDao {
 		        
 		        try {
 		            sql.inSql("num", "product_seq.NEXTVAL");
-		            sql.in("num", article.getNum());
 		            sql.in("passwd", article.getPasswd());
 		            sql.in("name", article.getName());
 		            sql.in("price", article.getPrice());
