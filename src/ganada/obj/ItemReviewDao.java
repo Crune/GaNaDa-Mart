@@ -144,10 +144,7 @@ public class ItemReviewDao {
 		int x = 0;
 
 		try {
-			db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe();
-
-			if (db.next())
-				x = db.getInt("1");
+			x=db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe().getInt("1");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
