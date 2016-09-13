@@ -51,13 +51,13 @@
 		</tr>
 		<tr>
 		<%
-			String str = "right.png/left.png/bot.png/top.png/image.png/back.png";
-			StringTokenizer tokens = new StringTokenizer(str, "/");
+			String colorImage = "right.png/left.png/bot.png/top.png/image.png/back.png";
+			StringTokenizer tokens = new StringTokenizer(colorImage, "/");
 			for(int x=1; tokens.hasMoreElements(); x++){
-				System.out.println("문자"+x+"="+tokens.nextToken());
+				tokens.nextToken();	
 			}
 		%>
-			<td><img src="#">상품사진(우)</td>
+			<td><img src="#">${product.image }</td>
 			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
