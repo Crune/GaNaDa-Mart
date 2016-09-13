@@ -21,7 +21,7 @@
 		<!-- global_typ_gnb_top -->
 		<div class="global_gnb_top">
 			<div class="global_left_nav">
-				<a href="main.gnd"><em>GaNaDa</em></a>
+				<a href="main.gnd"><em>가나다 마트</em></a>
 				<a href="http://www.iei.or.kr/"><span>KH</span></a>
 			</div>
 			<div class="global_right_nav">

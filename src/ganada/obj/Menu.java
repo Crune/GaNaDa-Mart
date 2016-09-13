@@ -4,13 +4,20 @@ public class Menu {
 
     public static final int TYPE_NORMAL = 0;
     public static final int TYPE_EVENT = 1;
-    
+
+    private int level;
     private String code;
     private String name;
     private int type = TYPE_NORMAL;
     private String upper;
     private int order_lv = 100;
 
+    public int getLevel() {
+        return level;
+    }
+    public void setLevel(int level) {
+        this.level = level;
+    }
     public String getCode() {
         return code;
     }

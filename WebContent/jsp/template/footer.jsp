@@ -83,9 +83,9 @@
 					<li>KSNET 구매안전 서비스 <a href="javascript:popUp02();">ㅣ
 							서비스가입사실 확인</a></li>
 					<li>안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 KSNET의 구매안전 서비스<br>
-						(채무지급보증)를 이용하실 수 있습니다.<!-- 151006 추가 및 수정 --></li>
+						(채무지급보증)를 이용하실 수 있습니다.</li>
 					<li class="global_content_guide_list">온라인디지털콘텐츠사업발전법에 의한
-						콘텐츠보호안내 <a class="btn_content_guide" href="#">자세히보기</a> <!-- global_content_guide_box -->
+						콘텐츠보호안내 <a class="btn_content_guide" href="#">자세히보기</a>
 						<div class="global_content_guide_box">
 							<div class="global_guide_layer">
 								<div class="global_guide_inner">
@@ -106,7 +106,7 @@
 									<a class="global_ly_close" href="#"><span>닫기</span></a>
 								</div>
 							</div>
-						</div> <!-- 151006 추가 및 수정 -->
+						</div>
 					</li>
 				</ul>
 			</div>
