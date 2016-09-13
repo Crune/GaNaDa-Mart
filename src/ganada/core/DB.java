@@ -241,14 +241,6 @@ public class DB {
 		return 0;
 	}
 
-    public int count(String table, String where) throws Exception {
-        S("COUNT(*)", table, where).exe();
-        if (rs.next()) {
-            return rs.getInt(1);
-        }
-        return 0;
-    }
-    
 	public void finalize() {
 		if (rs != null)
 			try {
@@ -395,6 +387,5 @@ public class DB {
 			}
 		}
 	}
-
 
 }

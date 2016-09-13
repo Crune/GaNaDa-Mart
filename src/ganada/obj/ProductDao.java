@@ -14,7 +14,7 @@ public class ProductDao {
 	    private ProductDao() {
 	    }
 		
-		public Product getProduct(String num) throws Exception {
+		public Product getProduct(int num) throws Exception {
 			DB db = new DB();
 			Product product = null;
 			try {
@@ -25,7 +25,7 @@ public class ProductDao {
 			    	product.setPasswd(db.getString("passwd"));
 			    	product.setName(db.getString("name"));
 			    	product.setPrice(db.getInt("price"));
-			    	product.setDiscount(db.getInt("dscount"));
+			    	product.setDiscount(db.getInt("discount"));
 			    	product.setColor(db.getString("color"));
 			    	product.setPd_size(db.getString("pd_size"));
 			    	product.setStock(db.getInt("stock"));
@@ -53,7 +53,6 @@ public class ProductDao {
 		        
 		        try {
 		            sql.inSql("num", "product_seq.NEXTVAL");
-		            sql.in("num", article.getNum());
 		            sql.in("passwd", article.getPasswd());
 		            sql.in("name", article.getName());
 		            sql.in("price", article.getPrice());

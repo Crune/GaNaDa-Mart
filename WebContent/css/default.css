@@ -1,42 +1,23 @@
 @charset "utf-8";
-
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 body {
-	font-family: "Nanum Gothic", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
 }
-
 .page-title {
-	font-family: "Nanum Gothic", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
 	font-weight: 600;
 }
-
 img.bg {
-	width: 100%;
+    width: 100%;
 }
-
 .bg_img {
-	position: relative;
-	width: 100%;
-	text-align: center;
-	padding-bottom: 0 !important;
-	vertical-align: middle;
-	border: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0 !important;
+    vertical-align: middle;
+    border: 0;
 }
 
-.global_footer_link_list .global_link1 h4 a {
-	font-size: 16px;
-	color: #8d8d8d;
-	font-weight: bold;
-}
 
-h4.global_footer_link_tit a {
-	margin-bottom: 20px;
-	font-size: 16px;
-	font-weight: bold;
-	color: #fff;
-}
-
-.global_social_link>.global_footer_link_tit {
-	padding-top: 0;
-}
