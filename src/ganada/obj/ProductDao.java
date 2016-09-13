@@ -14,7 +14,7 @@ public class ProductDao {
 	    private ProductDao() {
 	    }
 		
-		public Product getProduct(String num) throws Exception {
+		public Product getProduct(int num) throws Exception {
 			DB db = new DB();
 			Product product = null;
 			try {
