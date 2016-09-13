@@ -2,24 +2,41 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import = "java.util.StringTokenizer" %>
 <html>
 <head><title>상품상세페이지(상단)</title>
 <script language="javascript">
      <!--
      function mySubmit(index){
-    	 if(index==1){
- 			document.product.action='#';
+    	if(index==1){
+    		if(!document.product.size.value ) {
+                alert("사이즈를 입력하세요");
+                return false;
+            }
+            if(!document.product.amount.value ) {
+                alert("수량을 입력하세요");
+                return false;
+            }
+            document.product.action='cart.gnd';
  		}
     	if(index==2){
- 			document.product.action='#';
+    		if(!document.product.size.value ) {
+                alert("사이즈를 입력하세요");
+                return false;
+            }
+            if(!document.product.amount.value ) {
+                alert("수량을 입력하세요");
+                return false;
+            }
+            document.product.action='order.gnd';
  		}
-    	document.myForm.submit();
+    	document.product.submit();
      }
      //-->
    </script>
 </head>
 <body>
-	<form method="post" name="product">
+	<form method="get" name="product">
 	<table border="1" width="1000" align="center">
 		<tr>
 			<td colspan="4"><a href="#">카테</a>
@@ -33,11 +50,18 @@
 			<td colspan="2">${product.name }<br />카테고리</td>
 		</tr>
 		<tr>
+		<%
+			String str = "right.png/left.png/bot.png/top.png/image.png/back.png";
+			StringTokenizer tokens = new StringTokenizer(str, "/");
+			for(int x=1; tokens.hasMoreElements(); x++){
+				System.out.println("문자"+x+"="+tokens.nextToken());
+			}
+		%>
 			<td><img src="#">상품사진(우)</td>
-			<c:if test="${discount == null }">
+			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
-			<c:if test="${discount != null }">
+			<c:if test="${product.discount != null }">
 				<td><strike><font><fmt:formatNumber value="${product.price }" /></font></strike>
 					<fmt:formatNumber value="${product.discount }" />
 				</td>
@@ -51,7 +75,7 @@
 		</tr>
 		<tr>
 			<td><img src="#">상품사진(좌)</td>
-			<td>제품색상이름 불러오기</td>
+			<td>${product.color }</td>
 			<td align="right">제품색상코드 불러오기(get)</td>
 		</tr>
 		<tr>
@@ -88,7 +112,7 @@
 		</tr>
 		<tr>
 			<td rowspan="2">&nbsp;</td>
-			<td colspan="2"><a href="#">상품이름</a>에 대해 더 알아보세요.<br /> 
+			<td colspan="2"><a href="#">${product.name }</a>에 대해 더 알아보세요.<br /> 
 				페이지 하단의<a href="#review">스토어 리뷰</a>를 통해 매장 스페셜리스트의 상세한 리뷰를 확인해보세요.<br />
 			</td>
 		</tr>

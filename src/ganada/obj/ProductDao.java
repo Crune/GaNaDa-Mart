@@ -25,7 +25,7 @@ public class ProductDao {
 			    	product.setPasswd(db.getString("passwd"));
 			    	product.setName(db.getString("name"));
 			    	product.setPrice(db.getInt("price"));
-			    	product.setDiscount(db.getInt("dscount"));
+			    	product.setDiscount(db.getInt("discount"));
 			    	product.setColor(db.getString("color"));
 			    	product.setPd_size(db.getString("pd_size"));
 			    	product.setStock(db.getInt("stock"));
