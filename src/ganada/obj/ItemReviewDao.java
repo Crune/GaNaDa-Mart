@@ -144,7 +144,7 @@ public class ItemReviewDao {
 		int x = 0;
 
 		try {
-			x=db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe().getInt("1");
+			x = db.count("review","ITEMNUM="+itemnum);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -160,7 +160,7 @@ public class ItemReviewDao {
 
 		try {
 			//db.sql("select * from review where itemnum=" + itemnum + "order by ref desc, re_step asc").exe();
-			db.S("*","review","where itemnum="+itemnum, "order by ref desc, re_step asc").exe();
+			db.S("*","review","itemnum="+itemnum, "ref desc, re_step asc").exe();
 			if (db.next()) {
 				articleList = new ArrayList<ItemReview>(count);
 				do {
