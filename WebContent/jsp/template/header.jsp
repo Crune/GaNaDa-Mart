@@ -10,7 +10,6 @@
 <title>${sessionScope.pageTitle }</title>
 
 <link href="./css/default.css" rel="stylesheet" type="text/css">
-<link href="./css/base.css" rel="stylesheet" type="text/css">
 <link href="./css/nike.css" rel="stylesheet" type="text/css">
 
 </head>

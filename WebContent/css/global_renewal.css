@@ -1,0 +1,764 @@
+@charset="utf-8";
+
+/* body, a, h1, h2, h3, p, strong, span, dt, dd, li, div, input[type="text"], input[type="password"], select {font-family:'Malgun Gothic', '맑은 고딕'; letter-spacing:normal;}
+ */
+body {min-width:710px;}
+
+/* 글로벌 영문 폰트 */
+/* @font-face {
+    font-family: "TradeGothicW01-BoldCn20 675334";
+    src: url(/fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix);
+    src: url(/fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix)format("eot"), url(/fonts/5fdc935e-9e30-442a-bbe9-8d887b858471.woff)format("woff"), url(/fonts/616c4c87-a077-43f4-a9f4-f01267c13818.ttf)format("truetype"), url(../fonts/c901ad5f-a842-4549-a1f4-583a97f7e169.svg#c901ad5f-a842-4549-a1f4-583a97f7e169)format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: "Trade Gothic W01 Cn 18";
+    src: url(/fonts/087e5c21-3358-4cf3-9d2c-289a03a48292.eot?#iefix);
+    src: url(/fonts/087e5c21-3358-4cf3-9d2c-289a03a48292.eot?#iefix)format("eot"), url(/fonts/fb754dec-aa8f-444c-be48-868464c47ab0.woff)format("woff"), url(/fonts/295ff20c-2b48-4fa6-be92-a53bbf9bbbb4.ttf)format("truetype"), url(../fonts/c573d9d0-0726-4b95-aeee-fb621a299563.svg#c573d9d0-0726-4b95-aeee-fb621a299563)format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+*.global_tdgB {font-family:"TradeGothicW01-BoldCn20 675334", Apple Gothic, sans-serif; letter-spacing:.025em;}
+*.global_tdgN {font-family:"Trade Gothic W01 Cn 18", Apple Gothic, sans-serif; letter-spacing:.025em;}
+ */
+/* webkit 브라우저 스크롤 히든 */
+/*::-webkit-scrollbar {width:0 !important; height:0 !important;}*/
+
+/* 아이콘 */
+.global_link_twitter {display:inline-block; width:30px; height:30px; vertical-align: middle; background:url('http://image.nike.co.kr/global/global_ico_twitter_30-30.png') no-repeat 0 0; background-size:30px; text-indent:-999em;}
+.global_link_facebook {display:inline-block; width:30px; height:30px; vertical-align: middle; background:url('http://image.nike.co.kr/global/global_ico_facebook_30-30.png') no-repeat 0 0; background-size:30px; text-indent:-999em;}
+.global_link_insta {display:inline-block; width:30px; height:30px; vertical-align: middle; background:url('http://image.nike.co.kr/global/global_ico_insta_30-30.png') no-repeat 0 0; background-size:30px; text-indent:-999em;}
+.global_link_youtube {display:inline-block; width:30px; height:30px; vertical-align: middle; background:url('http://image.nike.co.kr/global/global_ico_youtube_30-30.png') no-repeat 0 0; background-size:30px; text-indent:-999em;}
+
+/* 버튼타입 */
+.global_btn_type1 {display:block; padding:10px; width:100%; font-size:15px; box-sizing:border-box; line-height:20px; border-radius:2px; background-color:#111; text-align:center; color:#fff;}
+.global_btn_type2 {display:block; padding:10px; width:100%; font-size:15px; box-sizing:border-box; line-height:20px; border-radius:2px; background-color:#fff; text-align:center; color:#000;}
+
+.global_gnb {position:fixed; top:0; left:0; width:100%; background-color:#fff; z-index:200;} /* 2016-01-05 gnb fixed */
+/* .global_gnb ~ #wrap, .global_gnb ~ form > #wrap {padding:0;} */
+/* .global_gnb ~ #content .cat_order {padding:10px 30px 60px} */
+.global_gnb_top {padding:1.5px 24px 1.5px 0; border-bottom:1px solid #e1e1e1; *zoom:1;}
+.global_gnb_top:after {display:block; clear:both; content:'';}
+.global_gnb ~ form > #content .cat_order {position:relative; padding-top:40px}
+
+.global_left_nav {float:left;}
+.global_left_nav > em, 
+.global_left_nav a {padding:0 20px; display:inline-block; height:35px; line-height:35px; border-right: 1px solid #d1d1d1;color: #8D8D8D; letter-spacing: 0;}
+.global_left_nav a.global_nikeplus {font-weight:bold;}
+.global_left_nav a:hover span {opacity:.9;}
+
+.global_right_nav {float:right;}
+.global_right_nav > ul {*zoom:1;}
+.global_right_nav > ul:after {display:block; clear:both; content:'';}
+.global_right_nav > ul > li {float:left; position:relative; z-index:102;}
+.global_right_nav > ul > li > a {padding:0 8px; position:relative; display:block; height:35px; line-height:35px; opacity:.35; font-size:12px; color:#000; z-index:102; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_right_nav > ul > li.on > a {opacity:.9;}
+.global_right_nav > ul > li > a.on {opacity:.9;}
+.global_right_nav > ul > li.on > a span:after,
+.global_right_nav > ul > li > a.on span:after {position:absolute; left:0; bottom:-2px; width:100%; height:2px; background-color:#000; content:'';}
+.global_right_nav .cart > a {position:relative; opacity:.9;}
+.global_right_nav .cart > a:hover > span:first-child {opacity:.9;}
+.global_right_nav .cart > a:hover > .count:after {width:0; height:0;}
+.global_right_nav .cart .count {position:absolute; top:0; right:0; display:block; width:15px; height:15px; line-height:15px; border-radius:50%; opacity:1; background-color:#fe8113; text-align:center; font-size:10px; color:#fff;}
+.global_right_nav .global_flags {opacity:1;}
+.global_right_nav .global_flags:hover span:after {width:0; height:0;}
+
+.global_login_window,
+.global_user_menu {display:none;}
+.global_help_menu,
+.global_user_menu {position:absolute; top:35px; display:none; right:-81px; width:216px; background-color:#fff; opacity:1; padding:25px 32px 18px; border:1px solid #e1e1e1; border-radius:4px 0 4px 4px; font-size:14px; line-height:34px; box-sizing:border-box; z-index:101;}
+.global_help_menu a,
+.global_user_menu a {font-size:14px; color:#000;}
+
+
+.global_gnb_middle {position:relative; padding:0 30px; border-bottom:1px solid #e5e5e5;}
+.global_gnb_middle .global_gnb_logo span {display:block; width:49px; height:17px; background:url('http://image.nike.co.kr/global/global_gnb_logo.png') no-repeat 0 0; text-indent:-999em;}
+
+.global_gnb_middle h1 {display:inline-block; width:25%; vertical-align:middle;}
+.global_gnb_middle .global_gnb_logo a {display:block; width:50px;}
+.global_gnb_middle .global_depth1 {position:relative; display:inline-block; margin-left:-4px; vertical-align:middle; height:60px; z-index:1001;}
+.global_gnb_middle .global_depth1 a {position:relative; display:block; padding:20px; font-size:16px; font-weight:bold; letter-spacing:1px; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_gnb_middle .global_depth1.on a span:after {position:absolute; left:0; bottom:0; width:100%; height:2px; background-color:#000; content:'';}
+
+.global_gnb_middle .global_depth2 {position:absolute; top:59px; left:0; display:none; width:100%; opacity:0; z-index:498; background-color:#fff; border-top:1px solid #e5e5e5;}
+.global_gnb_middle .global_gnb_menu {display:inline-block; width:50%; text-align:center;}
+
+.global_sub_box {padding:40px 30px; box-sizing:border-box; box-shadow:0 5px 5px rgba(0,0,0,.05); text-align:center}
+.global_sub_menu {display:inline-block;margin-left:100px; max-width:953px; width:100%; overflow:hidden; text-align:left;*zoom:1;}
+.global_sub_menu:after {display:block; clear:both; content:'';}
+.global_sub_menu > div {float:left; width:calc((100% - 200px)/ 5); margin-left:30px;margin-bottom:-10000px; padding-left:15px;padding-bottom:10000px; text-align:left; box-sizing:border-box;}
+
+.global_sub_menu .global_category_stit a,
+.global_sub_menu .global_category_stit em {margin-bottom:20px; display:block; font-size:16px; font-weight:bold; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;} 
+
+.global_sub_menu .global_category_h2 a {font-size:16px; font-weight:bold; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_sub_menu .global_category_h2 li + li {margin-top:14px;}
+
+/* 20160704 lnb 3depth no link style */
+.global_sub_menu .global_category_h3 li {margin-bottom:6px; padding-right:7px; font-size:13px; display:block; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_sub_menu .global_category_h3 li a {margin-bottom:6px; padding-right:7px; font-size:13px; display:block; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;} 
+.global_sub_menu .global_category_h2 a:hover,
+.global_sub_menu .global_category_h3 a:hover {text-decoration:underline;}
+
+/* .global_sub_menu .global_category_h3.gb_shoes,
+.global_sub_menu .global_category_h3.gb_sports,
+.global_sub_menu .global_category_h3.gb_age {padding-left:26px; border-left:1px solid #e5e5e5;}
+.global_sub_menu .global_category_h3.gb_clothes {padding-right:0;} */
+
+.global_category_h3.gb_bdLeft {border-left:1px solid #e5e5e5;}
+
+.global_search_box {position:absolute; top:50%; right:32px; margin-top:-21px;}
+.global_search_box input[type="text"] {padding:0 30px 0 45px; width:100%; height:39px; box-sizing:border-box; border-radius:5px; border:1px solid #e5e5e5; font-size:14px; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;} 
+
+.Notification.global_shipping_cta {position:relative; top:100px; z-index:11; width:100%; height:55px; background:#f9f9f9; border-bottom:1px solid #e1e1e1} /* 2016-01-05 gnb fixed 로 인한 Notification 위치값 수정 */
+.Notification.global_shipping_cta .content {position:relative; top:0; margin:auto; width:770px; height:55px; line-height:55px}
+.Notification.global_shipping_cta .content .area {overflow:hidden; position:relative; margin:0 57px; width:653px; height:55px; line-height:55px}
+.Notification.global_shipping_cta .content .area ul {position:relative; width:90000px; height:55px; line-height:55px}
+.Notification.global_shipping_cta .content .area ul li {float:left; height:55px; line-height:55px}
+.Notification.global_shipping_cta .content .area ul li .box {position:relative; width:653px; height:55px; line-height:55px; text-align:center;  vertical-align: middle;}
+.Notification.global_shipping_cta .content .area ul li .box img {vertical-align: middle;}
+.Notification.global_shipping_cta .content .area ul li .box span.tit {display:inline-block; padding:0px 15px; height:55px; line-height:50px; font-size:14px; font-weight:bold; vertical-align: middle; letter-spacing:-1px; color:#000;}
+.Notification.global_shipping_cta .content .area ul li .box span.con {overflow:hidden; display:inline-block; max-width:360px; padding:0 20px;  height:55px; line-height:55px; font-size:12px; vertical-align: middle; white-space:nowrap; text-overflow:ellipsis; color:#a8a8a8}
+.Notification.global_shipping_cta .content .area ul li .box a {display:inline-block;  padding:0px 5px;  font-size:12px; vertical-align: middle;  text-decoration: underline; color:#a8a8a8}
+.Notification.global_shipping_cta .content .left {position:absolute; top:14px; left:0; width:19px; padding-left:20px; height:29px; overflow:hidden; text-indent:-10000px;background:url('http://image.nike.co.kr/global/btn-event-left.png') no-repeat}
+.Notification.global_shipping_cta .content .right {position:absolute; top:14px; right:0; width:19px; height:29px; padding-right:20px; overflow:hidden; text-indent:-10000px;background:url('http://image.nike.co.kr/global/btn-event-right.png') no-repeat}
+
+/* 로그인 레이어 */
+/*  2015-12-24  수정 시작 */
+.global_login_modal {position:absolute; top:98px; left:0; display:none; padding-top:175px; width:100%; height:488px !important;background-color:#fff !important; text-align:center; z-index:10000;box-shadow:0 5px 5px rgba(0,0,0,.05);}
+/*  2015-12-24  수정 끝 */
+.global_login_modal > div {display:inline-block; width:315px; text-align:left; vertical-align:top;}
+.global_login_modal .gb_register_cont {padding-right:50px; width:315px; border-right:1px solid #e5e5e5; box-sizing:border-box;}
+.global_login_modal .gb_register_cont p {font-size:13px;}
+.global_login_modal .gb_register_cont ul {padding:12px 0 56px; font-size:13px; line-height:21px; list-style:disc;min-height: 44px;}
+.global_login_modal .gb_register_cont ul li {margin-left:15px;}
+.global_login_modal .gb_login_cont {padding-left:50px; width:315px; box-sizing:border-box;}
+.global_login_modal .gb_login_tit {margin-bottom:26px; font-size:24px; font-weight:bold; letter-spacing:.025em;}
+
+.global_login_modal .gb_login_cont .place_input {position:relative;top:0;left:0;}
+.global_login_modal .gb_login_cont .gb_login_label {position:absolute; top:13px; left:14px; overflow:hidden; color:#aaa; line-height:14px}
+.global_login_modal .gb_login_cont .gb_login_label + input {margin-bottom:9px; padding:10px 15px; width:100%; height:42px; line-height:42px; display:block; box-sizing:border-box; border:1px solid rgba(163, 163, 163, .3); background:0 0; font-size:14px;  font-family:'Malgun Gothic', 'NanumGothic', Apple Gothic, sans-serif; line-height:20px; border-radius:2px;}
+
+.global_login_modal .global_btn_type1 {margin-top:16px;}
+.global_login_modal .global_modal_close {position:absolute; top:30px; right:30px; width:25px; height:25px; background:url('http://image.nike.co.kr/global/global_ico_login_modal_close.png') no-repeat; background-size:25px 25px; text-indent:-999em;}
+.global_id_pass_info {margin:23px 0 28px;}
+.global_id_pass_info:after {display:block; clear:both; content:'';}
+.global_id_pass_info span {float:left;}
+.global_id_pass_info span > label {padding-left:5px;}
+.global_id_pass_info div {float:right;}
+.global_id_pass_info .global_bar span a {color:#111}
+.global_id_pass_info .global_bar span + span {margin-left:10px; padding-left:10px; background:url('http://image.nike.co.kr/global/global_bar.png') no-repeat 0 3px;}
+
+/* 메인 P1 */
+.global_p1_banner {position:relative; box-sizing:border-box; padding-top:151px; margin:0 auto; width:100%; height:100vh; overflow:hidden; z-index:1;}
+.global_p1_banner .global_p1_img {position:absolute; top:0; left:0; width:100%; height:100%; background-repeat:no-repeat; background-position:50% 50%; background-size:cover;}
+.global_p1_banner .global_p1_tit strong {font-size:50px; font-weight:normal; letter-spacing:.025em; color:#111;}
+.global_p1_banner .global_p1_tit span {display:block; margin:20px 0 30px; font-size:14px; color:#8d8d8d;}
+.global_p1_banner .global_btn_type2 {padding:15px 30px 13px; display:inline-block; width:auto;}
+.global_p1_banner .global_txt_box {position:absolute; top:50%; left:100px; margin-top:-92px;}
+
+/* 푸터 */
+.global_footer {background-color:#111;}
+
+.global_footer_link {position:relative; margin:0 auto; padding:0 80px; width:100%; box-sizing:border-box;}
+.global_footer_link_inner:after {display:block; clear:both; content:'';}
+.global_footer_link_list {float:right; padding:60px 0 60px 50px; width:calc(100% - 275px); box-sizing:border-box;}
+.global_footer_link_list > ul,
+.global_footer_link_list > div {float:left; box-sizing:border-box; width:16.66667%;}
+.global_footer_link_list > ul a,
+.global_footer_link_list > div a {font-size:12px; line-height:2; color:#999;}
+.global_footer_link_list > ul:first-child {width:25%;}
+
+.global_footer_link_list .global_link1 a {font-size:16px; color:#8d8d8d; font-weight:bold;}
+.global_footer_link_tit {margin-bottom:20px; font-size:16px; font-weight:bold; color:#fff;}
+
+.global_social_link a + a {margin-left:5px;}
+.global_social_link > .global_footer_link_tit {padding-top:10px}
+
+.global_footer_info .global_info_cont {padding:20px 30px; border-top:1px solid #2c2c2c; background-color:#1d1d1d;}
+.global_footer_info .global_info_cont:after {display:block; clear:both; content:'';}
+.global_footer_info .global_info_cont > ul {box-sizing:border-box;}
+.global_footer_info .global_info_cont > ul:after {display:block; clear:both; content:'';}
+.global_footer_info .global_info_cont > ul > li {float:left; display:inline-block; font-size:10px; line-height:1.6; color:#999;}
+.global_footer_info .global_info_cont > ul > li:nth-child(2) {margin-left:10px;}
+.global_footer_info .global_info_cont > ul > li > a {display:inline-block; font-size:10px; line-height:1.6; color:#999;}
+.global_footer_info .global_info_left {float:left;}
+.global_footer_info .global_info_left > li > a img {position:relative; top:-1px;}
+.global_footer_info .global_info_right {float:right;}
+.global_footer_info .global_info_cont .global_info_right > li:nth-child(2) {margin-left:5px;}
+
+.global_footer_info .global_info_cont2 {padding:40px 0 60px; background-color:#1d1d1d; border-top:1px solid #2c2c2c; text-align:center;}
+.global_footer_info .global_info_cont2_inner {display:inline-block;}
+.global_footer_info .global_info_cont2_inner:after {display:block; clear:both; content:'';}
+.global_footer_info .global_info_cont2_inner > ul {float:left;}
+.global_footer_info .global_info_cont2_inner > ul + ul {margin-left:45px;}
+.global_footer_info .global_info_cont2_inner li {text-align:left; font-size:11px; line-height:1.5; color:#8d8d8d;}
+.global_footer_info .global_info_cont2_inner a {padding:0 7px 0 3px; background:url('http://image.nike.co.kr/global/global_ico_footer_arrow_4x7.png') no-repeat right 4px; font-size:11px; font-weight:bold; color:#b2b2b2;}
+
+.global_content_guide_list {position:relative;}
+.global_content_guide_list .global_content_guide_box {position:absolute; bottom:16px; left:-241px; display:none; width:482px;}
+.global_content_guide_list .global_guide_layer {padding:20px 20px 30px; background-color:#fff;}
+.global_content_guide_list .global_guide_layer h4 {padding-bottom:20px; font-size:18px; font-weight:bold; border-bottom:1px solid #e5e5e5; color:#111;}
+.global_content_guide_list .global_guide_inner div {margin-top:20px;}
+.global_content_guide_list .global_guide_inner div p {color:#333;}
+.global_content_guide_list .global_guide_inner .global_ly_close {position:absolute; top:20px; right:20px; padding:0; width:20px; height:20px; background:url('http://image.nike.co.kr/global/global_ico_login_modal_close.png') no-repeat center center; text-indent:-999em;}
+
+/* LNB */
+.global_lnb_wrap .global_nav_tit {margin-bottom:20px;}
+.global_lnb_wrap .global_nav_tit h2 { font-size:20px; color:#111;}
+
+.global_lnb_wrap .global_nav_sec > section {border-top:1px solid #d9d9d9; padding-top:12px; padding-bottom:8px;}
+.global_lnb_wrap .global_nav_sec h3 {display: block; padding:4px 0; line-height:16px; font-weight:normal; font-size:12px;}
+.global_lnb_wrap .global_nav_sec a {font-size:12px; font-weight:normal;}
+
+.global_lnb_wrap .global_lnb_pdt_list {display:none; padding:6px 0 5px 15px;}
+.global_lnb_wrap .global_lnb_pdt_list.gl_block_list {display:block} 
+.global_lnb_wrap .global_selected + .global_lnb_pdt_list {display:block;}
+.global_lnb_wrap .global_lnb_pdt_list a {display:block; padding:4px 0; line-height:16px;}
+.global_lnb_wrap .global_lnb_pdt_list a.active {font-weight:bold;}
+.global_lnb_wrap .global_selected h3,
+.global_lnb_wrap .global_selected span {font-weight:bold;}
+.global_lnb_wrap .global_lnb_more, 
+.global_lnb_wrap .global_lnb_more h3 {background:url('http://image.nike.co.kr/global/global_ico_more.gif') no-repeat center right;}
+.global_lnb_wrap .global_lnb_more.is_open,
+.global_lnb_wrap .global_lnb_more.is_open h3 {background:url('http://image.nike.co.kr/global/global_ico_minus.gif') no-repeat center right; font-weight:bold;}
+.global_lnb_wrap .global_opt_more {display:none;}
+.global_lnb_wrap .global_lnb_filter_check a {display:block; padding:4px 0;}
+
+
+.global_lnb_wrap .global_color_check ul:after {display:block; clear:both; content:'';}
+.global_lnb_wrap .global_color_check li {float:left; margin-top:13px;}
+.global_lnb_wrap .global_color_check li + li {margin-left:13px;}
+
+.global_lnb_wrap .global_color_check li:nth-child(7),
+.global_lnb_wrap .global_color_check li:nth-child(13) {margin-left:0;}
+
+.global_lnb_wrap .global_color_check li div a {position:relative; display:block; box-sizing:border-box; width:19px; height:19px; border-radius:19px; text-indent:-999em;}
+.global_lnb_wrap .global_color_check li .on:after {position:absolute; top:0; left:0; width:19px; height:19px; background:url('http://image.nike.co.kr/global/global_ico_color_check.png') no-repeat 4px 5px; content:'';}
+
+/* 2015-12-28 수정 시작 - lnb 그리드 영역 컬러칩 ie9 */
+.global_lnb_wrap .global_color_check li .global_color_white .on:after, 
+.global_lnb_wrap .global_color_check li .global_color_silver .on:after {position:absolute;margin:5px 0 0 5px;-ms-transform: rotate(-45deg); -webkit-transform:rotate(-45deg);transform:rotate(-45deg);content:'';border:solid #111;border-width:0 0 2px 2px !important;height:3px;width:6px;background:none}
+/* 2015-12-28 수정 끝 - lnb 그리드 영역 컬러칩 ie9 */
+
+.global_lnb_wrap .global_color_check .global_color_white a {border:1px solid #bdbdbd; background-color:#fff;}
+.global_lnb_wrap .global_color_check .global_color_gray a {border:1px solid #737373; background-color:#737373;}
+.global_lnb_wrap .global_color_check .global_color_green a {border:1px solid #0d9300; background-color:#0d9300;}
+.global_lnb_wrap .global_color_check .global_color_navy a {border:1px solid #3b4a75; background-color:#3b4a75;}
+.global_lnb_wrap .global_color_check .global_color_red a {border:1px solid #c40001; background-color:#c40001;}
+.global_lnb_wrap .global_color_check .global_color_black a {border:1px solid #242424; background-color:#242424;}
+.global_lnb_wrap .global_color_check .global_color_blue a {border:1px solid #3786d5; background-color:#3786d5;}
+.global_lnb_wrap .global_color_check .global_color_orange a {border:1px solid #eb621e; background-color:#eb621e;}
+.global_lnb_wrap .global_color_check .global_color_purple a {border:1px solid #693cb1; background-color:#693cb1;}
+.global_lnb_wrap .global_color_check .global_color_silver a {border:1px solid #c4c4c4; background-color:#c4c4c4;}
+.global_lnb_wrap .global_color_check .global_color_pink a {border:1px solid #ea008a; background-color:#ea008a;}
+.global_lnb_wrap .global_color_check .global_color_brown a {border:1px solid #765439; background-color:#765439;}
+.global_lnb_wrap .global_color_check .global_color_yellow a {border:1px solid #fcc300; background-color:#fcc300;}
+.global_lnb_wrap .global_color_check .global_color_gold a {border:1px solid #daaf00; background-color:#daaf00;}
+.global_lnb_wrap .global_color_check .global_color_khaki a {border:1px solid #7f7f00; background-color:#7f7f00;}
+
+.global_check_box {position:absolute; opacity:0; width:0 !important; height:0 !important;}
+.global_check_box + label {position:relative; display:inline-block; padding:4px 0 4px 22px;}
+.global_check_box + label:after {position:absolute; display:inline-block; width:14px; height:14px; top:4px; left:0; box-sizing:border-box; border:1px solid #bbb; border-radius:2px; background-repeat:no-repeat; background-size:13px; content:""; overflow:hidden;}
+.global_check_box:checked + label:after {background:url('http://image.nike.co.kr/global/global_check_box_on.gif') no-repeat 1px 2px;}
+
+.global_accordian {margin:32px 0;}
+.global_accordian > a,
+.global_accordian > a > h3,
+.global_accordian > a > h3 > span {font-weight:bold !important}
+
+.global_size_check {margin:13px 0}
+.global_size_check .global_size_list {border-left:1px solid #eee;}
+.global_size_check .global_size_list:after {display:block; clear:both; content:'';}
+.global_size_check .global_size_list li {overflow:hidden;float:left; width:20%;height:46px;}
+.global_size_check .global_size_list li div {display:table;width:100%;height:46px;vertical-align:middle;word-break:break-all;}
+.global_size_check .global_size_list a {overflow:hidden;display:table-cell;padding:2px;box-sizing:border-box; border-right:1px solid #eee; border-bottom:1px solid #eee; text-align:center; color:#111;vertical-align:middle;}
+.global_size_check .global_size_list li a.on {background-color:#111; color:#fff;}
+.global_size_check .global_size_list li:nth-child(1) a,
+.global_size_check .global_size_list li:nth-child(2) a,
+.global_size_check .global_size_list li:nth-child(3) a,
+.global_size_check .global_size_list li:nth-child(4) a,
+.global_size_check .global_size_list li:nth-child(5) a {border-top:1px solid #eee;}
+
+.global_wrap .titleArea02 .title .searchArea .search {height:20px} /* 2016-01-04 고객센터 검색영역 테투리선 높이값 수정 */
+
+/* gridwall */
+.global_gridwall_wrap {min-height:400px;padding-top:100px} /* 2016-01-05 gnb fixed 로 인한 그리드 영역 위치값 수정 */
+.global_gridwall_wrap .global_lnb_wrap {position:relative; float:left; width:180px; min-height:100%;font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;} 
+.global_gridwall_inner {padding:51px 0 50px; margin:0 auto; width:710px;}
+.global_gridwall_inner:after {display:block; clear:both; content:'';}
+.global_gridwall_box {position:relative; float:right; padding-left:0; width:calc(100% - 230px);}
+.global_lnb_none .global_gridwall_box {width:100%;}
+.global_gridwall_box .global_sec_tit {font-size:20px; padding-right:240px;}
+.global_gridwall_box .global_sec_tit span {margin-left:5px; color:#8d8d8d;}
+.global_gridwall_box .global_sec_tit span:before {content:'(';}
+.global_gridwall_box .global_sec_tit span:after {content:')';}
+.global_gridwall_box .global_gridwall_top_info {margin-bottom:20px;}
+.global_gridwall_box .global_sel_category {margin:35px 0 20px; padding-right:230px}
+.global_gridwall_box .global_sel_category span {display:inline-block; margin-right:11px;font-weight:bold; font-size:12px; color:#999; line-height:29px; word-break:break-word; vertical-align:middle}
+.global_gridwall_box .global_sel_category .del {display:inline-block; position:relative; top:-1px; width:10px; height:10px; padding-right:4px; background:url('http://image.nike.co.kr/global/global_category_del.gif') no-repeat left; vertical-align:middle; cursor:pointer;border:none;}
+.global_sel_category .sel_cancel {display:inline-block; width:68px; height:23px; border:1px solid #666; border-radius:2px; background:#fff; color:#111; text-align:center; line-height:23px; vertical-align:middle}
+
+
+.global_gridwall {margin:30px -10px 0; padding-bottom:50px;}
+.global_gridwall .none_goods {display: table; width:80%; min-height:200px; margin-top:50px;text-align: center;padding:0 10%;}
+.global_gridwall .none_goods > span {display:table-cell; vertical-align:middle; text-align:center; font-size:13px; font-weight:bold; color:#777}
+
+.global_gridwall_list:after {display:block; clear:both; content:'';}
+
+.global_gridwall_list li {position:relative; float:left; box-sizing:border-box; width:250px;} /* 2016-01-19 */
+/*.global_gridwall_list li:before {display:block; padding-bottom:141.7322834646%; content:'';}*/
+
+.global_gridwall_container {position:absolute; top:0; left:0; box-sizing:border-box; padding:10px; width:100%; height:100%;}
+.global_gridwall_container > a {display:block;}
+.global_gridwall_container .gridwall_item_soldout {font-size:11px; font-weight:bold;}
+.global_gridwall_container .gridwall_item_soldout .sold_out {position:relative; float:right; color:#fa5400;}
+.global_gridwall_container .gridwall_customization_opt {border-bottom:1px solid #ccc;padding-bottom: 4px;}
+.global_gridwall_list .global_gridwall_img {display:block; overflow:hidden; background:#f6f6f6; text-align:center; width:230px; height:230px; line-height:230px;} /* 2016-01-19 */
+.global_gridwall_list .global_gridwall_img img {max-width:100%; height:auto;}
+.global_gridwall_list .global_gridwall_item {font-size:12px; line-height:19px; padding-top:10px;} /* 셀렉트박스 스타일 */
+/*20160628 2줄처리 수정*/
+/* .global_gridwall_list .global_gridwall_item > span {display:block;} */
+/* .global_gridwall_list .global_gridwall_item .gridwall_item_title {font-weight:bold;margin-top: 4px;} */
+.global_gridwall_list .global_gridwall_item > span {display:block;overflow:hidden;max-height:41px;}
+.global_gridwall_list .global_gridwall_item .gridwall_item_title {font-weight:bold;margin-top: 4px;max-height:41px;overflow:hidden;}
+/*20160628 2줄처리 수정*/
+.global_gridwall_list .global_gridwall_item .gridwall_product_sale {margin-right:5px; text-decoration:line-through; color:#999;}
+
+.global_gridwall_col {padding:0 10px; height:414px;}/*  2016-01-19 */
+.global_gridwall_col:hover > .global_gridwall_container {height:auto; background-color:#fff; z-index:10; border:1px solid #ccc; padding:9px;}
+/* .global_gridwall_col.on > .global_gridwall_container {height:auto; background-color:#fff; z-index:10; border:1px solid #ccc; padding:9px;} */
+/*.global_gridwall_col.on .gridwall_customization_opt > div[class^="gridwall_item"] {display:none;}*/
+.global_gridwall_col:before {display:none !important;}
+
+/* 2016-01-04 검색결과 섬네일 롤링 수정 시작 */
+.gridwall_hover_sec {opacity:0; position:absolute;}
+.global_gridwall_col.on .gridwall_hover_sec{opacity:1; position:relative; padding:0 0 8px 0; height:60px; text-align:center;}
+.gridwall_hover_sec .gridwall_item_exp {position:relative; left:0; height:60px; display:inline-block; text-align:center; width:187px; overflow:hidden; z-index:2;}
+.gridwall_hover_sec .gridwall_item_exp_inner {position:absolute; left:0; display:inline-block; width:100%; z-index:1; overflow:hidden;}
+.gridwall_hover_sec .gridwall_item_exp_inner:after {display:block; clear:both; content:'';}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide {float:left;}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide:after {display:block; clear:both; content:'';}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide > div {position:relative; float:left; width:60px; height:60px; margin:0 1px; overflow:hidden; box-sizing:border-box; background-color:#fff;}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide a {position:relative; display:block; width:60px; height:60px; text-align:center; box-sizing:border-box; background-color:#f6f6f6; overflow:hidden; line-height:60px}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide img {height:43px}
+.gridwall_hover_sec .global_exp_prev {display:none;}
+
+/*
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="1"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="4"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="8"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="11"] img {left:-45px;}
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="2"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="5"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="9"] img,
+.gridwall_hover_sec .gridwall_item_exp_inner .slide[data-index="12"] img {left:-96px;}
+*/
+
+.gridwall_hover_sec .global_exp_prev,
+.gridwall_hover_sec .global_exp_next {position:absolute; top:50%; margin-top:-7px; width:8px; height:13px;}
+.gridwall_hover_sec .global_exp_next {right:0; background:url('http://image.nike.co.kr/global/global_gridwall_next.gif') no-repeat; text-indent:-999em;}/* 2016-01-19 */
+.gridwall_hover_sec .global_exp_prev {left:0; background:url('http://image.nike.co.kr/global/global_gridwall_prev.gif') no-repeat; text-indent:-999em;} /* 2016-01-19 */
+.gridwall_hover_sec .global_exp_prev.disabled,
+.gridwall_hover_sec .global_exp_next.disabled {display:none;}
+/* 2016-01-04 검색결과 섬네일 롤링 수정 끝 */
+
+
+.global_heading_sort {position:absolute; top:0; right:0; width:230px; line-height:1.6; z-index:11;}
+.global_sect_menu {position:relative; background-position:0 0; border:1px solid #bbb; color:#000; z-index:112;}
+.global_sect_field {position:relative; display:inline-block; padding:10px 30px 10px 10px; width:100%; box-sizing:border-box; cursor:pointer;font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_sect_field:after {position:absolute; top:50%; right:10px; display:inline-block; margin-top:-4px; width:18px; height:10px; background:url('http://image.nike.co.kr/global/global_select_arrow.gif') no-repeat; line-height:1px; vertical-align:middle; content:'';}
+.global_sect_field span {box-sizing:border-box; font-size:14px; cursor:pointer;}
+.global_sect_menu_list {position:absolute; top:42px; left:-1px; right:0; display:none; padding:0; width:230px; min-width:180px; background-color:#fff; border-bottom:1px solid #bbb; z-index:-1;}
+.global_sect_menu_list li {position:relative; font-size:14px; color:#111; border-left:1px solid #bbb; border-right:1px solid #bbb;}
+.global_sect_menu_list li.active:before {position:absolute; top:5px; bottom:5px; left:0; width:2px; background-color:#111; content:'';}
+.global_sect_menu_list li.active a {background-color:#eee;}
+.global_sect_menu_list li a {display:block; padding:8px 0 8px 16px;font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_sect_menu_list li a:hover {background-color:#e5e5e5;}
+
+.global_shopby_wrap {padding-top:100px} /* 2016-01-05 gnb fixed 로 인한 shopby sports 화면 위치값 수정 */
+.global_shopby_wrap:after {display:block; clear:both; content:'';}
+.global_shopby_inner {position:relative; padding:60px 20px 50px; width:100%; margin:0 auto; box-sizing:border-box;}
+.global_shopby_wrap .global_lnb_wrap {float:left; width:180px;}
+.global_shopby_wrap .global_right_cont {position:relative; float:right; padding-left:0; width:calc(100% - 230px);}
+.global_shopby_wrap .global_p1_banner_area {position:relative;}
+.global_shopby_wrap .global_p1_banner_area > img {width:100%;}
+.global_shopby_wrap .global_p1_banner_area h3 {font-size:36px; font-weight:bold; color:#fff;}
+.global_shopby_wrap .global_p1_banner_area p {margin-top:20px; font-size:11px; color:#fff;}
+.global_shopby_wrap .global_p1_banner_area a {display:block; margin-top:20px; width:85px; height:35px; line-height:35px; border-radius:3px; background-color:#fff; text-align:center; font-size:12px; font-weight:bold; color:#000;}
+.global_shopby_wrap .global_p1_banner_area .global_p1_txt {position:absolute; top:50%; left:43px; margin-top:-160px;}
+.global_shopby_wrap .category_wt {padding-top:0}
+.global_shopby_wrap .category_wt .con01 {padding:40px 25px;}
+/* 2015-12-24 shop by sports 태그 변경 시작 */
+.global_shopby_wrap .category_wt .con01 .clx {width:100%;}
+.global_shopby_wrap .category_wt .con01 .gb_shop_bT {width:25%;padding-right:20px; box-sizing:border-box;}
+.global_shopby_wrap .category_wt .con01 .gb_shop_bT .btn {padding-left:0;}
+.global_shopby_wrap .category_wt .con01 .gb_shop_bP {width:25%;text-align:center;}
+.global_shopby_wrap .category_wt .con01 .gb_shop_bP .txt {padding:6px 0 0 0;}
+.global_shopby_wrap .category_wt .con01 .gb_shop_bP .txt p {font-size:11px;}
+/* 2015-12-24 shop by sports 태그 변경 끝 */
+.global_shopby_wrap .category_wt .con01 .tit {padding:0; font-size:18px;}
+.global_shopby_wrap .category_wt .con01 .tit + p {margin-top:12px;}
+.global_shopby_wrap .category_wt .con01 .btn a {margin-top:18px; display:block; font-size:12px; color:#111; text-decoration:underline;}
+.global_shopby_wrap .category_wt .con01 h5 {font-size:13px; font-weight:bold;}
+.global_shopby_wrap .category_wt .txt_area h5 {font-size:14px;}
+.global_shopby_wrap .category_wt .con02 li .txt_area p {font-size:12px;}
+.global_shopby_wrap .global_accordian {margin:0;}
+.global_shopby_wrap .global_product_banner > img {width:100%;}
+.global_shopby_wrap .global_product_buy {padding:55px 0; text-align:center;}
+.global_shopby_wrap .global_product_buy strong {font-size:14px; font-weight:bold;}
+.global_shopby_wrap .global_product_buy p {margin-top:5px;}
+
+.global_lnb_wrap .global_lnb_shopby_tit + .global_lnb_pdt_list {padding-left:0;}
+.global_lnb_wrap .global_nav_sec .global_lnb_shopby_tit span {font-size:13px;}
+
+/* 검색결과 */
+.global_recommend_item dl {*zoom:1}
+.global_recommend_item dl:after {display:block; content:""; clear:both}
+.global_recommend_item dt,
+.global_recommend_item dd {float:left; font-size:12px; font-weight:bold;}
+.global_recommend_item dt {width:60px; margin-right:10px; color:#111;line-height: 20px;}
+.global_recommend_item dd {width:88%; color:#666;margin-left: 9px;line-height: 20px;}
+.global_recommend_item dd a {margin-left:-3px; padding-right:10px; word-break: break-all; line-height:20px}
+.global_recommend_item dd a:before {display:inline-block; padding-right:10px; vertical-align:middle; width:2px; height:11px; border-left:1px solid #b4b4b4; content:'';}
+.global_recommend_item .global_orange {color:#fa5400;}
+.global_recommend_item_tit {margin-bottom:20px; font-weight:bold; font-size:18px;}
+
+.global_search_result_none {margin-bottom:50px; text-align:center; font-size:18px; color:#111;}
+.global_search_result_none em {font-weight:bold;}
+.global_search_none.global_grey_box {padding:0; margin-bottom:60px;}
+.global_search_none.global_grey_box dl:after {display:block; clear:both; content:'';}
+.global_search_none.global_grey_box dt,
+.global_search_none.global_grey_box dd {display:inline-block; vertical-align:middle; font-weight:bold;}
+.global_search_none.global_grey_box dt {padding:30px; font-size:18px;}
+.global_search_none.global_grey_box dd {color:#111;line-height: 18px;}
+
+.global_grey_box {padding:16px 0; background-color:#fafafa;}
+.goodsListLoadingImg {text-align:center}  /* 로딩이미지 가운데 정렬 */
+
+/* 2016-01-05 lps 장바구니 레이어 영역 시작 */
+.global_gnb ~ .Pdp, .global_gnb ~ form > .Pdp {padding-top:130px;}
+.global_newCartArea .right-area {width:100%; height:285px; background-image:-webkit-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png); background-color:#fff;  border-bottom:2px solid #bababa}
+.global_newCartArea {position:fixed; top:-190px; left:0;width:100%; z-index:199}
+.global_newCartArea #newCartArea {height:287px}
+.global_newCartArea #newCartArea ul {position:relative; width:761px; margin:0 auto; padding:26px 0;}
+.global_newCartArea #newCartArea ul li {float:left; width:327px;  text-align:center; width:435px; font-size:12px; font-family:"돋움", Apple Gothic, sans-serif; color:#333;}
+.global_newCartArea #newCartArea ul li:first-child {width:326px; background:url(http://image.nike.co.kr/web/bg/bg-div-line.gif) right 0 repeat-y;}
+.global_newCartArea #newCartArea ul li .title { font-size:20px; font-family:"NanumGothic", Apple Gothic, sans-serif; font-weight:bolder; color:#333;}
+.global_newCartArea #newCartArea ul li .item-tit {font-weight:bold;}
+.global_newCartArea #newCartArea ul li .image {padding:10px 0;}
+.global_newCartArea #newCartArea ul li .order { margin-top:10px; font-weight:bold;}
+.global_newCartArea #newCartArea ul li .order span.size {display:inline-block; margin-right:15px;}
+.global_newCartArea #newCartArea ul li .order span.quantity {display:inline-block; margin-right:15px;}
+.global_newCartArea #newCartArea ul li .order span.price {color:#fa5400;}
+.global_newCartArea #newCartArea ul li .tPrice {margin-top:40px; font-size:16px; color:#fa5400; font-weight:bold;}
+.global_newCartArea #newCartArea ul li .dn {margin-top:10px; }
+.global_newCartArea #newCartArea ul li .btn {margin-top:40px;}
+.global_newCartArea #newCartArea ul .close {display:block; position:absolute; top:0px; right:0px; background:url(http://image.nike.co.kr/web/btn/btn_layer_close.png) 0 0 no-repeat; width:17px; height:16px; text-indent:-100 00px;}
+.global_newCartArea #newCartArea ul li .order_sum{margin:5px 0 0 0}
+.global_newCartArea #newCartArea ul li .order_sum span{display:inline-block; *display:inline; *zoom:1; font-weight:bold; font-size:13px}
+.global_newCartArea #newCartArea ul li .order_sum .price{margin-right:10px; text-decoration:line-through}
+.global_newCartArea #newCartArea ul li .order_sum .pass-price{margin-right:15px; color:#fa5400}
+/* 2016-01-05 lps 장바구니 레이어 영역 끝 */
+
+.global_gridwall_list.g_col5 li {width: 250px; padding: 0 15px;}
+.global_gridwall_list.g_col5 .gridwall_hover_sec .global_exp_next {right: 4px; background:url('http://image.nike.co.kr/global/global_gridwall_next.gif') no-repeat; text-indent:-999em;}
+.global_gridwall_list.g_col5 .gridwall_hover_sec .global_exp_prev {left: 1px; background:url('http://image.nike.co.kr/global/global_gridwall_prev.gif') no-repeat; text-indent:-999em;}
+.global_gridwall_list.g_col5 .global_gridwall_img {display:block; overflow:hidden;text-align: center;}
+/* 20160707 검색결과없을시 노출이미지 개선 (width:inherit 삭제) */
+.global_gridwall_list.g_col5 .global_gridwall_img img {display:inline-block; max-width:100%; height:auto;}
+
+.global_gnb ~ .titleArea02 {margin-top:100px}
+.global_gnb ~ .titleArea02 .title .searchArea .search {height:20px}  
+.global_gnb ~ form > #wrap > .contents {padding-top: 40px;}
+.global_gnb ~ form > #content {margin-top:80px}
+.global_gnb ~ #wrap > .contents {padding-top:120px}
+.global_gnb ~ #wrap > .titleArea02 {margin-top:20px}
+.global_gnb ~ #contents {padding-top:120px}
+.global_gnb ~ #wrap > .titleArea02 .title .searchArea .search {height:20px}
+
+.global_gnb ~ .P1.banner-area {padding-top:100px} /* 남성 브랜드 조던*/
+.global_gnb ~ .P1 .banner-area_lunch {padding-top:100px} /* 남성 런칭 캘린더 */
+.global_gnb ~ .rsvp_wrap {padding-top:100px} /* 남성 The Draw */
+.global_gnb ~ .P1 .seasonOff {padding-top:100px !important;}/* 가격인하 */
+.global_gnb ~ .P1 + .season_off {padding-top:50px !important;} /* 가격인하 */
+.global_gnb ~ .P1 + .proList {padding-top:20px !important;} /* 가격인하 */
+.global_gnb ~ .season_off {padding-top:150px !important;} /* 가격인하 */
+.global_gnb ~ .season_off + .proList {padding-top:20px !important;} /* 가격인하 */
+/*.global_gnb ~ .proList {padding-top:150px !important;}  가격인하 */
+.global_gnb ~ .page_title + .P1  {padding-top: 100px;} 
+.global_gnb ~ .BraCalculator0901 {margin-top:100px} /* 나이키 프로 */
+.global_gnb ~ .P1.banner-area ~ .section-title {padding-top:30px !important} /* 여성 상의 브라 */
+.global_gnb ~ .section-title {padding-top:150px !important}  /* 여성 상의 브라 */
+.global_gnb ~ .section-title + .proList {padding-top:0}  /* 여성 상의 브라 */
+
+
+
+
+@media (max-width:680px) {
+	.global_gridwall_inner.global_lnb_none {width:587px;}
+}
+
+@media (max-width:960px) {
+    .global_shopby_wrap {min-width:960px;}
+
+}
+
+
+@media (min-width:768px) and (max-width:1020px) {
+    .global_recommend_item dt {width:15%; margin-right:0;}
+    .global_recommend_item dd {width:72%;}
+}
+
+@media (min-width:1020px) {
+    .global_shopby_inner {padding-right:40px; padding-left:40px; width:100%;}
+	.global_search_box input[type="text"] {width:220px;}
+    .global_gridwall {margin:32px -10px 0; padding-bottom:50px;}   
+}
+
+@media (min-width:1021px) and (max-width:1269px) {
+    .global_recommend_item dt,
+    .global_recommend_item dd {box-sizing:border-box;}
+    .global_recommend_item dt {width:10%; margin-right:0;}
+    .global_recommend_item dd {width:86%;}
+}
+
+
+@media (max-width: 1023px) {
+	.global_gridwall_inner {width:732px;} /* 2016-01-19 */
+
+}
+
+@media (max-width:1024px) {
+	.global_gnb_middle .global_depth1 a {transition:.25s; transition-delay:.25s; padding:20px 10px;}	
+	.global_search_box input[type="text"] {width:110px; transition:.5s; transition-duration:.25s;}
+	.global_search_box input[type="text"].select_is_open {width:200px; transition-property:width; transition-duration:.25s;}
+	.global_gridwall_box .global_sel_category {padding-right:10%}
+	.global_sub_menu {margin-left:50px;}
+}
+
+@media (min-width: 1024px) and (max-width: 1269px) {
+	.global_gridwall_inner {width:974px;}   /* 2016-01-19 */
+}
+
+@media (min-width:1025px) {
+	.global_gnb_middle .global_depth1 a {left:0; transition:.5s;}
+}
+
+
+@media (max-width:1150px) {
+    .global_shopby_wrap .global_p1_banner_area .global_p1_txt {margin-top:-125px;}
+}
+
+@media (min-width: 1270px) and (max-width: 1599px) {
+     .global_gridwall_inner {width:1232px;}  /* 2016-01-19 */
+}
+
+
+@media (min-width:1270px) {
+    .global_shopby_inner {width:1210px;}
+	.global_gridwall_inner.global_lnb_none {width:1000px;}
+	.global_gridwall_inner.global_lnb_none .global_gridwall_list li {margin:0}
+}
+
+
+@media (max-width:1280px) {
+	.global_footer_link_list {width:100% !important;}
+}
+
+@media (max-width:1320px) {
+	.global_footer_link_list {width:100%}
+	.global_social_link > div > a {width:24px; height:24px;}
+	.global_social_link > div > a.global_link_twitter {background:url('http://image.nike.co.kr/global/global_ico_twitter_24-24.png') no-repeat 0 0;}
+	.global_social_link > div > a.global_link_facebook {background:url('http://image.nike.co.kr/global/global_ico_facebook_24-24.png') no-repeat 0 0;}
+	.global_social_link > div > a.global_link_youtube {background:url('http://image.nike.co.kr/global/global_ico_youtube_24-24.png') no-repeat 0 0;}
+	.global_social_link > div > a.global_link_insta {background:url('http://image.nike.co.kr/global/global_ico_insta_24-24.png') no-repeat 0 0;}
+}
+
+@media (max-width:1500px) {
+	.global_p1_banner .global_p1_tit strong {font-size:40px;}
+	.global_p1_banner .global_btn_type2 {padding:13px 20px 11px;}
+}
+
+
+@media (min-width: 1600px) {
+   .global_gridwall_inner {width:1230px;}/*  2016-01-19 */
+   .global_footer_link {width:1600px;}
+   .global_gridwall_list li {margin:0 2px}
+   .global_gridwall_list li:first-child {margin:0;}
+}
+
+
+@media (min-width:1760px) {
+	.global_footer_link {padding-left:0; padding-right:0;}
+}
+
+/* Mac 사파리 대응 FONT-FAMILY 160127 */
+/* common */
+.unit .info .flag {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.unit .info .loca {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.unit .info .status {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.unit .info .out_of_stock {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+
+/* detail */
+.table-type1 {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.table-type2 {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.lnbWrap .loc {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Pdp .content .loc-box {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Pdp .content .item-box .right .item-list .soldout-tit {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Pdp .content .item-box .right .btn-group .alert span {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Pdp .content .item-box .left .etc ul li span {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content dl {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.sizeGuide .board .guide-content .noti {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.copyBlockPdp .box p.content {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Local-tab .conTab .tab ul li .conArea .group ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review> .content .t-box .sub-tit {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review> .content .t-box .review-info ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review> .content .review-avg ul li .box>div.con .tip span {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-list >.content .gruop .list> .box >.tit-s {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-list >.content .gruop .list> .box >.txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-list >.content .gruop .list> .box >.eval .rate li .tip {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif} 
+.Review-write .content >div.review-check .star {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .tip span {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .title input {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .review .count {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .img .script {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .guide span.number {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .guide span.txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-write .board .guide .g-btn {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Review-write .content >div.review-confirm {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > p {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.proInfo .infoArea > dl dd {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif;}
+.layer-cart ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.conTab .merit .content .sectionR > p {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.conTab .merit .content .sectionR > ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.bestReview .Review-list .conBox .eval .rate li .tip {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .tip {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .chk {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .pdtevaluation .review-check .star {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .pdtevaluation .review-check span.txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .tip {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .conbox .writeform .byteChk {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .conbox .writeform .youtubeinfo {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .conbox .guide ol {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .section .conbox .guide span.n {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.reviewWrite .review-confirm {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+
+/* display */
+.Notification .content .area ul li .box span.con {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Notification .content .area ul li .box a {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.P2-4Touts .content ul li .bg .txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.P2-3Touts .content ul li .bg .txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Benefit .content .title span {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Benefit .content ul li .box .txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.Slideshow .content .box .area ul li .new-box .right-con .txt {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.socialFeed-pop .box ul li .left-section .page-id {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.copyBlock .content {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.filter > ul li .menu {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.filter > ul li .value ul li > a {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.txt_Nodata {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.searchTip > dd {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.benefit-con > .group  .box ul li {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.mvp_layer .table-type1 {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+.mvp_layer .tip {font-family:"돋움","NanumGothic", Apple Gothic, sans-serif}
+
+/* 20160217 브랜드바 */
+.global_left_nav a span {display:block; padding:0 8px; opacity:1; letter-spacing:normal; font-weight:normal}
+.global_left_nav > em, .global_left_nav a:hover{color:#111}
+.global_left_nav a + a {margin-left:-2px;}
+.global_left_nav a.global_nikeplus span{opacity:1}
+.global_left_nav a.global_nikeplus:hover span{color:#111}
+.global_gnb_top {padding:0px 24px 0px 0; border-bottom:1px solid #e1e1e1; *zoom:1;}
+.global_left_nav > em, 
+.global_left_nav a {padding:0 20px; display:inline-block; height:38px; line-height:38px; border-right: 1px solid #e5e5e5;color: #8D8D8D; letter-spacing: 0; min-width:50px; text-align:center}
+.global_gnb_middle .global_gnb_logo span {display:block; width:60px; height:25px; background:url('http://image.nike.co.kr/global/global_gnb_logo_new.png') no-repeat 0 0; text-indent:-999em;}
+.global_ico_jordan span {display:block; width:auto; height:38px; background:url('http://image.nike.co.kr/global/global_ico_jordan_new.png') no-repeat center center; text-indent:-999em;}
+.global_ico_jordan span:hover{background:url('http://image.nike.co.kr/global/global_ico_jordan_new_on.png') no-repeat center center;}
+.global_right_nav .cart span:first-child {display:block; width:18px; height:35px; line-height:35px; background:url('http://image.nike.co.kr/global/global_ico_cart_new.png') no-repeat center center; opacity:1; text-indent:-999em; }
+.global_right_nav .cart span:first-child:hover{background:url('http://image.nike.co.kr/global/global_ico_cart_new_on.png') no-repeat center center;}
+.global_search_box a {position:absolute; top:0; left:0; width:46px; height:38px; background:url('http://image.nike.co.kr/global/global_ico_search_new.png') no-repeat center center;}
+.global_right_nav > ul > li > a {padding:0 10px; position:relative; display:block; height:35px; line-height:35px; opacity:1; font-size:12px; color:#8d8d8d; z-index:102; font-family:Malgun Gothic, NanumGothic, Apple Gothic, sans-serif;}
+.global_right_nav > ul > li > a:hover{color:#111}
+.global_right_nav > ul > li.global_help.on > a span:after,
+.global_right_nav > ul > li.global_help > a.on span:after {position:absolute; left:0; bottom:-2px; width:100%; height:2px; background-color:#000; background:#000; content:'';} 
+.global_right_nav > ul > li.global_login.on > a span:after,
+.global_right_nav > ul > li.global_login > a.on span:after {position:absolute; left:0; bottom:-2px; width:100%; height:2px; background-color:none; background:none; content:'';} 
+.global_right_nav > ul > li.cart.on > a span:after,
+.global_right_nav > ul > li.cart > a.on span:after {position:absolute; left:0; bottom:-2px; width:100%; height:2px; background-color:none; background:none; content:'';} 
+
+
+/* 20160314 사파리 푸터 및 그리드 페이지 */
+.global_footer_link_list{width:80%}
+.global_gridwall_box{width:1000px}
+@media (max-width: 1269px) and (min-width: 1024px) {
+	.global_gridwall_box{width:744px}
+}
+@media (max-width: 1023px) {
+	.global_gridwall_box{width:502px}
+}
+
+/* 20160504 자동 검색 추가 */
+/* 20160613 css 수정 media 추가 */
+.global_gnb_middle .global_depth2 {z-index:98 !important}/* 20160513 global_depth2 z-index 수정 */
+.global_search_box input[type="text"] {width:220px;}
+.global_search_box .global_search_list {display:none;position:absolute;top:37px;left:0;width:194px;padding:8px 12px;border:1px solid #e1e1e1;background:#f7f7f7;z-index:100;}/* 20160516 z-index 수정*/
+.global_search_box .global_search_list ul li {padding:5px 0;color:#999;}
+.global_search_box .global_search_list ul li a {display:inline-block;position:static;width:auto;height:auto;color:#999;background:none;}
+.global_search_box .global_search_list ul li a em,
+.global_search_box .global_search_list ul li em {color:#111;}
+.global_search_box .global_search_freq {position:absolute;top:37px;left:0;width:218px;border:1px solid #e1e1e1;background:#fff;z-index:100;}
+.global_search_box .global_search_freq.off {display:none;}
+.global_search_box .global_search_freq .freq_tab ul:after {content:'';display:block;clear:both;}
+.global_search_box .global_search_freq .freq_tab ul li {float:left;width:50%;text-align:center;border-bottom:1px solid #e5e5e5;border-left:1px solid #e5e5e5;background:#f5f5f5;box-sizing:border-box;}
+.global_search_box .global_search_freq .freq_tab ul li:first-child {border-left:none;}
+.global_search_box .global_search_freq .freq_tab ul li.active {border-bottom:none;background:#fff;}
+.global_search_box .global_search_freq .freq_tab ul li > a {display:block;position:static;width:auto;height:33px;line-height:33px;background:none;}
+.global_search_box .global_search_freq .freq_tab ul li a.lnk_freq {padding:18px 10px 14px 5px;}
+.global_search_box .global_search_freq .freq_tab ul li a.lnk_freq span {display:inline-block;width:20px;height:20px;line-height:20px;vertical-align:top;color:#fff;background:#777;border-radius:50%;}
+.global_search_box .global_search_freq .freq_lst {display:none;padding:20px 20px 10px 30px;}
+.global_search_box .global_search_freq .freq_lst.active {display:block;}
+.global_search_box .global_search_freq .freq_lst ul li {padding:6px 0;color:#999;}
+.global_search_box .global_search_freq .freq_lst ul li:after {content:'';display:block;clear:both;}
+.global_search_box .global_search_freq .freq_lst ul li a {position:static;overflow:hidden;float:left;width:auto;max-width:145px;height:auto;color:#888;background:none;white-space:nowrap;text-overflow:ellipsis;}
+.global_search_box .global_search_freq .freq_lst ul li a.bt_del {float:right;}
+.global_search_box .global_search_freq .freq_btn {padding:20px 0;text-align:center;}
+.global_search_box .global_search_freq .freq_btn > a {display:inline-block;position:static;width:auto;height:auto;padding:0 10px 0 12px;line-height:1;text-decoration:underline;color:#666;border-left:1px solid #ddd;background:none;}
+.global_search_box .global_search_freq .freq_btn > a:first-child {border-left:none;}
+.global_search_box .global_search_freq .freq_btn.fn_off {padding:30px 0;}
+.global_search_box .global_search_freq .freq_btn.fn_off p {padding:6px 0;color:#111;}
+.global_search_box .global_search_freq .freq_btn.fn_off a {border-left:none;}
+.global_search_box .global_search_freq .btn_bottom {padding:20px 30px;}
+.global_search_box .global_search_freq .btn_bottom a.g_layer_delete {display:block;position:static;height:35px;line-height:35px;text-align:center;color:#fff;border-radius:2px;background:#333;}
+
+@media (max-width: 1269px) and (min-width: 1024px) {
+    .global_gridwall_box{width:744px}
+}
+@media (max-width: 1023px) {
+    .global_search_box input[type="text"] {width:110px;}
+    .global_search_box .global_search_freq {width:198px;}
+    .global_search_box .global_search_freq .freq_lst {padding:20px 15px 10px 20px;}
+
+    .global_search_box input[type="text"] {transition-delay: .5s;}
+    .global_search_box input[type="text"].select_is_open {width:200px; transition-property:width; transition-duration:.25s;transition-delay: 0s;}
+}
+
+/* 20160425 gnb converse 추가 */
+.global_left_nav a.global_ico_converse {width:70px;}
+.global_ico_converse span {text-indent:-9999em;background:url(http://image.nike.co.kr/global/g_ico_converse.png) no-repeat center;}
+.global_ico_converse span:hover {background:url(http://image.nike.co.kr/global/g_ico_converse_on.png) no-repeat center;}
+
+
+ /* 20160718 추가 */
+body .global_gridwall_list .global_gridwall_item .gridwall_item_title {/*text-overflow: ellipsis;white-space: nowrap;*/} /*20160721*/
+/* 20160718 추가 */
+
+/* 20160719 추가 */
+/* body .global_gnb ~ .P1 + .proList {padding-top:0px !important;} */
+.content .global_gridwall_top_info {min-height:44px;padding:0 33px;}
+.content .global_gridwall_top_info:after {content:'';display:block;clear:both;}
+.content .global_gridwall_top_info .global_sec_tit {width:70%;float:left;padding:0}
+.content .global_gridwall_top_info .global_list_item {width:30%;float:right;text-align:right}
+.content .global_gridwall_top_info .global_list_item .global_heading_sort {width:100%;max-width:230px;position:static;display:inline-block;text-align:left}
+/* 20160719 추가 */

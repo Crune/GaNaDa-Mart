@@ -1,55 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<style type="text/css">
+.global_footer_link_list .global_link1 h4 a {
+	font-size: 16px;
+	color: #8d8d8d;
+	font-weight: bold;
+}
+
+h4.global_footer_link_tit a {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.global_social_link>.global_footer_link_tit {
+	padding-top: 0;
+}
+</style>
 <div class="global_footer" id="footerF">
 	<div class="global_footer_link">
 		<div class="global_footer_link_inner">
 			<div class="global_footer_link_list">
 				<ul class="global_link1" id="forGenFooter">
-					<li><a
-						href="./findstore/findStoreView.lecs">매장안내</a></li>
+					<li><a href="./findstore/findStoreView.lecs">매장안내</a></li>
 					<li><a href="javascript:showLogin();">로그인</a></li>
 					<li><a href="javascript:showLogin();">회원가입</a></li>
 				</ul>
 				<ul class="global_link2">
 					<li>
-						<h4 class="global_footer_link_tit footer-title">
+						<h4 class="global_footer_link_tit">
 							<a href="./helpdesk/mainCustomer.lecs">고객센터</a>
 						</h4>
 					</li>
-					<li><a
-						href="./helpdesk/listFaq.lecs?ql=1468">주문결제</a></li>
-					<li><a
-						href="./helpdesk/listFaq.lecs?ql=1462">배송</a></li>
+					<li><a href="./helpdesk/listFaq.lecs?ql=1468">주문결제</a></li>
+					<li><a href="./helpdesk/listFaq.lecs?ql=1462">배송</a></li>
 					<li><a href="javascript:goInfoShopDetail();">주문배송조회</a></li>
-					<li><a
-						href="./helpdesk/listFaq.lecs?ql=1456">회원혜택/서비스</a></li>
-					<li><a
-						href="./helpdesk/listFaq.lecs?ql=1700&amp;noticeYN=Y">공지사항</a></li>
+					<li><a href="./helpdesk/listFaq.lecs?ql=1456">회원혜택/서비스</a></li>
+					<li><a href="./helpdesk/listFaq.lecs?ql=1700&amp;noticeYN=Y">공지사항</a></li>
 					<li><a href="javascript:assmtEmailLayerPop();">1:1 이메일문의</a></li>
 					<li><a href="./display/rules.lecs?tach=1">이용약관</a></li>
 					<li><a href="./display/rules.lecs?tach=2">개인정보취급(처리)방침</a></li>
 				</ul>
 				<ul class="global_link3">
 					<li>
-						<h4 class="global_footer_link_tit footer-title">
+						<h4 class="global_footer_link_tit">
 							<a href="javascript:nikeAbout()" title="회사소개">회사소개</a>
 						</h4>
 					</li>
 				</ul>
-				<div class="global_social_link footer-title">
+				<div class="global_social_link">
 					<h4 class="global_footer_link_tit global_tdgB">
 						<a>SOCIAL</a>
 					</h4>
 					<div>
 						<a class="global_link_twitter"
 							href="https://twitter.com/ganada_mart" target="_blank"
-							title="새창열림">Twitter</a>
-						<a class="global_link_facebook"
-							href="https://www.facebook.com/anada_mart" target="_blank" title="새창열림">Facebook</a>
-						<a class="global_link_youtube"
+							title="새창열림">Twitter</a> <a class="global_link_facebook"
+							href="https://www.facebook.com/anada_mart" target="_blank"
+							title="새창열림">Facebook</a> <a class="global_link_youtube"
 							href="https://www.youtube.com/user/anada_mart" target="_blank"
 							title="새창열림">Youtube</a> <a class="global_link_insta"
-							href="https://instagram.com/anada_mart" target="_blank" title="새창열림">Instagram</a>
+							href="https://instagram.com/anada_mart" target="_blank"
+							title="새창열림">Instagram</a>
 					</div>
 				</div>
 			</div>
@@ -58,7 +72,8 @@
 	<div class="global_footer_info">
 		<div class="global_info_cont">
 			<ul class="global_info_left">
-				<li class="copy-write">©2016 GaNaDa Mart, Inc. All Rights Reserved.</li>
+				<li class="copy-write">©2016 GaNaDa Mart, Inc. All Rights
+					Reserved.</li>
 			</ul>
 			<ul class="global_info_right">
 				<li><a href="./display/rules.lecs?tach=1">이용약관</a></li>
@@ -83,7 +98,8 @@
 					<li>KSNET 구매안전 서비스 <a href="javascript:popUp02();">ㅣ
 							서비스가입사실 확인</a></li>
 					<li>안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 KSNET의 구매안전 서비스<br>
-						(채무지급보증)를 이용하실 수 있습니다.</li>
+						(채무지급보증)를 이용하실 수 있습니다.
+					</li>
 					<li class="global_content_guide_list">온라인디지털콘텐츠사업발전법에 의한
 						콘텐츠보호안내 <a class="btn_content_guide" href="#">자세히보기</a>
 						<div class="global_content_guide_box">
