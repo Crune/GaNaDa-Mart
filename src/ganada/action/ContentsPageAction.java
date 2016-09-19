@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import ganada.obj.*;
 
-public class MainAction extends HaveSubAction {
+public class ContentsPageAction extends HaveSubAction {
     private static ContentsPage page;
     private static List<BannerHTML> banners;
     
@@ -18,11 +18,11 @@ public class MainAction extends HaveSubAction {
     
     private static String innerHTML = "";
 
-    public void init() throws Exception {
+    public void init(String pageCode) throws Exception {
         pageDao = ContentsPageDao.getInstance();
         bannerDao = BannerHTMLDao.getInstance();
 
-        page = pageDao.getPage("MAIN");
+        page = pageDao.getPage(pageCode);
         banners = new ArrayList<BannerHTML>();
         
         for (int key : page.bannerMap().keySet()) {
@@ -39,19 +39,19 @@ public class MainAction extends HaveSubAction {
     
     public String exe(HttpServletRequest request, HttpServletResponse response) {
         try {
-            if (page == null) init();
             
+            String code = (String) request.getParameter("code");
+            if (page == null) init(code);            
+
             HttpSession session = request.getSession();
             session.setAttribute("pageTitle", page.getName());
             session.setAttribute("menu", "0");
             session.setAttribute("innerHTML", innerHTML);
-            
-            System.out.println("");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "/jsp/menu/main.jsp";
+        return "/jsp/template/page.jsp";
     }
 
 }

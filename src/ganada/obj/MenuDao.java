@@ -46,7 +46,7 @@ public class MenuDao {
                 cur.setType(db.getInt("TYPE"));
                 cur.setUpper(db.getString("UPPER"));
                 cur.setOrder_lv(db.getInt("ORDER_LV"));
-                System.out.println(cur);
+                //System.out.println(cur);
                 menus.add(cur);
             }
         } catch (Exception ex) {

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="menu" uri="/WEB-INF/tld/menu.tld"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +21,12 @@
 		<!-- global_typ_gnb_top -->
 		<div class="global_gnb_top">
 			<div class="global_left_nav">
-				<a href="main.gnd"><em>가나다 마트</em></a>
-				<a href="http://www.iei.or.kr/"><span>KH</span></a>
+				<a href="main.gnd"><em>가나다 마트</em></a> <a
+					href="http://www.iei.or.kr/"><span>KH</span></a>
 			</div>
 			<div class="global_right_nav">
 				<ul>
-					<li class="global_login"><a href="#"><span>회원가입 /
-								로그인</span></a></li>
+					<li class="global_login"><a href="#"><span>회원가입 / 로그인</span></a></li>
 					<li class="global_help"><a href="mainCustomer.lecs"><span>고객센터</span></a>
 						<ul class="global_help_menu">
 							<li><a href="./helpdesk/listFaq.gnd?fid=1">주문결제</a></li>
@@ -51,227 +51,58 @@
 		<!-- global_gnb_middle -->
 		<div class="global_gnb_middle">
 			<!-- global_gnb_main -->
-			<div class="global_gnb_main">
+			<div class="global_gnb_main">			
 				<h1 class="global_gnb_logo">
-					<a href="javascript:goMain();"> <span>Nike. Shoes,
-							Clothing &amp; Gear.</span>
+					<a href="javascript:goMain();"> <span>가나다</span>
 					</a>
 				</h1>
+
 				<div class="global_gnb_menu">
-					<div class="global_depth1 men">
-						<span></span> <a
-							href="./display/displayShop.lecs?displayNo=NK1A49"> <span>MEN</span>
-						</a>
-					</div>
-					<div class="global_depth2 men">
-						<div>
-							<div class="global_sub_box">
-								<div class="global_sub_menu">
-									<div class="global_category_h2">
-										<div>
-											<ul>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A02A01">신상품</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A02A21">2016
-														가을 신상</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="global_category_h3 All Shoes:RN_NSW:PWH">
-										<div>
-											<div class="global_category_stit">
-												<a href="./display/displayShop.lecs?displayNo=NK1A49A01">신발</a>
-												<span class="ico"></span>
-											</div>
-											<ul>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A01A10">신발
-														전체</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A01A01">라이프스타일</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A01A02">러닝</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A01A03">트레이닝
-														& 짐</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="global_category_h3 All Clothing:NSW">
-										<div>
-											<div class="global_category_stit">
-												<a href="./display/displayShop.lecs?displayNo=NK1A49A03">의류</a>
-												<span class="ico"></span>
-											</div>
-											<ul>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A03A09">의류
-														전체</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A03A03">후디
-														＆ 풀오버</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A03A04">재킷
-														＆ 베스트</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="global_category_h3 sports">
-										<div>
-											<div class="global_category_stit">
-												<a href="./display/displayShop.lecs?displayNo=NK1A49A04">스포츠</a>
-												<span class="ico"></span>
-											</div>
-											<ul>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A04A09">러닝</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A04A05">트레이닝
-														& 짐</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A04A02">농구</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A04A03">축구</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="global_category_h3 bland">
-										<div>
-											<div class="global_category_stit">
-												<a href="./display/displayShop.lecs?displayNo=NK1A49A04">브랜드</a>
-												<span class="ico"></span>
-											</div>
-											<ul>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A05A01">Nike
-														Sportswear</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A05A03">NikeLab</a></li>
-												<li><a
-													href="./display/displayShop.lecs?displayNo=NK1A49A05A02">Jordan</a></li>
-											</ul>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					
+<menu:getChild code="0" type="0">
+<c:forEach var="d1" items="${ChildMenu}">
                     <div class="global_depth1 men">
-                        <span></span> <a
-                            href="./display/displayShop.lecs?displayNo=NK1A49"> <span>WOMEN</span>
-                        </a>
+                        <span></span> <a href="./page.gnd?code=${d1.code}"><span>${d1.name}</span></a>
                     </div>
-                    <div class="global_depth2 men">
-                        <div>
+                    <div class="global_depth2 men"><div>
                             <div class="global_sub_box">
                                 <div class="global_sub_menu">
-                                    <div class="global_category_h2">
-                                        <div>
-                                            <ul>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A02A01">신상품</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A02A21">2016
-                                                        가을 신상</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="global_category_h3 All Shoes:RN_NSW:PWH">
-                                        <div>
+                                    <div class="global_category_h2"><div><ul>                                   
+<!-- 2단계 이벤트 반복 시작 -->
+<menu:getChild code="${d1.code}" type="1">
+ <c:forEach var="d2e" items="${ChildMenu}">
+                                                <li><a href="./page.gnd?code=${d2e.code}">${d2e.name}</a></li>
+ </c:forEach>
+</menu:getChild>
+<!-- 2단계 이벤트 반복 종료 -->                        
+                                    </ul></div></div>
+<!-- 2단계 반복 시작 -->
+<menu:getChild code="${d1.code}" type="0">
+ <c:forEach var="d2" items="${ChildMenu}">
+                                    <div class="global_category_h3"><div>
                                             <div class="global_category_stit">
-                                                <a href="./display/displayShop.lecs?displayNo=NK1A49A01">신발</a>
-                                                <span class="ico"></span>
+                                                <a href="./type.gnd?code=${d2.code}">${d2.name}</a> <span class="ico"></span>
                                             </div>
                                             <ul>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A01A10">신발
-                                                        전체</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A01A01">라이프스타일</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A01A02">러닝</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A01A03">트레이닝
-                                                        & 짐</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="global_category_h3 All Clothing:NSW">
-                                        <div>
-                                            <div class="global_category_stit">
-                                                <a href="./display/displayShop.lecs?displayNo=NK1A49A03">의류</a>
-                                                <span class="ico"></span>
-                                            </div>
-                                            <ul>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A03A09">의류
-                                                        전체</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A03A03">후디
-                                                        ＆ 풀오버</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A03A04">재킷
-                                                        ＆ 베스트</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="global_category_h3 sports">
-                                        <div>
-                                            <div class="global_category_stit">
-                                                <a href="./display/displayShop.lecs?displayNo=NK1A49A04">스포츠</a>
-                                                <span class="ico"></span>
-                                            </div>
-                                            <ul>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A04A09">러닝</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A04A05">트레이닝
-                                                        & 짐</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A04A02">농구</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A04A03">축구</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="global_category_h3 bland">
-                                        <div>
-                                            <div class="global_category_stit">
-                                                <a href="./display/displayShop.lecs?displayNo=NK1A49A04">브랜드</a>
-                                                <span class="ico"></span>
-                                            </div>
-                                            <ul>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A05A01">Nike
-                                                        Sportswear</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A05A03">NikeLab</a></li>
-                                                <li><a
-                                                    href="./display/displayShop.lecs?displayNo=NK1A49A05A02">Jordan</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
+<!-- 3단계 반복 시작 -->
+  <menu:getChild code="${d2.code}" type="0">
+   <c:forEach var="d3" items="${ChildMenu}">
+                                                <li><a href="./type.gnd?code=${d3.code}">${d3.name}</a></li>
+   </c:forEach>
+  </menu:getChild>
+<!-- 3단계 반복 종료 -->
+                                            </ul>                                        
+                                    </div></div>
+ </c:forEach>
+</menu:getChild>
+                                            <!-- 2단계 반복 종료 -->
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-            
+                    </div></div>
+<!-- 1단계 종료 -->
+</c:forEach>
+</menu:getChild>
+				</div>
 			</div>
-		</div>	
-        <!-- global_gnb_main -->    
+		</div>
+		<!-- global_gnb_main -->
 	</nav>
-	
