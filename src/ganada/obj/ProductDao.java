@@ -27,6 +27,8 @@ public class ProductDao {
 			    	product.setPrice(db.getInt("price"));
 			    	product.setDiscount(db.getInt("discount"));
 			    	product.setColor(db.getString("color"));
+			    	product.setColorcode(db.getString("colorcode"));
+			    	product.setColorimage(db.getString("colorimage"));
 			    	product.setPd_size(db.getString("pd_size"));
 			    	product.setStock(db.getInt("stock"));
 			    	product.setStoread(db.getString("storead"));
@@ -58,6 +60,8 @@ public class ProductDao {
 		            sql.in("price", article.getPrice());
 		            sql.in("discount", article.getDiscount());
 		            sql.in("color", article.getColor());
+		            sql.in("colorcode", article.getColorcode());
+		            sql.in("colorimage", article.getColorimage());
 		            sql.in("pd_size", article.getPd_size());
 		            sql.in("stock", article.getStock());
 		            sql.in("storead", article.getStoread());
@@ -89,6 +93,8 @@ public class ProductDao {
 		            sql.set("price", product.getPrice());
 		            sql.set("discount", product.getDiscount());
 		            sql.set("color", product.getColor());
+		            sql.set("colorcode", product.getColorcode());
+		            sql.set("colorimage", product.getColorimage());
 		            sql.set("pd_size", product.getPd_size());
 		            sql.set("stock", product.getStock());
 		            sql.set("storead", product.getStoread());

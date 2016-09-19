@@ -10,6 +10,6 @@
 
 <a href="item_review.gnd?itemnum=45">상품 리뷰 보러가기</a>
 
-<a href="pdp.gnd?num=4">상품 상세보기(상단)</a>
+<a href="pdp.gnd?num=6">상품 상세보기(상단)</a>
 </body>
 </html>
