@@ -55,7 +55,7 @@
 			<td colspan="2">${product.name }<br />카테고리</td>
 		</tr>
 		<tr>
-			<td><img name="right" src="/img/product/right.png" onClick="javascript:chgimg();">${pdImageSt.nextToken()}</td>
+			<td><img name="right" src="/GaNaDa-Mart/img/product/%3right.png" width="100" height="60" onClick="javascript:chgimg();" /></td>
 			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
