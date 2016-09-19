@@ -18,7 +18,7 @@ public class ProductTest extends DBTester {
     	productOrg.setDiscount(139300);		//할인가격
     	productOrg.setColor("멀티-컬러/멀티-컬러");		//상품색
     	productOrg.setColorcode("스타일-컬러 # 844862-999");		//상품색상코드
-    	productOrg.setColorimage("/");		//상품색이미지
+    	productOrg.setColorimage("blue.png/red.png/black,png");		//상품색이미지
     	productOrg.setPd_size("260");		//상품크기
     	productOrg.setStock(10);			//재고량
     	productOrg.setStoread("매장주소");		//매장주소

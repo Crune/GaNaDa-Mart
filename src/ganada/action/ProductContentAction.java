@@ -17,12 +17,8 @@ public class ProductContentAction implements SuperAction{
 		
 		String pdImage = product.getImage();
 		StringTokenizer pdImageSt = new StringTokenizer(pdImage, "/");
-		//for(int x=1; tokens.hasMoreElements(); x++){}
-		String colorImage = product.getColorimage();
-		StringTokenizer colorImageSt = new StringTokenizer(colorImage, "/");
 			
 		request.setAttribute("pdImageSt", pdImageSt);
-		request.setAttribute("colorImageSt", colorImageSt);
 		request.setAttribute("num", new Integer(num));
 		request.setAttribute("product", product);
 		
