@@ -62,5 +62,7 @@
 </tr>
 <tr><td>이미지</td><td>
 <input type="file" name="save" /> </td> </tr>
+<tr><td colspan="3"><font size="2">모든 리뷰 정보는 나이키에 귀속됩니다. 부적절한 리뷰는 삭제될 수 있습니다.</font>
+<input type="checkbox"> <font size="2"><b><u>동의합니다 </u></b></font></td></tr>
 </table>
  </form>
