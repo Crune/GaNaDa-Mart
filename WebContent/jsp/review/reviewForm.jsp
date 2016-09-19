@@ -11,7 +11,7 @@
  
      
      
-     <form action="/review/reviewPro.gnd" method = "post">
+     <form action="/reviewPro.gnd" method = "post">
 <table>
 <tr>
 <td> 별점주기 </td>
