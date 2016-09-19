@@ -50,14 +50,7 @@
 			<td colspan="2">${product.name }<br />카테고리</td>
 		</tr>
 		<tr>
-		<%
-			String colorImage = "right.png/left.png/bot.png/top.png/image.png/back.png";
-			StringTokenizer tokens = new StringTokenizer(colorImage, "/");
-			for(int x=1; tokens.hasMoreElements(); x++){
-				tokens.nextToken();	
-			}
-		%>
-			<td><img src="#">${product.image }</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
@@ -69,25 +62,25 @@
 			<td align="right">별점</td>
 		</tr>
 		<tr>
-			<td><img src="#">상품사진(하)</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<td>카드사별 무이자 할부 안내</td>
 			<td align="right"><br /><a href="#">혜택자세히보기</a></td>
 		</tr>
 		<tr>
-			<td><img src="#">상품사진(좌)</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<td>${product.color }</td>
 			<td align="right">제품색상코드 불러오기(get)</td>
 		</tr>
 		<tr>
-			<td><img src="#">상품사진(상)</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<td colspan="2"><img src="#">색상사진</td>
 		</tr>
 		<tr>
-			<td><img src="#">상품사진(일반)</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<td colspan="2">가격인하제품 아래 제품 목록은 할인된 가격으로 판매합니다</td>
 		</tr>
 		<tr>
-			<td><img src="#">상품사진(후)</td>
+			<td><img src="#">${tokens.nextToken()}</td>
 			<td colspan="2"><img src="#">색상사진</td>
 		</tr>
 		<tr>
