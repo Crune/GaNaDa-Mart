@@ -8,7 +8,9 @@ public class Product {
 	private String name;			//상품이름
 	private int price;				//가격
 	private int discount;			//할인가격
-	private String color;			//상품색 (color=image.png/color=image.png/color=image.png...)
+	private String color;			//상품색
+	private String colorcode;		//색상코드
+	private String colorimage;		//색이미지
 	private String pd_size;			//상품크기		
 	private int stock;				//재고
 	private String storead;			//매장위치
@@ -65,6 +67,18 @@ public class Product {
 	}
 	public void setColor(String color) {
 		this.color = color;
+	}
+	public String getColorcode() {
+		return colorcode;
+	}
+	public void setColorcode(String colorcode) {
+		this.colorcode = colorcode;
+	}
+	public String getColorimage() {
+		return colorimage;
+	}
+	public void setColorimage(String colorimage) {
+		this.colorimage = colorimage;
 	}
 	public String getPd_size() {
 		return pd_size;

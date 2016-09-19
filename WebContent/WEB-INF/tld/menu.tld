@@ -3,18 +3,26 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
 
-	<tlib-version>1.0</tlib-version>
-	<jsp-version>1.2</jsp-version>
-	<short-name>menus</short-name>
+	<tlib-version>1.0</tlib-version><!-- 태그 라이브러리 버전 -->
+	<jsp-version>1.2</jsp-version><!-- JSP 버전 -->
+	<short-name>menu</short-name><!-- 태그 라이브러리의 축약된 이름. 생략가능 -->
+	<info>hello CustomTag</info> <!-- 태그 라이브러리에 대한 간략한 설명을 기술한다. 생략 가능 -->
 
-	<function>
-		<name>menu</name>
-		<description>이름</description>
-		<function-class>ganada.tag.Menus</function-class> <!--클래스경로까지써주세요 -->
-		<function-signature>java.lang.String getChild(java.lang.String,
-			java.lang.Integer)
-		</function-signature>
-		<example>${menu:getChild(code, type)}</example>
-	</function>
+	<tag>
+		<name>getChild</name><!-- 태그의 이름 ex) <short-name:tag-name/> -->
+		<tagclass>ganada.tag.GetChild</tagclass> <!-- 태그 핸들러 클래스 기술 -->
+		<bodycontent>JSP</bodycontent> <!-- 바디 부분의 컨텐츠 타입을 기술한다. -->
+		<attribute> <!-- 태그에 속성 기능을 부여할때 사용 -->
+			<name>code</name> <!-- 태그 속성이름 ex) <short-name:tag-name tag-attribute-name="value"/> -->
+			<required>true</required> <!-- 필수입력 여부 (true / false) -->
+			<rtexprvalue>true</rtexprvalue> <!-- 자바 표현식 사용 여부-->
+			<description>부모 메뉴의 코드값</description>			﻿
+		</attribute>
+        <attribute> <!-- 태그에 속성 기능을 부여할때 사용 -->
+            <name>type</name> <!-- 태그 속성이름 ex) <short-name:tag-name tag-attribute-name="value"/> -->
+            <required>true</required> <!-- 필수입력 여부 (true / false) -->
+            <rtexprvalue>false</rtexprvalue> <!-- 자바 표현식 사용 여부-->
+            <description>1: 이벤트, 그외: 이벤트 제외</description>           ﻿
+        </attribute>
+	</tag>
 </taglib> 
-    
