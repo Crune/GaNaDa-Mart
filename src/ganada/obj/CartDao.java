@@ -20,7 +20,7 @@ public class CartDao {
     
     public void insertCart(Cart cart) throws Exception{
 	DB db = new DB();
-	DB.Insert sql = db.new Insert("Cart");
+	DB.Insert sql = db.new Insert("Cart_Item");
 	try {
     	sql.inSql("CART_ID", "CART_ITEM_PK.NEXTVAL"); // 장바구니 아이디(메인키)
     	sql.inSql("REGDT", "SYSDATE"); // 날짜

@@ -18,17 +18,19 @@ public class CartAction implements SuperAction, DataBinding{
 		
 		HttpSession session = request.getSession();
 		Cart cartSVO = null;
+		
 	/*	if(session.getAttribute("user") ==  null){
 			return null;
 		}else{			
 		 cartSVO = (Cart)session.getAttribute("user");
 		}*/
 		
-		cartSVO  = new Cart(); //임시방편 최종적으로는 지울거임...
+		cartSVO  = new Cart(); //임시방편 최종적으로는 지울 것
 		
 		CartDao cartDao  = CartDao.getInstance();
 		
-		//이것도 테스트용 나중에는 지울거임...
+		//이것도 테스트용 나중에는 지울 것
+		
 		if(cartSVO.getUser_id() ==null){
 			cartSVO.setUser_id("test1");
 		}

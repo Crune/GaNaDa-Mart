@@ -72,8 +72,5 @@ public class Cart {
 	public void setItem_image(String item_image) {
 		this.item_image = item_image;
 	}
-	
-	
-	
 }
 	
