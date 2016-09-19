@@ -55,7 +55,7 @@
 			<td colspan="2">${product.name }<br />카테고리</td>
 		</tr>
 		<tr>
-			<td><img name="right" src="right.png" onClick="javascript:chgimg();">${pdImageSt.nextToken()}</td>
+			<td><img name="right" src="/img/product/right.png" onClick="javascript:chgimg();">${pdImageSt.nextToken()}</td>
 			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
