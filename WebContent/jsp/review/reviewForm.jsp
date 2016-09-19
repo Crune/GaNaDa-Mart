@@ -11,7 +11,7 @@
  
      
      
-     <form action="/reviewPro.gnd" method = "post">
+     <form action="/reviewPro.gnd" method = "post" encType="multipart/form-data">
 <table>
 <tr>
 <td> 별점주기 </td>
