@@ -11,10 +11,13 @@
  
      
      
-     <form action="/review/insert.gnd" method = "post">
+     <form action="/review/reviewPro.gnd" method = "post">
 <table>
 <tr>
 <td> 별점주기 </td>
+<td><input type="radio" id="star" name="star" value="1">★<input type="radio" id="star" name="star" value="2">★★
+<input type="radio" id="star" name="star" value="3">★★★<input type="radio" id="star" name="star" value="4">★★★★
+<input type="radio" id="star" name="star" value="5">★★★★★</td>
 <td>구매사이즈</td><td><select id="itemsize" name="itemsize">
 <option value="225">225</option>
 <option value="230">230</option>
@@ -27,18 +30,31 @@
 </td>
 </tr>
 <tr><td> 사이즈  </td>
+<td><input type="radio" id="siz" name="siz" value="-1">작은
+<input type="radio" id="siz" name="siz" value="0">보통
+<input type="radio" id="siz" name="siz" value="1">큰 </td>
 <td>체중 </td><td> <input type="text" name="wei" size="7"> kg
 </td>
 </tr>
-<tr>
-<td> </td>
+<tr><td>편안함</td>
+<td><input type="radio" id="comfortable" name="comfortable" value="-1">편안하지 않은
+<input type="radio" id="comfortable" name="comfortable" value="0">보통
+<input type="radio" id="comfortable" name="comfortable" value="1">편안한</td>
 <td>키</td><td><input type="text" name="hei" size="7"> cm
 </td>
 </tr>
-<tr><td></td>
+<tr><td>폭</td>
+<td><input type="radio" id="wid" name="wid" value="-1">좁은
+<input type="radio" id="wid" name="wid" value="0">보통
+<input type="radio" id="wid" name="wid" value="1">넓은</td>
 <td>나이</td><td> <input type="text" name="age" size="7">세
 </td>
 </tr>
+<tr><td>내구성</td>
+<td>
+<input type="radio" id="dura" name="dura" value="-1">내구성 없는
+<input type="radio" id="dura" name="dura" value="0">보통
+<input type="radio" id="dura" name="dura" value="1">내구성 있는 </td></tr>
 </table>
 <font size="4"><b>리뷰내용</b></font>
 <hr>
@@ -61,8 +77,13 @@
 </td>
 </tr>
 <tr><td>이미지</td><td>
-<input type="file" name="save" /> </td> </tr>
+<input id="review_image" type="file" name="review_image" /> </td> </tr>
 <tr><td colspan="3"><font size="2">모든 리뷰 정보는 나이키에 귀속됩니다. 부적절한 리뷰는 삭제될 수 있습니다.</font>
 <input type="checkbox"> <font size="2"><b><u>동의합니다 </u></b></font></td></tr>
 </table>
+<hr>
+<center>
+<input type="submit" value="등록하기">
+ <input type="button" value="취소" onclick="javascript:window.location='/item_review.gnd'">
+</center>
  </form>
