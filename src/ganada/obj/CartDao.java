@@ -1,17 +1,8 @@
 package ganada.obj;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-
-import ganada.core.*;
+import ganada.core.DB;
 
 public class CartDao {
 	
@@ -31,13 +22,14 @@ public class CartDao {
 	DB db = new DB();
 	DB.Insert sql = db.new Insert("Cart");
 	try {
-    	sql.inSql("ID", "BANNER_SEQ.NEXTVAL");
-    	sql.in("CART_ID", cart.getCart_id()); // 장바구니 아이디(메인키)
-    	sql.in("ITEM_NUM", cart.getItem_num()); //상품번호
-    	sql.in("ITEM_CL", cart.getItem_cl()); //상품색상
+    	sql.inSql("CART_ID", "CART_ITEM_PK.NEXTVAL"); // 장바구니 아이디(메인키)
+    	sql.inSql("REGDT", "SYSDATE"); // 날짜
+    	sql.in("ITEM_ID", cart.getItem_num()); //상품번호
+    	sql.in("ITEM_COLOR", cart.getItem_cl()); //상품색상
     	sql.in("ITEM_SIZE", cart.getItem_size()); //상품사이즈
-    	sql.in("ITEM_CNT", cart.getItem_cnt()); //상품수량
+    	sql.in("ITEM_COUNT", cart.getItem_cnt()); //상품수량
     	sql.in("ITEM_TOTAL", cart.getItem_total()); //합계금액
+      	sql.in("USER_ID", cart.getUser_id()); // 고객  id
     	sql.run();
     	}catch(Exception e){
     		e.printStackTrace();
@@ -45,21 +37,39 @@ public class CartDao {
     		db.finalize();
     	}
     }
+    
+    public Product getProduct(String item_id) throws Exception{
+    	
+    	   DB db = new DB();
+    		Product product = new Product();
+    	 
+    		db.S("*", "product", "num=?").var(item_id).exe();
+		    if (db.next()) {
+		    	product.setName(db.getString("name"));
+		    	product.setPrice(db.getInt("price"));
+		    	product.setDiscount(db.getInt("discount"));
+		    }   	   
+    	   return product;
+    	
+    }
   
     // 장바구니 화면으로 갈 때   
    public ArrayList<Cart> getCart(String user_id) throws Exception {
    DB db = new DB();
-   ArrayList<Cart> cart_list= null;
+   ArrayList<Cart> cart_list=  new ArrayList<Cart>();
    try {
-	   db.S("*", "CART", "buyer=?").var(user_id).exe(); 
-	   if (db.next()) {
+	   db.S("*", "CART_ITEM", "USER_ID=?").var(user_id).exe(); 
+	   while(db.next()) {
 		   Cart cart= new Cart();
            cart.setCart_id(db.getString("CART_ID"));
-           cart.setItem_num(db.getString("ITEM_NUM"));
-           cart.setItem_cl(db.getString("ITEM_CL"));
+           cart.setItem_num(db.getString("ITEM_ID"));
+           cart.setItem_cl(db.getString("ITEM_COLOR"));
            cart.setItem_size(db.getString("ITEM_SIZE"));
-           cart.setItem_cnt(db.getInt("ITEM_CNT"));
-           cart.setItem_total(db.getInt("ITEM_TOTAL"));
+           cart.setItem_cnt(db.getInt("ITEM_COUNT"));
+           cart.setUser_id(db.getString("USER_ID"));
+           cart.setItem_image(db.getString("ITEM_IMAGE"));
+           
+           cart_list.add(cart);
        }
 	   }catch(Exception ex){
             ex.printStackTrace();
