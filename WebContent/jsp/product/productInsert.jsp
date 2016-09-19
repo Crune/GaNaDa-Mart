@@ -6,7 +6,7 @@
 <title>상품등록</title>
 </head>
 <body>  
-	<form method="post" name="productInsert" action="productInsertPro.gnd">
+	<form method="post" name="productInsert" action="pdpInsertPro.gnd">
 		<input type="hidden" name="num" value="${num}">
 		<table width="400" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
@@ -57,7 +57,7 @@
 				    	<option value="260">260</option>
 				    	<option value="265">265</option>
 				    	<option value="270">270</option>
-				    	<option value="2750">275</option>
+				    	<option value="275">275</option>
 				    	<option value="280">280</option>
 				    </select>
 				    <select name="stock">
@@ -113,8 +113,7 @@
 				<td colspan=2 align="center"> 
 					<input type="submit" value="글쓰기">  
 		  			<input type="reset" value="다시작성">
-		  			<input type="button" value="목록보기" OnClick="window.location='/study/ch19/list.do'">
-				</td>
+		  		</td>
 			</tr>
 		</table>  
 	</form>      
