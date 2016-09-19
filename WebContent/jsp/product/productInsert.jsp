@@ -8,42 +8,42 @@
 <body>  
 	<form method="post" name="productInsert" action="pdpInsertPro.gnd">
 		<input type="hidden" name="num" value="${num}">
-		<table width="400" border="1" cellspacing="0" cellpadding="0"  align="center">
+		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
 	    		<td align="right" colspan="2">
 		    		<a href="#">상품목록</a> 
 	   			</td>
 	   		</tr>
 	   		<tr>
-	    		<td width="70" align="center">상품명</td>
+	    		<td width="170" align="center">상품명</td>
 	    		<td width="330">
 	      			<input type="text" size="10" name="name"></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center" >가격</td>
+	    		<td align="center" >가격</td>
 	    		<td width="330">
 					<input type="text" size="40" name="price"></td>
 			<tr>
-	    		<td width="70" align="center">할인가격</td>
+	    		<td align="center">할인가격</td>
 	    		<td width="330">
 	       			<input type="text" size="40" name="discount" ></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">색상</td>
+	    		<td align="center">색상</td>
 	    		<td width="330">
 	       			<input type="text" size="40" name="color" ></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">색상코드</td>
+	    		<td align="center">색상코드</td>
 	    		<td width="330">
 	       			<input type="text" size="40" name="colorcode" ></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">색상이미지업로드</td>
+	    		<td align="center">색상이미지업로드</td>
 	    		<td width="330"><input type="file" name="colorimage"></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">사이즈</td>
+	    		<td align="center">사이즈</td>
 	    		<td width="330">
 	       			<select name="size">
 				    	<option value="" selected>사이즈</option>
@@ -75,36 +75,36 @@
 				</td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">매장위치</td>
+	    		<td align="center">매장위치</td>
 	    		<td width="330">
 	       			<input type="text" size="40" name="storead" ></td>
 	  		</tr>
 	  		<tr>
-	    		<td width="70" align="center">상품이미지업로드</td>
+	    		<td align="center">상품이미지업로드</td>
 	    		<td width="330"><input type="file" name="image"></td>
 	  		</tr>
 			<tr>
-			    <td width="70" align="center">상품정보</td>
+			    <td align="center">상품정보</td>
 			    <td width="330" >
 			    	<textarea name="info" rows="13" cols="40"></textarea></td>
 			</tr>
 			<tr>
-			    <td width="70" align="center">배송정보</td>
+			    <td align="center">배송정보</td>
 			    <td width="330" >
 			    	<textarea name="deliveryinfo" rows="13" cols="40"></textarea></td>
 			</tr>
 			<tr>
-			    <td width="70" align="center">유의사항</td>
+			    <td align="center">유의사항</td>
 			    <td width="330" >
 			    	<textarea name="note" rows="13" cols="40"></textarea></td>
 			</tr>
 			<tr>
-			    <td width="70" align="center">A/S정보</td>
+			    <td align="center">A/S정보</td>
 			    <td width="330" >
 			    	<textarea name="asinfo" rows="13" cols="40"></textarea></td>
 			</tr>
 	  		<tr>
-	   			<td width="70" align="center" >글비밀번호</td>
+	   			<td align="center" >글비밀번호</td>
 	   			<td width="330" >
 	     			<input type="password" size="8" maxlength="12" name="passwd"> 
 		 		</td>

@@ -8,22 +8,20 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class ProductInsertAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			String path = request.getRealPath("img");		//���������ϰ��
-			//String path = "F://save//";
-			String enc = "UTF-8";		//�������ڵ�
-			int maxSize = 1024*1024*5;	//5MB���� ���ϸ�, -1=����������x
-			DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();	//�����̸� �ߺ�����
-			MultipartRequest mr = new MultipartRequest(request, path, maxSize, enc, dp);	//��û����, ���ε��Ұ��, �����ִ�ũ��, ���ڵ�, ��������
+			String path = request.getRealPath("img");
+			String enc = "UTF-8";		
+			int maxSize = 1024*1024*5;	
+			DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();	
+			MultipartRequest mr = new MultipartRequest(request, path, maxSize, enc, dp);
 			
-			//String writer = mr.getParameter("writer");		//�ۼ���
-			String orgName = mr.getOriginalFileName("image");	//�����̸�(java.png)
-			String sysName = mr.getFilesystemName("image");	//���ε�� �̸�(java1.png)
+			String orgName = mr.getOriginalFileName("image");	
+			String sysName = mr.getFilesystemName("image");	
 			
 			File f = mr.getFile("image");
-			String type = mr.getContentType("image");	//������ Ÿ��(text(����)/html(Ȯ����))�� ���� ����
-			type = type.split("/")[0];		// "/"�� �����ؼ� [0]/[1]�ε� 0��° ���� ����ϰڴٴ� �ǹ�
-			if(!type.equals("image")){		//���ε��Ϸ��� ������ ����
-				f.delete();					//�̹����� �ƴϸ� ����, �̹����� ���ε��ϱ����� ����ϴ� ���α׷�, ���ε�� �̹� ������ �Ǿ��� ������ ���ε�� ������ ������ �־���Ѵ�.
+			String type = mr.getContentType("image");	
+			type = type.split("/")[0];		
+			if(!type.equals("image")){		
+				f.delete();					
 			}
 			request.setAttribute("sysName", sysName);
 			
