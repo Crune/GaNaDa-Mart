@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.servlet.jsp.tagext.TagSupport;
 
-import ganada.obj.Menu;
-import ganada.obj.MenuDao;
+import ganada.obj.common.Menu;
+import ganada.obj.common.MenuDao;
 
 public class GetChild extends TagSupport {
 
