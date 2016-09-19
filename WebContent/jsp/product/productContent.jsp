@@ -55,7 +55,7 @@
 			<td colspan="2">${product.name }<br />카테고리</td>
 		</tr>
 		<tr>
-			<td><img name="right" src="/GaNaDa-Mart/img/product/%3right.png" width="100" height="60" onClick="javascript:chgimg();" /></td>
+			<td><img name="right" src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60" onClick="javascript:chgimg();" /></td>
 			<c:if test="${product.discount == null }">
 				<td><fmt:formatNumber value="${product.price }" /></td>
 			</c:if>
@@ -67,17 +67,17 @@
 			<td align="right">별점</td>
 		</tr>
 		<tr>
-			<td><img src="#">${pdImageSt.nextToken()}</td>
+			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
 			<td>카드사별 무이자 할부 안내</td>
 			<td align="right"><br /><a href="#">혜택자세히보기</a></td>
 		</tr>
 		<tr>
-			<td><img src="#">${pdImageSt.nextToken()}</td>
+			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
 			<td>${product.color }</td>
 			<td align="right">${product.colorcode }(get)</td>
 		</tr>
 		<tr>
-			<td><img src="#">${pdImageSt.nextToken()}</td>
+			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
 			<td colspan="2">
 				<c:forTokens var="ci" items="${product.colorimage}" delims="/">
 					<img src="#">${ci }
@@ -85,11 +85,11 @@
 			</td>
 		</tr>
 		<tr>
-			<td><img src="#">${pdImageSt.nextToken()}</td>
+			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
 			<td colspan="2">가격인하제품 아래 제품 목록은 할인된 가격으로 판매합니다</td>
 		</tr>
 		<tr>
-			<td><img src="#">${pdImageSt.nextToken()}</td>
+			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
 			<td colspan="2">
 			<c:forTokens var="ci" items="${product.colorimage}" delims="/">
 					<img src="#">${ci }
