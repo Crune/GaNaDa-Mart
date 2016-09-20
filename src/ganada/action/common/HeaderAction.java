@@ -26,6 +26,8 @@ public class HeaderAction implements SuperAction {
         HttpSession session = request.getSession();
         session.setAttribute("menus", menus);
         
+
+        
         return "/jsp/template/header.jsp";
     }
 

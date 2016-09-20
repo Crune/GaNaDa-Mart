@@ -1,8 +1,6 @@
 package ganada.obj.member;
 
 import ganada.core.*;
-import ganada.core.DB.Insert;
-import ganada.core.DB.Update;
 
 public class AccountDao {
 
@@ -47,11 +45,11 @@ public class AccountDao {
 			}
 		    }
 
-		    public Account getaccount(String code) throws Exception {
+		    public Account getaccount(String id) throws Exception {
 			DB db = new DB();
 			Account account = null;
 			try {
-			    db.S("*", "BANNER", "CODE=?").var(code).exe();
+			    db.S("*", "ACCOUNT", "ID=?").var(id).exe();
 			    if (db.next()) {
 				account = new Account();
 				account.setName(db.getString("NAME"));
@@ -105,17 +103,7 @@ public class AccountDao {
 			    sql.set("SMS_CHECK", account.getSms_check());
 			    sql.set("PASSWD_PHONE", account.getPasswd_phone());
 			    sql.set("SECURITY", account.getSecurity());
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
+			    			    
 			    sql.run();
 			} catch (Exception ex) {
 			    ex.printStackTrace();
@@ -136,5 +124,22 @@ public class AccountDao {
 			    db.finalize();
 			}
 			return x;
+		    }
+
+		    public int userCheck(String id, String passwd) throws Exception {
+		    DB db = new DB();
+		    int x = -1;
+		    try {
+		        db.S("PASSWD", "ACCOUNT", "id=?").var(id).exe();
+		        if (db.next()) {
+		        String dst = db.exe().getString("passwd");
+		        x = DB.isSame(passwd, dst) ? 1 : 0;
+		        }
+		    } catch (Exception ex) {
+		        ex.printStackTrace();
+		    } finally {
+		        db.finalize();
+		    }
+		    return x;
 		    }
 		}
