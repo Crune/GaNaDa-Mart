@@ -16,7 +16,7 @@
 	   		<tr>
 	    		<td width="170" align="center">상품명</td>
 	    		<td width="330">
-	      			<input type="text" size="10" name="name"></td>
+	      			<input type="text" size="40" name="name"></td>
 	  		</tr>
 	  		<tr>
 	    		<td align="center">가격</td>
@@ -25,7 +25,7 @@
 			<tr>
 	    		<td align="center">할인가격</td>
 	    		<td width="330">
-	       			<input type="text" size="40" name="discount" ></td>
+	       			<input type="text" size="40" name="discount"></td>
 	  		</tr>
 	  		<tr>
 	    		<td align="center">색상</td>
@@ -79,8 +79,28 @@
 	       			<input type="text" size="40" name="storead" ></td>
 	  		</tr>
 	  		<tr>
-	    		<td align="center">상품이미지업로드</td>
+	    		<td align="center">상품이미지(우측)</td>
+	    		<td width="330"><input type="file" name="imageright"></td>
+	  		</tr>
+	  		<tr>
+	    		<td align="center">상품이미지(좌측)</td>
+	    		<td width="330"><input type="file" name="imageleft"></td>
+	  		</tr>
+	  		<tr>
+	    		<td align="center">상품이미지(하단)</td>
+	    		<td width="330"><input type="file" name="imagebot"></td>
+	  		</tr>
+	  		<tr>
+	    		<td align="center">상품이미지(상단)</td>
+	    		<td width="330"><input type="file" name="imagetop"></td>
+	  		</tr>
+	  		<tr>
+	    		<td align="center">상품이미지(정면)</td>
 	    		<td width="330"><input type="file" name="image"></td>
+	  		</tr>
+	  		<tr>
+	    		<td align="center">상품이미지(후면)</td>
+	    		<td width="330"><input type="file" name="imageback"></td>
 	  		</tr>
 			<tr>
 			    <td align="center">상품정보</td>

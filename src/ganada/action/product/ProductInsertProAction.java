@@ -23,7 +23,12 @@ public class ProductInsertProAction implements SuperAction{
 			MultipartRequest mr = new MultipartRequest(request, path, maxSize, enc, dp);
 			
 			//String orgName1 = mr.getOriginalFileName("image");	//이미지원본이름
+			String imageright = mr.getFilesystemName("imageright");
+			String imageleft = mr.getFilesystemName("imageleft");	
+			String imagebot = mr.getFilesystemName("imagebot");	
+			String imagetop = mr.getFilesystemName("imagetop");	
 			String image = mr.getFilesystemName("image");	
+			String imageback = mr.getFilesystemName("imageback");	
 			//String orgName2 = mr.getOriginalFileName("colorimage");	
 			String colorimage = mr.getFilesystemName("colorimage");	
 			
@@ -34,28 +39,26 @@ public class ProductInsertProAction implements SuperAction{
 				f.delete();					
 			}
 			
-			//String price = request.getParameter("price");
-			//String price = request.getParameter("discount");
-			
 			Product article = new Product();
 		 	//article.setNum(Integer.parseInt(request.getParameter("num")));
-			article.setName(request.getParameter("name"));
-		 	article.setPrice(Integer.parseInt(request.getParameter("price")));
-		 	article.setDiscount(Integer.parseInt(request.getParameter("discount")));
-		 	article.setColor(request.getParameter("color"));
-		 	article.setColorcode(request.getParameter("colorcode"));
+			article.setName(mr.getParameter("name"));
+		 	article.setPrice(Integer.parseInt(mr.getParameter("price")));
+		 	article.setDiscount(Integer.parseInt(mr.getParameter("discount")));
+		 	article.setColor(mr.getParameter("color"));
+		 	article.setColorcode(mr.getParameter("colorcode"));
 		 	article.setColorimage(colorimage);
-		 	article.setPd_size(request.getParameter("pd_size"));
-		 	article.setStock(Integer.parseInt(request.getParameter("stock")));
-		 	article.setStoread(request.getParameter("storead"));
-		 	article.setImage(image);
-		 	article.setInfo(request.getParameter("info"));
-		 	article.setDeliveryinfo(request.getParameter("deliveryinfo"));
-		 	article.setNote(request.getParameter("note"));
-		 	article.setAsinfo(request.getParameter("asinfo"));
-		 	article.setStar(Integer.parseInt(request.getParameter("star")));
-		 	article.setRecommend(Integer.parseInt(request.getParameter("recommend")));
-		 	article.setPasswd(request.getParameter("passwd"));
+		 	article.setPd_size(mr.getParameter("pd_size"));
+		 	article.setStock(Integer.parseInt(mr.getParameter("stock")));
+		 	article.setStoread(mr.getParameter("storead"));
+		 	//String i = imageright+"/"+imageleft+"/"+imagebot+"/"+imagetop+"/"+image+"/"+imageback;
+		 	article.setImage(imageright+"/"+imageleft+"/"+imagebot+"/"+imagetop+"/"+image+"/"+imageback);
+		 	article.setInfo(mr.getParameter("info"));
+		 	article.setDeliveryinfo(mr.getParameter("deliveryinfo"));
+		 	article.setNote(mr.getParameter("note"));
+		 	article.setAsinfo(mr.getParameter("asinfo"));
+		 	//article.setStar(Integer.parseInt(mr.getParameter("star")));		별점 추가할땐 없어도됨
+		 	//article.setRecommend(Integer.parseInt(mr.getParameter("recommend")));	추천수 추가할땐 없어도됨
+		 	article.setPasswd(mr.getParameter("passwd"));
 			
 		 	ProductDao dbPro = ProductDao.getInstance();
 		 	dbPro.insertProduct(article);
