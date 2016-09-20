@@ -14,7 +14,7 @@ public class ProductTest extends DBTester {
     @BeforeClass
     public static void init() {
     	productOrg = new Product(); 	
-    	productOrg.setPasswd("1234");		//글비밀번호
+   // 	productOrg.setPasswd("1234");		//글비밀번호
     	productOrg.setName("나이키 루나에픽 로우 플라이니트 ULTD");	//상품명
     	productOrg.setPrice(199000);	//가격
     	productOrg.setDiscount(139300);		//할인가격

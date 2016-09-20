@@ -63,8 +63,6 @@ public class ItemReviewDao {
             in.in("itemname", article.getItemname());
             in.in("writer", article.getWriter());
             in.in("subject", article.getSubject());
-            in.in("lik",article.getLik());
-            in.in("bad", article.getBad());
             in.in("siz", article.getSiz());
             in.in("comfortable", article.getComfortable());
             in.in("wid", article.getWid());
@@ -76,9 +74,7 @@ public class ItemReviewDao {
             in.in("mail", article.getMail());
             in.in("content", article.getContent());
             in.in("star", article.getStar());
-            in.in("passwd", article.getPasswd());
             in.in("readcount", article.getReadcount());
-            in.in("ip", article.getIp());
             in.in("ref", article.getRef());
             in.in("re_step", article.getRe_step());
             in.in("re_level", article.getRe_level());

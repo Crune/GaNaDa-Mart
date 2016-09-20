@@ -6,6 +6,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ganada.core.DBTester;
+import ganada.obj.common.BannerHTML;
+import ganada.obj.common.BannerHTMLDao;
 
 public class CartTest extends DBTester {
     public static Cart CartOrg;
@@ -31,5 +33,4 @@ public class CartTest extends DBTester {
 		}
 		
 	}
-
 }
