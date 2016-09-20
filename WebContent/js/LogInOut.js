@@ -2,7 +2,7 @@
 	$.ajax({
 		type: "POST",
 		dataType : "html",
-		url: "/display/chkLoginAjax.lecs", 
+		url: "/member/chkLoginAjax.gnd", 
 		success: function(data){	
 			//alert(data);
 			if(data != 'N'){ //html은 항상 로그인 하지 않은 상태이므로, 로그인 됐을때만 교체작업을 호출.
@@ -27,12 +27,6 @@
 					$("#memberIdForGen").val(loginId);
 					$("#memberNoForGen").val(memberNo); //상품평에서 사용
 					
-					// GNB 회원가입/로그인 영역
-					/*$(".right-area>div").each(function(i){
-						if(i >0){
-							$(this).remove();
-						}
-					});*/
 					$(".global_login").remove();
 															
 					var aStr2 = '<li class="global_login_window">'
@@ -131,25 +125,5 @@
 		}
 	});	
 }catch(e){
-	//에러나도 무시
+	
 };
-
-/*	20150422 - 푸터 변경으로 인한 주석처리
-$(document).ready(function(){	
-	try{	
-		// 1초 후 한번 실행
-		setTimeout(function() {
-			if($("#memberIdForGen").val() != ''){
-				// footer 처리
-				var aStr1 = '<li class="foot_menu last"><dl><dt>MVP회원 혜택 <img src="http://image.nike.co.kr/web/ico/footer_arr.png"  alt="MVP회원 혜택" class="arr" /></dt>'
-								+'<dd><a href="/display/benefitMain.lecs" title="MVP 혜택 보기"><span>MVP 혜택 보기</span></a></dd></dl></li>';
-									
-				$("#forGenFooter>li").last().remove();
-				$("#forGenFooter>li").last().after(aStr1);
-			}
-		}, 1000);
-	}catch(e){
-		//에러나도 무시
-	};	
-});
-*/
