@@ -7,7 +7,6 @@
 </head>
 <body>  
 	<form method="post" name="productInsert" enctype="multipart/form-data" action="pdpInsertPro.gnd">
-		<input type="hidden" name="num" value="${num}">
 		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
 	    		<td align="right" colspan="2">
@@ -45,7 +44,7 @@
 	  		<tr>
 	    		<td align="center">사이즈</td>
 	    		<td width="330">
-	       			<select name="size">
+	       			<select name="pd_size">
 				    	<option value="" selected>사이즈</option>
 				    	<option value="220">220</option>
 				    	<option value="225">225</option>
