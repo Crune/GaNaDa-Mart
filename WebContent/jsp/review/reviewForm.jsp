@@ -14,7 +14,7 @@
 
 
 
-     <form id="revForm" action="/jsp/review/reviewPro.gnd" method = "post" encType="multipart/form-data">
+     <form id="revForm" action="./reviewPro.gnd" method = "post" encType="multipart/form-data">
 <table>
 <tr>
 <td> 별점주기 </td>
@@ -87,6 +87,6 @@
 <hr>
 <center>
 <input type="submit" id="review" value="등록하기">
- <input type="button" value="취소" onclick="javascript:window.location='/item_review.gnd'">
+ <input type="button" value="취소" onclick="javascript:window.location='./item_review.gnd'">
 </center>
  </form>

@@ -6,7 +6,7 @@
 의견이 있나요?<br />
 이 상품의 첫 리뷰를 남겨 보세요. <br />
 <input type="button" value="리뷰작성하기" 
-            onclick="javascript:window.location='/jsp/review/reviewForm.gnd">
+            onclick="javascript:window.location='./reviewForm.gnd'">
 </center>
 </c:if>
 <c:if test="${count > 0}">

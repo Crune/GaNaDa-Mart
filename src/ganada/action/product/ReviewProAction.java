@@ -1,5 +1,8 @@
 package ganada.action.product;
 import java.io.File;
+import java.sql.Timestamp;
+import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
@@ -7,42 +10,58 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import ganada.action.common.SuperAction;
 import ganada.obj.product.ItemReview;
-
+import ganada.obj.product.ItemReviewDao;
 public class ReviewProAction implements SuperAction {
 
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String filename="";
 		String path = request.getRealPath("img");
 		int maxSize = 1024*1024*5; 
 		String enc = "euc-kr";
 		DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();
 		MultipartRequest mr = new MultipartRequest(request,path,maxSize,enc,dp);
-		String orgName = mr.getOriginalFileName("review_image");
-		String sysName = mr.getFilesystemName("review_image");
-		File f = mr.getFile("review_image");
-		String type = mr.getContentType("review_image");
-		type = type.split("/")[0];
-		System.out.println(type);
-		if(!type.equals("image")){
-			f.delete();
-		}
 		
-		request.setAttribute("sysName", sysName);
-	try{
-		ItemReview review = new ItemReview();
-		review.setStar(Integer.parseInt(request.getParameter("star")));
-		review.setItemsize(request.getParameter("itemsize"));
-		review.setSiz(Integer.parseInt(request.getParameter("siz")));
-		review.setWei(request.getParameter("wei"));
-		review.setComfortable(Integer.parseInt(request.getParameter("comfortable")));
-		review.setHei(request.getParameter("hei"));
-		review.setWid(Integer.parseInt(request.getParameter("wid")));
-		review.setAge(request.getParameter("age"));
-		review.setDura(Integer.parseInt(request.getParameter("dura")));
-		review.setSubject(request.getParameter("subject"));
-		review.setContent(request.getParameter("content"));
+		Enumeration<?> files = mr.getFileNames();
+		
+		while(files.hasMoreElements()){
+			
+			String name = (String)files.nextElement();//input태그 file속성을 가진 태그의 파라미터 
+			filename = mr.getFilesystemName(name);//서버에 저장된 파일 이름
+			
+		}
 	
-	}catch(Exception e){e.printStackTrace();}
+		ItemReview review = new ItemReview();
+		String star = mr.getParameter("star");
+		String itemsize = mr.getParameter("itemsize");
+		String itemnum = "45";
+		String siz = mr.getParameter("siz");
+		String wei = mr.getParameter("wei");
+		String comfortable = mr.getParameter("comfortable");
+		String hei = mr.getParameter("hei");
+		String wid = mr.getParameter("wid");
+		String age = mr.getParameter("age");
+		String dura = mr.getParameter("dura");
+		String subject = mr.getParameter("subject");
+		String content = mr.getParameter("content");
+	
+		review.setStar(Integer.parseInt(star));
+		review.setItemsize(itemsize);
+		review.setSiz(Integer.parseInt(siz));
+		review.setWei(wei);
+		review.setComfortable(Integer.parseInt(comfortable));
+		review.setHei(hei);
+		review.setWid(Integer.parseInt(wid));
+		review.setAge(age);
+		review.setDura(Integer.parseInt(dura));
+		review.setSubject(subject);
+		review.setContent(content);
+		review.setReg_date(new Timestamp(System.currentTimeMillis()));
+		
+		ItemReviewDao  ird = ItemReviewDao.getInstance();
+		ird.insert(review);
+		
+		request.setAttribute("itemnum", itemnum);
 		return "/jsp/review/reviewPro.jsp";
 	}
 
