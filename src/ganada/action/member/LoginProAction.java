@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ganada.action.common.SuperAction;
+import ganada.obj.member.Account;
 import ganada.obj.member.AccountDao;
 
 public class LoginProAction implements SuperAction {
@@ -17,13 +18,17 @@ public class LoginProAction implements SuperAction {
         String passwd = request.getParameter("password");
 
         AccountDao dao = AccountDao.getInstance();
+        
+        Account vo = dao.getAccount(dao.getAccounts(id).get(0));
+        
         HttpSession session = request.getSession();
 
         int check = dao.userCheck(id, passwd);
         request.setAttribute("check", check);
         if (check == 1) {
-            session.setAttribute("memId", id);
-            session.setAttribute("memName", dao.getaccount(id).getName());
+            session.setAttribute("loginId", id);
+            session.setAttribute("userAccount", vo);
+            session.setAttribute("memName", vo.getName());
             return "/page.gnd?code=MAIN";
         }
         
