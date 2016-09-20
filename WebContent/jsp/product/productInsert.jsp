@@ -10,7 +10,7 @@
 		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
 	    		<td align="right" colspan="2">
-		    		<a href="#">상품목록</a> 
+		    		<a href="pdpList.gnd">상품목록</a> 
 	   			</td>
 	   		</tr>
 	   		<tr>
