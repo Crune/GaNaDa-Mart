@@ -13,10 +13,10 @@ public class AccountTest extends DBTester{
 	@BeforeClass
 	public static void init(){
 		accountOrg = new Account();
-		accountOrg.setName("dsadf");
-		accountOrg.setEmail("jbh");
-		accountOrg.setId("bmw");
-		accountOrg.setPasswd("saff");
+		accountOrg.setName("테스터");
+		accountOrg.setEmail("test@test.com");
+		accountOrg.setId("test");
+		accountOrg.setPasswd("1234");
 		accountOrg.setBirthday(84);
 		accountOrg.setBirthday1(02);
 		accountOrg.setBirthday2(15);

@@ -133,8 +133,9 @@ h4.global_footer_link_tit a {
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="./js/jquery-1.11.3.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="./js/bootstrap.js"></script>
+<!-- CP Javascript -->
+<script src="./js/global_renewal.js"></script>
+<script src="./js/LogInOut.js"></script>
 
 <!-- Custom Javascript -->
 <script src="./js/default.js"></script>
