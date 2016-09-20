@@ -12,22 +12,22 @@ public class ReviewProAction implements SuperAction {
 
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String path = request.getRealPath("img");//project�� �ִ� ���� ��θ� ã���� "d://save//"; ������ �ٷ� �ø�����real path
-		int maxSize = 1024*1024*5; //5MB -1�� ���� �����ϰž� 1024 ������1GB
-		String enc = "euc-kr";//�ѱ� ����
-		DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy(); //���� �ߺ��̸�����
+		String path = request.getRealPath("img");
+		int maxSize = 1024*1024*5; 
+		String enc = "euc-kr";
+		DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();
 		MultipartRequest mr = new MultipartRequest(request,path,maxSize,enc,dp);
-		String orgName = mr.getOriginalFileName("review_image");//untitled
-		String sysName = mr.getFilesystemName("review_image");//untitled1 �̰Ŵϱ� sysName�� �����Ϲ� �� �����ͺ��̽��� �길 ����
+		String orgName = mr.getOriginalFileName("review_image");
+		String sysName = mr.getFilesystemName("review_image");
 		File f = mr.getFile("review_image");
-		String type = mr.getContentType("review_image");//upload������ Ÿ�������� ������ 
-		type = type.split("/")[0];//type���� /�� �ڸ��� �迭�� ��ȯ�ϴµ� 0��° �͸� ���ڴٴ� �� �׷��� image�� ��
+		String type = mr.getContentType("review_image");
+		type = type.split("/")[0];
 		System.out.println(type);
-		if(!type.equals("image")){//������ �ƴϸ� �����ض�
+		if(!type.equals("image")){
 			f.delete();
 		}
 		
-		request.setAttribute("sysName", sysName);//�����̸�,���ε�� �����̸�
+		request.setAttribute("sysName", sysName);
 	try{
 		ItemReview review = new ItemReview();
 		review.setStar(Integer.parseInt(request.getParameter("star")));

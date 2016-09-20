@@ -10,7 +10,7 @@ public class ReviewFormAction implements SuperAction{
 	
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		return "/jsp/review/reviewList.jsp";
+		return "/jsp/review/reviewForm.jsp";
 	}
 
 }
