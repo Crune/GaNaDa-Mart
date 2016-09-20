@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Product {
 	private int num;				//상품이 등록된 게시글번호
-	private String passwd;			//글비밀번호
+//	private String passwd;			//글비밀번호
 	private String name;			//상품이름
 	private int price;				//가격
 	private int discount;			//할인가격
@@ -37,12 +37,6 @@ public class Product {
 	}
 	public void setNum(int num) {
 		this.num = num;
-	}
-	public String getPasswd() {
-		return passwd;
-	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
 	}
 	public String getName() {
 		return name;

@@ -16,6 +16,7 @@
 	   		<tr>
 	    		<td width="170" align="center">상품명</td>
 	    		<td width="330">
+	    			<input type="hidden" name="num" value="${product.num }">
 	      			<input type="text" size="40" name="name" value="${product.name }"></td>
 	  		</tr>
 	  		<tr>
@@ -122,12 +123,6 @@
 			    <td width="330" >
 			    	<textarea name="asinfo" rows="13" cols="40">${product.asinfo }</textarea></td>
 			</tr>
-	  		<tr>
-	   			<td align="center">글비밀번호</td>
-	   			<td width="330" >
-	     			<input type="password" size="8" maxlength="12" name="passwd"> 
-		 		</td>
-	  		</tr>
 			<tr>      
 				<td colspan=2 align="center"> 
 					<input type="submit" value="수정하기">  

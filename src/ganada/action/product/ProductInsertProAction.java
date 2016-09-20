@@ -39,29 +39,29 @@ public class ProductInsertProAction implements SuperAction{
 				f.delete();					
 			}
 			
-			Product article = new Product();
+			Product product = new Product();
 		 	//article.setNum(Integer.parseInt(request.getParameter("num")));
-			article.setName(mr.getParameter("name"));
-		 	article.setPrice(Integer.parseInt(mr.getParameter("price")));
-		 	article.setDiscount(Integer.parseInt(mr.getParameter("discount")));
-		 	article.setColor(mr.getParameter("color"));
-		 	article.setColorcode(mr.getParameter("colorcode"));
-		 	article.setColorimage(colorimage);
-		 	article.setPd_size(mr.getParameter("pd_size"));
-		 	article.setStock(Integer.parseInt(mr.getParameter("stock")));
-		 	article.setStoread(mr.getParameter("storead"));
+			product.setName(mr.getParameter("name"));
+			product.setPrice(Integer.parseInt(mr.getParameter("price")));
+			product.setDiscount(Integer.parseInt(mr.getParameter("discount")));
+			product.setColor(mr.getParameter("color"));
+			product.setColorcode(mr.getParameter("colorcode"));
+			product.setColorimage(colorimage);
+			product.setPd_size(mr.getParameter("pd_size"));
+		 	product.setStock(Integer.parseInt(mr.getParameter("stock")));
+		 	product.setStoread(mr.getParameter("storead"));
 		 	//String i = imageright+"/"+imageleft+"/"+imagebot+"/"+imagetop+"/"+image+"/"+imageback;
-		 	article.setImage(imageright+"/"+imageleft+"/"+imagebot+"/"+imagetop+"/"+image+"/"+imageback);
-		 	article.setInfo(mr.getParameter("info"));
-		 	article.setDeliveryinfo(mr.getParameter("deliveryinfo"));
-		 	article.setNote(mr.getParameter("note"));
-		 	article.setAsinfo(mr.getParameter("asinfo"));
-		 	//article.setStar(Integer.parseInt(mr.getParameter("star")));		별점 추가할땐 없어도됨
-		 	//article.setRecommend(Integer.parseInt(mr.getParameter("recommend")));	추천수 추가할땐 없어도됨
-		 	article.setPasswd(mr.getParameter("passwd"));
+		 	product.setImage(imageright+"/"+imageleft+"/"+imagebot+"/"+imagetop+"/"+image+"/"+imageback);
+		 	product.setInfo(mr.getParameter("info"));
+		 	product.setDeliveryinfo(mr.getParameter("deliveryinfo"));
+		 	product.setNote(mr.getParameter("note"));
+		 	product.setAsinfo(mr.getParameter("asinfo"));
+		 	//product.setStar(Integer.parseInt(mr.getParameter("star")));		별점 추가할땐 없어도됨
+		 	//product.setRecommend(Integer.parseInt(mr.getParameter("recommend")));	추천수 추가할땐 없어도됨
+		 	//product.setPasswd(mr.getParameter("passwd"));
 			
 		 	ProductDao dbPro = ProductDao.getInstance();
-		 	dbPro.insertProduct(article);
+		 	dbPro.insertProduct(product);
 		 	
 			
 		//	request.setAttribute("image", image);

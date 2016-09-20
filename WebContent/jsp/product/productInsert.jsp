@@ -122,12 +122,6 @@
 			    <td width="330" >
 			    	<textarea name="asinfo" rows="13" cols="40"></textarea></td>
 			</tr>
-	  		<tr>
-	   			<td align="center">글비밀번호</td>
-	   			<td width="330" >
-	     			<input type="password" size="8" maxlength="12" name="passwd"> 
-		 		</td>
-	  		</tr>
 			<tr>      
 				<td colspan=2 align="center"> 
 					<input type="submit" value="글쓰기">  
