@@ -6,7 +6,7 @@
 <title>상품등록</title>
 </head>
 <body>  
-	<form method="post" name="productInsert" action="pdpInsertPro.gnd">
+	<form method="post" name="productInsert" enctype="multipart/form-data" action="pdpInsertPro.gnd">
 		<input type="hidden" name="num" value="${num}">
 		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
@@ -20,7 +20,7 @@
 	      			<input type="text" size="10" name="name"></td>
 	  		</tr>
 	  		<tr>
-	    		<td align="center" >가격</td>
+	    		<td align="center">가격</td>
 	    		<td width="330">
 					<input type="text" size="40" name="price"></td>
 			<tr>
@@ -104,7 +104,7 @@
 			    	<textarea name="asinfo" rows="13" cols="40"></textarea></td>
 			</tr>
 	  		<tr>
-	   			<td align="center" >글비밀번호</td>
+	   			<td align="center">글비밀번호</td>
 	   			<td width="330" >
 	     			<input type="password" size="8" maxlength="12" name="passwd"> 
 		 		</td>
