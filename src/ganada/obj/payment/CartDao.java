@@ -62,7 +62,7 @@ public class CartDao {
 	   db.S("*", "CART_ITEM", "USER_ID=?").var(user_id).exe(); 
 	   while(db.next()) {
 		   Cart cart= new Cart();
-           cart.setCart_id(db.getString("CART_ID"));
+           cart.setCart_id(db.getInt("CART_ID"));
            cart.setItem_num(db.getString("ITEM_ID"));
            cart.setItem_cl(db.getString("ITEM_COLOR"));
            cart.setItem_size(db.getString("ITEM_SIZE"));

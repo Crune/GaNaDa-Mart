@@ -34,10 +34,10 @@
 	   <div class="container show-grid">
 	     <div class="row">
 	       <div class="col-md-6" style="border-bottom: 1px solid #333;">
-	         <h1> <img src="<%=root%>/img/tit_mycat.png" /></h1>
+	         <h1> <img src="<%=root%>/img/cart/tit_mycat.png" /></h1>
 	       </div>
 	       <div class="col-md-6" style="border-bottom: 1px solid #333;direction: rtl;">
-	         <h1> <img src="<%=root%>/img/tab_cat01.png" /></h1>
+	         <h1> <img src="<%=root%>/img/cart/tab_cat01.png" /></h1>
 	       </div>
 	     </div>
 	     <div class="row">
@@ -47,7 +47,7 @@
 		         <span>30일간</span>보관됩니다.
 		         <a href="javascript:#">로그인</a>
 		         </p> 
-		         <p>나이키닷컴 회원이 되시면 다양한 혜택을 누리실 수 있습니다.</p>
+		         <p>가나다마트 회원이 되시면 다양한 혜택을 누리실 수 있습니다.</p>
 		       </div>
 	       </div>
 	    </div>
@@ -92,7 +92,7 @@
 								</strong>
 	 						    <span>COLOR : ${vo.item_cl}</span>
 								<span>SIZE : ${vo.item_size}</span>
-								 <img src="<%=root%>/img/btn_option.gif" alt="옵션변경">
+								 <img src="<%=root%>/img/cart/btn_option.gif" alt="옵션변경">
 	                       </div>   
 					   </td>
 					   <td class="lns03">
@@ -102,12 +102,12 @@
                          <label class="hidden" for="amountType02">수량입력</label>
                          <input name="qty" title="수량선택" class="qty" id="qty0_10" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="1">
 						  <div class="option">
-				               <a href="#"><img alt="수량증가" src="<%=root%>/img/up_arrow.png"></a>
-							   <a href="#"><img alt="수량감소" src="<%=root%>/img/down_arrow.png"></a>
+				               <a href="#"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
+							   <a href="#"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
 				          </div>
 					      <div>
 						    <a title="변경" href="javascript:$('input[name=&quot;chkdel&quot;]', document.cartForm).get('0').checked=true;fn_updateOrderQuantity('0', '60670243', 1, 'on');">
-						    <img alt="변경" src="<%=root%>/img/order_count_modify_btn.gif"></a>						   
+						    <img alt="변경" src="<%=root%>/img/cart/order_count_modify_btn.gif"></a>						   
 						 </div>
 				       </td>
 				       <td class="lns05">
@@ -116,9 +116,9 @@
 					      <input type="hidden" id="finalPricePerGoods" name="finalPricePerGoods" value="139000">
 					   </td>
 					   <td class="lns06">
-						  <a href="javascript:openLogin();"><img src="<%=root%>/img/btn_cat.gif" alt="보관하기"></a>
+						  <a href="javascript:openLogin();"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
 						  <a href="javascript:fn_deleteCartItem('ONE', '60673823', 'NK31073830');fn_catalystDelCart('844595-708');">
-						  <img src="<%=root%>/img/btn_delete.gif" alt="삭제"></a>
+						  <img src="<%=root%>/img/cart/btn_delete.gif" alt="삭제"></a>
 				        </td>
 					</tr>
 				    </c:forEach>
