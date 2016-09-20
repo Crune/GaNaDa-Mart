@@ -115,7 +115,7 @@
 			<tr>
 			    <td align="center">유의사항</td>
 			    <td width="330" >
-			    	<textarea name="note" rows="13" cols="40">{product.note }</textarea></td>
+			    	<textarea name="note" rows="13" cols="40">${product.note }</textarea></td>
 			</tr>
 			<tr>
 			    <td align="center">A/S정보</td>
