@@ -26,26 +26,9 @@
 			</div>
 			<div class="global_right_nav">
 				<ul>
-
-
-<c:choose>
- <c:when test="${sessionScope.memName eq null}">
                     <li class="global_login">
                         <a href="#"><span>회원가입 / 로그인</span></a>
                     </li>
- </c:when>
- <c:when test="${sessionScope.memName ne null}">
-                    <li class="global_login_window" style="display: list-item;">
-					   <a href="#" class="user"><span>${sessionScope.memName}님</span></a>
-					</li>
-					<ul class="global_user_menu" style="display: none; opacity: 1;">
-						<li><a href="javascript:goInfoShop();">마이페이지</a></li>
-						<li><a href="javascript:goModify();">회원정보관리</a></li>
-						<li><a href="javascript:goMyLocker();">위시리스트</a></li>
-						<li><a href="javascript:goLogOut();">로그아웃</a></li>
-					</ul>
- </c:when>
-</c:choose>
 					<li class="global_help"><a href="mainCustomer.gnd"><span>고객센터</span></a>
 						<ul class="global_help_menu" style="display: none;">
 							<li><a href="./helpdesk/listFaq.gnd?fid=1">주문결제</a></li>

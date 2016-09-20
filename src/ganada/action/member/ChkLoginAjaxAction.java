@@ -17,7 +17,17 @@ public class ChkLoginAjaxAction implements SuperAction {
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         HttpSession session = request.getSession();
-        session.setAttribute("ajaxStr", "luon12짤1짤153짤000000004695213짤최윤짤");
+        
+        String loginId = (String) session.getAttribute("memId");
+        String cartCount = "1";
+        String var1 = "15";
+        String var2 = "000000004695213";
+        String memberName = (String) session.getAttribute("memName");
+        String token = "짤";
+        
+        if (loginId == null) loginId = "guest";
+        
+        session.setAttribute("ajaxStr", loginId+token+cartCount+token+var1+token+var2+token+memberName+token);
         
         return "/jsp/template/ajax.jsp";
     }
