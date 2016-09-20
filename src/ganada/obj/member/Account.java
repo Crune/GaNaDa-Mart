@@ -1,6 +1,9 @@
 package ganada.obj.member;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
+
+import ganada.core.DB;
 
 public class Account {
 	private String code;
@@ -58,7 +61,11 @@ public class Account {
 		return passwd;
 	}
 	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	    try {
+	        this.passwd = DB.getEncSHA256(passwd);
+	    } catch (NoSuchAlgorithmException e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	public int getBirthday() {

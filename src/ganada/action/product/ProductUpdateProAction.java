@@ -5,12 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import ganada.action.common.SuperAction;
 
-public class ReviewFormAction implements SuperAction{
-
-	
+public class ProductUpdateProAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		return "/jsp/review/reviewForm.jsp";
+		
+		return "/jsp/product/productUpdatePro.jsp";
 	}
-
 }

@@ -135,6 +135,8 @@
 			<td colspan="2" align="right"><a href="#">사이즈 가이드</a></td>
 		</tr>
 	</table>
+	 <input type="button" value="글수정" 
+       onclick="document.location.href='pdpUpdate.gnd?num=${product.num}'">
 	</form>
 	<br />
 	<table border="1" width="1000" align="center">
