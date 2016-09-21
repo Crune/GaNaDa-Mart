@@ -48,16 +48,16 @@ public class ItemReviewDao {
                 number = 1;
             }
 
-            if (num != 0) {
+           // if (num != 0) {
              //   up.setWhereCondition("ref=? and re_step>?").setWhere(ref).setWhere(re_step);
              //   up.setSql("re_step", "re_step+1").run();
              //   re_step = re_step + 1;
               //  re_level = re_level + 1;
-            } else {
+           // } else {
              //   ref = number;
              //   re_step = 0;
               //  re_level = 0;
-            }        
+           // }        
             in.inSql("num", "review_seq.NEXTVAL");
             in.in("itemnum", article.getItemnum());
             in.in("itemname", article.getItemname());

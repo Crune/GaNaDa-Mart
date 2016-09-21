@@ -61,7 +61,6 @@ public class ReviewProAction implements SuperAction {
 		review.setDura(Integer.parseInt(dura));
 		review.setSubject(subject);
 		review.setContent(content);
-		review.setReg_date(new Timestamp(System.currentTimeMillis()));
         System.out.println(review.toString());
 		ItemReviewDao  ird = ItemReviewDao.getInstance();
 		ird.insert(review);

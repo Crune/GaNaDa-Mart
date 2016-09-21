@@ -13,18 +13,18 @@ public class ItemReviewTest extends DBTester {
     @BeforeClass
     public static void init() {
     	ItemReviewOrg = new ItemReview();
-    	ItemReviewOrg.setItemname("나이키 머큐리얼 벨로체 III AG- PRO");
-    	ItemReviewOrg.setItemnum("45");
-    	ItemReviewOrg.setWriter("anonymous");
-    	ItemReviewOrg.setSubject("착화감이 좋아요");
+    	ItemReviewOrg.setItemname("나이키 머큐리얼 베이퍼 XI FG");
+    	ItemReviewOrg.setItemnum("55");
+    	ItemReviewOrg.setWriter("kkk");
+    	ItemReviewOrg.setSubject("최고의 축구화");
     	ItemReviewOrg.setSiz(0);
     	ItemReviewOrg.setComfortable(1);
     	ItemReviewOrg.setWid(0);
     	ItemReviewOrg.setDura(1);
-    	ItemReviewOrg.setItemsize("250");
+    	ItemReviewOrg.setItemsize("240");
     	ItemReviewOrg.setWei("55kg");
-    	ItemReviewOrg.setHei("175cm");
-    	ItemReviewOrg.setAge("32세");
+    	ItemReviewOrg.setHei("180cm");
+    	ItemReviewOrg.setAge("35세");
     	ItemReviewOrg.setContent("편하고 좋아요 착화감도 좋고 무게도 가볍습니다 최고의 축구화예요");
     	ItemReviewOrg.setStar(5);
     	
