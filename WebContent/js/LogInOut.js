@@ -2,7 +2,7 @@
 	$.ajax({
 		type: "POST",
 		dataType : "html",
-		url: "/member/chkLoginAjax.gnd", 
+		url: "./member/chkLoginAjax.gnd", 
 		success: function(data){	
 			//alert(data);
 			
