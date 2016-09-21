@@ -40,6 +40,7 @@ public class ProductUpdateProAction implements SuperAction{
 		
 		Product product = new Product();
 		product.setNum(Integer.parseInt(mr.getParameter("num")));
+		product.setName(mr.getParameter("name"));
 		product.setPrice(Integer.parseInt(mr.getParameter("price")));
 		product.setDiscount(Integer.parseInt(mr.getParameter("discount")));
 		product.setColor(mr.getParameter("color"));
