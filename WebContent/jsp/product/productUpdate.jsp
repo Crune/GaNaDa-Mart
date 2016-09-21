@@ -127,6 +127,7 @@
 				<td colspan=2 align="center"> 
 					<input type="submit" value="수정하기">  
 		  			<input type="reset" value="다시작성">
+		  			<input type="button" value="글삭제" onClick="document.location.href='pdpDeletePro.gnd?num=${product.num}'">
 		  		</td>
 			</tr>
 		</table>  
