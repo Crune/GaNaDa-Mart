@@ -191,18 +191,19 @@ public class DB {
 	}
 
 	public DB var(Object var) throws Exception {
+	    boolean isNull = false;
 		if (var == null) {
-			System.out.println("null 데이터 주입!");
-			return this;
+			System.out.println("DB.var:null 데이터 주입!"+ var);
+			isNull = true;
 		}
 		if (var.getClass() == java.lang.String.class)
-			var((String) var);
+			var((String) (isNull?"":var));
 		if (var.getClass() == java.lang.Integer.class)
-			var((int) var);
+			var((int) (isNull?0:var));
 		if (var.getClass() == java.lang.Double.class)
-			var((double) var);
+			var((double) (isNull?0d:var));
 		if (var.getClass() == java.lang.Boolean.class)
-			var((boolean) var);
+			var((boolean) (isNull?false:var));
 		if (var.getClass() == java.sql.Timestamp.class)
 			var((Timestamp) var);
 		return this;
