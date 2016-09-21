@@ -1,6 +1,6 @@
 package ganada.obj.product;
 
-public class Color {
+public class ProductColor {
 	private String c_code;				//색상코드
 	private String im_code;				//이미지코드
 	private String c_name;				//색상이름

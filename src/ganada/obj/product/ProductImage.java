@@ -1,6 +1,6 @@
 package ganada.obj.product;
 
-public class Image {
+public class ProductImage {
 	private String im_code;				//이미지코드
 	private String pd_code;				//상품코드
 	private String im_order;			//이미지순서
