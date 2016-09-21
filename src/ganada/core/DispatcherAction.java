@@ -91,9 +91,10 @@ public class DispatcherAction extends HttpServlet {
             session.setAttribute("urlFooter", (String) url);
 
             String view = sa.executeAction(request, response);
-            RequestDispatcher rd = request.getRequestDispatcher(view);
-
-            rd.forward(request, response);
+            if (view != null) {
+                RequestDispatcher rd = request.getRequestDispatcher(view);
+                rd.forward(request, response);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

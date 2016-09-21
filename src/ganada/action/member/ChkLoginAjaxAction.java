@@ -13,29 +13,36 @@ import ganada.action.common.SuperAction;
 import ganada.obj.member.Account;
 
 public class ChkLoginAjaxAction implements SuperAction {
+
+    private Object nullChk(Object checkObj, Object nullReplace) {
+        if (checkObj == null) return nullReplace;
+        else return checkObj;
+    }
     
     @Override
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         HttpSession session = request.getSession();
-        
-        String loginId = (String) session.getAttribute("loginId");
-        Account account = (Account) session.getAttribute("userAccount");                
 
-        Double mile = account.getMile();
-        if (mile == null) mile = 0d;
-        String memberNo = "000000004695213";
-        String memberName = (String) session.getAttribute("memName");
+        Account account = (Account) nullChk(session.getAttribute("userAccount"), null); 
+        Double mile = 0d;
+        String memberCode="000000000000000", memberName="guest", cartId="0", cartCount="0", tk= "짤";
+                
+        String loginId = (String) session.getAttribute("loginId");
         
-        String cartId = (String) session.getAttribute("cartId");        
-        String cartCount = (String) session.getAttribute("cartCount");
-        if (cartCount == null) cartCount = "1";
-        
-        String token = "짤";
-        
-        if (loginId == null) loginId = "guest";
-        
-        session.setAttribute("ajaxStr", loginId+token+cartCount+token+mile+token+memberNo+token+memberName+token);
+        System.out.println("ChkLoginAjaxAction.executeAction.loginId="+loginId);        
+
+        if (loginId == null || account == null) {
+            loginId = "guest";
+        } else {            
+            mile = (double) nullChk(account.getMile(), mile);
+            memberCode = (String) nullChk(account.getCode(), memberCode);
+            memberName = (String) nullChk(account.getName(), memberName);
+            
+            cartId = (String) nullChk(session.getAttribute("cartId"), cartId);
+            cartCount = (String) nullChk(session.getAttribute("cartCount"), "1");
+        }
+        session.setAttribute("ajaxStr", loginId+tk+cartCount+tk+mile+tk+memberCode+tk+memberName+tk);
         
         return "/jsp/template/ajax.jsp";
     }

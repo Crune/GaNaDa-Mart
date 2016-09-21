@@ -20,7 +20,7 @@ public class AccountDao {
         try {
             sql.inSql("CODE", "ACCOUNT_SEQ.NEXTVAL");
             sql.in("NAME", account.getName());
-            sql.in("INFO", account.getName());
+            sql.in("INFO", account.getInfo());
             
             sql.in("EMAIL", account.getEmail());
             sql.in("ID", account.getId());
@@ -64,7 +64,7 @@ public class AccountDao {
                 account.setId(db.getString("ID"));
                 account.setPasswd(db.getString("PASSWD"));
 
-                account.setBirthday(db.getTimestamp("BIRTHDAY"));
+                account.setBirthday(db.getTimestamp("BIRTH"));
                 account.setLunisolar(db.getInt("LUNISOLAR"));
                 account.setGender(db.getInt("GENDER"));
 
@@ -83,11 +83,24 @@ public class AccountDao {
         return account;
     }
 
+    public Account getAccountLast(String id) throws Exception {
+        DB db = new DB();
+        Account acc = null;
+        try {
+            acc = getAccount(getAccounts(id).get(0));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            db.finalize();
+        }
+        return acc;
+    }
+    
     public List<String> getAccounts(String id) throws Exception {
         DB db = new DB();
         List<String> result = new ArrayList<String>();
         try {
-            db.S("*", "ACCOUNT", "ID=?","","REG_DATE DESC").var(id).exe();
+            db.S("*", "ACCOUNT", "ID=?","REG_DATE DESC").var(id).exe();
             while (db.next()) {
                 result.add(db.getString("CODE"));
             }
@@ -105,7 +118,7 @@ public class AccountDao {
         try {
             sql.setWhere("CODE", account.getCode());
             sql.set("NAME", account.getName());
-            sql.set("INFO", account.getName());
+            sql.set("INFO", account.getInfo());
             
             sql.set("EMAIL", account.getEmail());
             sql.set("ID", account.getId());

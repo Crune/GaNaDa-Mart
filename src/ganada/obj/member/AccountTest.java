@@ -2,7 +2,11 @@ package ganada.obj.member;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ganada.core.DBTester;
@@ -31,16 +35,17 @@ public class AccountTest extends DBTester{
         account.setSms_allow(1);
 		
 	}
-	
+
 	@Test
 	public void test() {
 		AccountDao dao = AccountDao.getInstance();
 		try {
 		    dao.insertAccount(account);
-		} catch (Exception e) {
-		    e.printStackTrace();
-		}
-		
-	}
-
+            List<String> str = (ArrayList<String>) dao.getAccounts("test");
+            System.out.println(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
 }

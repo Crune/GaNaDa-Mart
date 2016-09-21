@@ -13,7 +13,13 @@
 			userinput.submit();
 		}
 	}
+
+    function goLogOut() {
+        var logout = eval("document.logout");
+        logout.submit();
+    }
 </script>
+<form name="logout" action="doLogout.gnd" method="post"></form>
 <form name="userinput" id="loginForm_1"
 	action="doLogin.gnd" method="post"
 	onSubmit="return checkIt()">

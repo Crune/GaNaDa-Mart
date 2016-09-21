@@ -18,20 +18,18 @@ public class LoginProAction implements SuperAction {
         String passwd = request.getParameter("password");
 
         AccountDao dao = AccountDao.getInstance();
-        
-        Account vo = dao.getAccount(dao.getAccounts(id).get(0));
-        
-        HttpSession session = request.getSession();
 
         int check = dao.userCheck(id, passwd);
         request.setAttribute("check", check);
-        if (check == 1) {
+        
+        if (check == 1) {            
+            HttpSession session = request.getSession();
             session.setAttribute("loginId", id);
+
+            Account vo = dao.getAccountLast(id);
             session.setAttribute("userAccount", vo);
             session.setAttribute("memName", vo.getName());
-            return "/page.gnd?code=MAIN";
         }
-        
         return "/jsp/member/popup_login_pro.jsp";
     }
 
