@@ -34,7 +34,9 @@ public class ReviewProAction implements SuperAction {
 		ItemReview review = new ItemReview();
 		String star = mr.getParameter("star");
 		String itemsize = mr.getParameter("itemsize");
-		String itemnum = "45";
+		String itemnum = mr.getParameter("itemnum");
+		String itemname = mr.getParameter("itemname");
+		String writer = mr.getParameter("writer");
 		String siz = mr.getParameter("siz");
 		String wei = mr.getParameter("wei");
 		String comfortable = mr.getParameter("comfortable");
@@ -45,6 +47,10 @@ public class ReviewProAction implements SuperAction {
 		String subject = mr.getParameter("subject");
 		String content = mr.getParameter("content");
 	
+		System.out.println(wid);
+		review.setItemnum(itemnum);
+		review.setItemname(itemname);
+		review.setWriter(writer);
 		review.setStar(Integer.parseInt(star));
 		review.setItemsize(itemsize);
 		review.setSiz(Integer.parseInt(siz));

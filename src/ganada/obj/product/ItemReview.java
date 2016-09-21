@@ -5,11 +5,9 @@ import java.sql.Timestamp;
 public class ItemReview {
 	private int num; //게시글 번호
 	private String itemname;// 상품명
-	private int itemnum;//게시한 상품등록번호
+	private String itemnum;//게시한 상품등록번호
 	private String writer;//작성자
 	private String subject;//제목
-	private int lik;
-	private int bad;
 	private int siz;
 	private int comfortable;
 	private int wid;
@@ -18,12 +16,9 @@ public class ItemReview {
 	private String wei;
 	private String hei;
 	private String age;
-	private String mail;//e-mail
 	private String content;//내용
 	private int star;//별점
-	private String passwd;//비밀번호
 	private int readcount;//조회수
-	private String ip;//ip
 	private Timestamp reg_date;//등록일
 	private int ref;//게시글 그룹번호
 	private int re_step;//게시글 계층 정렬 번호
@@ -40,10 +35,10 @@ public class ItemReview {
 	public void setItemname(String itemname) {
 		this.itemname = itemname;
 	}
-	public int getItemnum() {
+	public String getItemnum() {
 		return itemnum;
 	}
-	public void setItemnum(int itemnum) {
+	public void setItemnum(String itemnum) {
 		this.itemnum = itemnum;
 	}
 	public String getWriter() {
@@ -57,18 +52,6 @@ public class ItemReview {
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
-	}
-	public int getLik() {
-		return lik;
-	}
-	public void setLik(int lik) {
-		this.lik = lik;
-	}
-	public int getBad() {
-		return bad;
-	}
-	public void setBad(int bad) {
-		this.bad = bad;
 	}
 	public int getSiz() {
 		return siz;
@@ -118,12 +101,6 @@ public class ItemReview {
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getMail() {
-		return mail;
-	}
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
 	public String getContent() {
 		return content;
 	}
@@ -136,23 +113,11 @@ public class ItemReview {
 	public void setStar(int star) {
 		this.star = star;
 	}
-	public String getPasswd() {
-		return passwd;
-	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
 	public int getReadcount() {
 		return readcount;
 	}
 	public void setReadcount(int readcount) {
 		this.readcount = readcount;
-	}
-	public String getIp() {
-		return ip;
-	}
-	public void setIp(String ip) {
-		this.ip = ip;
 	}
 	public Timestamp getReg_date() {
 		return reg_date;

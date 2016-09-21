@@ -15,6 +15,10 @@
 
 
      <form id="revForm" action="./reviewPro.gnd" method = "post" encType="multipart/form-data">
+<input type="hidden" id="itemname" value="운동화">
+<input type="hidden" id="itemnum" value="45">
+<input type="hidden" id="writer" value="writer">
+
 <table>
 <tr>
 <td> 별점주기 </td>
