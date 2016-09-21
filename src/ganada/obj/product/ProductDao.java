@@ -22,7 +22,6 @@ public class ProductDao {
 			    if (db.next()) {
 			    	product = new Product();
 			    	product.setNum(db.getInt("num"));
-			    //	product.setPasswd(db.getString("passwd"));
 			    	product.setName(db.getString("name"));
 			    	product.setPrice(db.getInt("price"));
 			    	product.setDiscount(db.getInt("discount"));
@@ -55,7 +54,6 @@ public class ProductDao {
 		        
 		        try {
 		            sql.inSql("num", "product_seq.NEXTVAL");
-		           // sql.in("passwd", article.getPasswd());
 		            sql.in("name", article.getName());
 		            sql.in("price", article.getPrice());
 		            sql.in("discount", article.getDiscount());
@@ -88,8 +86,7 @@ public class ProductDao {
 				DB.Update sql = db.new Update("product");
 				try {
 				    sql.setWhere("num", product.getNum());
-				   // sql.set("passwd", product.getPasswd());
-		            sql.set("name", product.getName());
+				    sql.set("name", product.getName());
 		            sql.set("price", product.getPrice());
 		            sql.set("discount", product.getDiscount());
 		            sql.set("color", product.getColor());

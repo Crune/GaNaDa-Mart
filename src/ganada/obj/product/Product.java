@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 public class Product {
 	private int num;				//상품이 등록된 게시글번호
-//	private String passwd;			//글비밀번호
 	private String name;			//상품이름
 	private int price;				//가격
 	private int discount;			//할인가격
@@ -22,16 +21,7 @@ public class Product {
 	private String note;			//유의사항
 	private String asinfo;			//AS정보
 	private Timestamp reg_date;		//등록날짜
-	//private int pd_num;				//상품등록번호
-	//private String imageright;	//상품우측이미지
-	//private String imageleft;		//상품좌측이미지
-	//private String imagebot;		//상품하단이미지
-	//private String imagetop;		//상품상단이미지
-	//private int sellcount;		//판매량
-	//private String gender;		//상품성별
-	//private String type;			//상품타입
-	//private String brand;			//상품브랜드
-	//private String width;			//발볼크기	
+	
 	public int getNum() {
 		return num;
 	}
