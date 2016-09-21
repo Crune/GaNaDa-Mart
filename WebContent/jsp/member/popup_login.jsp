@@ -18,7 +18,15 @@
         var logout = eval("document.logout");
         logout.submit();
     }
+    function goJoinView() {
+        var login = eval("document.login");
+        login.src = "inner_join.gnd";
+    }
 </script>
+
+<div class="layerArea" id="login_Pop">
+    <iframe src="" allowtransparency="false" id="frameLogin" name="login" width="840px" height="400px" frameborder="0" marginwidth="0" scrolling="no"></iframe>
+</div>
 <form name="logout" action="doLogout.gnd" method="post"></form>
 <form name="userinput" id="loginForm_1"
 	action="doLogin.gnd" method="post"
