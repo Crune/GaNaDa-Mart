@@ -42,7 +42,7 @@
 							<li class="gb_help_list_all"><a
 								href="./helpdesk/mainCustomer.gnd">전체보기</a></li>
 						</ul></li>
-					<li class="cart"><a href="./cart/list.gnd"> <span>장바구니</span>
+					<li class="cart"><a href="./cartList.gnd"> <span>장바구니</span>
 							<span class="count" id="cartBubble" style="display: none;">0</span>
 					</a></li>
 				</ul>

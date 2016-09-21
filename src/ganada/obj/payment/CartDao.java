@@ -25,7 +25,7 @@ public class CartDao {
 	try {
     	sql.inSql("CART_ID", "CART_ITEM_PK.NEXTVAL"); // 장바구니 아이디(메인키)
     	sql.inSql("REGDT", "SYSDATE"); // 날짜
-    	sql.in("ITEM_ID", cart.getItem_num()); //상품번호
+    	sql.in("ITEM_ID", cart.getItem_id()); //상품번호
     	sql.in("ITEM_COLOR", cart.getItem_cl()); //상품색상
     	sql.in("ITEM_SIZE", cart.getItem_size()); //상품사이즈
     	sql.in("ITEM_COUNT", cart.getItem_cnt()); //상품수량
@@ -63,7 +63,7 @@ public class CartDao {
 	   while(db.next()) {
 		   Cart cart= new Cart();
            cart.setCart_id(db.getInt("CART_ID"));
-           cart.setItem_num(db.getString("ITEM_ID"));
+           cart.setItem_id(db.getString("ITEM_ID"));
            cart.setItem_cl(db.getString("ITEM_COLOR"));
            cart.setItem_size(db.getString("ITEM_SIZE"));
            cart.setItem_cnt(db.getInt("ITEM_COUNT"));
