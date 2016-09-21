@@ -113,7 +113,7 @@ public class ProductDao {
 				}
 		}
 		
-		 public int deleteProduct(String num) throws Exception {
+		 public int deleteProduct(int num) throws Exception {
 				DB db = new DB();
 				int x = -1;
 				try {

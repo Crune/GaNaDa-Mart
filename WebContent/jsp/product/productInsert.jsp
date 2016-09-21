@@ -49,6 +49,7 @@
 				    	<option value="220">220</option>
 				    	<option value="225">225</option>
 				    	<option value="230">230</option>
+				    	<option value="235">235</option>
 				    	<option value="240">240</option>
 				    	<option value="245">245</option>
 				    	<option value="250">250</option>
@@ -70,6 +71,7 @@
 				    	<option value="7">7</option>
 				    	<option value="8">8</option>
 				    	<option value="9">9</option>
+				    	<option value="10">10</option>
 				    </select>
 				</td>
 	  		</tr>
