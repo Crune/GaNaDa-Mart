@@ -14,32 +14,23 @@ public class ProductDao {
 	    private ProductDao() {
 	    }
 		
-		public Product getProduct(int num) throws Exception {
+		public Product getProduct(String pd_code) throws Exception {
 			DB db = new DB();
 			Product product = null;
 			try {
-			    db.S("*", "product", "num=?").var(num).exe();
+			    db.sql("").var(pd_code).exe();
 			    if (db.next()) {
 			    	product = new Product();
-			    	product.setNum(db.getInt("num"));
-			    	product.setName(db.getString("name"));
-			    	product.setPrice(db.getInt("price"));
-			    	product.setDiscount(db.getInt("discount"));
-			    	product.setColor(db.getString("color"));
-			    	product.setColorcode(db.getString("colorcode"));
-			    	product.setColorimage(db.getString("colorimage"));
-			    	product.setPd_size(db.getString("pd_size"));
-			    	product.setStock(db.getInt("stock"));
-			    	product.setStoread(db.getString("storead"));
-			    	product.setImage(db.getString("image"));
-			    	product.setStar(db.getInt("star"));
-			    	product.setRecommend(db.getInt("recommend"));
-			    	product.setInfo(db.getString("info"));
-			    	product.setDeliveryinfo(db.getString("deliveryinfo"));
-			    	product.setNote(db.getString("note"));
-			    	product.setAsinfo(db.getString("asinfo"));
-			    	product.setReg_date(db.getTimestamp("reg_date"));
-			    }
+			    	product.setPd_code(db.getString("pd_code"));
+			    	product.setMenu_code(db.getString("menu_code"));
+			    	product.setPd_name(db.getString("pd_name"));
+			    	product.setPd_price(db.getInt("pd_price"));
+			    	product.setPd_reg_date(db.getTimestamp("pd_reg_date"));
+			    	product.setPd_infocode1(db.getString("pd_infocode1"));
+			    	product.setPd_infocode1(db.getString("pd_infocode2"));
+			    	product.setPd_infocode1(db.getString("pd_infocode3"));
+			    	product.setPd_infocode1(db.getString("pd_infocode4"));
+				}
 			} catch (Exception ex) {
 			    ex.printStackTrace();
 			} finally {
@@ -53,25 +44,16 @@ public class ProductDao {
 		        DB.Insert sql = db.new Insert("product");
 		        
 		        try {
-		            sql.inSql("num", "product_seq.NEXTVAL");
-		            sql.in("name", article.getName());
-		            sql.in("price", article.getPrice());
-		            sql.in("discount", article.getDiscount());
-		            sql.in("color", article.getColor());
-		            sql.in("colorcode", article.getColorcode());
-		            sql.in("colorimage", article.getColorimage());
-		            sql.in("pd_size", article.getPd_size());
-		            sql.in("stock", article.getStock());
-		            sql.in("storead", article.getStoread());
-		            sql.in("image", article.getImage());
-		            sql.in("star", article.getStar());
-		            sql.in("recommend", article.getRecommend());
-		            sql.in("info", article.getInfo());
-		            sql.in("deliveryinfo", article.getDeliveryinfo());
-		            sql.in("note", article.getNote());
-		            sql.in("asinfo", article.getAsinfo());
-		            		            
-		            sql.inSql("REG_DATE", "sysdate");
+		            sql.inSql("pd_code", "product_seq.NEXTVAL");
+		           // sql.in("pd_code", article.getPd_code());
+		            sql.in("menu_code", article.getMenu_code());
+		            sql.in("pd_name", article.getPd_name());
+		            sql.in("pd_price", article.getPd_price());
+		            sql.in("pd_infocode1", article.getPd_infocode1());
+		            sql.in("pd_infocode2", article.getPd_infocode2());
+		            sql.in("pd_infocode3", article.getPd_infocode3());
+		            sql.in("pd_infocode4", article.getPd_infocode4());
+		            sql.inSql("pd_reg_date", "sysdate");
 		            sql.run();
 		        } catch (Exception e) {
 		            e.printStackTrace();
@@ -85,23 +67,14 @@ public class ProductDao {
 				DB db = new DB();
 				DB.Update sql = db.new Update("product");
 				try {
-				    sql.setWhere("num", product.getNum());
-				    sql.set("name", product.getName());
-		            sql.set("price", product.getPrice());
-		            sql.set("discount", product.getDiscount());
-		            sql.set("color", product.getColor());
-		            sql.set("colorcode", product.getColorcode());
-		            sql.set("colorimage", product.getColorimage());
-		            sql.set("pd_size", product.getPd_size());
-		            sql.set("stock", product.getStock());
-		            sql.set("storead", product.getStoread());
-		            sql.set("image", product.getImage());
-		            sql.set("star", product.getStar());
-		            sql.set("recommend", product.getRecommend());
-		            sql.set("info", product.getInfo());
-		            sql.set("deliveryinfo", product.getDeliveryinfo());
-		            sql.set("note", product.getNote());
-		            sql.set("asinfo", product.getAsinfo());
+				    sql.setWhere("pd_code", product.getPd_code());
+				    sql.set("menu_code", product.getMenu_code());
+				    sql.set("pd_name", product.getPd_name());
+				    sql.set("pd_price", product.getPd_price());
+				    sql.set("pd_infocode1", product.getPd_infocode1());
+				    sql.set("pd_infocode1", product.getPd_infocode2());
+				    sql.set("pd_infocode1", product.getPd_infocode3());
+				    sql.set("pd_infocode1", product.getPd_infocode4());
 				    sql.run();
 				} catch (Exception ex) {
 				    ex.printStackTrace();
@@ -110,11 +83,11 @@ public class ProductDao {
 				}
 		}
 		
-		 public int deleteProduct(int num) throws Exception {
+		 public int deleteProduct(String pd_code) throws Exception {
 				DB db = new DB();
 				int x = -1;
 				try {
-				    db.D("product", "num=?").var(num).exe();
+				    db.D("product", "pd_code=?").var(pd_code).exe();
 				    x = 1;
 				} catch (Exception e) {
 				    e.printStackTrace();

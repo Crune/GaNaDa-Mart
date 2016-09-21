@@ -3,7 +3,72 @@ package ganada.obj.product;
 import java.sql.Timestamp;
 
 public class Product {
-	private int num;				//상품이 등록된 게시글번호
+	private String pd_code;				//상품코드
+	private String menu_code;			//메뉴코드
+	private String pd_name;				//상품이름
+	private int pd_price;				//상품가격
+	private Timestamp pd_reg_date;		//상품등록일
+	private String pd_infocode1;		//상품정보코드
+	private String pd_infocode2;		//상품정보코드
+	private String pd_infocode3;		//상품정보코드
+	private String pd_infocode4;		//상품정보코드
+	
+	public String getPd_code() {
+		return pd_code;
+	}
+	public void setPd_code(String pd_code) {
+		this.pd_code = pd_code;
+	}
+	public String getMenu_code() {
+		return menu_code;
+	}
+	public void setMenu_code(String menu_code) {
+		this.menu_code = menu_code;
+	}
+	public String getPd_name() {
+		return pd_name;
+	}
+	public void setPd_name(String pd_name) {
+		this.pd_name = pd_name;
+	}
+	public int getPd_price() {
+		return pd_price;
+	}
+	public void setPd_price(int pd_price) {
+		this.pd_price = pd_price;
+	}
+	public Timestamp getPd_reg_date() {
+		return pd_reg_date;
+	}
+	public void setPd_reg_date(Timestamp pd_reg_date) {
+		this.pd_reg_date = pd_reg_date;
+	}
+	public String getPd_infocode1() {
+		return pd_infocode1;
+	}
+	public void setPd_infocode1(String pd_infocode1) {
+		this.pd_infocode1 = pd_infocode1;
+	}
+	public String getPd_infocode2() {
+		return pd_infocode2;
+	}
+	public void setPd_infocode2(String pd_infocode2) {
+		this.pd_infocode2 = pd_infocode2;
+	}
+	public String getPd_infocode3() {
+		return pd_infocode3;
+	}
+	public void setPd_infocode3(String pd_infocode3) {
+		this.pd_infocode3 = pd_infocode3;
+	}
+	public String getPd_infocode4() {
+		return pd_infocode4;
+	}
+	public void setPd_infocode4(String pd_infocode4) {
+		this.pd_infocode4 = pd_infocode4;
+	}
+	
+	/*private int num;				//상품이 등록된 게시글번호
 	private String name;			//상품이름
 	private int price;				//가격
 	private int discount;			//할인가격
@@ -129,5 +194,5 @@ public class Product {
 	}
 	public void setReg_date(Timestamp reg_date) {
 		this.reg_date = reg_date;
-	}
+	}*/
 }
