@@ -144,5 +144,13 @@ public class ItemReview {
 		this.re_level = re_level;
 	}
 
-	
+	public String toString() {
+	    
+	    String result = "ItemReview{"+num+", "+itemname+", "+itemnum+", "+writer+", "+subject
+            +siz+", "+comfortable+", "+wid+", "+dura+", "+itemsize
+            +wei+", "+hei+", "+age+", "+content+", "+star
+            +readcount+", "+reg_date+", "+ref+", "+re_step+", "+re_level+"}";
+            
+	    return result;
+	}
 }

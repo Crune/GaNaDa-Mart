@@ -18,7 +18,7 @@ public class ReviewProAction implements SuperAction {
 		String filename="";
 		String path = request.getRealPath("img");
 		int maxSize = 1024*1024*5; 
-		String enc = "euc-kr";
+		String enc = "UTF-8";
 		DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();
 		MultipartRequest mr = new MultipartRequest(request,path,maxSize,enc,dp);
 		
@@ -46,8 +46,7 @@ public class ReviewProAction implements SuperAction {
 		String dura = mr.getParameter("dura");
 		String subject = mr.getParameter("subject");
 		String content = mr.getParameter("content");
-	
-		System.out.println(wid);
+
 		review.setItemnum(itemnum);
 		review.setItemname(itemname);
 		review.setWriter(writer);
@@ -63,7 +62,7 @@ public class ReviewProAction implements SuperAction {
 		review.setSubject(subject);
 		review.setContent(content);
 		review.setReg_date(new Timestamp(System.currentTimeMillis()));
-		
+        System.out.println(review.toString());
 		ItemReviewDao  ird = ItemReviewDao.getInstance();
 		ird.insert(review);
 		

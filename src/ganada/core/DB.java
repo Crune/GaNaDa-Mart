@@ -191,19 +191,18 @@ public class DB {
 	}
 
 	public DB var(Object var) throws Exception {
-	    boolean isNull = false;
 		if (var == null) {
-			System.out.println("DB.var:null 데이터 주입!"+ var);
-			isNull = true;
+			System.out.println("DB.var:null 데이터 주입!");
+			return null;
 		}
 		if (var.getClass() == java.lang.String.class)
-			var((String) (isNull?"":var));
+			var((String) var);
 		if (var.getClass() == java.lang.Integer.class)
-			var((int) (isNull?0:var));
+			var((int) var);
 		if (var.getClass() == java.lang.Double.class)
-			var((double) (isNull?0d:var));
+			var((double) var);
 		if (var.getClass() == java.lang.Boolean.class)
-			var((boolean) (isNull?false:var));
+			var((boolean) var);
 		if (var.getClass() == java.sql.Timestamp.class)
 			var((Timestamp) var);
 		return this;
@@ -382,8 +381,11 @@ public class DB {
 					list.add(objVarMap.get(key));
 				}
 				sql(sql + val + ")");
-				for (Object obj : list)
+				int num = 0;
+				for (Object obj : list) {
+				    //System.out.println("insertV"+(++num)+":"+obj.toString());
 					var((Object) obj);
+				}
 				exe();
 			}
 		}
