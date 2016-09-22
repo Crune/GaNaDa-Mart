@@ -239,11 +239,11 @@ public class ItemReviewDao {
 
 
 
-	public int deleteArticle(String itemnum) {
+	public int deleteArticle(int num) {
 		DB db = new DB();
 		int x = -1;
 		try {
-			db.D("REVIEW", "itemnum=?").var(itemnum).exe();
+			db.D("REVIEW", "num=?").var(num).exe();
 			x = 1;
 		} catch (Exception ex) {
 			ex.printStackTrace();
