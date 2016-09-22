@@ -27,6 +27,7 @@ public class MCPageAction implements SuperAction {
             String menu = request.getParameter("menu");
             if (menu == null) menu = "main";
             menu = actions.containsKey(menu)?menu:"error";
+            session.setAttribute("curMCMenu", menu);
             
             String url = actions.get(menu).executeAction(request, response);
             session.setAttribute("urlCont", (String) url);
