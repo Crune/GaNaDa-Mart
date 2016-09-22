@@ -46,9 +46,9 @@ public class CartDao {
     	 
     		db.S("*", "product", "num=?").var(item_id).exe();
 		    if (db.next()) {
-		    	product.setName(db.getString("name"));
-		    	product.setPrice(db.getInt("price"));
-		    	product.setDiscount(db.getInt("discount"));
+		    	product.setPd_name(db.getString("name"));
+		    	product.setPd_price(db.getInt("price"));
+		    	//product.setDiscount(db.getInt("discount"));
 		    }   	   
     	   return product;
     	
@@ -97,18 +97,21 @@ public class CartDao {
    }
 
    //장바구니에서 cart_id에대한 레코드를 삭제하는 메소드
-   public int deleteCart(String cart_id) throws Exception {
+   public int deleteCart(int cart_id) throws Exception {
 	   DB db = new DB();
 	   int x = -1;
+	   
 	   try {
-		db.D("CART", "CODE=?").var(cart_id).exe();
-		x = 1;
-		}catch(Exception ex) {
+		   db.D("CART", "CART_ID=?").var(cart_id).exe();
+		   x = 1;
+		
+	   }catch(Exception ex) {
            ex.printStackTrace();
 		}finally {
           db.finalize();
         }
-   		return x;
-   		}
-  }
+  
+	   return x;	
+   }  
+}
    
