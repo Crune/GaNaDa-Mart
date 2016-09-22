@@ -13,44 +13,37 @@ import ganada.obj.common.BannerHTMLDao;
 import ganada.obj.common.ContentsPage;
 import ganada.obj.common.ContentsPageDao;
 
-public class ContentsPageAction extends HaveSubAction {
-    private static ContentsPage page;
-    private static List<BannerHTML> banners;
+public class ContentsPageAction implements SuperAction {
     
     private static ContentsPageDao pageDao;
     private static BannerHTMLDao bannerDao;
-    
-    private static String innerHTML = "";
 
-    public void init(String pageCode) throws Exception {
-        pageDao = ContentsPageDao.getInstance();
-        bannerDao = BannerHTMLDao.getInstance();
-
-        page = pageDao.getPage(pageCode);
-        banners = new ArrayList<BannerHTML>();
-        
-        for (int key : page.bannerMap().keySet()) {
-            String code = page.bannerMap().get(key);
-            BannerHTML curBanner;
-            curBanner = bannerDao.getBanner(code);
-            banners.add(curBanner);
-        }
-        
-        for (BannerHTML cur : banners) {
-            innerHTML += cur.getHtml();
-        }
-    }
-    
-    public String exe(HttpServletRequest request, HttpServletResponse response) {
+    @Override
+    public String executeAction(HttpServletRequest request, HttpServletResponse response) {
         try {
-            
-            String code = (String) request.getParameter("code");
-            if (page == null) init(code);            
+            pageDao = ContentsPageDao.getInstance();
+            bannerDao = BannerHTMLDao.getInstance();
 
+            // 페이지 정보 불러오기
+            String pageCode = (String) request.getParameter("code");
+            if (pageCode == null) {
+                pageCode = "";
+            }
+            ContentsPage page = pageDao.getPage(pageCode);
+
+            // 불러온 페이지의 배너들을 조회하여 innerHTML에 집어넣음.
+            String innerHTML = "";
+            for (int key : page.bannerMap().keySet()) {
+                String bannerCode = page.bannerMap().get(key);
+                BannerHTML cur = bannerDao.getBanner(bannerCode);
+                innerHTML += cur.getHtml();
+            }
+            
+            // 불러온 페이지의 이름, 코드, 정보를 세션에 집어 넣음.
             HttpSession session = request.getSession();
             session.setAttribute("pageTitle", page.getName());
-            session.setAttribute("menu", "0");
-            session.setAttribute("innerHTML", innerHTML);
+            session.setAttribute("menu", page.getCode());
+            session.setAttribute("innerHTML", innerHTML);        
 
         } catch (Exception e) {
             e.printStackTrace();
