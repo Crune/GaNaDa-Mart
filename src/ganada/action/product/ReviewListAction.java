@@ -14,11 +14,13 @@ public class ReviewListAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<ItemReview> reviewLists = null;
 		String itemnum = request.getParameter("itemnum");
+		//String itemnum = "45";
 		//int itemnum = 45;
 		ItemReviewDao reviewProcess = ItemReviewDao.getInstance();
-		int count = reviewProcess.getAllArticleCount();
+		int count = reviewProcess.getArticleCount(itemnum);
 		if( count > 0){
-			reviewLists = reviewProcess.getArticles(itemnum);
+			reviewLists = reviewProcess.getReview(itemnum);
+			//reviewLists = reviewProcess.getArticles(itemnum);
 			request.setAttribute("reviewLists", reviewLists);
 		}
 		//request.setAttribute("itemnum", new Integer(itemnum));

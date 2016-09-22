@@ -15,11 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ganada.action.*;
-import ganada.action.common.FooterAction;
-import ganada.action.common.HeaderAction;
-import ganada.action.common.NotFoundAction;
-import ganada.action.common.SuperAction;
+import ganada.action.common.*;
+
+import ganada.mc.action.*;
 
 public class DispatcherAction extends HttpServlet {
 
@@ -67,6 +65,13 @@ public class DispatcherAction extends HttpServlet {
                 uri = uri.substring(path.length());
 
             System.out.println("DispatcherAction.service.uri:" + uri);
+
+            // MC 헤더 푸터 적용 {
+            if (uri.contains("/mc/")) {
+                headerAction = new MCHeaderAction();
+                footerAction = new MCFooterAction();
+            }
+            // } MC 헤더 푸터 적용
 
             SuperAction sa = map.get(uri);
             sa = (sa == null) ? notFoundAction : sa;

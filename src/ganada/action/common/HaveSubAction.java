@@ -9,22 +9,23 @@ import javax.servlet.http.HttpSession;
 
 public abstract class HaveSubAction implements SuperAction {
 
-    protected static Map<String, SuperAction> actions = new HashMap<String, SuperAction>();
+    protected static Map<String, SuperAction> subActions = new HashMap<String, SuperAction>();
+    protected static Map<String, String> actionURLs = new HashMap<String, String>();
+        
+    protected abstract void doBefore(HttpServletRequest request, HttpServletResponse response) throws Exception;
 
     @Override
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	HttpSession session = request.getSession();
-	String url = "";
-	for (String key : actions.keySet()) {
-	    try {
-		url = actions.get(key).executeAction(request, response);
-		session.setAttribute(key, url);
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
-	}
-	return exe(request, response);
+        doBefore(request, response);
+        for (String key : subActions.keySet()) {
+            try {
+                actionURLs.put(key, subActions.get(key).executeAction(request, response));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return doAfter(request, response);
     }
 
-    public abstract String exe(HttpServletRequest request, HttpServletResponse response) throws Exception;
+    protected abstract String doAfter(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

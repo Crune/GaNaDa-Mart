@@ -19,14 +19,14 @@ public class AccountTest extends DBTester{
 	    account = new Account();
 
         account = new Account();
-        account.setName("테스터");
+        account.setName("쌜리");
         account.setInfo("");
         
-        account.setEmail("test@test.com");
-        account.setId("test");
-        account.setPasswd("1234");
+        account.setEmail("sally@test.com");
+        account.setId("sally");
+        account.setPasswd("4844");
         
-        account.setBirthday("1986-04-15");
+        account.setBirthday("2000-01-01");
         account.setLunisolar(1);
         account.setGender(1);
 
@@ -41,8 +41,6 @@ public class AccountTest extends DBTester{
 		AccountDao dao = AccountDao.getInstance();
 		try {
 		    dao.insertAccount(account);
-            List<String> str = (ArrayList<String>) dao.getAccounts("test");
-            System.out.println(str);
         } catch (Exception e) {
             e.printStackTrace();
         }
