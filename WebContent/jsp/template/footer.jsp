@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 <style type="text/css">
 .global_footer_link_list .global_link1 h4 a {
@@ -131,13 +132,13 @@ h4.global_footer_link_tit a {
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js"></script>
 
 <!-- CP Javascript -->
-<script src="./js/global_renewal.js"></script>
-<script src="./js/LogInOut.js"></script>
+<script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
+<script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
 
 <!-- Custom Javascript -->
-<script src="./js/default.js"></script>
+<script src="${pageContext.request.contextPath}/js/default.js"></script>
 </body>
 </html>

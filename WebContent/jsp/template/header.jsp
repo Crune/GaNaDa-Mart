@@ -10,8 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${sessionScope.pageTitle }</title>
 
-<link href="./css/default.css" rel="stylesheet" type="text/css">
-<link href="./css/nike.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/default.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/nike.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
