@@ -1,6 +1,8 @@
 package ganada.obj.product;
 
 import ganada.core.*;
+
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +28,12 @@ public class ItemReviewDao {
 	private ItemReviewDao() {
 	}
 
+	private Connection getConnection() throws Exception{
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context) initCtx.lookup("java:comp/env");
+		DataSource ds = (DataSource) envCtx.lookup("jdbc/orcl");
+		return ds.getConnection();
+	}
 	
 
     public void insert(ItemReview article) {
@@ -87,14 +95,17 @@ public class ItemReviewDao {
 	
 
 	// 특정 상품번호로 review 
-	 public ItemReview getReview(String itemnum) throws Exception {
+	 public List<ItemReview> getReview(String itemnum) throws Exception {
 			DB db = new DB();
-			ItemReview review = null;
+			List<ItemReview> reviewList = null;
 			int x = 0;
 			try {
-			    db.S("*", "REVIEW", "ITEMNUM=?").var(itemnum).exe();
+			    db.S("*", "REVIEW", "ITEMNUM=?","reg_date desc").var(itemnum).exe();
 			    if (db.next()) {
-				review = new ItemReview();
+				reviewList = new ArrayList<ItemReview>();
+				do{
+					ItemReview review = new ItemReview();
+				
 				review.setNum(db.getInt("num"));
 				review.setItemnum(db.getString("itemnum"));
 				review.setItemname(db.getString("itemname"));
@@ -113,13 +124,15 @@ public class ItemReviewDao {
 				review.setReadcount(db.getInt("readcount"));
 				review.setReg_date(db.getTimestamp("reg_date"));
 				
+				reviewList.add(review);
+			    }while(db.next());
 			    }
 			} catch (Exception ex) {
 			    ex.printStackTrace();
 			} finally {
 			    db.finalize();
 			}
-			return review;
+			return reviewList;
 		    }
 	 
 	 //전체 등록수 카운트
@@ -139,19 +152,31 @@ public class ItemReviewDao {
 	 
 	 //상품번호의 리뷰 카운트...
 	public int getArticleCount(String itemnum) throws Exception {
-		DB db = new DB();
+		//DB db = new DB();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		ItemReview review = null;
 		int x = 0;
-
+		int num = Integer.parseInt(itemnum);
 		try {
-			db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe();
+			conn = getConnection();
+			String sql="select count(*) from review where itemnum="+num;
+			pstmt = conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				x=rs.getInt(1);
+			}
+			//db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe();
 
-			if (db.next())
-				x = db.getInt("1");
+		//	if (db.next())
+		//		x = db.getInt("1");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			db.finalize();
+			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 		}
 		return x;
 	}
