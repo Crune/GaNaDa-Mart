@@ -3,6 +3,7 @@ import java.io.File;
 import java.sql.Timestamp;
 import java.util.Enumeration;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
@@ -16,11 +17,16 @@ public class ReviewProAction implements SuperAction {
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String filename="";
-		String path = request.getRealPath("img");
+		String realFolder="";
+		String saveFolder="/img";
+		//String path = request.getRealPath("img");
 		int maxSize = 1024*1024*5; 
 		String enc = "UTF-8";
 		DefaultFileRenamePolicy dp = new DefaultFileRenamePolicy();
-		MultipartRequest mr = new MultipartRequest(request,path,maxSize,enc,dp);
+		
+		ServletContext context = request.getSession().getServletContext();
+		realFolder = context.getRealPath(saveFolder);
+		MultipartRequest mr = new MultipartRequest(request,realFolder,maxSize,enc,dp);
 		
 		Enumeration<?> files = mr.getFileNames();
 		
