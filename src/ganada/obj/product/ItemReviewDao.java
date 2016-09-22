@@ -158,7 +158,11 @@ public class ItemReviewDao {
 		ResultSet rs = null;
 		ItemReview review = null;
 		int x = 0;
+		if(itemnum == null){
+			itemnum ="0";
+		}
 		int num = Integer.parseInt(itemnum);
+		
 		try {
 			conn = getConnection();
 			String sql="select count(*) from review where itemnum="+num;

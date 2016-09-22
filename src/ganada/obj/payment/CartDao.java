@@ -44,7 +44,7 @@ public class CartDao {
     	   DB db = new DB();
     		Product product = new Product();
     	 
-    		db.S("*", "PRODUCT", "PD_CODE=?").var(item_id).exe();
+    		db.S("*", "product", "num=?").var(item_id).exe();
 		    if (db.next()) {
 		    	product.setPd_name(db.getString("name"));
 		    	product.setPd_price(db.getInt("price"));
