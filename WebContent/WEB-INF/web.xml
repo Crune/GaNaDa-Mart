@@ -28,14 +28,18 @@
   </resource-ref>
   
   
-       <jsp-config>
-       <taglib>
-         <taglib-uri>
-           http://some.thing/mine
-         </taglib-uri>
-         <taglib-location>
-           /WEB-INF/tld/menu.tld
-         </taglib-location>
-       </taglib> 
-       </jsp-config>
+  <jsp-config>
+  <taglib>
+    <taglib-uri>
+      http://some.thing/mine
+    </taglib-uri>
+    <taglib-location>
+      /WEB-INF/tld/menu.tld
+    </taglib-location>
+  </taglib> 
+  </jsp-config>
+       
+  <session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
 </web-app>
