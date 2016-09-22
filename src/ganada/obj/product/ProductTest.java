@@ -15,8 +15,8 @@ public class ProductTest extends DBTester {
     public static void init() {
     	productOrg = new Product(); 	
     	productOrg.setMenu_code("1234");						//메뉴코드
-    	productOrg.setPd_name("나이키 루나에픽 로우 플라이니트 ULTD");	//상품명
-    	productOrg.setPd_price(120000);							//가격
+    	productOrg.setPd_name("나이키 루나에픽 로우");	//상품명
+    	productOrg.setPd_price(240000);							//가격
     	productOrg.setPd_infocode1("1");	//상품정보코드
     	productOrg.setPd_infocode2("2");	//상품정보코드
     	productOrg.setPd_infocode3("3");	//상품정보코드

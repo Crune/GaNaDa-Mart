@@ -40,7 +40,6 @@ public class ProductImageDao {
 	        
 	        try {
 	            sql.inSql("im_code", "product_image_seq.NEXTVAL");
-	            sql.in("im_code", article.getIm_code());
 	            sql.in("pd_code", article.getPd_code());
 	            sql.in("im_order", article.getIm_order());
 	            sql.in("im_path", article.getIm_path());
