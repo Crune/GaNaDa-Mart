@@ -26,15 +26,7 @@ public class DB {
 	private boolean needReturn = false;
 
     public static Timestamp getTime(String yyyyMMdd) {
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            try {
-                dateFormat.parse(yyyyMMdd);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            Calendar cal = dateFormat.getCalendar();        
-           return new Timestamp(cal.getTime().getTime());
+           return string2Timestamp(yyyyMMdd,"yyyy-MM-dd");
     }
 	public static Timestamp string2Timestamp(String time, String format) {
 	        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
