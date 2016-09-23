@@ -117,8 +117,12 @@
 					   </td>
 					   <td class="lns06">
 						  <a href="javascript:openLogin();"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
+						  
+						  
 						  <a href="javascript:fn_deleteCartItem('ONE', '60673823', 'NK31073830');fn_catalystDelCart('844595-708');">
 						  <img src="<%=root%>/img/cart/btn_delete.gif" alt="삭제"></a>
+	 
+	 
 				        </td>
 					</tr>
 				    </c:forEach>
@@ -146,9 +150,9 @@
 	    	 <button type="button" id="goShop" name="goShop" class="btn btn-primary">쇼핑계속하기</button>
 	      </c:if>	 
 	       <c:if test="${itemList != null && itemList.size() > 0 }">
-	    	 <button type="button"  id="goShop" name="goShop" class="btn btn-primary">쇼핑계속하기</button>
+	    	 <button type="button"  id="goShop" name="goShop" class="btn btn-primary" action="/page.gnd?code=MAIN">쇼핑계속하기</button>
 	    	<!--  <button type="button" class="btn btn-primary">비회원주문하기</button> -->
-	    	 <button type="button" id="order" name="order" class="btn btn-primary">주문하기</button>
+	    	 <button type="button" id="order" name="order" class="btn btn-primary" action="/page.gnd?code=MAIN">주문하기</button>
 	      </c:if>	 
 	       </div>
 	     </div>

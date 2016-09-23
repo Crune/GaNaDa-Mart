@@ -100,7 +100,7 @@ public class DB {
 
 	/**
 	 * @param args
-	 *            : VALUE / TABLE / WHERE / ORDER BY (DESC / ASC)
+	 *            : COLUMN / TABLE / WHERE / ORDER BY (DESC / ASC)
 	 * @return SQL Statement for String Type
 	 * @throws Exception
 	 */
@@ -179,49 +179,26 @@ public class DB {
 		return query;
 	}
 
-	public DB var(String var) throws Exception {
-		if (var.isEmpty())
-			var = "null";
-		this.pstmt.setString(pstmtNum++, var);
-		return this;
-	}
-
-	public DB var(int var) throws Exception {
-		this.pstmt.setInt(pstmtNum++, var);
-		return this;
-	}
-
-	public DB var(double var) throws Exception {
-		this.pstmt.setDouble(pstmtNum++, var);
-		return this;
-	}
-
-	public DB var(boolean var) throws Exception {
-		this.pstmt.setString(pstmtNum++, (var ? 'T' : 'F') + "");
-		return this;
-	}
-
-	public DB var(Timestamp var) throws Exception {
-		this.pstmt.setTimestamp(pstmtNum++, var);
-		return this;
-	}
-
 	public DB var(Object var) throws Exception {
 		if (var == null) {
 			System.out.println("DB.var:null 데이터 주입!");
 			return null;
+		} else {
+    		if (var.getClass() == java.lang.String.class){
+    	        if (((String) var).isEmpty())
+    	            var = "null";
+    	        this.pstmt.setString(pstmtNum++, (String) var);
+    		}
+    		if (var.getClass() == java.lang.Integer.class)
+    		    this.pstmt.setInt(pstmtNum++, (int)var);
+    		if (var.getClass() == java.lang.Double.class)
+    		    this.pstmt.setDouble(pstmtNum++,(double) var);
+    		if (var.getClass() == java.lang.Boolean.class)
+    		    this.pstmt.setString(pstmtNum++, ((boolean) var ? 'T' : 'F') + "");
+    		if (var.getClass() == java.sql.Timestamp.class)
+    		    this.pstmt.setTimestamp(pstmtNum++, (Timestamp) var);
+    		return this;
 		}
-		if (var.getClass() == java.lang.String.class)
-			var((String) var);
-		if (var.getClass() == java.lang.Integer.class)
-			var((int) var);
-		if (var.getClass() == java.lang.Double.class)
-			var((double) var);
-		if (var.getClass() == java.lang.Boolean.class)
-			var((boolean) var);
-		if (var.getClass() == java.sql.Timestamp.class)
-			var((Timestamp) var);
-		return this;
 	}
 
 	public ResultSet exe() throws Exception {
