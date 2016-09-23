@@ -1,11 +1,15 @@
 package ganada.obj.common;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.sun.xml.internal.ws.encoding.soap.SOAP12Constants;
 
 import ganada.core.DB;
 import ganada.core.DB.Insert;
 import ganada.core.DB.Update;
+import ganada.core.NULL;
 
 public class LogDBDao {
 
@@ -41,23 +45,29 @@ public class LogDBDao {
         }
     }
 
-    public List<LogDB> getLogs(Timestamp start) throws Exception {
-        return getLogs(start);
-    }    
-    
     public List<LogDB> getLogs(Timestamp time1, Timestamp time2) throws Exception {
         DB db = new DB();
-        List<LogDB> logs = null;
+        List<LogDB> logs = new ArrayList<LogDB>();
         LogDB curLog = null;
 
         long hour = 1000*60*60;
-        if (time2 == null) new Timestamp(System.currentTimeMillis()+hour);
-        if (time1 == null) new Timestamp(System.currentTimeMillis()-hour);
+        long gmt = 9*hour;
+        time1 = (Timestamp) NULL.R(time1, new Timestamp(System.currentTimeMillis()-gmt));
+        time2 = (Timestamp) NULL.R(time2, new Timestamp(System.currentTimeMillis()-gmt-hour));
         try {
+            System.out.println("LOG호출:"+time2.toString()+" ~ "+time1.toString());
             db.S("*", "LOG", "LOG_REG_DATE BETWEEN ? AND ?").var(time1).var(time2).exe();
             while (db.next()) {
-                curLog = new LogDB(db.getString("MSG"));
-                curLog.setLog_code(db.getString("CODE"));
+                curLog = new LogDB(db.getString("LOG_MSG"));
+                curLog.setLog_code(db.getString("LOG_CODE"));
+                curLog.setLog_type(db.getString("LOG_TYPE"));
+                curLog.setLog_group1(db.getString("LOG_GROUP1"));
+                curLog.setLog_group2(db.getString("LOG_GROUP2"));
+                curLog.setLog_value(db.getString("LOG_VALUE"));
+                curLog.setLog_reg_date(db.getTimestamp("LOG_REG_DATE"));
+                logs.add(curLog);
+                
+                curLog.toJSONString();
             }
         } catch (Exception e) {
             e.printStackTrace();
