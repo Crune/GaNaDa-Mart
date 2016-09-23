@@ -7,7 +7,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,6 +25,27 @@ public class DB {
 	private int pstmtNum = 0;
 	private boolean needReturn = false;
 
+    public static Timestamp getTime(String yyyyMMdd) {
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+                dateFormat.parse(yyyyMMdd);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Calendar cal = dateFormat.getCalendar();        
+           return new Timestamp(cal.getTime().getTime());
+    }
+	public static Timestamp string2Timestamp(String time, String format) {
+	        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+	        try {
+	            dateFormat.parse(time);
+	        } catch (ParseException e) {
+	            e.printStackTrace();
+	        }
+	        Calendar cal = dateFormat.getCalendar();        
+	       return new Timestamp(cal.getTime().getTime());
+	}
 	public static String getEncSHA256(String txt) throws NoSuchAlgorithmException {
 		StringBuffer sbuf = new StringBuffer();
 
