@@ -3,14 +3,41 @@ package ganada.obj.common;
 import java.sql.Timestamp;
 
 public class LogDB {
-    private String log_code="";
-    private String log_type="";
-    private String log_group1="";
-    private String log_group2="";
-    private String log_msg="";
-    private String log_value="";
-    private Timestamp log_reg_date;
-        
+    private static String log_code="";
+    private static String log_type="";
+    private static String log_group1="";
+    private static String log_group2="";
+    private static String log_msg; // NOT NULL !!
+    private static String log_value="";
+    private static Timestamp log_reg_date;
+    
+    public final static String INFO = ".";
+    public final static String CODE_YELLOW = "?";
+    public final static String CODE_RED = "!";
+    public final static String TRACE = "TR";
+    public final static String MSG = "TR";
+
+    LogDB(String type, String group1, String group2, String msg, String value) { 
+        init(type, group1, group2, msg, value);
+    }    
+    LogDB(String type, String group1, String group2, String msg) {    
+        init(type, group1, group2, msg, "");
+    }    
+    LogDB(String type, String group, String msg) {
+        init(type, group, "", msg, "");
+    }    
+    LogDB(String msg) {
+        init("", "", "", msg, "");
+    }
+    
+    public static void init(String type, String group1, String group2, String msg, String value) { 
+        log_type = type;
+        log_group1 = group1;
+        log_group2 = group2;        
+        log_msg = msg; 
+        log_value = value;
+    }
+    
     public String toString() {
         String result = "LogDB{"
                 +"log_code:"+log_code
@@ -61,7 +88,7 @@ public class LogDB {
         this.log_value = log_value;
     }
     public Timestamp getLog_reg_date() {
-        return log_reg_date;
+        return new Timestamp(log_reg_date.getTime() + 9*60*60*1000);
     }
     public void setLog_reg_date(Timestamp log_reg_date) {
         this.log_reg_date = log_reg_date;
