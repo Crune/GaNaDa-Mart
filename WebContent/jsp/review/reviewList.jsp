@@ -50,7 +50,9 @@
 </td>
 </tr>
 <tr>
-<td rowspan="4" align="left">${review.getContent()}</td>
+<td rowspan="4" align="left">
+
+${review.getContent()}</td>
 <td align="left" > <c:if test="${review.getSiz() != null }"><b>사이즈</b></c:if></td>
 <td align="left"><c:if test="${review.getSiz() == 1}"> 큰</c:if>
 <c:if test="${review.getSiz() == 0 }"> 보통 </c:if>

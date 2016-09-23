@@ -27,7 +27,7 @@ public class ReviewProAction implements SuperAction {
 		ServletContext context = request.getSession().getServletContext();
 		realFolder = context.getRealPath(saveFolder);
 		MultipartRequest mr = new MultipartRequest(request,realFolder,maxSize,enc,dp);
-		
+		String sysName = mr.getFilesystemName("save");
 		Enumeration<?> files = mr.getFileNames();
 		
 		while(files.hasMoreElements()){
@@ -72,6 +72,7 @@ public class ReviewProAction implements SuperAction {
 		ird.insert(review);
 		
 		request.setAttribute("itemnum", itemnum);
+		request.setAttribute("sysName", sysName);
 		return "/jsp/review/reviewPro.jsp";
 	}
 
