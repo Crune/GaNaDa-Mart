@@ -51,6 +51,9 @@
 </tr>
 <tr>
 <td rowspan="4" align="left">
+	<c:if test="${review.img != null}">
+		<img src="./img/${review.img}" width="100px"><br />
+	</c:if>
 
 ${review.getContent()}</td>
 <td align="left" > <c:if test="${review.getSiz() != null }"><b>사이즈</b></c:if></td>
