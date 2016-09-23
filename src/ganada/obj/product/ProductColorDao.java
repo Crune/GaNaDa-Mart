@@ -18,7 +18,7 @@ public class ProductColorDao {
 		DB db = new DB();
 		ProductColor productColor = null;
 		try {
-		    db.sql("").var(c_code).exe();
+		    db.S("*", "product_color", "c_code=?").var(c_code).exe();
 		    if (db.next()) {
 		    	productColor = new ProductColor();
 		    	productColor.setC_code(db.getString("c_code"));

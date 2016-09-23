@@ -16,26 +16,16 @@
 	   		<tr>
 	    		<td width="170" align="center">상품명</td>
 	    		<td width="330">
-	      			<input type="text" size="40" name="name"></td>
+	      			<input type="text" size="40" name="pd_name"></td>
 	  		</tr>
 	  		<tr>
 	    		<td align="center">가격</td>
 	    		<td width="330">
-					<input type="text" size="40" name="price"></td>
-			<tr>
-	    		<td align="center">할인가격</td>
-	    		<td width="330">
-	       			<input type="text" size="40" name="discount"></td>
-	  		</tr>
+					<input type="text" size="40" name="pd_price"></td>
 	  		<tr>
 	    		<td align="center">색상</td>
 	    		<td width="330">
 	       			<input type="text" size="40" name="color" ></td>
-	  		</tr>
-	  		<tr>
-	    		<td align="center">색상코드</td>
-	    		<td width="330">
-	       			<input type="text" size="40" name="colorcode" ></td>
 	  		</tr>
 	  		<tr>
 	    		<td align="center">색상이미지업로드</td>

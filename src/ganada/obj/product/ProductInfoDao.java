@@ -18,7 +18,7 @@ public class ProductInfoDao {
 		DB db = new DB();
 		ProductInfo productInfo = null;
 		try {
-		    db.sql("").var(pd_infocode).exe();
+		    db.S("*", "product_info", "pd_infocode=?").var(pd_infocode).exe();
 		    if (db.next()) {
 		    	productInfo = new ProductInfo();
 		    	productInfo.setPd_infocode(db.getString("pd_infocode"));
