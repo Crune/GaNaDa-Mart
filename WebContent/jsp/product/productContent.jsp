@@ -51,47 +51,51 @@
 		</tr>
 		<tr>
 			<td>화살표</td>
-			<td rowspan="10" width="500"><img name="center" src="#">중단사진</td>
-			<td colspan="2">${product.name }<br />카테고리</td>
+			<td rowspan="10" width="500"><img name="center" src="#">중단사진
+				<c:forEach var="imageList" items="${productImageList}">
+					<br>${imageList.im_name}
+				</c:forEach>
+			</td>
+			<td colspan="2">${product.pd_name }<br />카테고리</td>
 		</tr>
 		<tr>
-			<td><img name="right" src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60" onClick="javascript:chgimg();" /></td>
-			<c:if test="${product.discount == null }">
-				<td><fmt:formatNumber value="${product.price }" /></td>
+			<td><img name="right" src="/GaNaDa-Mart/img/product/right" width="100" height="60" onClick="javascript:chgimg();" /></td>
+			<c:if test="${product.pd_price != null }">
+				<td><fmt:formatNumber value="${product.pd_price }" /></td>
 			</c:if>
-			<c:if test="${product.discount != null }">
-				<td><strike><font><fmt:formatNumber value="${product.price }" /></font></strike>
-					<fmt:formatNumber value="${product.discount }" />
+			<c:if test="${product.pd_price == null }">
+				<td><strike><font><fmt:formatNumber value="${product.pd_price }" /></font></strike>
+					<fmt:formatNumber value="${product.pd_discount }" />
 				</td>
 			</c:if>
 			<td align="right">별점</td>
 		</tr>
 		<tr>
-			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
+			<td><img src="/GaNaDa-Mart/img/product/left" width="100" height="60">${productimage.im_name}</td>
 			<td>카드사별 무이자 할부 안내</td>
 			<td align="right"><br /><a href="#">혜택자세히보기</a></td>
 		</tr>
 		<tr>
-			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
-			<td>${product.color }</td>
-			<td align="right">${product.colorcode }(get)</td>
+			<td><img src="/GaNaDa-Mart/img/product/bot" width="100" height="60">${productimage.im_name}</td>
+			<td>${productcolor.c_name }</td>
+			<td align="right">${productcolor.c_code }(get)</td>
 		</tr>
 		<tr>
-			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
+			<td><img src="/GaNaDa-Mart/img/product/top" width="100" height="60">${productimage.im_name}</td>
 			<td colspan="2">
-				<c:forTokens var="ci" items="${product.colorimage}" delims="/">
+				<c:forTokens var="ci" items="${productimage.im_order}" delims="/">
 					<img src="#">${ci }
 				</c:forTokens>
 			</td>
 		</tr>
 		<tr>
-			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
+			<td><img src="/GaNaDa-Mart/img/product/image" width="100" height="60">${productimage.im_name}</td>
 			<td colspan="2">가격인하제품 아래 제품 목록은 할인된 가격으로 판매합니다</td>
 		</tr>
 		<tr>
-			<td><img src="/GaNaDa-Mart/img/product/${pdImageSt.nextToken()}" width="100" height="60"></td>
+			<td><img src="/GaNaDa-Mart/img/product/back" width="100" height="60">${productimage.im_name}</td>
 			<td colspan="2">
-			<c:forTokens var="ci" items="${product.colorimage}" delims="/">
+			<c:forTokens var="ci" items="${productimage.im_order}" delims="/">
 					<img src="#">${ci }
 			</c:forTokens>
 			</td>
@@ -127,7 +131,7 @@
 		</tr>
 		<tr>
 			<td rowspan="2">&nbsp;</td>
-			<td colspan="2"><a href="#">${product.name }</a>에 대해 더 알아보세요.<br /> 
+			<td colspan="2"><a href="#">${product.pd_name }</a>에 대해 더 알아보세요.<br /> 
 				페이지 하단의<a href="#review">스토어 리뷰</a>를 통해 매장 스페셜리스트의 상세한 리뷰를 확인해보세요.<br />
 			</td>
 		</tr>
@@ -136,7 +140,7 @@
 		</tr>
 	</table>
 	 <input type="button" value="글수정" 
-       onclick="document.location.href='pdpUpdate.gnd?num=${product.num}'">
+       onclick="document.location.href='pdpUpdate.gnd?num=${product.pd_code}'">
 	</form>
 	<br />
 	<table border="1" width="1000" align="center">
@@ -175,7 +179,12 @@
 			<td align="center">교환/반품/AS</td>
 		</tr>
 		<tr>
-			<td colspan="4" align="center"><img src="#"></td>
+			<td colspan="4" align="center"><img src="#">
+			${productinfo1.pd_infocontent }<br />
+			${productinfo2.pd_infocontent }<br />
+			${productinfo3.pd_infocontent }<br />
+			${productinfo4.pd_infocontent }<br />
+			</td>
 		</tr>
 	</table>
 	<br />

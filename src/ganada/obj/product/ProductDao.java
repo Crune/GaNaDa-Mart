@@ -18,7 +18,7 @@ public class ProductDao {
 			DB db = new DB();
 			Product product = null;
 			try {
-			    db.sql("").var(pd_code).exe();
+			    db.S("*", "product", "pd_code=?").var(pd_code).exe();
 			    if (db.next()) {
 			    	product = new Product();
 			    	product.setPd_code(db.getString("pd_code"));
@@ -27,9 +27,9 @@ public class ProductDao {
 			    	product.setPd_price(db.getInt("pd_price"));
 			    	product.setPd_reg_date(db.getTimestamp("pd_reg_date"));
 			    	product.setPd_infocode1(db.getString("pd_infocode1"));
-			    	product.setPd_infocode1(db.getString("pd_infocode2"));
-			    	product.setPd_infocode1(db.getString("pd_infocode3"));
-			    	product.setPd_infocode1(db.getString("pd_infocode4"));
+			    	product.setPd_infocode2(db.getString("pd_infocode2"));
+			    	product.setPd_infocode3(db.getString("pd_infocode3"));
+			    	product.setPd_infocode4(db.getString("pd_infocode4"));
 				}
 			} catch (Exception ex) {
 			    ex.printStackTrace();

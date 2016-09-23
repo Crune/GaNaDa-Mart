@@ -1,5 +1,5 @@
 package ganada.action.product;
-
+/*
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,3 +19,4 @@ public class ProductDeleteProAction implements SuperAction{
 		return "/jsp/product/productDeletePro.jsp";
 	}
 }
+*/

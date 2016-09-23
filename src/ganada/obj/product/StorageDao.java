@@ -19,7 +19,7 @@ private static StorageDao instance = new StorageDao();
 		DB db = new DB();
 		Storage storage = null;
 		try {
-		    db.sql("").var(st_code).exe();
+		    db.S("*", "storage", "st_code=?").var(st_code).exe();
 		    if (db.next()) {
 		    	storage = new Storage();
 		    	storage.setSt_code(db.getString("st_code"));
