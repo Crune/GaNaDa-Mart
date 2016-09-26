@@ -43,7 +43,7 @@ public class CartListAction implements SuperAction{
 			for(Cart vo : cartList){
 				total =0;
 				// 장바구니에 있는 각각의 상품코드를 통해서 상품에 대한 가격정보, 상품명 을 가져온다.
-				Product pVo  = cartDao.getProduct(vo.getItem_id());
+				Product pVo  = (Product) cartDao.select(vo.getItem_id());
 				total = pVo.getPd_price() * vo.getItem_cnt();
 
 				vo.setItem_price(pVo.getPd_price());

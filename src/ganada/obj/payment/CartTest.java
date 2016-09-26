@@ -27,7 +27,7 @@ public class CartTest extends DBTester {
 	public void test() {
 		CartDao dao = CartDao.getInstance();
 		try {
-		    dao.insertCart(CartOrg);
+		    dao.insert(CartOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
