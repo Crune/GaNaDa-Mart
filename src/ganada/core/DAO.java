@@ -48,8 +48,8 @@ public abstract class DAO {
             	Object getValue = m.invoke(obj);
                 if (getValue != null) sql.in(cName(m), getValue);
             }            
-            if (!t.getCNameReg().isEmpty()) sql.inSql("REG_DATE", "sysdate");
-            if (!t.getCNameMod().isEmpty()) sql.inSql("MOD_DATE", "sysdate");
+            if (!t.getCNameReg().isEmpty()) sql.inSql(t.getCNameReg(), "sysdate");
+            if (!t.getCNameMod().isEmpty()) sql.inSql(t.getCNameMod(), "sysdate");
             sql.run();
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,6 +92,7 @@ public abstract class DAO {
                 		sql.set(name, getValue);
                 }
             }            
+            if (!t.getCNameMod().isEmpty()) sql.setSql(t.getCNameMod(), "sysdate");
             sql.run();
         } catch (Exception ex) {
             ex.printStackTrace();
