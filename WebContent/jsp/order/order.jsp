@@ -116,6 +116,8 @@
 						  <p><strong>이벤트 할인</strong></p>
 						  <p class="mt05"><a href="javascript:promotionCode();"><img src="<%=root%>/img/cart//btn_promotion.gif" alt="프로모션 코드 등록"></a></p>
 						  <input type="hidden" name="codeNo" maxlength="20"> 
+						  
+						  
 					    </th>
 	                    <td>
 				          <p>한슬기님께서 보유하고 계신 프로모션 코드내역입니다. 사용을 원하실 경우 라디오박스를 선택해 주세요.</p>
