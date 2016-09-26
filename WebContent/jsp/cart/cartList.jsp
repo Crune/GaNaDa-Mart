@@ -37,7 +37,7 @@
 	  });
 	  
 	  $("#order").bind("click", function(){
-		  $(location).attr('href',"<%=root%>/orderForm.gnd");
+		  $(location).attr('href',"<%=root%>/order.gnd");
 	  });	
 	  
   }
@@ -57,9 +57,50 @@
       }
   }
   
+  function changeAmount(item_id, cnt, type) {
+	 
+	  var id ="qty_"+ item_id + "_" + cnt;
+	  
+	  var itemCnt =  Number($("#"+id).val());
+	 
+	  if(type =="up"){
+		  itemCnt = itemCnt +1;
+		  $("#"+id).val(itemCnt);
+		  
+		 
+	 }else if(type =="down"){
+		 
+		 if(itemCnt == 1){
+			 alert("제품은 최소 1개이상 선택되어야합니다.");
+			 return false;
+		
+		 }else if (itemCnt > 1){
+			 itemCnt = itemCnt -1;
+		 }
+		 itemCnt = itemCnt -1;
+		  $("#"+id).val(itemCnt);
+
+	 }
+  }
+  function modifyAmount(cart_id, item_id, cnt){
+  
+  var id ="qty_"+ item_id + "_" + cnt;
+  var itemCnt =  Number($("#"+id).val());
+  
+  $("updateForm").find("#item_cnt").val(itemCnt);
+  $("updateForm").find("#cart_id").val(cart_id);
+  
+  var form = $("updateForm");
+  
+  from.submit();
+  }
   window.onload = init;
   </script>
    <form id="cartForm" method="post"></form>
+   <form id="updateForm" method="post" action="<%=root%>/cartUpdate.gnd">
+   <jinput type="hidden" id="item_cnt" name="item_cnt" value="">
+   <jinput type="hidden" id="cart_id" name="cart_id" value="">
+   </form>
    <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
      <input type="hidden" id="item_num" name="item_num" value="" />
      <input type="hidden" id="cart_id" name="cart_id" value="" />
@@ -102,7 +143,7 @@
 					  <tr>
 						<th scope="col">
 						 <label class="hidden" for="check">선택</label>
-						 <input type="checkbox" id="check">
+						 <input type="checkbox" id="checkAll">
 						</th>
 						<th scope="col">상품</th>
 						<th scope="col">상품금액</th>
@@ -112,10 +153,10 @@
 					 </tr>
 				    </thead>
 					<tbody>
-					<c:forEach var="vo" items="${itemList}">
+					<c:forEach var="vo" items="${itemList}" varStatus="status">
 					 <tr>
 					  <td class="lns01">
-					   <input type="checkbox" id="check_${vo.item_name}" checked="checked">
+					   <input type="checkbox" id="check_${vo.item_id}" name="cart_check" value="${vo.item_id}" checked="checked">
 					 </td>
 					  <td class="lns02">
 						   <div class ="ms">
@@ -135,13 +176,13 @@
 					   </td>
 					   <td class="lns04">
                          <label class="hidden" for="amountType02">수량입력</label>
-                         <input name="qty" title="수량선택" class="qty" id="qty0_10" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="1">
+                         <input name="qty" title="수량선택" class="qty" id="qty_${vo.item_id}_${status.count}" readonly="readonly" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="1">
 						  <div class="option">
-				               <a href="#"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
-							   <a href="#"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
+				               <a href="javascript:void(0)" onclick="javascript:changeAmount ('${vo.item_id}',${status.count}, 'up')"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
+							   <a href="javascript:void(0)" onclick="javascript:changeAmount ('${vo.item_id}',${status.count}, 'down')"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
 				          </div>
 					      <div>
-						    <a title="변경" href="javascript:$('input[name=&quot;chkdel&quot;]', document.cartForm).get('0').checked=true;fn_updateOrderQuantity('0', '60670243', 1, 'on');">
+						    <a title="변경" href="javascript:void(0);" onclick="javascript:modifyAmount('${vo.cart_id}','${vo.item_id}', ${ststus.cont})"></a>
 						    <img alt="변경" src="<%=root%>/img/cart/order_count_modify_btn.gif"></a>						   
 						 </div>
 				       </td>
