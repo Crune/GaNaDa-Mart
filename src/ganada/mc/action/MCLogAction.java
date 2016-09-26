@@ -27,15 +27,17 @@ public class MCLogAction implements SuperAction {
         List<LogDB> logs;
 
         String ajaxStr="";
-        String reqTime1 = NULL.toDQ(request.getParameter("code")); 
-        String reqTime2 = NULL.toDQ(request.getParameter("code")); 
+        String reqTime1 = NULL.toDQ(request.getParameter("st")); 
+        String reqTime2 = NULL.toDQ(request.getParameter("en")); 
         Timestamp time1 = null, time2 = null;
         if (!reqTime1.isEmpty()) {
-            time1 = DB.string2Timestamp(reqTime1, "yyyy-mm-dd hh:mm:ss");
+            time1 = DB.string2Timestamp(reqTime1, "yyyy-MM-dd/hh:mm");
         }
         if (!reqTime2.isEmpty()) {
-            time2 = DB.string2Timestamp(reqTime2, "yyyy-mm-dd hh:mm:ss");
+            time2 = DB.string2Timestamp(reqTime2, "yyyy-MM-dd/hh:mm");
         }
+        
+        System.out.println("mm:"+time1.toString());
         
         //최종 완성될 JSONObject 선언(전체)
         JSONObject json = new JSONObject();

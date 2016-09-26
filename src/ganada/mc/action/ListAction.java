@@ -9,9 +9,13 @@ public class ListAction implements SuperAction{
 
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+<<<<<<< HEAD
 		List<Product> plist = null;
 		String pd_code = request.getParameter("pd_code");
 		int count = 0;
+=======
+		List<Product> List = null;
+>>>>>>> branch 'master' of https://github.com/Crune/GaNaDa-Mart.git
 		
 		ProductDao process = ProductDao.getInstance();
 		count = process.getCount();

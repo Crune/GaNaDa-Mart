@@ -46,4 +46,8 @@
 	</div>
 </div>
 
-<div class="well">로그</div>
+<div class="well">
+    <div class="log">
+        로그부분. 자바스크립트로 /mc/log.gnd 에서 json 객체를 얻어와야 함. 
+    </div>
+</div>

@@ -46,8 +46,8 @@ public class CartDao {
     	 
     		db.S("*", "product", "pd_code=?").var(item_id).exe();
 		    if (db.next()) {
-		    	product.setPd_name(db.getString("name"));
-		    	product.setPd_price(db.getInt("price"));
+		    	product.setPd_name(db.getString("pd_name"));
+		    	product.setPd_price(db.getInt("pd_price"));
 		    	//product.setDiscount(db.getInt("discount"));
 		    }   	   
     	   return product;

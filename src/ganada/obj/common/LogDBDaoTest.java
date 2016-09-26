@@ -25,8 +25,8 @@ public class LogDBDaoTest extends DBTester {
         try {
             //dao.newLog(tempLog);   
             List<LogDB> list = dao.getLogs(DB.getTime("1986-04-01"), null);
-            for (LogDB log : list) {
-                log.toJSONString();
+            for (LogDB cur : list) {
+                System.out.println(">"+cur.toJSONString());
             }
         } catch (Exception e) {
             e.printStackTrace();

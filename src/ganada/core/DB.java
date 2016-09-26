@@ -18,12 +18,19 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import ganada.obj.common.LogDB;
+import ganada.obj.common.LogDBDao;
+
 public class DB {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	private int pstmtNum = 0;
 	private boolean needReturn = false;
+	private String sql = "";
+	private boolean isLoged = false;
+	
+    private List<String> inData = new ArrayList<String>();
 
     public static Timestamp getTime(String yyyyMMdd) {
            return string2Timestamp(yyyyMMdd,"yyyy-MM-dd");
@@ -90,7 +97,10 @@ public class DB {
 			this.conn = getConnection();
 
 		needReturn = sql.toUpperCase().startsWith("SELECT");
-		System.out.println("SQL: " + sql);
+		//System.out.println("SQL: " + sql);
+		this.sql = sql;
+	    this.inData.clear();
+	    this.isLoged = false;
 
 		this.pstmt = conn.prepareStatement(sql);
 		pstmtNum = 1;
@@ -184,6 +194,7 @@ public class DB {
 			System.out.println("DB.var:null 데이터 주입!");
 			return null;
 		} else {
+	        inData.add(pstmtNum+"/"+var.toString());
     		if (var.getClass() == java.lang.String.class){
     	        if (((String) var).isEmpty())
     	            var = "null";
@@ -202,6 +213,17 @@ public class DB {
 	}
 
 	public ResultSet exe() throws Exception {
+	    if (!isLoged) {
+    	    System.out.println("SQL.Q: " + sql);
+            if (!inData.isEmpty())
+                System.out.println("SQL.?: " + inData);
+            isLoged = true;
+            
+            if (sql.contains("DELETE ")) {
+                LogDB log = new LogDB(LogDB.CODE_YELLOW, "DB", "DELETE", sql, inData+"");
+                LogDBDao.getInstance().newLog(log);
+            }
+	    }
 		if (!needReturn) {
 			this.pstmt.executeUpdate();
 		} else if (rs == null) {
