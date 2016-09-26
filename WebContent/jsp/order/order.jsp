@@ -118,7 +118,7 @@
 						  <input type="hidden" name="codeNo" maxlength="20"> 
 					    </th>
 	                    <td>
-				          <p>신동열님께서 보유하고 계신 프로모션 코드내역입니다. 사용을 원하실 경우 라디오박스를 선택해 주세요.</p>
+				          <p>한슬기님께서 보유하고 계신 프로모션 코드내역입니다. 사용을 원하실 경우 라디오박스를 선택해 주세요.</p>
 					      <p>
 					        <label class="hidden" for="couponRadio0">나이키닷컴 웰컴 쿠폰</label>
 					        <input type="radio" name="couponPromotionNo" id="couponRadio0" onclick="fn_setCouponPrc('11', '02', '10000', '0', '20615721');" value="485">
