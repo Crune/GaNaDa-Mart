@@ -33,7 +33,7 @@ public class MenuTest extends DBTester {
         menuOrg.setUpper("0");
 
         try {
-            dao.insertMenu(menuOrg);
+            dao.insert(menuOrg);
         } catch (Exception e) {
             e.printStackTrace();
         }

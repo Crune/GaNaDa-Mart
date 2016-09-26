@@ -22,7 +22,7 @@ public class ProductCatalogTest extends DBTester {
     public void test() {
         ProductCatalogDao dao = ProductCatalogDao.getInstance();
 		try {
-		    System.out.println(dao.count("1"));
+		    System.out.println(dao.select("0", "2").size());
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

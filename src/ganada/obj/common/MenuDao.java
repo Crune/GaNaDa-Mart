@@ -8,7 +8,7 @@ import java.util.Map;
 
 import ganada.core.*;
 
-public class MenuDao {
+public class MenuDao extends DAO {
     private static MenuDao instance = new MenuDao();
 
     public static MenuDao getInstance() {
@@ -25,6 +25,16 @@ public class MenuDao {
     private MenuDao() {
     }
 
+    private static DBTable t;
+	@Override
+	protected DBTable gT() {
+    	if (t == null) {
+    		t = new DBTable("MENU", "CODE");
+    		t.setCls("ganada.obj.common.Menu");
+    	}
+		return t;
+	}
+	
     private static List<Menu> menus = new ArrayList<Menu>();
     public static void refresh() {
         menus.clear();
@@ -71,79 +81,4 @@ public class MenuDao {
         return menus;        
     }
 
-    public void insertMenu(Menu menu) throws Exception {
-        DB db = new DB();
-        DB.Insert sql = db.new Insert("MENU");
-        try {
-            sql.in("CODE", menu.getCode());
-            sql.in("NAME", menu.getName());
-            sql.in("TYPE", menu.getType());
-            sql.in("UPPER", menu.getUpper());
-            sql.in("ORDER_LV", menu.getOrder_lv());
-            sql.in("TARGET_CODE", menu.getTarget());
-            sql.run();
-            refresh();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-    }
-
-    public void updateMenu(Menu menu) throws Exception {
-        DB db = new DB();
-        DB.Update sql = db.new Update("MENU");
-        try {
-            sql.set("CODE", menu.getCode());
-            sql.set("NAME", menu.getName());
-            sql.set("TYPE", menu.getType());
-            sql.set("UPPER", menu.getUpper());
-            sql.set("ORDER_LV", menu.getOrder_lv());
-            sql.set("TARGET_CODE", menu.getTarget());
-            sql.run();
-            refresh();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-    }
-
-    public int deleteMenu(String code) throws Exception {
-        DB db = new DB();
-        int x = -1;
-        try {
-            db.D("MENU", "CODE=?").var(code).exe();
-            refresh();
-            x = 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-        return x;
-    }
-
-    public Menu getMenu(String code) throws Exception {
-        DB db = new DB();
-        Menu menu = null;
-        try {
-            db.S("*", "MENU", "CODE=?").var(code).exe();
-            if (db.next()) {
-                menu = new Menu();                
-                menu.setCode(db.getString("CODE"));
-                menu.setName(db.getString("NAME"));
-                menu.setType(db.getInt("TYPE"));
-                menu.setUpper(db.getString("UPPER"));
-                menu.setOrder_lv(db.getInt("ORDER_LV"));
-                menu.setTarget(db.getString("TARGET_CODE"));
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-        return menu;
-    }
-    
 }

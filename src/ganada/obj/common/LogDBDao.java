@@ -6,12 +6,14 @@ import java.util.List;
 
 import com.sun.xml.internal.ws.encoding.soap.SOAP12Constants;
 
+import ganada.core.DAO;
 import ganada.core.DB;
+import ganada.core.DBTable;
 import ganada.core.DB.Insert;
 import ganada.core.DB.Update;
 import ganada.core.NULL;
 
-public class LogDBDao {
+public class LogDBDao extends DAO  {
 
     private static LogDBDao instance = new LogDBDao();
 
@@ -22,6 +24,16 @@ public class LogDBDao {
     private LogDBDao() {
     }
 
+    private static DBTable t;
+	@Override
+	protected DBTable gT() {
+    	if (t == null) {
+    		t = new DBTable(null, "LOG", "LOG_CODE", "LOG_REG_DATE", "");
+    		t.setCls("ganada.obj.common.LogDB");
+    	}
+		return t;
+	}
+	
     public void newLog(String msg) throws Exception {
         newLog(new LogDB(msg));
     }

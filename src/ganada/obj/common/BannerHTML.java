@@ -12,7 +12,13 @@ public class BannerHTML {
     
     private Timestamp reg_date;
 
-    public String getCode() {
+    @Override
+	public String toString() {
+		return "BannerHTML [code=" + code + ", name=" + name + ", info=" + info + ", html=" + html + ", reg_date="
+				+ reg_date + "]";
+	}
+
+	public String getCode() {
         return code;
     }
 

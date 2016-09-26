@@ -29,13 +29,13 @@ public class ContentsPageAction implements SuperAction {
             if (pageCode == null) {
                 pageCode = "";
             }
-            ContentsPage page = pageDao.getPage(pageCode);
+            ContentsPage page = (ContentsPage) pageDao.select(pageCode);
 
             // 불러온 페이지의 배너들을 조회하여 innerHTML에 집어넣음.
             String innerHTML = "";
             for (int key : page.bannerMap().keySet()) {
                 String bannerCode = page.bannerMap().get(key);
-                BannerHTML cur = bannerDao.getBanner(bannerCode);
+                BannerHTML cur = (BannerHTML) bannerDao.select(bannerCode);
                 innerHTML += cur.getHtml();
             }
             

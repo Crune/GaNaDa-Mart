@@ -96,11 +96,11 @@ public class ContentsPage {
     }
 
     public void addBanner(String code) {
-        int max = getMaxOrderBanner();
+        int max = _getMaxOrderBanner();
         this.banners.put(++max, code);
     }
 
-    public int getMaxOrderBanner() {
+    public int _getMaxOrderBanner() {
         int maxKey = 0;
         for (int key : this.banners.keySet()) {
             maxKey = (maxKey < key) ? key : maxKey;

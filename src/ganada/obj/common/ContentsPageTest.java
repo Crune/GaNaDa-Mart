@@ -27,9 +27,9 @@ public class ContentsPageTest extends DBTester {
 	    modOrg.setInfo("1"+pageOrg.getInfo());
 	    modOrg.setBanners(pageOrg.getBanners());
 	    modOrg.addBanner("2");
-	    dao.updatePage(modOrg);
-	    getModOrg = dao.getPage("1");
-        dao.insertPage(pageOrg);
+	    dao.update(modOrg);
+	    getModOrg = (ContentsPage) dao.select("1");
+        dao.insert(pageOrg);
 	    //dao.deletePage("2");
 	    
 	} catch (Exception e) {
