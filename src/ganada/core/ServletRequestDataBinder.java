@@ -35,25 +35,8 @@ public class ServletRequestDataBinder {
 		return false;
 	}
 
-	public static Object cVO(Class<?> type, String value){
-	    return createValueObject(type, value);
-	}
 	private static Object createValueObject(Class<?> type, String value) {
-		if (type.getName().equals("int") || type == Integer.class) {
-			return new Integer(value);
-		} else if (type.getName().equals("float") || type == Float.class) {
-			return new Float(value);
-		} else if (type.getName().equals("double") || type == Double.class) {
-			return new Double(value);
-		} else if (type.getName().equals("long") || type == Long.class) {
-			return new Long(value);
-		} else if (type.getName().equals("boolean") || type == Boolean.class) {
-			return new Boolean(value);
-		} else if (type == Date.class) {
-			return java.sql.Date.valueOf(value);
-		} else {
-			return value;
-		}
+		return DAO.cVO(type, value);
 	}
 
 	private static Method findSetter(Class<?> type, String name) {

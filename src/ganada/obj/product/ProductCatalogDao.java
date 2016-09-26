@@ -1,25 +1,23 @@
 package ganada.obj.product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ganada.core.DAO;
+import ganada.core.DBTable;
 
 public class ProductCatalogDao extends DAO {
 
-    private static ProductCatalogDao instance;
+    private static ProductCatalogDao instance = new ProductCatalogDao();
     
     public static ProductCatalogDao getInstance() {
-        instance = new ProductCatalogDao();
-        try {
-            init("ProductCatalog", "PRODUCT_CATALOG");
-            setPKName("CAT_CODE");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    	if (t == null) {
+    		t = new DBTable("PRODUCT_CATALOG", "CAT_CODE");
+    		t.setCls("ganada.obj.product.ProductCatalog");
+    	}
         return instance;
     }   
 
     private ProductCatalogDao() {
     }
-    
-    
-
 }
