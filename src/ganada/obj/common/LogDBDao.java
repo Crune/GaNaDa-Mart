@@ -55,7 +55,7 @@ public class LogDBDao {
         time1 = (Timestamp) NULL.R(time1, new Timestamp(System.currentTimeMillis()-gmt));
         time2 = (Timestamp) NULL.R(time2, new Timestamp(System.currentTimeMillis()-gmt-hour));
         try {
-            System.out.println("LOG호출:"+time2.toString()+" ~ "+time1.toString());
+            //System.out.println("LOG호출:"+time2.toString()+" ~ "+time1.toString());
             db.S("*", "LOG", "LOG_REG_DATE BETWEEN ? AND ?").var(time1).var(time2).exe();
             while (db.next()) {
                 curLog = new LogDB(db.getString("LOG_MSG"));
@@ -65,9 +65,8 @@ public class LogDBDao {
                 curLog.setLog_group2(db.getString("LOG_GROUP2"));
                 curLog.setLog_value(db.getString("LOG_VALUE"));
                 curLog.setLog_reg_date(db.getTimestamp("LOG_REG_DATE"));
-                logs.add(curLog);
-                
-                curLog.toJSONString();
+                //System.out.println(curLog.toJSONString());
+                logs.add(curLog);                
             }
         } catch (Exception e) {
             e.printStackTrace();
