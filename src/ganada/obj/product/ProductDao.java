@@ -43,11 +43,10 @@ public class ProductDao {
 		    }
 		public List<Product> getArticle(String pd_code) throws Exception {
 			DB db = new DB();
-			List<Product> productList = null;
+			List<Product> productList = new ArrayList<Product>();
 			try {
-			    db.S("*", "product", "pd_code=?").var(pd_code).exe();
-			    if (db.next()) {
-			    	productList = new ArrayList<Product>();
+			    db.S("*", "product").exe();
+		    	while(db.next()){
 			    	Product product = new Product();
 			    	product.setPd_code(db.getString("pd_code"));
 			    	product.setMenu_code(db.getString("menu_code"));
@@ -59,7 +58,8 @@ public class ProductDao {
 			    	product.setPd_infocode3(db.getString("pd_infocode3"));
 			    	product.setPd_infocode4(db.getString("pd_infocode4"));
 			    	productList.add(product);
-			    }
+			    	
+				}
 			} catch (Exception ex) {
 			    ex.printStackTrace();
 			} finally {

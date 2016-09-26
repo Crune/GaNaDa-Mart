@@ -14,14 +14,14 @@ public class ListAction implements SuperAction{
 		String pd_code = request.getParameter("pd_code");
 		int count = 0;
 
-		List<Product> List = null;
+	
 
 		ProductDao process = ProductDao.getInstance();
 		count = process.getCount();
 		
 		if(count > 0){
 			plist = process.getArticle(pd_code);
-			
+			System.out.println(plist);
 			
 			
 		}
