@@ -6,13 +6,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class LogDB {
-    private static String log_code="";
-    private static String log_type="";
-    private static String log_group1="";
-    private static String log_group2="";
-    private static String log_msg; // NOT NULL !!
-    private static String log_value="";
-    private static Timestamp log_reg_date;
+    private  String log_code="";
+    private  String log_type="";
+    private  String log_group1="";
+    private  String log_group2="";
+    private  String log_msg; // NOT NULL !!
+    private  String log_value="";
+    private  Timestamp log_reg_date;
     
     public final static String INFO = ".";
     public final static String CODE_YELLOW = "?";
@@ -20,20 +20,32 @@ public class LogDB {
     public final static String TRACE = "TR";
     public final static String MSG = "TR";
 
-    LogDB(String type, String group1, String group2, String msg, String value) { 
+    public LogDB(String type, String group1, String group2, String msg, String value) { 
         init(type, group1, group2, msg, value);
     }    
-    LogDB(String type, String group1, String group2, String msg) {    
+    public LogDB(String type, String group1, String group2, String msg) {    
         init(type, group1, group2, msg, "");
     }    
-    LogDB(String type, String group, String msg) {
+    public LogDB(String type, String group, String msg) {
         init(type, group, "", msg, "");
     }    
-    LogDB(String msg) {
+    public LogDB(String msg) {
         init("", "", "", msg, "");
     }
-    
-    public static void init(String type, String group1, String group2, String msg, String value) { 
+    private LogDB() throws Exception {
+        init("", "", "", "", "");
+        System.out.println("LogDB : 로그는 메시지를 생성해서 작성해 주세요!");
+        throw new Exception();
+    }
+    public LogDB in(Object str) {
+        this.log_value += str.toString();
+        return this;
+    }
+    public LogDB t(String CODE_YELLOW) {
+        this.log_type = CODE_YELLOW;
+        return this;
+    }
+    public void init(String type, String group1, String group2, String msg, String value) { 
         log_type = type;
         log_group1 = group1;
         log_group2 = group2;        

@@ -10,6 +10,9 @@ public class MCMainAction implements SuperAction {
     @Override
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         
+        String logTimeST = "";
+        String logTimeEN = "";
+        
         return "/jsp/mc/main.jsp";
     }
 

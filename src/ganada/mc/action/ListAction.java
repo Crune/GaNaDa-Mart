@@ -9,7 +9,7 @@ public class ListAction implements SuperAction{
 
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		list<Product> List = null;
+		List<Product> List = null;
 		
 		return "/jsp/mc/pmc/list.jsp";
 	}
