@@ -63,7 +63,7 @@
 <menu:getChild code="0" type="0">
 <c:forEach var="d1" items="${ChildMenu}">
                     <div class="global_depth1 men">
-                        <span></span> <a href="./page.gnd?code=${d1.code}"><span>${d1.name}</span></a>
+                        <span></span> <a href="./page.gnd?code=${d1.target}"><span>${d1.name}</span></a>
                     </div>
                     <div class="global_depth2 men"><div>
                             <div class="global_sub_box">
@@ -72,7 +72,7 @@
 <!-- 2단계 이벤트 반복 시작 -->
 <menu:getChild code="${d1.code}" type="1">
  <c:forEach var="d2e" items="${ChildMenu}">
-                                                <li><a href="./page.gnd?code=${d2e.code}">${d2e.name}</a></li>
+                                                <li><a href="./page.gnd?code=${d2e.target}">${d2e.name}</a></li>
  </c:forEach>
 </menu:getChild>
 <!-- 2단계 이벤트 반복 종료 -->                        
@@ -82,13 +82,13 @@
  <c:forEach var="d2" items="${ChildMenu}">
                                     <div class="global_category_h3"><div>
                                             <div class="global_category_stit">
-                                                <a href="./type.gnd?code=${d2.code}">${d2.name}</a> <span class="ico"></span>
+                                                <a href="./type.gnd?code=${d2.target}">${d2.name}</a> <span class="ico"></span>
                                             </div>
                                             <ul>
 <!-- 3단계 반복 시작 -->
   <menu:getChild code="${d2.code}" type="0">
    <c:forEach var="d3" items="${ChildMenu}">
-                                                <li><a href="./type.gnd?code=${d3.code}">${d3.name}</a></li>
+                                                <li><a href="./type.gnd?code=${d3.target}">${d3.name}</a></li>
    </c:forEach>
   </menu:getChild>
 <!-- 3단계 반복 종료 -->

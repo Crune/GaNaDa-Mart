@@ -4,6 +4,7 @@ public class Menu {
 
     public static final int TYPE_NORMAL = 0;
     public static final int TYPE_EVENT = 1;
+    public static final int TYPE_PAGE = 2;
 
     private int level;
     private String code;
@@ -11,6 +12,7 @@ public class Menu {
     private int type = TYPE_NORMAL;
     private String upper;
     private int order_lv = 100;
+    private String target;
 
     public int getLevel() {
         return level;
@@ -47,5 +49,11 @@ public class Menu {
     }
     public void setOrder_lv(int order_lv) {
         this.order_lv = order_lv;
+    }
+    public String getTarget() {
+        return target;
+    }
+    public void setTarget(String target) {
+        this.target = target;
     }
 }

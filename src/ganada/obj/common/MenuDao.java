@@ -28,7 +28,7 @@ public class MenuDao {
     private static List<Menu> menus = new ArrayList<Menu>();
     public static void refresh() {
         menus.clear();
-        String sql = "SELECT LEVEL, CODE, NAME, TYPE, UPPER, ORDER_LV"
+        String sql = "SELECT LEVEL, CODE, NAME, TYPE, UPPER, ORDER_LV, TARGET_CODE"
                     +" FROM MENU"
                     +" WHERE CODE!='0'"
                     +" START WITH CODE='0'"
@@ -46,6 +46,7 @@ public class MenuDao {
                 cur.setType(db.getInt("TYPE"));
                 cur.setUpper(db.getString("UPPER"));
                 cur.setOrder_lv(db.getInt("ORDER_LV"));
+                cur.setTarget(db.getString("TARGET_CODE"));
                 //System.out.println(cur);
                 menus.add(cur);
             }
@@ -79,6 +80,7 @@ public class MenuDao {
             sql.in("TYPE", menu.getType());
             sql.in("UPPER", menu.getUpper());
             sql.in("ORDER_LV", menu.getOrder_lv());
+            sql.in("TARGET_CODE", menu.getTarget());
             sql.run();
             refresh();
         } catch (Exception e) {
@@ -97,6 +99,7 @@ public class MenuDao {
             sql.set("TYPE", menu.getType());
             sql.set("UPPER", menu.getUpper());
             sql.set("ORDER_LV", menu.getOrder_lv());
+            sql.set("TARGET_CODE", menu.getTarget());
             sql.run();
             refresh();
         } catch (Exception e) {
@@ -132,7 +135,8 @@ public class MenuDao {
                 menu.setName(db.getString("NAME"));
                 menu.setType(db.getInt("TYPE"));
                 menu.setUpper(db.getString("UPPER"));
-                menu.setOrder_lv(db.getInt("ORDER_LV"));                
+                menu.setOrder_lv(db.getInt("ORDER_LV"));
+                menu.setTarget(db.getString("TARGET_CODE"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -35,6 +35,9 @@ public class ServletRequestDataBinder {
 		return false;
 	}
 
+	public static Object cVO(Class<?> type, String value){
+	    return createValueObject(type, value);
+	}
 	private static Object createValueObject(Class<?> type, String value) {
 		if (type.getName().equals("int") || type == Integer.class) {
 			return new Integer(value);
