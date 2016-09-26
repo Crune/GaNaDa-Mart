@@ -4,9 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-등록된 상품 목록${count}<br />
+등록된 상품 목록 <font size="3" color="red">${count}</font><br /> 
 <br />
-<button id="">상품 등록</button>
+<input type="button" value="상품등록" onclick="javascript:window.location='./insert.gnd'">
 <button id="main">관리자 메인으로</button>
 <br />
 <c:if test ="${count == 0 }">
@@ -20,7 +20,6 @@
 <td align = "center" width="30"> 메뉴코드 </td>
 <td align = "center" width="100"> 상품 명 </td>
 <td align = "center" width="50"> 가격 </td>
-<td align = "center" width="100"> 이미지 </td>
 <td align = "center" width="30"> infocode1 </td>
 <td align = "center" width="30"> infocode2 </td>
 <td align = "center" width="30"> infocode3 </td>
@@ -49,7 +48,7 @@ ${pd.getPd_infocode3()}</td>
 <td width="30" align="center">
 ${pd.getPd_infocode4()}</td>
 <td width="70">
-${pd.getReg_date()}</td>
+${pd.getPd_reg_date()}</td>
 </tr>
 </c:forEach>
 </table>
