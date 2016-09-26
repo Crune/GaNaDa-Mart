@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!-- 
 <div class="P1 banner-area">
 	<div class="container">
 		<div class="bnr_item nsw_pwh">
@@ -13,6 +14,7 @@
 		</div>
 	</div>
 </div>
+-->
 <jsp:include page='/jsp/type/contJSnCSS.jsp' flush="false" />
 
 <!-- 필터 전용 Form -->
