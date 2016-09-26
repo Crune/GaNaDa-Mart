@@ -82,10 +82,10 @@ public class Account {
     public Timestamp getBirthday() {
         return birthday;
     }
-    public void setBirthday(Timestamp birthday) {
+    public void setBirth(Timestamp birthday) {
         this.birthday = birthday;
     }
-    public void setBirthday(String birthday) {
+    public void _setBirthday(String birthday) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             dateFormat.parse(birthday);
@@ -93,9 +93,9 @@ public class Account {
             e.printStackTrace();
         }
         Calendar cal = dateFormat.getCalendar();        
-        setBirthday(new Timestamp(cal.getTime().getTime()));
+        setBirth(new Timestamp(cal.getTime().getTime()));
     }
-    public int getLunisolar() {
+	public int getLunisolar() {
         return lunisolar;
     }
     public void setLunisolar(int LUNARorSOLAR) {
@@ -107,16 +107,16 @@ public class Account {
     public void setGender(int gender) {
         this.gender = gender;
     }
-    public String getContact_call_code() {
+    public String getContact() {
         return contact_call_code;
     }
-    public void setContact_call_code(String contact_call_code) {
+    public void setContact(String contact_call_code) {
         this.contact_call_code = contact_call_code;
     }
-    public String getPhone_call_code() {
+    public String getPhone() {
         return phone_call_code;
     }
-    public void setPhone_call_code(String phone_call_code) {
+    public void setPhone(String phone_call_code) {
         this.phone_call_code = phone_call_code;
     }
     public int getSms_allow() {

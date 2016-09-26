@@ -26,12 +26,12 @@ public class AccountTest extends DBTester{
         account.setId("sally");
         account.setPasswd("4844");
         
-        account.setBirthday("2000-01-01");
+        account._setBirthday("2000-01-01");
         account.setLunisolar(1);
         account.setGender(1);
 
-        account.setContact_call_code("");
-        account.setPhone_call_code("");
+        account.setContact("");
+        account.setPhone("");
         account.setSms_allow(1);
 		
 	}
@@ -40,7 +40,7 @@ public class AccountTest extends DBTester{
 	public void test() {
 		AccountDao dao = AccountDao.getInstance();
 		try {
-		    dao.insertAccount(account);
+		    dao.insert(account);
         } catch (Exception e) {
             e.printStackTrace();
         }

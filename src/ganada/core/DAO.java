@@ -79,6 +79,7 @@ public abstract class DAO {
             if (db.next()) {
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
+                	//System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
             		m.invoke(obj, value);
                 }
             }
@@ -100,6 +101,7 @@ public abstract class DAO {
                 Object obj = t.getVoCls().newInstance();
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
+                	//System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
             		m.invoke(obj, value);
                 }
         		objList.add(obj);

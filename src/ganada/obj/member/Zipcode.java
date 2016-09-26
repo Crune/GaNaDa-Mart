@@ -9,6 +9,22 @@ public class Zipcode {
 	private String sugungueg;
 	private String eubmyndong;
 	private String eubmyndongen;
+	private String ri;
+	private String mountain; 
+	private String dong;      
+	private int justart;     
+	private int bustart;
+	private int julast;
+	private int bulast;	
+	
+	@Override
+	public String toString() {
+		return "Zipcode [zipcode=" + zipcode + ", sido=" + sido + ", sidoeng=" + sidoeng + ", sigungu=" + sigungu
+				+ ", sugungueg=" + sugungueg + ", eubmyndong=" + eubmyndong + ", eubmyndongen=" + eubmyndongen + ", ri="
+				+ ri + ", mountain=" + mountain + ", dong=" + dong + ", justart=" + justart + ", bustart=" + bustart
+				+ ", julast=" + julast + ", bulast=" + bulast + "]";
+	}
+	
 	public int getZipcode() {
 		return zipcode;
 	}
@@ -93,18 +109,5 @@ public class Zipcode {
 	public void setBulast(int bulast) {
 		this.bulast = bulast;
 	}
-	private String ri;
-	private String mountain; 
-	private String dong;      
-	private int justart;     
-	private int bustart;
-	private int julast;
-	private int bulast;
-	private String code;
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
+
 }

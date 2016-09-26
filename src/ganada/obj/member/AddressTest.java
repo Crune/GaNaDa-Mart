@@ -28,7 +28,7 @@ public class AddressTest extends DBTester{
 	public void test() {
 		AddressDao dao = AddressDao.getInstance();
 		try {
-		    dao.insertAddress(AddressOrg);
+		    dao.insert(AddressOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
