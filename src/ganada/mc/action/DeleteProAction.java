@@ -14,7 +14,7 @@ String pd_code= request.getParameter("pd_code");
 		
 		ProductDao dbPro = ProductDao.getInstance();
 		dbPro.deleteProduct(pd_code);
-		return null;
+		return "/jsp/mc/pmc/delete.jsp";
 	}
 
 }
