@@ -398,7 +398,6 @@ public class DB {
 				sql(sql + val + ")");
 				int num = 0;
 				for (Object obj : list) {
-				    //System.out.println("insertV"+(++num)+":"+obj.toString());
 					var((Object) obj);
 				}
 				exe();
