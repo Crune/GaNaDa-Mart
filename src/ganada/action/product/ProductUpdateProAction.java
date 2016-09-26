@@ -14,7 +14,7 @@ import ganada.obj.product.ProductDao;
 
 public class ProductUpdateProAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		/*
 		request.setCharacterEncoding("UTF-8");
 		
 		String path = request.getRealPath("img/product");
@@ -59,7 +59,7 @@ public class ProductUpdateProAction implements SuperAction{
 	 	
 		ProductDao dbPro = ProductDao.getInstance();
 		dbPro.updateProduct(product);
-		
+		*/
 		return "/jsp/product/productUpdatePro.jsp";
 	}
 }

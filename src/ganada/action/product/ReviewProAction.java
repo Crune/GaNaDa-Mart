@@ -14,7 +14,6 @@ import ganada.obj.product.ItemReview;
 import ganada.obj.product.ItemReviewDao;
 public class ReviewProAction implements SuperAction {
 
-
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String filename="";
 		String realFolder="";
@@ -27,15 +26,7 @@ public class ReviewProAction implements SuperAction {
 		ServletContext context = request.getSession().getServletContext();
 		realFolder = context.getRealPath(saveFolder);
 		MultipartRequest mr = new MultipartRequest(request,realFolder,maxSize,enc,dp);
-		
-		Enumeration<?> files = mr.getFileNames();
-		
-		while(files.hasMoreElements()){
-			
-			String name = (String)files.nextElement();//input태그 file속성을 가진 태그의 파라미터 
-			filename = mr.getFilesystemName(name);//서버에 저장된 파일 이름
-			
-		}
+		String sysName = mr.getFilesystemName("review_image");
 	
 		ItemReview review = new ItemReview();
 		String star = mr.getParameter("star");
@@ -67,11 +58,13 @@ public class ReviewProAction implements SuperAction {
 		review.setDura(Integer.parseInt(dura));
 		review.setSubject(subject);
 		review.setContent(content);
+		review.setImg(sysName);
         System.out.println(review.toString());
 		ItemReviewDao  ird = ItemReviewDao.getInstance();
 		ird.insert(review);
 		
 		request.setAttribute("itemnum", itemnum);
+		request.setAttribute("sysName", sysName);
 		return "/jsp/review/reviewPro.jsp";
 	}
 

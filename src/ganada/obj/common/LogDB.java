@@ -2,6 +2,9 @@ package ganada.obj.common;
 
 import java.sql.Timestamp;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 public class LogDB {
     private static String log_code="";
     private static String log_type="";
@@ -37,7 +40,7 @@ public class LogDB {
         log_msg = msg; 
         log_value = value;
     }
-    
+
     public String toString() {
         String result = "LogDB{"
                 +"log_code:"+log_code
@@ -49,6 +52,25 @@ public class LogDB {
                 +", log_reg_date:"+log_reg_date
                 +"}";        
         return result;        
+    }
+    
+    public String toJSONString() {     
+        return getJSONObject().toJSONString();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSONObject() {
+        JSONObject logObj = new JSONObject();   
+        { 
+            logObj.put("log_code", log_code); 
+            logObj.put("log_type", log_type); 
+            logObj.put("log_group1", log_group1); 
+            logObj.put("log_group2", log_group2); 
+            logObj.put("log_msg", log_msg); 
+            logObj.put("log_value", log_value); 
+            logObj.put("log_reg_date", log_reg_date);
+        }
+        return logObj;        
     }
     
     public String getLog_code() {

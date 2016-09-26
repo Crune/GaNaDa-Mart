@@ -9,8 +9,7 @@
 </table>
 <hr>
 
-<form id="revForm" action="./reviewPro.gnd" method="post"
-	encType="multipart/form-data">
+<form id="revForm" action="./reviewPro.gnd" method="post" encType="multipart/form-data">
 	<input type="hidden" name="itemname" value="운동화">
     <input type="hidden" name="itemnum" value="45">
     <input type="hidden" name="writer" value="writer">

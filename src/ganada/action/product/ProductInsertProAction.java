@@ -14,6 +14,7 @@ import ganada.obj.product.ProductDao;
 
 public class ProductInsertProAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		/*
 		 	request.setCharacterEncoding("UTF-8");
 		 	
 			String path = request.getRealPath("img/product");
@@ -69,7 +70,7 @@ public class ProductInsertProAction implements SuperAction{
 		//	request.setAttribute("colorimage", colorimage);
 		//	request.setAttribute("orgName2", orgName2);
 		//	request.setAttribute("path", path);		//경호롹인
-		
+		*/
 		return "/jsp/product/productInsertPro.jsp";
 	}
 }

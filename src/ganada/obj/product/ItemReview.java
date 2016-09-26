@@ -23,6 +23,7 @@ public class ItemReview {
 	private int ref;//게시글 그룹번호
 	private int re_step;//게시글 계층 정렬 번호
 	private int re_level;//게시글 계층 번호
+	private String img;
 	public int getNum() {
 		return num;
 	}
@@ -144,12 +145,20 @@ public class ItemReview {
 		this.re_level = re_level;
 	}
 
+	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public String toString() {
 	    
 	    String result = "ItemReview{"+num+", "+itemname+", "+itemnum+", "+writer+", "+subject
             +siz+", "+comfortable+", "+wid+", "+dura+", "+itemsize
             +wei+", "+hei+", "+age+", "+content+", "+star
-            +readcount+", "+reg_date+", "+ref+", "+re_step+", "+re_level+"}";
+            +readcount+", "+reg_date+", "+ref+", "+re_step+", "+re_level+"img"+"}";
             
 	    return result;
 	}

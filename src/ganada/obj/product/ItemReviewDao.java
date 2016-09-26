@@ -28,12 +28,6 @@ public class ItemReviewDao {
 	private ItemReviewDao() {
 	}
 
-	private Connection getConnection() throws Exception{
-		Context initCtx = new InitialContext();
-		Context envCtx = (Context) initCtx.lookup("java:comp/env");
-		DataSource ds = (DataSource) envCtx.lookup("jdbc/orcl");
-		return ds.getConnection();
-	}
 	
 
     public void insert(ItemReview article) {
@@ -82,7 +76,8 @@ public class ItemReviewDao {
             in.in("content", article.getContent());
             in.in("star", article.getStar());
             in.inSql("REG_DATE", "sysdate");
-            in.run();
+            in.in("img", article.getImg());
+            in.run();  
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -99,33 +94,34 @@ public class ItemReviewDao {
 			DB db = new DB();
 			List<ItemReview> reviewList = null;
 			int x = 0;
-			try {
+			try {    
 			    db.S("*", "REVIEW", "ITEMNUM=?","reg_date desc").var(itemnum).exe();
+			    
 			    if (db.next()) {
-				reviewList = new ArrayList<ItemReview>();
-				do{
-					ItemReview review = new ItemReview();
-				
-				review.setNum(db.getInt("num"));
-				review.setItemnum(db.getString("itemnum"));
-				review.setItemname(db.getString("itemname"));
-				review.setWriter(db.getString("writer"));
-				review.setSubject(db.getString("subject"));
-				review.setSiz(db.getInt("siz"));
-				review.setComfortable(db.getInt("comfortable"));
-				review.setWid(db.getInt("wid"));
-				review.setDura(db.getInt("dura"));
-				review.setItemsize(db.getString("itemsize"));
-				review.setWei(db.getString("wei"));
-				review.setHei(db.getString("hei"));
-				review.setAge(db.getString("age"));
-				review.setContent(db.getString("content"));
-				review.setStar(db.getInt("star"));
-				review.setReadcount(db.getInt("readcount"));
-				review.setReg_date(db.getTimestamp("reg_date"));
-				
-				reviewList.add(review);
-			    }while(db.next());
+			    	reviewList = new ArrayList<ItemReview>();
+			    	do{
+			    		ItemReview review = new ItemReview();				
+						review.setNum(db.getInt("num"));
+						review.setItemnum(db.getString("itemnum"));
+						review.setItemname(db.getString("itemname"));
+						review.setWriter(db.getString("writer"));
+						review.setSubject(db.getString("subject"));
+						review.setSiz(db.getInt("siz"));
+						review.setComfortable(db.getInt("comfortable"));
+						review.setWid(db.getInt("wid"));
+						review.setDura(db.getInt("dura"));
+						review.setItemsize(db.getString("itemsize"));
+						review.setWei(db.getString("wei"));
+						review.setHei(db.getString("hei"));
+						review.setAge(db.getString("age"));
+						review.setContent(db.getString("content"));
+						review.setStar(db.getInt("star"));
+						review.setReadcount(db.getInt("readcount"));
+						review.setReg_date(db.getTimestamp("reg_date"));
+						review.setImg(db.getString("img"));
+						
+						reviewList.add(review);
+			    	}while(db.next());
 			    }
 			} catch (Exception ex) {
 			    ex.printStackTrace();
@@ -133,7 +129,7 @@ public class ItemReviewDao {
 			    db.finalize();
 			}
 			return reviewList;
-		    }
+		   }
 	 
 	 //전체 등록수 카운트
 	 public int getAllArticleCount()throws Exception{
@@ -152,10 +148,7 @@ public class ItemReviewDao {
 	 
 	 //상품번호의 리뷰 카운트...
 	public int getArticleCount(String itemnum) throws Exception {
-		//DB db = new DB();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		DB db = new DB();
 		ItemReview review = null;
 		int x = 0;
 		if(itemnum == null){
@@ -164,28 +157,17 @@ public class ItemReviewDao {
 		int num = Integer.parseInt(itemnum);
 		
 		try {
-			conn = getConnection();
-			String sql="select count(*) from review where itemnum="+num;
-			pstmt = conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-			if(rs.next()){
-				x=rs.getInt(1);
+			String sql="select count(*) from review where itemnum=?";
+			if(db.sql(sql).var(num).exe().next()){
+				x = db.exe().getInt(1);
 			}
-			//db.S("count(*)", "REVIEW", "ITEMNUM=").var(itemnum).exe();
-
-		//	if (db.next())
-		//		x = db.getInt("1");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+			db.finalize();
 		}
 		return x;
 	}
-	
-	
 	
 	
 //특정 상품에 대해 작성한 리뷰를 지정한 수만큼 얻어냄
@@ -240,7 +222,6 @@ public class ItemReviewDao {
 	}
 
 	//nike엔 수정이 없음...
-
 
 
 	public int deleteArticle(int num) {
