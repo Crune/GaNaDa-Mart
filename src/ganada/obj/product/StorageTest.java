@@ -22,7 +22,7 @@ public class StorageTest extends DBTester {
     public void test() {
     	StorageDao dao = StorageDao.getInstance();
 		try {
-		    dao.insertStorage(StorageOrg);
+		    dao.insert(StorageOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

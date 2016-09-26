@@ -27,7 +27,7 @@ public class ProductImageTest extends DBTester {
     public void insert() {
 		ProductImageDao dao = ProductImageDao.getInstance();
 		try {
-		    dao.insertProductImage(productImageOrg);
+		    dao.insert(productImageOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

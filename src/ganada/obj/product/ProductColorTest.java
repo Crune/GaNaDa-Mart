@@ -22,7 +22,7 @@ public class ProductColorTest extends DBTester {
     public void test() {
 		ProductColorDao dao = ProductColorDao.getInstance();
 		try {
-		    dao.insertProductColor(productColorOrg);
+		    dao.insert(productColorOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

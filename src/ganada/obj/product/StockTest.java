@@ -25,7 +25,7 @@ public class StockTest extends DBTester {
     public void test() {
     	StockDao dao = StockDao.getInstance();
 		try {
-		    dao.insertStock(StockOrg);
+		    dao.insert(StockOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

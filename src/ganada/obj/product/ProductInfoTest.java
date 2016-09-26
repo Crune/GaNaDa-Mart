@@ -21,7 +21,7 @@ public class ProductInfoTest extends DBTester {
     public void test() {
     	ProductInfoDao dao = ProductInfoDao.getInstance();
 		try {
-		    dao.insertProductInfo(productInfoOrg);
+		    dao.insert(productInfoOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
