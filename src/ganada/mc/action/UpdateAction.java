@@ -13,7 +13,7 @@ public class UpdateAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String pd_code = request.getParameter("pd_code");
 		ProductDao dbPro = ProductDao.getInstance();
-		Product product = dbPro.getProduct(pd_code);
+		Product product = (Product)dbPro.select(pd_code);
 		
 		request.setAttribute("product", product);
 		

@@ -13,7 +13,7 @@ public class DeleteProAction implements SuperAction{
 String pd_code= request.getParameter("pd_code");
 		
 		ProductDao dbPro = ProductDao.getInstance();
-		dbPro.deleteProduct(pd_code);
+		dbPro.delete(pd_code);
 		return "/jsp/mc/pmc/delete.jsp";
 	}
 

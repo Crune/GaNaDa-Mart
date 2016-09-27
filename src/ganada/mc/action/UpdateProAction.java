@@ -62,7 +62,7 @@ public class UpdateProAction implements SuperAction{
 //	 	product.setRecommend(1);
 	 	
 		ProductDao dbPro = ProductDao.getInstance();
-		dbPro.updateProduct(product);
+		dbPro.update(product);
 		return null;
 	}
 
