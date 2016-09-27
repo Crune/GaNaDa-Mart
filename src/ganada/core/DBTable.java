@@ -15,8 +15,8 @@ public class DBTable {
 	
 	private List<Method> getMethods = new ArrayList<Method>();
 	private List<Method> setMethods = new ArrayList<Method>();
-	
-	public DBTable() {
+
+    public DBTable() {
 	}
 
 	public DBTable(Class OBJ, String TABLE_NAME) {
@@ -47,19 +47,28 @@ public class DBTable {
 		this.cNameCode = COL_NAME_CODE;
 		this.cNameReg = COL_NAME_REG;
 		this.cNameMod = COL_NAME_MOD;
-	}
-	
+	}	
 
+    private Method getPK;   
+    public Method getPK() {
+        return getPK;
+    }
 	public void init() {
 		if (voCls != null) {
-
+            String getPKMethodName = "get";
+            getPKMethodName += cNameCode.toLowerCase().indexOf(0);
+            getPKMethodName += cNameCode.toLowerCase().substring(1);
 			for (Method m : voCls.getMethods()) {
 				String name = m.getName();
 
 				for (Method objM : Object.class.getMethods())
 					if (objM.getName().equals(name))
 						name = "";
-				if (name.startsWith("get")) getMethods.add(m);
+				if (name.startsWith("get")) {
+				    getMethods.add(m);
+				    if (name.equals(getPKMethodName))
+				        getPK = m;
+				}
 				if (name.startsWith("set")) setMethods.add(m);
 			}
 		}

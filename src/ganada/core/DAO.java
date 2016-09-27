@@ -114,6 +114,31 @@ public abstract class DAO {
         }
         return objList;
     }
+    
+    public List<String> search(String colName, String... between) {
+        List<String> list = new ArrayList<String>();
+        DB db = new DB();
+        DBTable t = gT();
+        try {
+            String var1 = NULL.toDQ(between[0]);
+            String var2 = NULL.toDQ(between[1]);
+            String where = var1.isEmpty()?"":colName;
+            where += var2.isEmpty()?"=?":" BETWEEN ? AND ?";
+            db.S("*", t.getTableName(), where);
+            if (var1.isEmpty()) db.var(var1);
+            if (var2.isEmpty()) db.var(var2);
+            while (db.next()) {
+                Object obj = t.getVoCls().newInstance();
+                Method m = t.getPK();
+                list.add((String) m.invoke(obj));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.finalize();
+        }
+        return list;        
+    }
 
     public void update(Object obj) throws Exception {
         DB db = new DB();
