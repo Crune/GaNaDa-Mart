@@ -1,0 +1,254 @@
+@charset "utf-8";
+/****************************************/
+/*  Name: NIKE STORE
+/*  PART: LAYER_POPUP STYLE
+/*  Version: 1.0
+/*  Author: Beky
+/****************************************/
+
+/*** 아이프레임용 레이어팝업 위치 및 레이아웃 ***/
+.layerArea {position:absolute; left:50%; top:200px; margin-left:-430px; visibility:hidden; z-index:10000;}
+
+/*** 팝업 레이아웃 ***/
+.popLayer {position:absolute; left:50%; top:200px; width:860px; margin-left:-430px; padding-top:10px; background:url(http://image.nike.co.kr/web/bg/bg_layerT_type1.png) no-repeat; z-index:10000;}
+.popLayer .layerBox {position:relative; padding-bottom:10px; background:url(http://image.nike.co.kr/web/bg/bg_layerB_type1.png) no-repeat left bottom;}
+.popLayer .layerBox .contents {width:780px; padding:27px 40px 30px; background-color:#fff; zoom:1;}
+.popLayer .layerBox .contents:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+.popLayer .layerBox .contents .sectionL {float:left; width:390px; padding-right:20px;}
+.popLayer .layerBox .contents .sectionR, .popLayer .layerBox .contents .sectionR02 {float:left; width:350px; padding-left:19px; border-left:1px solid #eee;}
+.popLayer .layerBox .contents .sectionR02 {margin-top:20px;}
+.popLayer.typeS {width:500px; margin-left:-250px; background:url(http://image.nike.co.kr/web/bg/bg_layerT_type2.png) no-repeat;}
+.popLayer.typeS .layerBox {background:url(http://image.nike.co.kr/web/bg/bg_layerB_type2.png) no-repeat left bottom;}
+.popLayer.typeS .layerBox .contents {width:420px;}
+.popLayer .layerBox .contents h4 {padding-bottom:20px; border-bottom:1px solid #eee; color:#333; font-size:20px; line-height:20px;}
+
+.contents input[type=radio] {vertical-align:baseline; vertical-align:bottom\0/ !important;}
+:root .contents input[type=radio] {vertical-align:baseline\0/IE9 !important;}
+.contents input[type=text]:hover, .contents input[type=password]:hover,
+.contents input[type=text]:focus, .contents input[type=password]:focus,
+.contents input[type=text]:active, .contents input[type=password]:active {border:1px solid #fa5400;}
+
+.contents .step {position:absolute; right:40px; top:30px;}
+.contents .step li {float:left; width:120px; height:21px; margin-left:-3px; padding-top:7px; background:url(http://image.nike.co.kr/web/bg/bg_member_step.png) no-repeat; color:#333; font-weight:bold; text-align:center;}
+.contents .step li.on {background-position:0 -28px; color:#fff;}
+.contents .step li.last {overflow:hidden; width:116px; background:url(http://image.nike.co.kr/web/bg/bg_member_step.png) no-repeat 0 -56px;}
+.contents .step li.last.on {background-position:0 -84px;}
+.contents .txt {margin-top:16px; color:#333; letter-spacing:-1px; line-height:18px;}
+.contents .txt > strong {color:#fa5400; font-size:13px;}
+.contents .txt.type02 {font-size:13px;}
+.contents .txt.type03 {font-size:13px; font-weight:bold;}
+.contents .txt02 {position:absolute; right:0; top:14px; padding-left:7px; color:#fa5400; font-size:11px; font-family:'돋움'; background:url(http://image.nike.co.kr/web/ico/bl_star.png) no-repeat left -1px;}
+.contents .txt03 {display:inline-block; margin:8px 0 0 5px; color:#333; font-size:11px; font-weight:bold; font-family:'돋움'; letter-spacing:-0.7px;}
+.contents .txt04 {margin:16px 0 11px; color:#333; font-size:13px;}
+.contents .txt05 {color:#666; font-family:'돋움'; letter-spacing:-0.5px; line-height:18px;}
+.contents .txt05.type02 {font-weight:bold; letter-spacing:-0.1px;}
+.contents .txt05.type03 {line-height:26px;}
+.contents .txt06 {color:#666; font-family:'돋움'; font-size:11px;}
+.contents .txt06.type02 {color:#fa5400;}
+.contents .txt06.type02 > span {font-size:12px;}
+.contents .txt06.type03 {font-size:13px;}
+.contents .txt07 {color:#333; font-weight:bold; font-family:'돋움'; letter-spacing:-0.2px; line-height:16px;}
+.contents .txt08 {color:#333; font-size:13px; font-weight:bold; letter-spacing:-1px; line-height:16px;}
+.contents .speech {display:none; position:absolute; left:90px; top:-37px;}
+.contents .speech.type02 {left:85px;}
+.contents .speech.type03 {left:130px;}
+.contents .speech.type04 {left:125px;}
+.contents .speech.type05 {left:235px; top:-17px;}
+.contents .speech.type06 {left:320px; top:-30px;}
+.contents .speech.type07 {left:185px;}
+.contents .speech .over {display:block; position:relative; padding:8px 12px 9px 10px; background-color:#333; border-radius:4px 4px 4px 4px; color:#fff; font-size:11px; text-align:center; letter-spacing:-1.5px; z-index:10;}
+.contents .speech.type05 .over, .contents .speech.type06 .over {text-align:left; padding-left:12px;}
+.contents .speech .arr {display:block; position:absolute; left:50%; top:30px; width:14px; height:7px; margin-left:-7px; background:url(http://image.nike.co.kr/web/ico/bl_btn_arr.png) no-repeat center bottom;}
+.contents .speech .arr02 {display:block; position:absolute; left:-7px; top:50%; width:7px; height:14px; margin-top:-7px; background:url(http://image.nike.co.kr/web/ico/bl_btn_arr02.png) no-repeat left 50%;}
+.contents .layerLabel, .contents .layerLabel02 {display:inline-block; background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat; color:#333; font-weight:bold; font-family:'돋움'; letter-spacing:-1px;}
+.contents .layerLabel {width:62px; padding-left:8px; background-position:0 4px;}
+.contents .layerLabel.type02 {width:74px;}
+.contents .layerLabel.type03 {width:122px;}
+.contents .layerLabel02 {width:120px; padding-left:10px; background-position:0 6px;}
+.contents .inputType01 {width:156px;}
+.contents .inputType02 {width:228px;}
+.contents .inputType03 {width:78px;}
+.contents .inputType04 {width:269px; *width:267px;}
+.contents .inputType05 {width:258px;}
+.contents .inputType06 {width:353px;}
+.contents .inputType07 {width:183px;}
+.contents .inputType08 {width:333px; *width:332px;}
+.contents .inputType09 {width:418px;}
+.contents .inputType10 {width:233px; *width:232px;}
+.contents .inputType11 {width:317px;}
+.contents .inputType12 {width:113px;}
+.contents .inputType20 {width:283px;}
+.contents .checkType01 {margin-left:4px; color:#666; font-size:11px; font-family:'돋움'; letter-spacing:-1px;}
+.contents .checkType02 {margin-left:4px; color:#333; font-size:12px; font-weight:bold; font-family:'돋움'; letter-spacing:-1px;}
+.contents .checkType03 {margin-left:4px; color:#666; font-size:12px; font-family:'돋움'; letter-spacing:-1px;}
+.contents .radioType {margin-left:4px; color:#666; font-family:'돋움'; letter-spacing:-1px;}
+.contents .selectType01 {width:80px;}
+.contents .selectType02 {width:50px;}
+.contents .selectType03 {width:114px; padding:4px 4px 4px 0; border:1px solid #fa5400; height:26px; color:#666; font-family:'돋움'; letter-spacing:-1px; vertical-align:middle;}
+.contents .selectType04 {width:100px;}
+.contents .selectType05 {width:114px; padding:4px 4px 4px 0; border:1px solid #ddd; height:26px; color:#666; font-family:'돋움'; letter-spacing:-1px; vertical-align:middle;}
+.contents .textArea {overflow-y:scroll; width:278px; height:39px; *margin-left:0; padding:8px 0 0 10px; color:#666; font-family:'돋움'; letter-spacing:-1px; line-height:16px; text-indent:0;}
+.contents .textArea.type02 {height:80px;}
+.contents .loginBtn {display:block; width:82px; height:39px; padding-top:20px; background:url(http://image.nike.co.kr/web/btn/btn_login.png) no-repeat; color:#fff; font-size:13px; font-weight:bold; text-align:center;}
+.contents .loginBtn.po {position:relative; top:31px;}
+.contents .loginBtn.type02 {background:url(http://image.nike.co.kr/web/btn/btn_login_black.png) no-repeat;}
+.contents .confirmBtn {display:block; width:103px; height:31px; padding-top:11px; background:url(http://image.nike.co.kr/web/btn/btn_confirm.png) no-repeat; color:#fff; font-size:13px; font-weight:bold; text-align:center;}
+.contents .btnAlign {margin-top:20px; padding-top:20px; border-top:1px solid #eee; text-align:right;}
+.contents .borAlign {padding-top:20px; border-top:1px solid #eee;}
+.contents .pointTxt {padding-left:17px; background:url(http://image.nike.co.kr/web/ico/ico_point.png) no-repeat; color:#666; font-size:11px; font-family:'돋움'; letter-spacing:-1px;}
+.contents .bir {display:inline-block; margin:0 6px 0 1px; color:#666;}
+.contents .close {display:block; overflow:hidden; position:absolute; right:19px; top:10px; width:13px; height:13px; background:url(http://image.nike.co.kr/web/btn/btn_poplayer_close.png) no-repeat; text-indent:9999px;}
+
+.contents .period {height:66px; margin:18px 0 20px; background-color:#eee;}
+.contents .period > dl {padding:20px 0 0 189px;}
+.contents .period > dl dt {float:left; margin:8px 19px 0 0; color:#333; font-weight:bold; font-family:'돋움';}
+.contents .period > dl dd {float:left; *width:500px;}
+.contents .period > dl dd input {width:98px; margin-left:3px;}
+.contents .period > dl dd a.calendar {display:inline-block; position:relative; width:18px; height:18px; margin-left:5px;}
+.contents .period > dl dd .btn-type6 {margin-left:8px;}
+
+.contents .loginArea {margin-top:38px;}
+.contents .loginForm {float:left; width:237px;}
+.contents .loginForm.type02 {width:308px;}
+.contents .loginForm .idSave {margin:8px 0 0 70px;}
+.contents .formBox {position:relative;}
+/*.contents .formBox:hover .speech {display:block;}*/
+.contents .loginBtn {float:left;}
+.contents .memberCheck {float:left; margin:11px 0 0 9px;}
+
+.contents .starTxt {margin-top:40px; padding-top:20px; border-top:1px solid #eee;}
+.contents .starTxt > span {position:relative; top:2px; margin-right:9px; padding-left:11px; background:url(http://image.nike.co.kr/web/ico/bl_star.gif) no-repeat; color:#333; font-family:'돋움'; letter-spacing:-1px;}
+
+.contents .desc {padding:20px 15px 20px 20px; background-color:#eee; color:#666; font-family:'돋움'; line-height:18px; letter-spacing:-0.5px;}
+.contents .desc > ul li {padding-left:10px; background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 7px;}
+.contents .desc > strong {color:#333;}
+
+.contents .selectBox {margin-top:15px;}
+.contents .selectBox > img {float:left; margin-top:3px;}
+.contents .selectBox .info {float:left; margin-left:20px;}
+.contents .selectBox .info > strong, .contents .selectBox .info > p {font-family:'돋움';}
+.contents .selectBox .info > strong {color:#333; letter-spacing:-0.2px;}
+.contents .selectBox .info > p {margin:6px 0 7px; color:#666; line-height:16px; letter-spacing:-1px;}
+
+.contents .termsForm > dt {margin-top:16px; color:#333; font-size:13px; font-weight:bold;}
+.contents .termsForm > dd {margin-top:9px;}
+.contents .termsForm > dd .textArea {overflow-y:auto; width:760px; height:88px; padding:10px; border:1px solid #ccc; background-color:#fafafa; color:#666; font-family:'돋움'; letter-spacing:-1px; line-height:18px; text-indent:0;}
+.contents .allCheck {width:740px; margin-top:19px; padding:20px; text-align:right; background-color:#eee;}
+
+.contents .txtBox {margin-top:20px; padding:30px 0 15px; background-color:#eee; color:#666; font-family:'돋움'; text-align:center; letter-spacing:-1px;}
+.contents .txtBox > span {display:block; margin-bottom:15px;}
+.contents .txtBox > span strong {color:#fa5400; letter-spacing:-0.5px;}
+
+.contents .tab {position:absolute; right:40px; top:30px;}
+.contents .tab li {float:left;}
+.contents .tab li > a {display:block; overflow:hidden; width:145px; height:38px; background:url(http://image.nike.co.kr/web/btn/btn_tab.png) no-repeat; color:#666; font-size:14px; font-weight:bold; text-align:center; line-height:37px;}
+.contents .tab li > a.on {color:#fff;}
+.contents .tab li > a.menu1 {background-position:0 0;}
+.contents .tab li > a.menu2 {background-position:-145px 0;}
+.contents .tab li > a.menu1.on {background-position:0 -40px;}
+.contents .tab li > a.menu2.on {background-position:-145px -40px;}
+
+.contents .stepArea {position:relative; width:780px; margin-top:15px;}
+.contents .stepArea > fieldset.left, .contents .stepArea > fieldset.right {padding-top:28px;}
+.contents .stepArea > fieldset.left h5 a, .contents .stepArea > fieldset.right h5 a {display:block; position:absolute; left:0; top:0; height:28px; background:url(http://image.nike.co.kr/web/bg/bg_step.png) no-repeat; color:#333; font-size:12px; text-align:center; line-height:28px; letter-spacing:-1px;}
+.contents .stepArea > fieldset.left h5 a {width:446px; background-position:0 0;}
+.contents .stepArea > fieldset.left h5 a.on {background-position:0 -28px; color:#fff;}
+.contents .stepArea > fieldset.right h5 a {left:441px; width:338px; background-position:0 -56px;}
+.contents .stepArea > fieldset.right h5 a.on {background-position:0 -84px; color:#fff;}
+.contents .stepArea > fieldset.left {float:left; width:440px;}
+.contents .stepArea > fieldset.right {float:left; width:340px;}
+
+.contents .stepArea .stepBoxL {width:420px; padding-right:20px;}
+.contents .stepArea .stepBoxL .search {margin-top:18px;}
+.contents .stepArea .stepBoxL .search > label {display:block; color:#666; font-family:'돋움'; letter-spacing:-1px;}
+.contents .stepArea .stepBoxL .search > label strong {color:#fa5400;}
+.contents .stepArea .stepBoxL .search > input.inputType06 {vertical-align:top;}
+.contents .stepArea .stepBoxR {width:320px; padding-left:19px; border-left:1px solid #eee;}
+.contents .stepArea .stepBoxR .btnPo {position:absolute; right:0; bottom:0; margin-top:19px; text-align:right;}
+
+.contents .stepArea .dataBox {margin-top:19px;}
+.contents .stepArea .dataBox > dt {color:#333; font-size:13px; font-weight:bold; line-height:13px;}
+.contents .stepArea .dataBox > dd {position:relative; margin-top:10px;}
+.contents .stepArea .dataBox > dd .txt06 {position:absolute; left:0; bottom:0;}
+.contents .stepArea .dataBox > dd .txt06 span {font-size:12px;}
+
+.contents .pro {float:left; width:120px; margin-top:20px;}
+.contents .pro .txt07 {margin-top:8px;}
+.contents .noti {float:left; width:270px; margin:18px 0 0 20px;}
+.contents .noti .txt05 {display:block; margin:10px 0 20px;}
+.contents .noti .selectType04 {height:26px; margin:10px 0; padding:4px 2px 4px 0; border:1px solid #707070; color:#666; font-family:'돋움'; letter-spacing:1px;}
+.contents .noti .txt06 {margin-left:4px;}
+
+.contents .report {margin-top:17px;}
+.contents .report .radioSel {margin-top:19px; padding-top:13px; padding-top:10px\0/ !important; border-top:1px solid #eee;}
+:root .contents .report .radioSel {padding-top:13px\0/IE9 !important;}
+.contents .report .radioSel > p {margin-top:7px;}
+.contents .report .radioSel > p input[type=radio] {vertical-align:top;}
+.contents .report .radioSel > p label {margin-left:7px; color:#666; font-family:'돋움'; letter-spacing:-0.5px; vertical-align:top; vertical-align:middle\0/ !important;}
+:root .contents .report .radioSel > p label {vertical-align:top\0/IE9 !important;}
+
+/*** 테이블 ***/
+.contents .stepArea .addTable {margin-top:20px; border-top:2px solid #333;}
+.contents .stepArea .addTable.type02 {margin-top:10px;}
+.contents .stepArea .addTable > table thead tr th {height:17px; padding-top:6px; color:#333; font-family:'돋움';}
+.contents .stepArea .addTable > table tbody tr td {padding:4px 0; color:#666; font-family:'돋움'; letter-spacing:-0.5px; line-height:17px;}
+.contents .stepArea .addTable .dataList {overflow-y:scroll; height:257px; padding:10px 10px 10px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+.contents .stepArea .addTable .dataList.type02 {height:136px;}
+
+.inquiryEmail {}
+.inquiryEmail tbody th, .inquiryEmail tbody td {padding-bottom:10px; color:#666; font-family:'돋움'; text-align:left; letter-spacing:-1px;}
+.inquiryEmail tbody th {color:#333;}
+.inquiryEmail tbody th.alT {vertical-align:top;}
+.inquiryEmail tbody th .btn-tbl-type2 {margin-left:14px;}
+.inquiryEmail tbody th .btn-tbl-type2 span {min-width:25px; padding-top:5px;}
+.inquiryEmail tbody th span.tit {display:inline-block; padding-left:13px; background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 5px;}
+.inquiryEmail tbody td span.txt {float:right; position:relative; left:-49px; margin-top:6px; color:#666; font-size:11px;}
+.inquiryEmail tbody td label.stxt {color:#666; font-size:11px;}
+.inquiryEmail tbody td input.txt {width:222px; margin-right:7px;}
+.inquiryEmail tbody td input.title {width:460px;}
+.inquiryEmail tbody td textarea {overflow:auto; width:460px; height:150px; text-indent:0; line-height:16px;}
+.inquiryEmail tbody td .qselect {margin-bottom:8px;}
+.inquiryEmail tbody td .qselect label {margin-right:25px; color:#666; font-family:'돋움'; text-align:left; letter-spacing:-1px;}
+.inquiryEmail tbody tr.lineType th, .inquiryEmail tbody tr.lineType td {margin-top:20px; padding-top:20px; border-top:1px solid #eee;}
+
+.proType {margin-bottom:20px; border-top:2px solid #333; border-bottom:1px solid #ccc;}
+.proType > table tbody tr th, .inquiryEmail tbody td .proType > table tbody tr td {padding-top:10px; border-top:1px solid #eee; color:#333; letter-spacing:-0.5px;}
+.proType > table tbody tr th {text-align:center;}
+.proType > table tbody tr.fir th, .inquiryEmail tbody td .proType > table tbody tr.fir td {border-top:none;}
+.proType.type02 fieldset > table thead tr th {padding:8px 0; border-bottom:1px solid #9b9d9c; color:#333; font-family:'돋움';}
+.proType.type02 fieldset > table tbody tr td {padding:15px 0; border-top:1px solid #eee; color:#333; font-family:'돋움'; letter-spacing:-0.2px; text-align:center;}
+.proType.type02 fieldset > table tbody tr.fir td{border-top:none;}
+.proType.type02 fieldset > table tbody tr td label.num {display:inline-block; margin-top:8px; font-weight:bold;}
+.proType.type02 fieldset > table tbody tr td img {margin-right:10px;}
+
+.infoInput {position:relative; margin-top:6px; padding-bottom:20px; border-bottom:1px solid #e5e5e5;}
+.infoInput > table tbody input[type=text] {vertical-align:top;}
+.infoInput > table tbody input.inputType20 {padding-left:5px;}
+.infoInput > table tbody tr th, .infoInput > table tbody tr td {height:26px; padding:8px 0 7px; color:#333; font-family:'돋움'; text-align:left; letter-spacing:-1px;}
+.infoInput > table tbody tr th p {padding-left:10px; background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 5px;}
+.infoInput > table tbody tr th span.star {display:inline-block; padding-right:7px; background:url(http://image.nike.co.kr/web/ico/bl_star.png) no-repeat right -1px;}
+.infoInput > table tbody tr th.verT {padding:10px 0 5px;}
+.infoInput > table tbody tr td .formBox:hover .speech {display:block;}
+.infoInput > table tbody .num > input[type=text] {margin:0 1px 0 3px; vertical-align:middle;}
+.infoInput > table tbody .num {color:#666;}
+.infoInput > table tbody .num input.fir {margin-left:0;}
+.infoInput.type02 {margin-top:10px; padding-bottom:0; border:none;}
+.infoInput.type02 > table tbody tr th, .infoInput.type02 > table tbody tr td {padding:10px 0 0;}
+
+.alert_new {position:absolute; background-color:#fff; border:1px solid #eee; padding:50px; }
+.alert_new .btn {margin-top:20px;}
+
+/* 주소검색 시스템 팝업 관련 추가 */
+.popWindow {width:860px; padding:27px 10px 10px 10px; background:url(http://image.nike.co.kr/web/bg/bg_layerT_type1.png) no-repeat;}
+.popWindow .layerBox .contents h4 {padding-bottom:20px; border-bottom:1px solid #eee; color:#333; font-size:20px; line-height:20px;}
+.contents .tabWindow {position:absolute; left:580px; top:30px;}
+.contents .tabWindow li {float:left;}
+.contents .tabWindow li > a {display:block; overflow:hidden; width:145px; height:38px; background:url(http://image.nike.co.kr/web/btn/btn_tab.png) no-repeat; color:#666; font-size:14px; font-weight:bold; text-align:center; line-height:37px;}
+.contents .tabWindow li > a.on {color:#fff;}
+.contents .tabWindow li > a.menu1 {background-position:0 0;}
+.contents .tabWindow li > a.menu2 {background-position:-145px 0;}
+.contents .tabWindow li > a.menu1.on {background-position:0 -40px;}
+.contents .tabWindow li > a.menu2.on {background-position:-145px -40px;}
+
+/* mos 로그인 백그라운드 비활성화 효과 20140313 */
+.mos_loginBg {display:none; position:absolute; top:150px; left:50%; width:840px; height:420px; margin-left:-480px; padding:60px; z-index:1012;background:black;filter:alpha(opacity=70); opacity:0.7; -moz-opacity:0.7"}

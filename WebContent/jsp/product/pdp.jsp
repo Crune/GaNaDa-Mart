@@ -4,9 +4,10 @@
 <link href="${pageContext.request.contextPath}/css/detail.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/detail_new.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/global_renewal_phase2.css" rel="stylesheet" type="text/css">
+<script src="${pageContext.request.contextPath}/js/pdp.js"></script>
+<script src="${pageContext.request.contextPath}/js/pdp_import.js"></script>
 <jsp:include page='/jsp/product/pdp_stock_js.jsp' flush="false" />
 <jsp:include page='/jsp/product/pdp_top.jsp' flush="false" />
 <jsp:include page='/jsp/product/pdp_reco.jsp' flush="false" />
 <jsp:include page='/jsp/product/pdp_detail.jsp' flush="false" />
-<jsp:include page='/jsp/product/pdp_etc.jsp' flush="false" />
 <jsp:include page='${urlFooter}' flush="false" />

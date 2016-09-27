@@ -50,68 +50,6 @@
 						</div>
 						<!-- // 상품정보고시 -->
 					</div> <!-- // 제품 특장점 --></li>
-				<script type="text/javascript">
-
-				/* 2013-07-8 추가 s */
-
-
-				$(function() {
-					var arrPosX = new Array(0, 130, 278, 406);  // 2014-04-08 탭 버튼 추가
-					$localTab = $(".Local-tab");
-					
-					$localTab.find(".menu").on("click", function(e){
-						alert("꺼졍");
-						e.preventDefault();
-						
-						if(isRun) return;
-						isRun = true;
-						
-						var id = $(this).attr("data-index");
-						var txt = $(this).text();
-						$localTab.find(".active-tab").text(txt);
-						
-						//컨텐츠의 높이를 구한다.
-						var hei = $(this).next().height()+80;
-						$localTab.find(".conTab").height(hei); //20140513 클래스명 수정
-						
-						//컨텐츠 셋팅
-						$localTab.find(".conArea").hide();
-						$localTab.find(".conArea").eq(id).fadeIn(300);
-						
-						var target = arrPosX[id]
-						$localTab.find(".active-tab").animate({
-							left:target
-						}, 
-						{
-							duration : 1000,
-							easing : "easeOutQuint",
-							queue : false,
-							complete : function(){
-								isRun = false;
-							}
-						});
-					});
-					
-					/* 2014-04-08 start */
-					var hei = $localTab.find(".menu").eq(0).next().height()+80;
-					$localTab.find(".conTab").height(hei); //20140513 클래스명 수정
-					/* 2014-04-08 end */
-					
-				});
-				/* 2013-07-8 추가 e */
-				
-					$(document).ready(function() {
-						/*
-							신발(01), 의류(02),  용품(03), 가방(04), 모자(05),양발(06), 나이키+(07), 
-							글러브(08), 헤드/리스트 밴드(09), 보호대(10), 공(11), 드라이버(12)
-						 */
-						showLaundryTab('1');
-					});
-
-					function showLaundryTab(num) {
-						$("#laundryTab" + num).show();
-					}
-				</script>
 				<li><a href="#" class="menu" data-index="1">배송/결제 정보</a>
 					<div class="conArea" style="display: none;">{상품정보2}</div></li>
 				<li><a href="#" class="menu" data-index="2">유의사항</a>

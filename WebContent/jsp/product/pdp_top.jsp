@@ -37,22 +37,22 @@
 						</p>
 					</div>
 					<style type="text/css">
-						.right_sub_cont {
-							padding: 10px 0;
-						}
-						
-						.right_sub_cont>p {
-							line-height: 18px;
-						}
-						
-						.right_sub_cont .view_more {
-							text-align: right;
-						}
-						
-						.right_sub_cont .view_more>a {
-							text-decoration: underline;
-						}
-					</style>
+.right_sub_cont {
+	padding: 10px 0;
+}
+
+.right_sub_cont>p {
+	line-height: 18px;
+}
+
+.right_sub_cont .view_more {
+	text-align: right;
+}
+
+.right_sub_cont .view_more>a {
+	text-decoration: underline;
+}
+</style>
 				</div>
 				<div class="box">
 					<div id="selectOptionValue" class="color-code">
@@ -66,7 +66,8 @@
 					<div id="colorList" class="item-list">
 						<!-- 색상 목록 시작 -->
 						<ul class="item clx">
-							<li><a href="#" class="on" title="704943-005"> <img src="{이미지주소}" alt=""
+							<li><a href="#" class="on" title="704943-005"> <img
+									src="{이미지주소}" alt=""
 									onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
 							</a></li>
 						</ul>
@@ -76,20 +77,31 @@
 
 				<div class="box">
 					<div class="btn-group clx" id="itemBtnArea">
-						<div class="size-area" id="sizeArea" data-value="240">
+						<div class="size-area" id="sizeArea" data-value="240"
+							onclick="javascript:fn_catalystSizeList();">
 							<a href="#" class="btn-pdp-type1 size"> <span id="selectSize">사이즈</span>
 							</a>
 							<div class="size-list" style="display: none;">
 								<div class="bg">
 									<span class="arr"></span>
 									<ul id="sizeList" class="clx">
-										<li><a href="#" title="225@NK31073268001">225</a></li>
-										<li><a href="#" title="230@NK31073268002">230</a></li>
-										<li><a href="#" title="235@NK31073268003">235</a></li>
-										<li><a href="#" title="235W@NK31073268007">235W</a></li>
-										<li><a href="#" title="240@NK31073268004" class="out">240</a></li>
-										<li><a href="#" title="245@NK31073268005" class="out">245</a></li>
-										<li><a href="#" title="250@NK31073268006" class="out">250</a></li>
+										<li><a href="#" title="240@NK31068567120" class="out">240</a></li>
+										<li><a href="#" title="245@NK31068567121" class="out">245</a></li>
+										<li><a href="#" title="250@NK31068567122">250</a></li>
+										<li><a href="#" title="255@NK31068567123">255</a></li>
+										<li><a href="#" title="260@NK31068567124">260</a></li>
+										<li><a href="#" title="265@NK31068567125">265</a></li>
+										<li><a href="#" title="270@NK31068567126">270</a></li>
+										<li><a href="#" title="275@NK31068567127">275</a></li>
+										<li><a href="#" title="280@NK31068567128">280</a></li>
+										<li><a href="#" title="285@NK31068567129">285</a></li>
+										<li><a href="#" title="290@NK31068567130">290</a></li>
+										<li><a href="#" title="295@NK31068567131">295</a></li>
+										<li><a href="#" title="300@NK31068567132">300</a></li>
+										<li><a href="#" title="305@NK31068567133" class="out">305</a></li>
+										<li><a href="#" title="310@NK31068567134" class="out">310</a></li>
+										<li><a href="#" title="320@NK31068567135" class="out">320</a></li>
+										<li><a href="#" title="330@NK31068567136" class="out">330</a></li>
 									</ul>
 								</div>
 							</div>
@@ -135,25 +147,9 @@
 						<div class="g_btn_wish">
 							<a href="#">위시리스트담기</a>
 						</div>
-						<script type="text/javascript">
-							$(function() {
-								$('.g_btn_wish').find('a').click(function() {
-									insertMyLocker();
-									return false;
-								});
-								$('.layer-cart').find('.close').click(
-										function() {
-											$(".layer-cart").stop(true, false)
-													.animate({
-														top : "-187px"
-													}, 1000);
-											return false;
-										});
-							});
-						</script>
 					</div>
 				</div>
-				
+
 				<div class="guide_msg"
 					style="padding: 13px 10px; margin-top: 12px; color: #666; font-size: 12px; line-height: 18px;">
 					<!-- h3 style="font-size:12px"-->
@@ -164,26 +160,26 @@
 						</h3>
 					</div>
 					<style type="text/css">
-						.store-btn {
-							text-decoration: underline;
-							font-weight: 600;
-						}
-						
-						.store-btn:hover {
-							text-decoration: underline
-						}
-						
-						.m-store-btn {
-							display: none !important
-						}
-						
-						.goods_view_new .m-store-btn {
-							display: inline !important;
-							margin-top: 0;
-							font-weight: 600;
-							cursor: pointer
-						}
-					</style>
+.store-btn {
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+.store-btn:hover {
+	text-decoration: underline
+}
+
+.m-store-btn {
+	display: none !important
+}
+
+.goods_view_new .m-store-btn {
+	display: inline !important;
+	margin-top: 0;
+	font-weight: 600;
+	cursor: pointer
+}
+</style>
 					<!--/h3-->
 				</div>
 
@@ -192,37 +188,51 @@
 				<div class="nav">
 					<div class="area">
 						<ul id="thumbImgList" class="item">
-<c:forEach begin="0" end="5" var="curImgNum">
-							<li data-index="${curImgNum }"><a href="#" class="on" title="">
-								<img src="{이미지주소}" alt="{이미지 설명}"
-								onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
-							</a></li>
-</c:forEach>
+							<c:forEach begin="0" end="5" var="curImgNum">
+								<li data-index="${curImgNum }"><a href="#" class="on"
+									title=""> <img src="{이미지주소}" alt="{이미지 설명}"
+										onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
+								</a></li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>
-				<div class="viewer">				
-					<ul id="detailImgList">					
-<c:forEach begin="0" end="5" var="curBigImgNum">
-<c:if test="${curBigImgNum == 0 }"><li style="display: list-item;"></c:if>
-<c:if test="${curBigImgNum != 0 }"><li style="display:none;"></c:if>
-		<a href="{원본이미지주소}" class="jqzoom" title="" rel="undefined" style="outline-style: none; text-decoration: none;">
-			<div class="zoomPad">
-				<img src="{큰이미지주소}" alt="상품 이미지" onerror="this.src='${pageContext.request.contextPath}/img/no-img/400x400.gif'" width="520" style="padding: 50px; opacity: 1;" title="">
-				<div class="zoomPup" style="cursor: -webkit-zoom-in; top: 237px; left: 500px; width: 119px; height: 192px; position: absolute; border-width: 1px; display: block;"></div>
-				<div class="zoomWindow" style="position: absolute; display: none; z-index: 5001; left: 636px; top: 0px;">
-					<div class="zoomWrapper" style="width: 384px;">
-						<div class="zoomWrapperTitle" style="width: 100%; position: absolute; display: none;"></div>
-						<div class="zoomWrapperImage" style="width: 100%; height: 620px;">
-							<img src="{확대한큰이미지주소}" style="position: absolute; border: 0px; display: block; left: -1616.13px; top: -767.742px;">
-						</div>
-					</div>
-				</div>
-				<div class="zoomPreload" style="visibility: hidden; top: 288.5px; left: 265px; position: absolute;">Loading zoom</div>
-			</div>
-		</a>
-	</li>
-</c:forEach>						
+				<div class="viewer">
+					<ul id="detailImgList">
+						<c:forEach begin="0" end="5" var="curBigImgNum">
+							<c:if test="${curBigImgNum == 0 }">
+								<li style="display: list-item;">
+							</c:if>
+							<c:if test="${curBigImgNum != 0 }">
+								<li style="display: none;">
+							</c:if>
+							<a href="{원본이미지주소}" class="jqzoom" title="" rel="undefined"
+								style="outline-style: none; text-decoration: none;">
+								<div class="zoomPad">
+									<img src="{큰이미지주소}" alt="상품 이미지"
+										onerror="this.src='${pageContext.request.contextPath}/img/no-img/400x400.gif'"
+										width="520" style="padding: 50px; opacity: 1;" title="">
+									<div class="zoomPup"
+										style="cursor: -webkit-zoom-in; top: 237px; left: 500px; width: 119px; height: 192px; position: absolute; border-width: 1px; display: block;"></div>
+									<div class="zoomWindow"
+										style="position: absolute; display: none; z-index: 5001; left: 636px; top: 0px;">
+										<div class="zoomWrapper" style="width: 384px;">
+											<div class="zoomWrapperTitle"
+												style="width: 100%; position: absolute; display: none;"></div>
+											<div class="zoomWrapperImage"
+												style="width: 100%; height: 620px;">
+												<img src="{확대한큰이미지주소}"
+													style="position: absolute; border: 0px; display: block; left: -1616.13px; top: -767.742px;">
+											</div>
+										</div>
+									</div>
+									<div class="zoomPreload"
+										style="visibility: hidden; top: 288.5px; left: 265px; position: absolute;">Loading
+										zoom</div>
+								</div>
+							</a>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>

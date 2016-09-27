@@ -30,7 +30,7 @@ public class ChkLoginAjaxAction implements SuperAction {
                 
         String loginId = (String) session.getAttribute("loginId");
         
-        System.out.println("ChkLoginAjaxAction.executeAction.loginId="+loginId);        
+        //ystem.out.println("ChkLoginAjaxAction.executeAction.loginId="+loginId);        
 
         if (loginId == null || account == null) {
             loginId = "guest";

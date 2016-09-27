@@ -13,6 +13,26 @@
 <link href="${pageContext.request.contextPath}/css/default.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/nike.css" rel="stylesheet" type="text/css">
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.json-2.2.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.bxslider.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.jqzoom-core.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.json-2.2.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.word-break-keep-all.min.js"></script>
+
+<link href="${pageContext.request.contextPath}/css/jquery.jqzoom.css" rel="stylesheet" type="text/css">
+
+<!-- CP Javascript -->
+<script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
+<script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
+<script src="${pageContext.request.contextPath}/js/popup.js"></script>
+
+<!-- Custom Javascript -->
+<script src="${pageContext.request.contextPath}/js/default.js"></script>
+
 </head>
 <body>
 
