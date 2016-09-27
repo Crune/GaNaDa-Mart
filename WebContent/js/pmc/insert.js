@@ -1,17 +1,17 @@
 $(document).ready(function(){
 	$("#inform").ajaxForm({
 	success: function(data, status){
-		window.location.href("/jsp/mc/pmc/list.jsp");
+		window.location.href("./list.gnd");
 	}	
 	});
 	
 	
 $("#main").click(function(){
-	window.location.href("/jsp/mc/mc.jsp");
+	window.location.href("./index.gnd");
 });	
 
 $("#list").click(function(){
-	window.location.href("/jsp/mc/pmc/list.jsp");
+	window.location.href("./list.gnd");
 })
 	
 })

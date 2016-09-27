@@ -7,7 +7,7 @@
 등록된 상품 목록 <font size="3" color="red">${count}</font><br /> 
 <br />
 <input type="button" value="상품등록" onclick="javascript:window.location='./insert.gnd'">
-<button id="main">관리자 메인으로</button>
+<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
 <br />
 <c:if test ="${count == 0 }">
 등록된 상품이 없습니다.
