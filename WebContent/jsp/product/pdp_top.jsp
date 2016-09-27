@@ -3,12 +3,9 @@
 <div class="Pdp">
 	<div class="content" id="goodsContent" style="display: block">
 		<div class="loc-box">
-			<span> <a href="/display/displayShop.lecs?displayNo=NK1A49">MEN</a>
-			</span> <span> &nbsp;&gt;&nbsp; <a
-				href="/display/displayShop.lecs?displayNo=NK1A49A01">신발</a>
-			</span> <span> &nbsp;&gt;&nbsp; <a
-				href="/display/displayShop.lecs?displayNo=NK1A49A01A01">라이프스타일</a>
-			</span> <span> </span>
+			<span> <a href="/display/displayShop.lecs?displayNo=NK1A49">MEN</a></span>
+			<span> &nbsp;&gt;&nbsp; <a href="/display/displayShop.lecs?displayNo=NK1A49A01">신발</a></span>
+			<span> &nbsp;&gt;&nbsp; <a href="/display/displayShop.lecs?displayNo=NK1A49A01A01">라이프스타일</a>	</span>
 		</div>
 		<div class="item-box clx">
 			<div class="overlay_wrap">
@@ -579,13 +576,6 @@ Air Max에는 최초로 적용된 플라이니트 갑피에 울트라 미드솔,
 
 
 				<!-- 예약상품일 경우  -->
-
-
-
-
-
-
-
 			</div>
 
 			<script type="text/javascript">
@@ -856,3 +846,4 @@ Air Max에는 최초로 적용된 플라이니트 갑피에 울트라 미드솔,
 		</div>
 	</div>
 </div>
+
