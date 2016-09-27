@@ -53,6 +53,7 @@ public abstract class DAO {
             for (Method m : t.getter()) {
             	Object getValue = m.invoke(obj);
             	if (getValue != null) {
+                	System.out.println("\tColumn: "+cName(m)+"\t\t <- "+m.getName()+""+getValue);
 	                if ( !t.getCNameReg().isEmpty() && cName(m).equals(t.getCNameReg()) ) {
 	                	sql.inSql(t.getCNameReg(), "sysdate");
 	                } else if (!t.getCNameMod().isEmpty() && cName(m).equals(t.getCNameReg()) ) {
@@ -79,7 +80,7 @@ public abstract class DAO {
             if (db.next()) {
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                	//System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
+                	System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
             		m.invoke(obj, value);
                 }
             }
@@ -101,11 +102,10 @@ public abstract class DAO {
                 Object obj = t.getVoCls().newInstance();
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                	//System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
+                	System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
             		m.invoke(obj, value);
                 }
         		objList.add(obj);
-        		System.out.println(obj);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -115,23 +115,23 @@ public abstract class DAO {
         return objList;
     }
     
-    public List<String> search(String colName, String... between) {
+    public List<String> search(String colName, String start, String... end) {
         List<String> list = new ArrayList<String>();
         DB db = new DB();
         DBTable t = gT();
         try {
-            String var1 = NULL.toDQ(between[0]);
-            String var2 = NULL.toDQ(between[1]);
-            String where = var1.isEmpty()?"":colName;
-            where += var2.isEmpty()?"=?":" BETWEEN ? AND ?";
-            db.S("*", t.getTableName(), where);
-            if (var1.isEmpty()) db.var(var1);
-            if (var2.isEmpty()) db.var(var2);
-            while (db.next()) {
-                Object obj = t.getVoCls().newInstance();
-                Method m = t.getPK();
-                list.add((String) m.invoke(obj));
-            }
+        	if (!colName.isEmpty() && !start.isEmpty()) {
+	            String var1 = NULL.toDQ(start);
+	            String var2 = var1;
+	            db.S("*", t.getTableName(), colName+" BETWEEN ? AND ?").var(var1).var(var2).exe();
+	            while (db.next()) {
+	                Object obj = t.getVoCls().newInstance();
+	                Method m = t.getPK();
+	                list.add((String) m.invoke(obj));
+	            }
+        	} else {
+        		System.out.println("DAO.search: 검색 조건 불충분!");
+        	}
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

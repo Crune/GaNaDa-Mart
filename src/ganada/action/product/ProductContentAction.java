@@ -21,7 +21,7 @@ public class ProductContentAction implements SuperAction {
         Product product = (Product) pDao.select(pd_code);
 
         ProductColorDao colordao = ProductColorDao.getInstance();
-        List colors = colordao.search(pd_code);
+        List colors = colordao.search("pd_code", pd_code);
 
         ProductImageDao imgDao = ProductImageDao.getInstance();
         Map<String, ProductImage> pImgs = imgDao.mapColorImg(pd_code);

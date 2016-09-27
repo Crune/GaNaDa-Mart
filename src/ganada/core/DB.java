@@ -214,7 +214,7 @@ public class DB {
 
 	public ResultSet exe() throws Exception {
 	    if (!isLoged) {
-    	    System.out.println("SQL.Q: " + sql);
+    	    System.out.println("\r\nSQL.Q: " + sql);
             if (!inData.isEmpty())
                 System.out.println("SQL.?: " + inData);
             isLoged = true;

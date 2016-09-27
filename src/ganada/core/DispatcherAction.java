@@ -46,7 +46,11 @@ public class DispatcherAction extends HttpServlet {
             try {
                 Class actionClass = Class.forName(value);
                 Object instance = actionClass.newInstance();
-                System.out.println("DispatcherAction.init.instance:" + instance.toString());
+                String tab = "\t";
+                for (int i=2;i<4;i++)
+                	tab += (key.toString().length()<8*i)?"\t":"";
+                String msg = " +@ url " +key +tab +instance.getClass().getName();
+                System.out.println(msg);
                 map.put((String) key, (SuperAction) instance);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -64,7 +68,7 @@ public class DispatcherAction extends HttpServlet {
             if (uri.indexOf(path) == 0) // sub domain check
                 uri = uri.substring(path.length());
 
-            System.out.println("DispatcherAction.service.uri:" + uri);
+            System.out.println("\r\n호출URI: " + uri);
 
             // MC 헤더 푸터 적용 {
             if (uri.contains("/mc/")) {

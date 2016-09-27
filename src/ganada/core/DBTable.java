@@ -9,6 +9,12 @@ public class DBTable {
 	private String tableName = "";
 	private String cNameCode = "CODE";
 	private String cNameReg = "";
+	@Override
+	public String toString() {
+		return "DBTable [테이블명=" + tableName + ", PK컬럼명=" + cNameCode + ", 등록일컬럼명=" + cNameReg + ", 수정일컬럼명="
+				+ cNameMod + "]";
+	}
+
 	private String cNameMod = "";		
 	
 	private Class voCls;
@@ -56,8 +62,9 @@ public class DBTable {
 	public void init() {
 		if (voCls != null) {
             String getPKMethodName = "get";
-            getPKMethodName += cNameCode.toLowerCase().indexOf(0);
+            getPKMethodName += cNameCode.toUpperCase().subSequence(0, 1);
             getPKMethodName += cNameCode.toLowerCase().substring(1);
+            
 			for (Method m : voCls.getMethods()) {
 				String name = m.getName();
 
@@ -65,11 +72,28 @@ public class DBTable {
 					if (objM.getName().equals(name))
 						name = "";
 				if (name.startsWith("get")) {
-				    getMethods.add(m);
-				    if (name.equals(getPKMethodName))
+				    if (name.equals(getPKMethodName)) {
 				        getPK = m;
+				    }
+				    getMethods.add(m);
 				}
-				if (name.startsWith("set")) setMethods.add(m);
+				if (name.startsWith("set")) {
+					setMethods.add(m);
+				}
+			}
+
+			System.out.println("\r\nDAO.TABLE:\t"+toString());
+			System.out.println("DAO.CLASS:\t"+voCls.getName());
+
+			for (Method m : getter()) {
+			    String msg = "\tG+ ";
+			    msg += (m.getName().equals(getPKMethodName))?"[PK]\t":"\t";
+			    msg += m.getName()+"()";	
+			    System.out.println(msg);
+			}
+
+			for (Method m : setter()) {
+			    System.out.println("\tS+ \t"+m.getName()+"()");
 			}
 		}
 	}
