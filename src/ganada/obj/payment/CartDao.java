@@ -28,7 +28,7 @@ public class CartDao extends DAO {
 	protected DBTable gT() {
 		if (t == null) {
 			t = new DBTable("CART_ITEM", "CART_ID");
-			t.setCls("ganada.obj.product.Cart");
+			t.setCls("ganada.obj.payment.Cart");
 		}
 		return t;
 	}
