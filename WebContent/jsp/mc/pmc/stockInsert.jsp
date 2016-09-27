@@ -6,15 +6,15 @@
     <form id="stinform" action="./stockInsertPro.gnd" method="post">
 	    <div id="productForm" class="box">
 		    <ul>
-		   
-		    <li><label for="pd_name">상품명</label>
-		    	<input id="pd_name" name="pd_name" type="text" size="50" placeholder="상품명" maxlength="50">
-		    <li><label for="pd_price">가격</label>
-		    	<input id="pd_price" name="pd_price" type="text" size="10" placeholder="가격" maxlength="10">원
-		    
-		    <li class="label2">
-		   		<input type="submit" id="stinProduct" value="상품수정">
-		    
+			   	<input id="pd_code" name="pd_code" type="hidden" placeholder="상품코드" value="${pd_code }">
+			    <li><label for="pd_size">사이즈</label>
+			    	<input id="pd_size" name="pd_size" type="text" size="10" placeholder="사이즈" maxlength="10">
+			    <li><label for="amount">수량</label>
+			    	<input id="amount" name="amount" type="text" size="10" placeholder="수량" maxlength="10">
+			    
+			    <li class="label2">
+			   		<input type="submit" id="stinProduct" value="상품수정">
+			    
 		    </ul>
 	    </div>
     </form>
