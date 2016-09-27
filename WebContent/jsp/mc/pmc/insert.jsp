@@ -8,6 +8,7 @@
     <form id="inform" action="./insertPro.gnd" method="post"></form>
     <div id="productForm" class="box">
     <ul>
+   <input type="hidden" name="menu_code" value="1234">
    
     <li><label for="pd_name">상품명</label>
     <input id="pd_name" name="pd_name" type="text" size="50" placeholder="상품명" maxlength="50">
@@ -15,8 +16,8 @@
     <input id="pd_price" name="pd_price" type="text" size="10" placeholder="가격" maxlength="10">원
     
     <li class="label2">
-    <input type="submit" id="inProduct" value="상품등록">
-    
+
+    <input type="submit" id="inProduct" value="상품등록" onclick="javascript:window.location='./insertPro.gnd'">
     </ul>
     </div>
     </form>
