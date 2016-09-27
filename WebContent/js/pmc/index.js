@@ -8,6 +8,6 @@ $(document).ready(function(){
 		window.location = "./update.gnd";
 	});
 	$("#review").click(function(){
-		window.location = "./delete.gnd.jsp";
+		window.location = "./delete.gnd";
 	});
 });

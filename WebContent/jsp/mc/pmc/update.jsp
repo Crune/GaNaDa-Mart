@@ -6,11 +6,11 @@
 <title>상품등록(수정)</title>
 </head>
 <body>  
-	<form method="post" name="productUpdate" enctype="multipart/form-data" action="pdpUpdatePro.gnd">
+	<form method="post" name="productUpdate" enctype="multipart/form-data" action="updatePro.gnd">
 		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
 	    		<td align="right" colspan="2">
-		    		<a href="pdpList.gnd">상품목록</a> 
+		    		<a href="./list.gnd">상품목록</a> 
 	   			</td>
 	   		</tr>
 	   		<tr>

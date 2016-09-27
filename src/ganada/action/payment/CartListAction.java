@@ -13,6 +13,7 @@ import ganada.obj.member.Account;
 import ganada.obj.payment.Cart;
 import ganada.obj.payment.CartDao;
 import ganada.obj.product.Product;
+import ganada.obj.product.ProductDao;
 
 /**
  * 실제 장바구니를 호출하는 액션
@@ -27,6 +28,7 @@ public class CartListAction implements SuperAction{
 		//세션에서 사용자 정보를 가져온다.
 		Account userVO  = (Account)session.getAttribute("userAccount");
 		CartDao cartDao  = CartDao.getInstance();
+		ProductDao productDao  = ProductDao.getInstance();
 		
 		//현재 로그인된 사용자가 가진 장바구니 리스트를 출력한다.
 		List<Cart> cartList  = cartDao.getCart(userVO.getId());
@@ -43,7 +45,7 @@ public class CartListAction implements SuperAction{
 			for(Cart vo : cartList){
 				total =0;
 				// 장바구니에 있는 각각의 상품코드를 통해서 상품에 대한 가격정보, 상품명 을 가져온다.
-				Product pVo  = (Product) cartDao.select(vo.getItem_id());
+				Product pVo  = (Product) productDao.select(vo.getItem_id());
 				total = pVo.getPd_price() * vo.getItem_cnt();
 
 				vo.setItem_price(pVo.getPd_price());

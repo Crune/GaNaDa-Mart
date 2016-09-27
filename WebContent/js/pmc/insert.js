@@ -1,17 +1,17 @@
 $(document).ready(function(){
 	$("#inform").ajaxForm({
 	success: function(data, status){
-		window.location.href("./list.gnd");
+		window.location="./list.gnd";
 	}	
 	});
 	
 	
 $("#main").click(function(){
-	window.location.href("./index.gnd");
+	window.location="./index.gnd";
 });	
 
 $("#list").click(function(){
-	window.location.href("./list.gnd");
-})
+	window.location="./list.gnd";
+});
 	
-})
+});
