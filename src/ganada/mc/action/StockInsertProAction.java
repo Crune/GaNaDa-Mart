@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ganada.action.common.SuperAction;
 
-public class StockInsertAction implements SuperAction {
+public class StockInsertProAction implements SuperAction {
 
 	
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -13,7 +13,7 @@ public class StockInsertAction implements SuperAction {
 		
 		request.setAttribute("pd_code", pd_code);
 		
-		return "/jsp/mc/pmc/stockInsert.jsp";
+		return "/jsp/mc/pmc/stockInsertPro.jsp";
 	}
 
 
