@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import ganada.action.common.SuperAction;
 import ganada.obj.product.Product;
 import ganada.obj.product.ProductDao;
-
 public class InsertProAction implements SuperAction{
 
 	
@@ -18,6 +17,10 @@ public class InsertProAction implements SuperAction{
 		Product pd = new Product();
 		pd.setPd_name(request.getParameter("pd_name"));
 		pd.setPd_price(Integer.parseInt(request.getParameter("pd_price")));
+		ProductDao process = ProductDao.getInstance();
+		
+		process.insert(pd);
+		
 		
 		
 

@@ -15,8 +15,8 @@
     <input id="pd_price" name="pd_price" type="text" size="10" placeholder="가격" maxlength="10">원
     
     <li class="label2">
-    <input type="submit" id="inProduct" value="상품등록">
-    
+
+    <input type="submit" id="inProduct" value="상품등록" onclick="javascript:window.location='./insertPro.gnd'">
     </ul>
     </div>
     </form>
