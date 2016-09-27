@@ -1,73 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <div class="Pdp">
 	<div class="content" id="goodsContent" style="display: block">
 		<div class="loc-box">
 			<span> <a href="/display/displayShop.lecs?displayNo=NK1A49">MEN</a>
-
 			</span> <span> &nbsp;&gt;&nbsp; <a
-				href="/display/displayShop.lecs?displayNo=NK1A49A01">½Å¹ß</a>
-
-
+				href="/display/displayShop.lecs?displayNo=NK1A49A01">ì‹ ë°œ</a>
 			</span> <span> &nbsp;&gt;&nbsp; <a
-				href="/display/displayShop.lecs?displayNo=NK1A49A01A01">¶óÀÌÇÁ½ºÅ¸ÀÏ</a>
-
-
-
+				href="/display/displayShop.lecs?displayNo=NK1A49A01A01">ë¼ì´í”„ìŠ¤íƒ€ì¼</a>
 			</span> <span> </span>
-
-
 		</div>
 		<div class="item-box clx">
-
 			<div class="overlay_wrap">
 				<div class="overlay" style="display: none;"></div>
 			</div>
-
 			<div class="right">
 				<div class="info">
-					<div class="tit">³ªÀÌÅ° ¿¡¾î¸Æ½º 1 ¿ïÆ®¶ó ÇÃ¶óÀÌ´ÏÆ®</div>
-					<!-- Ä«Å×°í¸® -->
-					<div class="loc">MEN &nbsp; ½Å¹ß &nbsp; ¶óÀÌÇÁ½ºÅ¸ÀÏ</div>
-
-					<div class="price">
-
-
-
-						<!-- ¼¼ÀÏ or °¡°ÝÀÎÇÏ - 2015.07.23 ¼¼ÀÏ ¶Ç´Â °¡°ÝÀÎÇÏ°¡ ¾Æ´Ñ ¿É¼ÇÇÒÀÎÀÎ °æ¿ì¿¡µµ ºñ±³°¡°Ý Ç¥±â ÇÊ¿ä -->
+					<div class="tit">ë‚˜ì´í‚¤ ì—ì–´ë§¥ìŠ¤ 1 ìš¸íŠ¸ë¼ í”Œë¼ì´ë‹ˆíŠ¸</div>
+					<!-- ì¹´í…Œê³ ë¦¬ -->
+					<div class="loc">MEN &nbsp; ì‹ ë°œ &nbsp; ë¼ì´í”„ìŠ¤íƒ€ì¼</div>
+					<div class="price">						<!-- ì„¸ì¼ or ê°€ê²©ì¸í•˜ - 2015.07.23 ì„¸ì¼ ë˜ëŠ” ê°€ê²©ì¸í•˜ê°€ ì•„ë‹Œ ì˜µì…˜í• ì¸ì¸ ê²½ìš°ì—ë„ ë¹„êµê°€ê²© í‘œê¸° í•„ìš” -->
 						<span id="itemOriAmtArea" class="ori_price" style="display: none;">
-							209,000¿ø </span> <span id="itemPriceArea">209,000¿ø</span>
-
-
-
-
+							209,000ì› </span> <span id="itemPriceArea">209,000ì›</span>
 					</div>
-
 					<div class="ra">
-						<!-- <a href="javascript:viewCreateAssessmentArea();">»óÇ°¸®ºäÀÛ¼º</a> -->
+						<!-- <a href="javascript:viewCreateAssessmentArea();">ìƒí’ˆë¦¬ë·°ìž‘ì„±</a> -->
 						<div class="star">
 							<a href="#" class="go_review"> <span class="rating"><span
 									style="width: 60.16px;">4.7</span></span>
 							</a> <strong>(51)</strong>
-
 						</div>
-
 					</div>
 					<div class="line"></div>
-
-					<!-- 150416 ½Å¿ëÄ«µå ÇýÅÃ : str (HTML1-¾È³»¹®±¸)-->
-
-
-
-
+					<!-- 150416 ì‹ ìš©ì¹´ë“œ í˜œíƒ : str (HTML1-ì•ˆë‚´ë¬¸êµ¬)-->
 					<div class="card_benefit">
-						<p>Ä«µå»çº° ¹«ÀÌÀÚ ÇÒºÎ ¾È³»</p>
+						<p>ì¹´ë“œì‚¬ë³„ ë¬´ì´ìž í• ë¶€ ì•ˆë‚´</p>
 						<p class="view_more">
-							<a href="#" id="btnCardBenefit">ÇýÅÃ ÀÚ¼¼È÷ º¸±â </a>
+							<a href="#" id="btnCardBenefit">í˜œíƒ ìžì„¸ížˆ ë³´ê¸° </a>
 						</p>
 					</div>
 					<style type="text/css">
-/* 150416 Ä«µå ÇÒºÎ ÇýÅÃ : str */
+/* 150416 ì¹´ë“œ í• ë¶€ í˜œíƒ : str */
 .card_benefit {
 	padding: 10px 0;
 }
@@ -176,7 +149,7 @@
 		no-repeat;
 	font-size: 11px;
 	line-height: 19px;
-	font-family: "µ¸¿ò";
+	font-family: "ë‹ì›€";
 	color: #666;
 	letter-spacing: -0.08em;
 }
@@ -199,7 +172,7 @@
 .pop_card_benefit .pop_content .pop_right .desc li strong {
 	color: #333;
 }
-/* 150416 Ä«µå ÇÒºÎ ÇýÅÃ : end */
+/* 150416 ì¹´ë“œ í• ë¶€ í˜œíƒ : end */
 </style>
 					<script type="text/javascript">
 						$(
@@ -235,7 +208,7 @@
 
 
 
-					<!--  //150416 ½Å¿ëÄ«µå ÇýÅÃ : end -->
+					<!--  //150416 ì‹ ìš©ì¹´ë“œ í˜œíƒ : end -->
 
 
 
@@ -243,7 +216,7 @@
 
 				<div class="box">
 
-					<!-- 2016.04.21. [smartchecker-1665] PDP ¸ÅÀåÀç°í¿µ¿ª Å¬¸¯¼ö Æ®·¡Å· Ãß°¡ -->
+					<!-- 2016.04.21. [smartchecker-1665] PDP ë§¤ìž¥ìž¬ê³ ì˜ì—­ í´ë¦­ìˆ˜ íŠ¸ëž˜í‚¹ ì¶”ê°€ -->
 
 
 
@@ -259,10 +232,10 @@
 					<!-- 150925 -->
 					<div id="selectOptionValue" class="color-code">
 						<div class="fll">
-							<span>ºê¶óÀÌÆ® Å©¸²½¼/È­ÀÌÆ®-À¯´Ï¹Ù½ÃÆ¼ ·¹µå</span>
+							<span>ë¸Œë¼ì´íŠ¸ í¬ë¦¼ìŠ¨/í™”ì´íŠ¸-ìœ ë‹ˆë°”ì‹œí‹° ë ˆë“œ</span>
 						</div>
 						<div class="flr">
-							½ºÅ¸ÀÏ-ÄÃ·¯ #<span>&nbsp;843384-601</span>
+							ìŠ¤íƒ€ì¼-ì»¬ëŸ¬ #<span>&nbsp;843384-601</span>
 						</div>
 					</div>
 					<div id="colorList" class="item-list">
@@ -369,39 +342,39 @@
 					<div class="box">
 						<a href="#" class="btn_storeStock bt_reserve_service"
 							onclick="popStoreStock('layerStoreStock'); setTclick('pc_pdp_inventory_01'); return false;">
-							<span>¸ÅÀåÀç°í ¿¹¾à ¼­ºñ½º</span>
+							<span>ë§¤ìž¥ìž¬ê³  ì˜ˆì•½ ì„œë¹„ìŠ¤</span>
 						</a>&nbsp;
-						<!-- ¸ÅÀåÀç°íÈ®ÀÎ 20151016 -->
+						<!-- ë§¤ìž¥ìž¬ê³ í™•ì¸ 20151016 -->
 						<a
 							href="http://www.nike.co.kr/display/displayShop.lecs?displayNo=NK1A66"><img
 							src="http://image.nike.co.kr/web/global/g_ico_q2.png" alt=""></a>
 						<p class="mt5" style="padding-bottom: 18px">
-							NIKE.COM¿¡¼­ ¿¹¾àÇÏ½Ã°í, ¸ÅÀå¿¡¼­ Ã£¾Æ°¡¼¼¿ä. ¸ÅÀå»óÇ° Àç°í È®ÀÎ ÈÄ, <br>±¸¸Å ¿¹¾àÀÌ
-							°¡´ÉÇÕ´Ï´Ù.
+							NIKE.COMì—ì„œ ì˜ˆì•½í•˜ì‹œê³ , ë§¤ìž¥ì—ì„œ ì°¾ì•„ê°€ì„¸ìš”. ë§¤ìž¥ìƒí’ˆ ìž¬ê³  í™•ì¸ í›„, <br>êµ¬ë§¤ ì˜ˆì•½ì´
+							ê°€ëŠ¥í•©ë‹ˆë‹¤.
 						</p>
 					</div>
 
 
 
-					<!-- 20140821 ¿É¼ÇÇÒÀÎÁ¦Ç° s -->
+					<!-- 20140821 ì˜µì…˜í• ì¸ì œí’ˆ s -->
 
-					<!-- 20140821 ¿É¼ÇÇÒÀÎÁ¦Ç° e -->
+					<!-- 20140821 ì˜µì…˜í• ì¸ì œí’ˆ e -->
 				</div>
 
-				<!-- 150430 Ç°Àý : str -->
+				<!-- 150430 í’ˆì ˆ : str -->
 
-				<!-- //150430 Ç°Àý : end -->
+				<!-- //150430 í’ˆì ˆ : end -->
 
 				<div class="box">
-					<!-- 150608 ±¸¸Å °¡ÀÌµå : str -->
-					<!-- ±¸¸Å°¡ÀÌµå°¡ µÎ¹ø ³ª¿Í¼­ ÁÖ¼® Ã³¸® ÇÔ
+					<!-- 150608 êµ¬ë§¤ ê°€ì´ë“œ : str -->
+					<!-- êµ¬ë§¤ê°€ì´ë“œê°€ ë‘ë²ˆ ë‚˜ì™€ì„œ ì£¼ì„ ì²˜ë¦¬ í•¨
 					
 						
 							<div class="guide_msg" style="padding:13px 10px;margin-top:12px;color:#666;font-size:12px;line-height:18px;">
     
 
 <h3 style="font-size:12px;font-weight:normal;">
-Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ Äí¼Å´×ÀÌ ¸¸³ª ÇÏ·ç Á¾ÀÏ Æí¾ÈÇÑ ÂøÈ­°¨À» ´À³¥ ¼ö ÀÖ½À´Ï´Ù.  <BR> <a href="http://www.nike.co.kr/display/displayShop.lecs?displayNo=NK1A56A02A10" class="store-btn">Nike.com/AirMax </a>¿¡¼­ ´õ ÀÚ¼¼ÇÑ ³»¿ëÀ» È®ÀÎÇØº¸¼¼¿ä. 
+Air Maxì—ëŠ” ìµœì´ˆë¡œ ì ìš©ëœ í”Œë¼ì´ë‹ˆíŠ¸ ê°‘í”¼ì— ìš¸íŠ¸ë¼ ë¯¸ë“œì†”, ê·¸ë¦¬ê³  Air Max ê³ ìœ ì˜ ì¿ ì…”ë‹ì´ ë§Œë‚˜ í•˜ë£¨ ì¢…ì¼ íŽ¸ì•ˆí•œ ì°©í™”ê°ì„ ëŠë‚„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  <BR> <a href="http://www.nike.co.kr/display/displayShop.lecs?displayNo=NK1A56A02A10" class="store-btn">Nike.com/AirMax </a>ì—ì„œ ë” ìžì„¸í•œ ë‚´ìš©ì„ í™•ì¸í•´ë³´ì„¸ìš”. 
 
 <BR>
 
@@ -417,7 +390,7 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 
 
 							
-								<div class="btn_sizechart_store"><a href="#" onclick="popSizeGuide()">»çÀÌÁî °¡ÀÌµå</a></div>
+								<div class="btn_sizechart_store"><a href="#" onclick="popSizeGuide()">ì‚¬ì´ì¦ˆ ê°€ì´ë“œ</a></div>
 							
 						
 						
@@ -433,12 +406,12 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 											"toolbar=yes, scrollbars=yes, resizable=yes, top=0, left=0, width=743, height=600");
 						}
 					</script>
-					<!-- //150608 ±¸¸Å °¡ÀÌµå : end -->
+					<!-- //150608 êµ¬ë§¤ ê°€ì´ë“œ : end -->
 
 					<div class="btn-group clx" id="itemBtnArea">
 						<div class="size-area" id="sizeArea" data-value="240"
 							onclick="javascript:fn_catalystSizeList();">
-							<a href="#" class="btn-pdp-type1 size"> <span id="selectSize">»çÀÌÁî</span>
+							<a href="#" class="btn-pdp-type1 size"> <span id="selectSize">ì‚¬ì´ì¦ˆ</span>
 							</a>
 							<div class="size-list" style="display: none;">
 								<div class="bg">
@@ -466,14 +439,14 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 							</div>
 							<div id="sizeAlertLine" class="alert-line" style="display: none;"></div>
 							<div id="sizeAlert" class="alert" style="display: none;">
-								<span>»çÀÌÁî¸¦ ¼±ÅÃÇÏ¼¼¿ä</span>
+								<span>ì‚¬ì´ì¦ˆë¥¼ ì„ íƒí•˜ì„¸ìš”</span>
 							</div>
 						</div>
 
 
 						<div id="qtyArea" class="quantity-area" data-value="240">
 							<a href="#" class="btn-pdp-type1 quantity"> <span
-								id="selectQty">¼ö·®</span>
+								id="selectQty">ìˆ˜ëŸ‰</span>
 							</a>
 							<div class="quantity-list" style="display: none;">
 								<div class="bg">
@@ -493,25 +466,25 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 							</div>
 							<div id="qtyAlertLine" class="alert-line" style="display: none;"></div>
 							<div id="qtyAlert" class="alert" style="display: none;">
-								<span>¼ö·®À» ¼±ÅÃÇÏ¼¼¿ä</span>
+								<span>ìˆ˜ëŸ‰ì„ ì„ íƒí•˜ì„¸ìš”</span>
 							</div>
 						</div>
 						<div class="cart-area">
 							<a href="javascript:cartSubmit('10');"
 								class="btn-type1 btn-black" id="cartBtn"> <span
-								class="right" style="width: 56px;">Àå¹Ù±¸´Ï</span>
+								class="right" style="width: 56px;">ìž¥ë°”êµ¬ë‹ˆ</span>
 							</a>
 							<!-- <a href="javascript:cartSubmit('20');" class="btn-type1 btn-orange"> -->
 
 							<a href="javascript:checkDirectBuy();"
 								class="btn-type1 btn-orange"> <span class="right"
-								style="width: 56px;">±¸¸ÅÇÏ±â</span>
+								style="width: 56px;">êµ¬ë§¤í•˜ê¸°</span>
 							</a>
 						</div>
 
-						<!-- 20160425 wishlist´ã±â Ãß°¡ -->
+						<!-- 20160425 wishlistë‹´ê¸° ì¶”ê°€ -->
 						<div class="g_btn_wish">
-							<a href="#">À§½Ã¸®½ºÆ®´ã±â</a>
+							<a href="#">ìœ„ì‹œë¦¬ìŠ¤íŠ¸ë‹´ê¸°</a>
 						</div>
 
 						<script type="text/javascript">
@@ -530,11 +503,11 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 										});
 							});
 						</script>
-						<!--// 20160425 wishlist´ã±â Ãß°¡ -->
+						<!--// 20160425 wishlistë‹´ê¸° ì¶”ê°€ -->
 					</div>
 				</div>
 
-				<!-- 20160614 guide_msg / btn_sizechart_store À§Ä¡º¯°æ -->
+				<!-- 20160614 guide_msg / btn_sizechart_store ìœ„ì¹˜ë³€ê²½ -->
 
 
 				<div class="guide_msg"
@@ -545,10 +518,10 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 
 
 						<h3 style="font-size: 12px; font-weight: normal;">
-							Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ Äí¼Å´×ÀÌ ¸¸³ª ÇÏ·ç
-							Á¾ÀÏ Æí¾ÈÇÑ ÂøÈ­°¨À» ´À³¥ ¼ö ÀÖ½À´Ï´Ù. <br> <a
+							Air Maxì—ëŠ” ìµœì´ˆë¡œ ì ìš©ëœ í”Œë¼ì´ë‹ˆíŠ¸ ê°‘í”¼ì— ìš¸íŠ¸ë¼ ë¯¸ë“œì†”, ê·¸ë¦¬ê³  Air Max ê³ ìœ ì˜ ì¿ ì…”ë‹ì´ ë§Œë‚˜ í•˜ë£¨
+							ì¢…ì¼ íŽ¸ì•ˆí•œ ì°©í™”ê°ì„ ëŠë‚„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <br> <a
 								href="http://www.nike.co.kr/display/displayShop.lecs?displayNo=NK1A56A02A10"
-								class="store-btn">Nike.com/AirMax </a>¿¡¼­ ´õ ÀÚ¼¼ÇÑ ³»¿ëÀ» È®ÀÎÇØº¸¼¼¿ä. <br>
+								class="store-btn">Nike.com/AirMax </a>ì—ì„œ ë” ìžì„¸í•œ ë‚´ìš©ì„ í™•ì¸í•´ë³´ì„¸ìš”. <br>
 
 
 						</h3>
@@ -581,10 +554,10 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 
 
 
-				<!-- //20160614 guide_msg / btn_sizechart_store À§Ä¡º¯°æ -->
+				<!-- //20160614 guide_msg / btn_sizechart_store ìœ„ì¹˜ë³€ê²½ -->
 
 				<div class="btn_sizechart_store clear">
-					<a href="#" class="fr" onclick="popSizeGuide()">»çÀÌÁî °¡ÀÌµå</a>
+					<a href="#" class="fr" onclick="popSizeGuide()">ì‚¬ì´ì¦ˆ ê°€ì´ë“œ</a>
 				</div>
 
 
@@ -597,15 +570,15 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 					<div class="des">
 						<a
 							href="http://www.nike.co.kr/display/displayShop.lecs?displayNo=NK1A29A21"
-							target="_blank" class="btn-detail">Á÷Á¢ ÀÔ¾îº¸°í ½Å¾îº» ÈÄ °áÁ¤ÇÏ¼¼¿ä!<br>NIKE.COM
-							Àü Á¦Ç° ¹«·á ¹è¼Û/¹ÝÇ° ¼­ºñ½º
+							target="_blank" class="btn-detail">ì§ì ‘ ìž…ì–´ë³´ê³  ì‹ ì–´ë³¸ í›„ ê²°ì •í•˜ì„¸ìš”!<br>NIKE.COM
+							ì „ ì œí’ˆ ë¬´ë£Œ ë°°ì†¡/ë°˜í’ˆ ì„œë¹„ìŠ¤
 						</a>
 					</div>
 				</div>
-				<!-- 150904 span -> div·Î ÅÂ±× º¯°æ -->
+				<!-- 150904 span -> divë¡œ íƒœê·¸ ë³€ê²½ -->
 
 
-				<!-- ¿¹¾à»óÇ°ÀÏ °æ¿ì  -->
+				<!-- ì˜ˆì•½ìƒí’ˆì¼ ê²½ìš°  -->
 
 
 
@@ -620,9 +593,9 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 			</script>
 			<div class="left">
 				<div class="nav">
-					<span class="dim first">Ã³À½</span>
-					<!-- 20141201 Ãß°¡ -->
-					<a href="#" class="up" style="display: none;">ÀÌÀü»óÇ°À¸·Î °¡±â</a>
+					<span class="dim first">ì²˜ìŒ</span>
+					<!-- 20141201 ì¶”ê°€ -->
+					<a href="#" class="up" style="display: none;">ì´ì „ìƒí’ˆìœ¼ë¡œ ê°€ê¸°</a>
 					<div class="area">
 						<ul id="thumbImgList" class="item">
 							<li data-index="0"><a href="#" class="on" title=""><img
@@ -651,9 +624,9 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 									onerror="this.src=' http://image.nike.co.kr//web/no-img/50x50.gif'"></a></li>
 						</ul>
 					</div>
-					<a href="#" class="down" style="display: none;">´ÙÀ½»óÇ°À¸·Î °¡±â</a> <span
-						class="dim last">¸¶Áö¸·</span>
-					<!-- 20141201 Ãß°¡ -->
+					<a href="#" class="down" style="display: none;">ë‹¤ìŒìƒí’ˆìœ¼ë¡œ ê°€ê¸°</a> <span
+						class="dim last">ë§ˆì§€ë§‰</span>
+					<!-- 20141201 ì¶”ê°€ -->
 				</div>
 				<div class="viewer">
 					<ul id="detailImgList">
@@ -807,7 +780,7 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 										zoom</div>
 								</div></a></li>
 					</ul>
-					<!-- <a href="#" class="expand-btn">È®´ëÇÏ±â</a> -->
+					<!-- <a href="#" class="expand-btn">í™•ëŒ€í•˜ê¸°</a> -->
 				</div>
 
 				<div class="etc">
@@ -818,11 +791,11 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 
 
 
-						<!-- 2016.03.24 Àü½Ã¾ÈÇÔ,ÆÇ¸ÅÁ¾·á Á¶°ÇÃß°¡ -->
+						<!-- 2016.03.24 ì „ì‹œì•ˆí•¨,íŒë§¤ì¢…ë£Œ ì¡°ê±´ì¶”ê°€ -->
 
 
 						<li><div class="fb-like fb_iframe_widget"
-								data-href="http://www.nike.co.kr/goods/facebookShare.lecs?nolayout=yes&amp;goodsNo=NK31073701&amp;goodsNm=³ªÀÌÅ° ¿¡¾î¸Æ½º 1 ¿ïÆ®¶ó ÇÃ¶óÀÌ´ÏÆ®&amp;imgUrl=http://image.nike.co.kr/goods/31/07/37/01/843384_COL_843384-401_80.png"
+								data-href="http://www.nike.co.kr/goods/facebookShare.lecs?nolayout=yes&amp;goodsNo=NK31073701&amp;goodsNm=ë‚˜ì´í‚¤ ì—ì–´ë§¥ìŠ¤ 1 ìš¸íŠ¸ë¼ í”Œë¼ì´ë‹ˆíŠ¸&amp;imgUrl=http://image.nike.co.kr/goods/31/07/37/01/843384_COL_843384-401_80.png"
 								data-send="false" data-width="90" data-show-faces="false"
 								data-layout="button_count" fb-xfbml-state="rendered"
 								fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.nike.co.kr%2Fgoods%2FfacebookShare.lecs%3Fnolayout%3Dyes%26goodsNo%3DNK31073701%26goodsNm%3D%25EB%2582%2598%25EC%259D%25B4%25ED%2582%25A4%2520%25EC%2597%2590%25EC%2596%25B4%25EB%25A7%25A5%25EC%258A%25A4%25201%2520%25EC%259A%25B8%25ED%258A%25B8%25EB%259D%25BC%2520%25ED%2594%258C%25EB%259D%25BC%25EC%259D%25B4%25EB%258B%2588%25ED%258A%25B8%26imgUrl%3Dhttp%3A%2F%2Fimage.nike.co.kr%2Fgoods%2F31%2F07%2F37%2F01%2F843384_COL_843384-401_80.png&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=90">
@@ -848,7 +821,7 @@ Air Max¿¡´Â ÃÖÃÊ·Î Àû¿ëµÈ ÇÃ¶óÀÌ´ÏÆ® °©ÇÇ¿¡ ¿ïÆ®¶ó ¹Ìµå¼Ö, ±×¸®°í Air Max °íÀ¯ÀÇ
 
 					</ul>
 					<!-- <div id="selectOptionValue" class="color-code"></div> -->
-					<!-- 150925 À§Ä¡º¯°æÀ¸·Î Á¦°Å -->
+					<!-- 150925 ìœ„ì¹˜ë³€ê²½ìœ¼ë¡œ ì œê±° -->
 				</div>
 
 				<!-- S - twitter button -->
