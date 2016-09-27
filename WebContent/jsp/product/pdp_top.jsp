@@ -36,142 +36,142 @@
 							<a href="#" id="btnCardBenefit">혜택 자세히 보기 </a>
 						</p>
 					</div>
-					<style type="text/css">
+<style type="text/css">
 /* 150416 카드 할부 혜택 : str */
-.card_benefit {
-	padding: 10px 0;
-}
-
-.card_benefit>p {
-	line-height: 18px;
-}
-
-.card_benefit .view_more {
-	text-align: right;
-}
-
-.card_benefit .view_more>a {
-	text-decoration: underline;
-}
-
-.pop_card_benefit {
-	display: none;
-	position: absolute;
-	top: 100px;
-	left: 50%;
-	width: 840px;
-	margin-left: -420px;
-	background: #fff;
-	border-radius: 5px;
-	z-index: 1002;
-}
-
-.pop_card_benefit .pop_inner {
-	position: relative;
-	padding: 40px;
-}
-
-.pop_card_benefit .close {
-	display: block;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	background: url(http://image.nike.co.kr/web/btn/btn_close_guide.png) 0 0
-		no-repeat;
-	width: 13px;
-	height: 13px;
-	text-indent: -10000px;
-}
-
-.pop_card_benefit .tit {
-	display: block;
-	padding-bottom: 20px;
-	font-size: 20px;
-	font-weight: bold;
-	border-bottom: 1px solid #ccc;
-}
-
-.pop_card_benefit .pop_content {
-	width: 100%;
-	padding-top: 20px;
-}
-
-.pop_card_benefit .pop_content:after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
-.pop_card_benefit .pop_content .pop_left {
-	float: left;
-	width: 390px;
-}
-
-.pop_card_benefit .pop_content .pop_right {
-	float: left;
-	width: 330px;
-	padding-left: 30px;
-}
-
-.pop_card_benefit .pop_content .tbl_box {
-	width: 100%;
-}
-
-.pop_card_benefit .pop_content .tbl_box .table-type1 {
-	width: 100%;
-	table-layout: fixed;
-}
-
-.pop_card_benefit .pop_content .tbl_box .table-type1 th {
-	padding: 7px 0 5px;
-	font-size: 11px;
-}
-
-.pop_card_benefit .pop_content .tbl_box .table-type1 tbody th,
-	.pop_card_benefit .pop_content .tbl_box .table-type1 tbody td {
-	padding: 6px 0 3px;
-	background: #fff;
-	font-size: 11px;
-	font-weight: normal;
-	color: #666;
-	text-align: center;
-	line-height: 18px;
-}
-
-.pop_card_benefit .pop_content .pop_right .desc li {
-	position: relative;
-	margin-top: 25px;
-	padding-left: 8px;
-	background: url(http://image.nike.co.kr/web/ico/ico-list-dot.png) 0 7px
-		no-repeat;
-	font-size: 11px;
-	line-height: 19px;
-	font-family: "돋움";
-	color: #666;
-	letter-spacing: -0.08em;
-}
-
-.pop_card_benefit .pop_content .pop_right .desc li:first-child {
-	margin-top: 0;
-}
-
-.pop_card_benefit .pop_content .pop_right .desc li.no_dot {
-	background: none;
-	color: #000;
-}
-
-.pop_card_benefit .pop_content .pop_right .desc li.no_dot span {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.pop_card_benefit .pop_content .pop_right .desc li strong {
-	color: #333;
-}
+	.card_benefit {
+		padding: 10px 0;
+	}
+	
+	.card_benefit>p {
+		line-height: 18px;
+	}
+	
+	.card_benefit .view_more {
+		text-align: right;
+	}
+	
+	.card_benefit .view_more>a {
+		text-decoration: underline;
+	}
+	
+	.pop_card_benefit {
+		display: none;
+		position: absolute;
+		top: 100px;
+		left: 50%;
+		width: 840px;
+		margin-left: -420px;
+		background: #fff;
+		border-radius: 5px;
+		z-index: 1002;
+	}
+	
+	.pop_card_benefit .pop_inner {
+		position: relative;
+		padding: 40px;
+	}
+	
+	.pop_card_benefit .close {
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: url(http://image.nike.co.kr/web/btn/btn_close_guide.png) 0 0
+			no-repeat;
+		width: 13px;
+		height: 13px;
+		text-indent: -10000px;
+	}
+	
+	.pop_card_benefit .tit {
+		display: block;
+		padding-bottom: 20px;
+		font-size: 20px;
+		font-weight: bold;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	.pop_card_benefit .pop_content {
+		width: 100%;
+		padding-top: 20px;
+	}
+	
+	.pop_card_benefit .pop_content:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	
+	.pop_card_benefit .pop_content .pop_left {
+		float: left;
+		width: 390px;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right {
+		float: left;
+		width: 330px;
+		padding-left: 30px;
+	}
+	
+	.pop_card_benefit .pop_content .tbl_box {
+		width: 100%;
+	}
+	
+	.pop_card_benefit .pop_content .tbl_box .table-type1 {
+		width: 100%;
+		table-layout: fixed;
+	}
+	
+	.pop_card_benefit .pop_content .tbl_box .table-type1 th {
+		padding: 7px 0 5px;
+		font-size: 11px;
+	}
+	
+	.pop_card_benefit .pop_content .tbl_box .table-type1 tbody th,
+		.pop_card_benefit .pop_content .tbl_box .table-type1 tbody td {
+		padding: 6px 0 3px;
+		background: #fff;
+		font-size: 11px;
+		font-weight: normal;
+		color: #666;
+		text-align: center;
+		line-height: 18px;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right .desc li {
+		position: relative;
+		margin-top: 25px;
+		padding-left: 8px;
+		background: url(http://image.nike.co.kr/web/ico/ico-list-dot.png) 0 7px
+			no-repeat;
+		font-size: 11px;
+		line-height: 19px;
+		font-family: "돋움";
+		color: #666;
+		letter-spacing: -0.08em;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right .desc li:first-child {
+		margin-top: 0;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right .desc li.no_dot {
+		background: none;
+		color: #000;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right .desc li.no_dot span {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	
+	.pop_card_benefit .pop_content .pop_right .desc li strong {
+		color: #333;
+	}
 /* 150416 카드 할부 혜택 : end */
 </style>
-					<script type="text/javascript">
+<script type="text/javascript">
 						$(
 								function() {
 
@@ -775,12 +775,6 @@ Air Max에는 최초로 적용된 플라이니트 갑피에 울트라 미드솔,
 
 				<div class="etc">
 					<ul class="clx">
-
-
-
-
-
-
 						<!-- 2016.03.24 전시안함,판매종료 조건추가 -->
 
 
@@ -846,4 +840,3 @@ Air Max에는 최초로 적용된 플라이니트 갑피에 울트라 미드솔,
 		</div>
 	</div>
 </div>
-
