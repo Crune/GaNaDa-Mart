@@ -15,6 +15,7 @@ public class InsertProAction implements SuperAction{
 
 		
 		Product pd = new Product();
+		pd.setMenu_code("menu_code");
 		pd.setPd_name(request.getParameter("pd_name"));
 		pd.setPd_price(Integer.parseInt(request.getParameter("pd_price")));
 		ProductDao process = ProductDao.getInstance();

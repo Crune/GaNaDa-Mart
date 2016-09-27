@@ -8,6 +8,7 @@
     <form id="inform" action="./insertPro.gnd" method="post"></form>
     <div id="productForm" class="box">
     <ul>
+   <input type="hidden" name="menu_code" value="1234">
    
     <li><label for="pd_name">상품명</label>
     <input id="pd_name" name="pd_name" type="text" size="50" placeholder="상품명" maxlength="50">
