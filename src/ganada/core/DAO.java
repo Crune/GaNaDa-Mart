@@ -167,7 +167,7 @@ public abstract class DAO {
         try {
             boolean isValidate = false;
             boolean isNoModDate = true;
-            DB.OUTLN("┌ Updated Data ────…");
+            DB.OUTLN("┌ Update Data ────…");
             for (Method m : t.getter()) {
             	String name = cName(m);
             	Object getValue = m.invoke(obj);
@@ -191,6 +191,7 @@ public abstract class DAO {
             }
             DB.OUTLN("└────…");
             if (isValidate) sql.run();
+            else DB.OUTLN("Update Fail! Target이 없습니다.");
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

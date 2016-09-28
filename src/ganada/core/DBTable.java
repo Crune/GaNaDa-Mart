@@ -49,10 +49,10 @@ public class DBTable {
 	
 	public void set(Class OBJ, String TABLE_NAME, String COL_NAME_CODE, String COL_NAME_REG, String COL_NAME_MOD) {
 		this.voCls = OBJ;
-		this.tableName = TABLE_NAME;
-		this.cNameCode = COL_NAME_CODE;
-		this.cNameReg = COL_NAME_REG;
-		this.cNameMod = COL_NAME_MOD;
+		this.tableName = TABLE_NAME.toUpperCase();
+		this.cNameCode = COL_NAME_CODE.toUpperCase();
+		this.cNameReg = COL_NAME_REG.toUpperCase();
+		this.cNameMod = COL_NAME_MOD.toUpperCase();
 	}	
 
     private Method getPK;   
