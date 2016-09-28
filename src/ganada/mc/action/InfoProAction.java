@@ -16,13 +16,12 @@ public class InfoProAction implements SuperAction{
 		ProductInfo pi = new ProductInfo();
 		ProductInfoDao process = ProductInfoDao.getInstance();
 		pi.setPd_infocontent(request.getParameter("pd_infocontent1"));
-		pi.setPd_infocontent(request.getParameter("pd_infocontent2"));
-		pi.setPd_infocontent(request.getParameter("pd_infocontent3"));
-		pi.setPd_infocontent(request.getParameter("pd_infocontent4"));
+
 		pi.setPd_code(pd_code);
 		
 		process.insert(pi);
 		
+	
 		request.setAttribute("pd_code", pd_code);
 		return "/jsp/mc/pmc/infoPro.jsp";
 	}
