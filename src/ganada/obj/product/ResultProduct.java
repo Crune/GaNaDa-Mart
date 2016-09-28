@@ -14,6 +14,7 @@ public class ResultProduct {
         JSONObject logObj = new JSONObject();   
         { 
             logObj.put("price", price); 
+            // 분기 한 후 수정함.
         }
         return logObj;        
     }
