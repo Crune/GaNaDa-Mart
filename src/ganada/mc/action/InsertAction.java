@@ -24,6 +24,7 @@ public class InsertAction implements SuperAction {
 		//List<Object> piList = dbPro.select(startCode, endCode);
 		
 		List<Object> piList1 = dbPro.search("pd_infotype", "1");
+		//for문으로 list<obj>를 list<productinfo>로 형변환해주어야함
 		List<Object> piList2 = dbPro.search("pd_infotype", "2");
 		List<Object> piList3 = dbPro.search("pd_infotype", "3");
 		List<Object> piList4 = dbPro.search("pd_infotype", "4");
