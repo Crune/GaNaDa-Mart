@@ -177,16 +177,17 @@ public abstract class DAO {
                 if (getValue != null && !isModCol && !isRegCol) {
                 	if (name.equals(t.getCNameCode())) {
                 		sql.setWhere(t.getCNameCode(), getValue);
+                        DB.OUTLN(" »\tTarget: "+tabber(name,2)+m.getName()+"("+getValue+")");
                 		isValidate = true;
                 	} else {
                 		sql.set(name, getValue);
+                        DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
                     }
                 }
-                DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
             }            
             if (!t.getCNameMod().isEmpty() ) {
                 sql.setSql(t.getCNameMod(), "sysdate");
-                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
+                DB.OUTLN(" :\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
             }
             DB.OUTLN("└────…");
             if (isValidate) sql.run();
