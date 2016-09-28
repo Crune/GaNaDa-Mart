@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <input type="button" value="목록으로" onclick="javascript:window.location='./list.gnd'">
 	<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
-    <form id="stinform" action="./stockUpdatePro.gnd" method="post">
+    <form id="stupform" action="./stockUpdatePro.gnd" method="post">
 	    <div id="productForm" class="box">
 		    <ul>
 		 	  	<input id="sk_code" name="sk_code" type="hidden" placeholder="재고코드" value="${stock.sk_code }">

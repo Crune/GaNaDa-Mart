@@ -3,13 +3,14 @@ package ganada.obj.product;
 public class ProductInfo {
 	private String pd_infocode;					//상품정보코드
 	private String pd_infocontent;				//상품정보내용
-	private String pd_code;
+	private String pd_infotype;
 	
-	public String getPd_code() {
-		return pd_code;
+	
+	public String getPd_infotype() {
+		return pd_infotype;
 	}
-	public void setPd_code(String pd_code) {
-		this.pd_code = pd_code;
+	public void setPd_infotype(String pd_infotype) {
+		this.pd_infotype = pd_infotype;
 	}
 	public String getPd_infocode() {
 		return pd_infocode;
