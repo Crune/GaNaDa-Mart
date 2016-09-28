@@ -12,7 +12,7 @@ public abstract class DAO {
 	
     protected DAO() {
     }
-
+    
     public static Object cVO(Class<?> type, String value){
         return createValueObject(type, value);
     }
@@ -36,6 +36,14 @@ public abstract class DAO {
         }
     }
     
+    public static String tabber(String str, int maxTabNumber) {
+        String result = "";
+        for (int i=1; i<=maxTabNumber;i++) {
+            if (str.length()<i*8) result += "\t";
+        }
+        return str+result ;
+    }
+    
     public static String cName(Method m) {
     	String result = m.getName();
     	if (result.startsWith("get") || result.startsWith("set")) {
@@ -49,20 +57,24 @@ public abstract class DAO {
         DBTable t = gT();
         DB.Insert sql = db.new Insert(t.getTableName());
         try {
+            DB.OUTLN("┌ Inserted Data ────…");
             sql.inSql(t.getCNameCode(), t.getTableName() + "_SEQ.NEXTVAL");
             for (Method m : t.getter()) {
             	Object getValue = m.invoke(obj);
             	if (getValue != null) {
-                	System.out.println("\tColumn: "+cName(m)+"\t\t <- "+m.getName()+""+getValue);
                     sql.in(cName(m), getValue);
+                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+"\t <-"+m.getName()+""+getValue);
             	}
             }
             if ( !t.getCNameReg().isEmpty() ) {
                 sql.inSql(t.getCNameReg(), "sysdate");
+                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameReg(),2)+" <- sysdate");
             } else if (!t.getCNameMod().isEmpty() ) {
                 sql.inSql(t.getCNameMod(), "sysdate");
+                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
             }
             sql.run();
+            DB.OUTLN("└────…");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -77,11 +89,13 @@ public abstract class DAO {
         try {
             db.S("*", t.getTableName(), t.getCNameCode() + "=?").var(code).exe();
             if (db.next()) {
+                DB.OUTLN("┌ Selected Data ────…");
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                	System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
-            		m.invoke(obj, value);
+                    m.invoke(obj, value);
+                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
                 }
+                DB.OUTLN("└────…");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,15 +111,18 @@ public abstract class DAO {
         List<Object> objList = new ArrayList<Object>();
         try {
             db.S("*", t.getTableName(), t.getCNameCode() + " BETWEEN ? AND ?").var(startCode).var(endCode).exe();
+            DB.OUTLN("┌ Selected Data ────…");
             while (db.next()) {
                 Object obj = t.getVoCls().newInstance();
                 for (Method m : t.setter()) {
             		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                	System.out.println("\tColumn: "+cName(m)+"\t\t"+m.getName()+"("+value+")");
             		m.invoke(obj, value);
+                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
                 }
         		objList.add(obj);
+                DB.OUTLN("\tㆍ────…");
             }
+            DB.OUTLN("└────…");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -123,11 +140,15 @@ public abstract class DAO {
 	            String var1 = NULL.toDQ(start);
 	            String var2 = var1;
 	            db.S("*", t.getTableName(), colName+" BETWEEN ? AND ?").var(var1).var(var2).exe();
+                DB.OUT("\tSearch » ");
+                int count = 0;
 	            while (db.next()) {
 	                Object obj = t.getVoCls().newInstance();
-	                Method m = t.getPK();
-	                list.add((String) m.invoke(obj));
+	                String result = (String) t.getPK().invoke(obj);
+	                list.add(result);
+                    DB.OUT((count>0)?", ":""+result);
 	            }
+	            DB.OUT(" «\r\n");
         	} else {
         		System.out.println("DAO.search: 검색 조건 불충분!");
         	}
@@ -146,26 +167,29 @@ public abstract class DAO {
         try {
             boolean isValidate = false;
             boolean isNoModDate = true;
+            DB.OUTLN("┌ Updated Data ────…");
             for (Method m : t.getter()) {
             	String name = cName(m);
             	Object getValue = m.invoke(obj);
-                if (getValue != null) {
+            	
+            	boolean isModCol = name.equals(t.getCNameMod());
+                boolean isRegCol = name.equals(t.getCNameReg());
+                if (getValue != null && !isModCol && !isRegCol) {
                 	if (name.equals(t.getCNameCode())) {
                 		sql.setWhere(t.getCNameCode(), getValue);
                 		isValidate = true;
-                	} else if (!t.getCNameMod().isEmpty() && name.equals(t.getCNameMod()) ) {
-                    	sql.setSql(t.getCNameMod(), "sysdate");
-                    	isNoModDate = false;
-                    } else {
+                	} else {
                 		sql.set(name, getValue);
                     }
                 }
-                if (isNoModDate) {
-                    sql.setSql(t.getCNameMod(), "sysdate");
-                }
+                DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
             }            
-            if (!t.getCNameMod().isEmpty()) sql.setSql(t.getCNameMod(), "sysdate");
-            sql.run();
+            if (!t.getCNameMod().isEmpty() ) {
+                sql.setSql(t.getCNameMod(), "sysdate");
+                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
+            }
+            DB.OUTLN("└────…");
+            if (isValidate) sql.run();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

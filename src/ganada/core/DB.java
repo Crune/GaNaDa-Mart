@@ -32,6 +32,14 @@ public class DB {
 	
     private List<String> inData = new ArrayList<String>();
 
+    public final static boolean IS_DEBUG_MODE = true;
+    public static void OUT(String str) {
+        if (IS_DEBUG_MODE) System.out.print(str);
+    }
+    public static void OUTLN(String str) {
+        if (IS_DEBUG_MODE) System.out.println(str);
+    }
+    
     public static Timestamp getTime(String yyyyMMdd) {
            return string2Timestamp(yyyyMMdd,"yyyy-MM-dd");
     }
