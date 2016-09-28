@@ -25,7 +25,7 @@
     <li><label for="pd_infocode">정보</label>
     	<select name="pd_infotype">
 			<option value="" selected>정보구분</option>
-			<forEach var="i" items="${piList }">
+			<forEach var="i" items="${piList1 }">
 				<option value="${i }">${piList.pd_infocontent}</option>
 			</forEach>
 		</select>
