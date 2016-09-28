@@ -26,7 +26,7 @@
 <link href="${pageContext.request.contextPath}/css/jquery.jqzoom.css" rel="stylesheet" type="text/css">
 
 <!-- CP Javascript -->
-<script src="${pageContext.request.contextPath}/js/popup.js"></script>
+<script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
 <script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
 
 <!-- Custom Javascript -->
