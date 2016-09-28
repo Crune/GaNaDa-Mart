@@ -14,11 +14,11 @@ public class StockTest extends DBTester {
     @BeforeClass
     public static void init() {
     	StockOrg = new Stock(); 	
-    	StockOrg.setSk_code("1");
-    	StockOrg.setC_code("2");
-    	StockOrg.setPd_size("245");
-    	StockOrg.setAmount(9);
-    	StockOrg.setPd_code("11");
+    	StockOrg.setSk_code("9");
+    	StockOrg.setC_code("3");
+    	StockOrg.setPd_size("225");
+    	StockOrg.setAmount(7);
+    	StockOrg.setPd_code("12");
     }
 
     @Test
