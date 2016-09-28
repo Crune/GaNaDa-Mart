@@ -7,7 +7,7 @@ import ganada.action.common.SuperAction;
 import ganada.obj.product.ProductInfo;
 import ganada.obj.product.ProductInfoDao;
 
-public class InfoProAction implements SuperAction{
+public class InfoInsertProAction implements SuperAction{
 
 	
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -22,7 +22,7 @@ public class InfoProAction implements SuperAction{
 		
 	
 		//request.setAttribute("pd_code", pd_code);
-		return "/jsp/mc/pmc/infoPro.jsp";
+		return "/jsp/mc/pmc/infoInsertPro.jsp";
 	}
 
 }

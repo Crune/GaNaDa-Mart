@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <input type="button" value="목록으로" onclick="javascript:window.location='./list.gnd'">
 	<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
-    <form id="inform" action="./infoPro.gnd" method="post">
+    <form id="inform" action="./infoInsertPro.gnd" method="post">
 	    <table>
 	    	<tr>
 	    		<td>
