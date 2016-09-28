@@ -14,7 +14,7 @@ public class StockTest extends DBTester {
     @BeforeClass
     public static void init() {
     	StockOrg = new Stock(); 	
-    	StockOrg.setSt_code("1");
+    //	StockOrg.setSt_code("1");
     	StockOrg.setC_code("1");
     	StockOrg.setPd_size("250");
     	StockOrg.setAmount(10);

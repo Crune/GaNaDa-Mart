@@ -15,7 +15,6 @@ public class StockInsertProAction implements SuperAction {
 		
 		Stock stock = new Stock();
 		//stock.setSk_code(request.getParameter("sk_code"));
-		stock.setSt_code(request.getParameter("st_code"));		//매장주소
 		stock.setC_code(request.getParameter("c_code"));		//색상코드
 		stock.setPd_size(request.getParameter("pd_size"));
 		stock.setAmount(Integer.parseInt(request.getParameter("amount")));

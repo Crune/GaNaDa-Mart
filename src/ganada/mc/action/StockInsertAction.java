@@ -10,12 +10,10 @@ public class StockInsertAction implements SuperAction {
 	
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String pd_code = request.getParameter("pd_code");
-		String st_code = request.getParameter("st_code");
 		//String c_code = request.getParameter("c_code");
 		
 		
 		request.setAttribute("pd_code", pd_code);
-		request.setAttribute("st_code", st_code);
 		//request.setAttribute("c_code", c_code);
 		
 		return "/jsp/mc/pmc/stockInsert.jsp";
