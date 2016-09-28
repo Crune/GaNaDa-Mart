@@ -17,7 +17,7 @@ public class InfoProAction implements SuperAction{
 		ProductInfoDao process = ProductInfoDao.getInstance();
 		pi.setPd_infocontent(request.getParameter("pd_infocontent1"));
 
-		pi.setPd_code(pd_code);
+	//	pi.setPd_code(pd_code);
 		
 		process.insert(pi);
 		
