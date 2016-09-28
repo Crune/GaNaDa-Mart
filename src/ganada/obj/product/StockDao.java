@@ -23,7 +23,7 @@ private static StockDao instance = new StockDao();
 	@Override
 	protected DBTable gT() {
     	if (t == null) {
-    		t = new DBTable("stock", "sk_code");
+    		t = new DBTable("stock", "SK_CODE");
     		t.setCls("ganada.obj.product.Stock");
     	}
 		return t;

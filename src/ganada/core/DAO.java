@@ -57,7 +57,7 @@ public abstract class DAO {
         DBTable t = gT();
         DB.Insert sql = db.new Insert(t.getTableName());
         try {
-            DB.OUTLN("┌ Inserted Data ────…");
+            DB.OUTLN("\r\n┌ Insert Data ────…");
             sql.inSql(t.getCNameCode(), t.getTableName() + "_SEQ.NEXTVAL");
             for (Method m : t.getter()) {
             	Object getValue = m.invoke(obj);
@@ -73,7 +73,9 @@ public abstract class DAO {
                 sql.inSql(t.getCNameMod(), "sysdate");
                 DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
             }
+            DB.OUTLN(" -ㆍInsert Start...! ───…");
             sql.run();
+            DB.OUTLN("SQL.R: Insert Started!");
             DB.OUTLN("└────…");
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,6 +90,7 @@ public abstract class DAO {
         Object obj = t.getVoCls().newInstance();
         try {
             db.S("*", t.getTableName(), t.getCNameCode() + "=?").var(code).exe();
+            DB.OUTLN("*"+"/"+t.getTableName()+"/"+t.getCNameCode() + "=?");
             if (db.next()) {
                 DB.OUTLN("┌ Selected Data ────…");
                 for (Method m : t.setter()) {
@@ -96,6 +99,8 @@ public abstract class DAO {
                     DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
                 }
                 DB.OUTLN("└────…");
+            } else {
+                DB.OUTLN(" » No data.");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,6 +117,7 @@ public abstract class DAO {
         try {
             db.S("*", t.getTableName(), t.getCNameCode() + " BETWEEN ? AND ?").var(startCode).var(endCode).exe();
             DB.OUTLN("┌ Selected Data ────…");
+            int count = 0;
             while (db.next()) {
                 Object obj = t.getVoCls().newInstance();
                 for (Method m : t.setter()) {
@@ -121,6 +127,10 @@ public abstract class DAO {
                 }
         		objList.add(obj);
                 DB.OUTLN("\tㆍ────…");
+                count++;
+            }
+            if (count==0) {
+                DB.OUTLN(" » No data.");
             }
             DB.OUTLN("└────…");
         } catch (Exception e) {
@@ -131,33 +141,37 @@ public abstract class DAO {
         return objList;
     }
     
-    public List<String> search(String colName, String start, String... end) {
-        List<String> list = new ArrayList<String>();
+    public List<Object> search(String colName, String start, String... end) {
         DB db = new DB();
         DBTable t = gT();
+        List<Object> objList = new ArrayList<Object>();
         try {
-        	if (!colName.isEmpty() && !start.isEmpty()) {
-	            String var1 = NULL.toDQ(start);
-	            String var2 = var1;
-	            db.S("*", t.getTableName(), colName+" BETWEEN ? AND ?").var(var1).var(var2).exe();
-                DB.OUT("\tSearch » ");
-                int count = 0;
-	            while (db.next()) {
-	                Object obj = t.getVoCls().newInstance();
-	                String result = (String) t.getPK().invoke(obj);
-	                list.add(result);
-                    DB.OUT((count>0)?", ":""+result);
-	            }
-	            DB.OUT(" «\r\n");
-        	} else {
-        		System.out.println("DAO.search: 검색 조건 불충분!");
-        	}
+            String endVar = start;
+            if (end.length>0) endVar = end[0];
+            db.S("*", t.getTableName(), colName + " BETWEEN ? AND ?").var(start).var(endVar).exe();
+            DB.OUTLN("┌ Searched Data ────…");
+            int count = 0;
+            while (db.next()) {
+                Object obj = t.getVoCls().newInstance();
+                for (Method m : t.setter()) {
+                    Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
+                    m.invoke(obj, value);
+                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
+                }
+                objList.add(obj);
+                DB.OUTLN("\tㆍ────…");
+                count++;
+            }
+            if (count==0) {
+                DB.OUTLN(" » No data.");
+            }
+            DB.OUTLN("└────…");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             db.finalize();
         }
-        return list;        
+        return objList;   
     }
 
     public void update(Object obj) throws Exception {
@@ -167,7 +181,8 @@ public abstract class DAO {
         try {
             boolean isValidate = false;
             boolean isNoModDate = true;
-            DB.OUTLN("┌ Updated Data ────…");
+            DB.OUTLN("\r\n┌ Update Data ──────…");
+            int count = 0;
             for (Method m : t.getter()) {
             	String name = cName(m);
             	Object getValue = m.invoke(obj);
@@ -177,19 +192,28 @@ public abstract class DAO {
                 if (getValue != null && !isModCol && !isRegCol) {
                 	if (name.equals(t.getCNameCode())) {
                 		sql.setWhere(t.getCNameCode(), getValue);
+                        DB.OUTLN(" »\tTarget: "+tabber(name,2)+m.getName()+"("+getValue+")");
                 		isValidate = true;
                 	} else {
                 		sql.set(name, getValue);
+                        DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
                     }
                 }
-                DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
-            }            
+            }       
+            if (count==0) {
+                DB.OUTLN(" » No data.");
+            }
             if (!t.getCNameMod().isEmpty() ) {
                 sql.setSql(t.getCNameMod(), "sysdate");
-                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
+                DB.OUTLN(" :\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
             }
-            DB.OUTLN("└────…");
-            if (isValidate) sql.run();
+            DB.OUTLN(" -ㆍUpdate Start...! ───…");
+            if (isValidate) {
+                sql.run();
+                DB.OUTLN("SQL.R: Update Started!");
+            } else {
+                DB.OUTLN("SQL.R: Update Fail! Target이 없습니다.");
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

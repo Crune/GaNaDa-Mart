@@ -2,14 +2,28 @@ package ganada.core;
 
 public class NULL {
 
+    @SuppressWarnings("finally")
     public static String toDQ(String checkStr) {
-        if (checkStr == null) return "";
-        else return checkStr;
+        try {
+            if (checkStr == null) return "";
+            else return checkStr;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return "";
+        }
     }
     
     
+    @SuppressWarnings("finally")
     public static Object R(Object obj, Object replace) {
-        if (obj == null) return replace;
-        else return obj;
+        try {
+            if (obj == null) return replace;
+            else return obj;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return replace;
+        }
     }
 }
