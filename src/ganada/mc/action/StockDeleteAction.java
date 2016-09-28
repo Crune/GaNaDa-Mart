@@ -5,14 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import ganada.action.common.SuperAction;
 
-public class StockDeleteAction implements SuperAction {
-
-	
-	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String pd_code = request.getParameter("pd_code");
+public class StockDeleteAction implements SuperAction {public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String st_code = request.getParameter("st_code");
 		
 		
-		request.setAttribute("pd_code", pd_code);
+		request.setAttribute("st_code", st_code);
 		
 		return "/jsp/mc/pmc/stockDelete.jsp";
 	}
