@@ -12,7 +12,7 @@ public class InsertProAction implements SuperAction{
 	
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-
+		request.setCharacterEncoding("UTF-8");
 		
 		Product pd = new Product();
 		int pd_price = Integer.parseInt(request.getParameter("pd_price"));

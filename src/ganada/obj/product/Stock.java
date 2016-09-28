@@ -2,7 +2,7 @@ package ganada.obj.product;
 
 public class Stock {
 	private String sk_code;				//재고코드
-	private String st_code;				//창고코드
+	//private String st_code;				//창고코드
 	private String c_code;				//색상코드
 	private String pd_size;				//사이즈
 	private int amount;				//재고량
@@ -14,12 +14,12 @@ public class Stock {
 	public void setSk_code(String sk_code) {
 		this.sk_code = sk_code;
 	}
-	public String getSt_code() {
+/*	public String getSt_code() {
 		return st_code;
 	}
 	public void setSt_code(String st_code) {
 		this.st_code = st_code;
-	}
+	}*/
 	public String getC_code() {
 		return c_code;
 	}

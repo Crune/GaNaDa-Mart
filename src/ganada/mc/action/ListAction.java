@@ -2,6 +2,8 @@ package ganada.mc.action;
 import ganada.obj.product.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.util.ArrayList;
 import java.util.List;
 import ganada.action.common.SuperAction;
 
@@ -24,6 +26,8 @@ public class ListAction implements SuperAction{
 			System.out.println(plist);
 			
 			
+		}else{
+			plist = new ArrayList<Product>();
 		}
 		request.setAttribute("plist", plist);
 		request.setAttribute("count", new Integer(count));
