@@ -57,6 +57,7 @@ public class ProductDao extends DAO {
 		    }
 
 		
+	
 		 public int getCount() throws Exception {
 			 return count();
 		 }
