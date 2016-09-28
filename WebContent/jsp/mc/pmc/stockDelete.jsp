@@ -4,7 +4,7 @@
 
     <input type="button" value="목록으로" onclick="javascript:window.location='./list.gnd'">
 	<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
-    <form id="stinform" action="./stockDeletePro.gnd" method="post">
+    <form id="stdeform" action="./stockDeletePro.gnd" method="post">
 	    <div id="productForm" class="box">
 		    <ul>
 			   	<input id="st_code" name="st_code" type="hidden" placeholder="상품코드" value="${st_code }">
