@@ -54,15 +54,14 @@ public abstract class DAO {
             	Object getValue = m.invoke(obj);
             	if (getValue != null) {
                 	System.out.println("\tColumn: "+cName(m)+"\t\t <- "+m.getName()+""+getValue);
-	                if ( !t.getCNameReg().isEmpty() && cName(m).equals(t.getCNameReg()) ) {
-	                	sql.inSql(t.getCNameReg(), "sysdate");
-	                } else if (!t.getCNameMod().isEmpty() && cName(m).equals(t.getCNameReg()) ) {
-	                	sql.inSql(t.getCNameMod(), "sysdate");
-	                } else {
-	                	sql.in(cName(m), getValue);
-	                }
+                    sql.in(cName(m), getValue);
             	}
-            }            
+            }
+            if ( !t.getCNameReg().isEmpty() ) {
+                sql.inSql(t.getCNameReg(), "sysdate");
+            } else if (!t.getCNameMod().isEmpty() ) {
+                sql.inSql(t.getCNameMod(), "sysdate");
+            }
             sql.run();
         } catch (Exception e) {
             e.printStackTrace();
@@ -145,17 +144,24 @@ public abstract class DAO {
         DBTable t = gT();
         DB.Update sql = db.new Update(t.getTableName());
         try {
+            boolean isValidate = false;
+            boolean isNoModDate = true;
             for (Method m : t.getter()) {
             	String name = cName(m);
             	Object getValue = m.invoke(obj);
-                if (getValue != null) {                	
+                if (getValue != null) {
                 	if (name.equals(t.getCNameCode())) {
                 		sql.setWhere(t.getCNameCode(), getValue);
-                	} else if (!t.getCNameMod().isEmpty() && name.equals(t.getCNameReg()) ) {
+                		isValidate = true;
+                	} else if (!t.getCNameMod().isEmpty() && name.equals(t.getCNameMod()) ) {
                     	sql.setSql(t.getCNameMod(), "sysdate");
+                    	isNoModDate = false;
                     } else {
                 		sql.set(name, getValue);
                     }
+                }
+                if (isNoModDate) {
+                    sql.setSql(t.getCNameMod(), "sysdate");
                 }
             }            
             if (!t.getCNameMod().isEmpty()) sql.setSql(t.getCNameMod(), "sysdate");
