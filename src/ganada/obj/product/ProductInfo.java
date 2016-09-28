@@ -21,6 +21,11 @@ public class ProductInfo {
 	public String getPd_infocontent() {
 		return pd_infocontent;
 	}
+	@Override
+	public String toString() {
+		return "ProductInfo [pd_infocode=" + pd_infocode + ", pd_infocontent=" + pd_infocontent + ", pd_infotype="
+				+ pd_infotype + "]";
+	}
 	public void setPd_infocontent(String pd_infocontent) {
 		this.pd_infocontent = pd_infocontent;
 	}
