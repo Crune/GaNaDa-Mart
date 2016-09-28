@@ -21,6 +21,18 @@
     function goJoinView() {
         var login = eval("document.login");
         login.src = "inner_join.gnd";
+        var uri = '팝업창 url'
+            var width = 520;
+            var height = 500;
+            var top = (screen.availHeight - height) / 2;
+            var left = (screen.availWidth - width) / 2;
+
+            var strFeature;
+            strFeature = 'height=' + height + ',width=' + width + ',menubar=no,toolbar=no,location=no,resizable=no,status=no,scrollbars=yes,top=' + top + ',left=' + left
+ 			url = "inner_join.gnd";
+        
+        // 새로운 윈도우를 엽니다.
+        open(url, "confirm",strFeature);
     }
 </script>
 
