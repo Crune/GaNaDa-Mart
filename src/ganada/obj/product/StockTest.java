@@ -14,10 +14,10 @@ public class StockTest extends DBTester {
     @BeforeClass
     public static void init() {
     	StockOrg = new Stock(); 	
-    //	StockOrg.setSt_code("1");
-    	StockOrg.setC_code("1");
-    	StockOrg.setPd_size("250");
-    	StockOrg.setAmount(10);
+    	StockOrg.setSk_code("1");
+    	StockOrg.setC_code("2");
+    	StockOrg.setPd_size("245");
+    	StockOrg.setAmount(9);
     	StockOrg.setPd_code("11");
     }
 
@@ -25,7 +25,7 @@ public class StockTest extends DBTester {
     public void test() {
     	StockDao dao = StockDao.getInstance();
 		try {
-		    dao.insert(StockOrg);
+		    dao.update(StockOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
