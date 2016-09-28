@@ -24,7 +24,7 @@ public class ChkLoginAjaxAction implements SuperAction {
 
         HttpSession session = request.getSession();
 
-        Account account = (Account) nullChk(session.getAttribute("userAccount"), null); 
+        Account account = (Account) session.getAttribute("userAccount"); 
         Double mile = 0d;
         String memberCode="000000000000000", memberName="guest", cartId="0", cartCount="0", tk= "짤";
                 
@@ -42,7 +42,10 @@ public class ChkLoginAjaxAction implements SuperAction {
             cartId = (String) nullChk(session.getAttribute("cartId"), cartId);
             cartCount = (String) nullChk(session.getAttribute("cartCount"), "1");
         }
-        session.setAttribute("ajaxStr", loginId+tk+cartCount+tk+mile+tk+memberCode+tk+memberName+tk);
+        String result = loginId+tk+cartCount+tk+mile+tk+memberCode+tk+memberName+tk;
+        session.setAttribute("ajaxStr", result);
+        
+        System.out.println("\t-login. "+result);
         
         return "/jsp/template/ajax.jsp";
     }

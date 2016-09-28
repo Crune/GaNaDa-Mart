@@ -68,6 +68,7 @@ public class DispatcherAction extends HttpServlet {
             if (uri.indexOf(path) == 0) // sub domain check
                 uri = uri.substring(path.length());
 
+            System.out.println("\r\n────────────────────────────────────────────");
             System.out.println("\r\n호출URI: " + uri);
 
             // MC 헤더 푸터 적용 {

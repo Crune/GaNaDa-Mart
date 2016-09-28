@@ -10,10 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${sessionScope.pageTitle }</title>
 
+<!-- Style Sheet -->
 <link href="${pageContext.request.contextPath}/css/default.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/nike.css" rel="stylesheet" type="text/css">
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.json-2.2.js"></script>
@@ -27,7 +28,6 @@
 
 <!-- CP Javascript -->
 <script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
-<script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
 
 <!-- Custom Javascript -->
 <script src="${pageContext.request.contextPath}/js/default.js"></script>

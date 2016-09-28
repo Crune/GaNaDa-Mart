@@ -130,5 +130,8 @@ h4.global_footer_link_tit a {
 		</div>
 	</div>
 </div>
+
+<script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
+
 </body>
 </html>
