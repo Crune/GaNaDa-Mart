@@ -37,7 +37,7 @@
 	  });
 	  
 	  $("#order").bind("click", function(){
-		  $(location).attr('href',"<%=root%>/order.gnd");
+		  $(location).attr('href',"<%=root%>/orderForm.gnd");
 	  });	
 	  
   }
@@ -48,6 +48,8 @@
       if(result) {
     	  var form  = $("#deletecartForm");
     	  
+    	  console.log(form);
+    	  
     	  form.find("#cart_id").val(cart_id);
     	  form.find("#item_num").val(item_num);
     	  
@@ -57,49 +59,72 @@
       }
   }
   
-  function changeAmount(item_id, cnt, type) {
-	 
-	  var id ="qty_"+ item_id + "_" + cnt;
+  function changeAmount(item_id, cnt, type){
 	  
-	  var itemCnt =  Number($("#"+id).val());
-	 
+	  var id ="qty_" + item_id + "_" + cnt;
+	  var itemCnt  = Number($("#"+id).val());  //수량값 가져오기
+	  
 	  if(type =="up"){
-		  itemCnt = itemCnt +1;
-		  $("#"+id).val(itemCnt);
-		  
-		 
-	 }else if(type =="down"){
-		 
-		 if(itemCnt == 1){
-			 alert("제품은 최소 1개이상 선택되어야합니다.");
-			 return false;
-		
-		 }else if (itemCnt > 1){
-			 itemCnt = itemCnt -1;
-		 }
-		 itemCnt = itemCnt -1;
-		  $("#"+id).val(itemCnt);
-
-	 }
+		  itemCnt = itemCnt +1;  //가져온 수량에서 1개 늘린다...
+		  $("#"+id).val(itemCnt);		  
+	  }else if(type =="down"){		  
+		  if(itemCnt ==1){
+			  alert("제품은 최소 1개이상 선택되어야합니다.");
+			  return false;
+		  }else if(itemCnt >1){
+			  itemCnt = itemCnt -1;
+		  }
+		  $("#"+id).val(itemCnt);	
+	  } 
   }
+  
   function modifyAmount(cart_id, item_id, cnt){
   
-  var id ="qty_"+ item_id + "_" + cnt;
-  var itemCnt =  Number($("#"+id).val());
-  
-  $("updateForm").find("#item_cnt").val(itemCnt);
-  $("updateForm").find("#cart_id").val(cart_id);
-  
-  var form = $("updateForm");
-  
-  from.submit();
+	  
+ 	 var id ="qty_" + item_id + "_" + cnt;
+ 	 var itemCnt  = Number($("#"+id).val());
+
+ 	 $("#updateForm").find("#cart_id").val(cart_id);
+ 	 
+ 	 var form  =  $("#updateForm");
+ 	 var url  = "<%=root%>/cartUpdate.gnd";
+ 	 
+ 	
+ 	$.ajax({
+		type:"post",
+		dataType:"json",
+		url:url,
+		data:form.serialize(),
+		success:function(result){
+			console.log(result);
+			var goods_id  ="total_goods_"+cart_id;
+			var price  = 0;
+			if(result.code !=null){
+				price = result.code;			
+				$("#"+goods_id).html(numbeComma(price) +"원");			
+			}
+		},
+		fail:function(){
+			console.log("Ajax Error Java 소스 확인해보세요 ...")
+		}
+	});
   }
+  
+  //정규식을 이용한 천단위 콤마찍기 로직
+  //안쓰려고했는데 스크립트에 포메터 넣으면 오류
+  //이유는 스크립트가 로딩될때 숫자를 문자로 인식
+  function numbeComma(number) {
+	    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+	 
+  //페이지 로드되자마자 해당 펑션을 실행시키도록 함
+  //제이쿼리함수써도 되는데 이게 더 보기 좋아서 사용
   window.onload = init;
   </script>
    <form id="cartForm" method="post"></form>
-   <form id="updateForm" method="post" action="<%=root%>/cartUpdate.gnd">
-   <jinput type="hidden" id="item_cnt" name="item_cnt" value="">
-   <jinput type="hidden" id="cart_id" name="cart_id" value="">
+   <form id="updateForm" method="post">
+     <input type="hidden" id ="item_cnt" name="item_cnt" value="" />
+     <input type="hidden" id ="cart_id" name="cart_id" value="" />
    </form>
    <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
      <input type="hidden" id="item_num" name="item_num" value="" />
@@ -178,16 +203,16 @@
                          <label class="hidden" for="amountType02">수량입력</label>
                          <input name="qty" title="수량선택" class="qty" id="qty_${vo.item_id}_${status.count}" readonly="readonly" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="1">
 						  <div class="option">
-				               <a href="javascript:void(0)" onclick="javascript:changeAmount ('${vo.item_id}',${status.count}, 'up')"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
-							   <a href="javascript:void(0)" onclick="javascript:changeAmount ('${vo.item_id}',${status.count}, 'down')"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
+				               <a href="javascript:void(0);" onclick="javascript:changeAmount('${vo.item_id}', ${status.count}, 'up')"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
+							   <a href="javascript:void(0);" onclick="javascript:changeAmount('${vo.item_id}', ${status.count}, 'down')"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
 				          </div>
 					      <div>
-						    <a title="변경" href="javascript:void(0);" onclick="javascript:modifyAmount('${vo.cart_id}','${vo.item_id}', ${ststus.cont})"></a>
+						    <a title="변경" href="javascript:void(0);" onclick="javascript:modifyAmount('${vo.cart_id}','${vo.item_id}', ${status.count})">
 						    <img alt="변경" src="<%=root%>/img/cart/order_count_modify_btn.gif"></a>						   
 						 </div>
 				       </td>
 				       <td class="lns05">
-						  <strong><fmt:formatNumber value="${vo.item_total}" pattern="#,###" />원</strong>
+						  <strong id="total_goods_${vo.cart_id}"><fmt:formatNumber value="${vo.item_total}" pattern="#,###" />원</strong>
 					      <input type="hidden" id="finalPricePerGoods" name="finalPricePerGoods" value="${vo.item_total}">
 					   </td>
 					   <td class="lns06">
@@ -199,13 +224,13 @@
 				    <tr>
 					 <td colspan="6" class="lns07">
 					   <div>
-					    <p>상품주문금액 <strong>${order_price}원</strong></p>
-					    <p>할인금액 - <strong>${discount_price}원</strong></p>
-						<p>배송비 + <strong>0원</strong></p>
+					    <p>상품주문금액 <strong id="order_total_price">${order_price}원</strong></p>
+					    <p>할인금액 - <strong id="order_total_discount">${discount_price}원</strong></p>
+						<p>배송비 + <strong id="order_total_delivery">0원</strong></p>
 					   </div>								
 					   <div class="total">
 						 <p>총 결제 예정금액</p>
-						 <strong><em>${total_price}</em> 원</strong>
+						 <strong id ="order_total_pay"><em>${total_price}</em> 원</strong>
 						</div>
 					  </td>
 					</tr>
