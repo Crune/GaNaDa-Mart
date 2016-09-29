@@ -23,15 +23,11 @@ public class InsertAction implements SuperAction {
 		//String endCode = String.valueOf(count);		
 		//List<Object> piList = dbPro.select(startCode, endCode);
 		
-		List<Object> piList1 = dbPro.search("pd_infotype", "1");
-		//for문으로 list<obj>를 list<productinfo>로 형변환해주어야함
-		for(Object object : piList1){
-			ProductInfo p = (ProductInfo) piList1.get(0);
-		}
-		List<Object> piList2 = dbPro.search("pd_infotype", "2");
-		List<Object> piList3 = dbPro.search("pd_infotype", "3");
-		List<Object> piList4 = dbPro.search("pd_infotype", "4");
-
+		List<ProductInfo> piList1 = (List<ProductInfo>) dbPro.search("pd_infotype", "1");
+		List<ProductInfo> piList2 = (List<ProductInfo>) dbPro.search("pd_infotype", "2");
+		List<ProductInfo> piList3 = (List<ProductInfo>) dbPro.search("pd_infotype", "3");
+		List<ProductInfo> piList4 = (List<ProductInfo>) dbPro.search("pd_infotype", "4");
+		
 		request.setAttribute("piList1", piList1);
 		request.setAttribute("piList2", piList2);
 		request.setAttribute("piList3", piList3);
