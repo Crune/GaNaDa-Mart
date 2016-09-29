@@ -1,5 +1,8 @@
 package ganada.obj.product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ganada.core.*;
 import ganada.obj.product.ProductColor;
 import ganada.obj.product.ProductColorDao;
@@ -22,6 +25,5 @@ public class ProductColorDao extends DAO {
     		t.setCls("ganada.obj.product.ProductColor");
     	}
 		return t;
-	}
-	
+	}	
 }
