@@ -19,6 +19,26 @@
         logout.submit();
     }
     function goJoinView() {
+		$(".global_login_modal").hide();
+		$('.global_right_nav').find('.global_login a').removeClass('active');
+
+		var loginBack = document.getElementById("login_background");
+		loginBack.style.height = document.body.clientHeight + 100 + "px";
+		loginBack.style.visibility = "visible";
+		//	비활성화 효과  end	-->
+		var frameLogin = document.getElementById("frameLogin");
+		$("#login_Pop").css({
+			"visibility" : "hidden"
+		});
+		$("#frameLogin").src = "";
+		frameLogin.src = "inner_join.gnd";
+
+		document.getElementById("login_Pop").style.visibility = "visible";
+		$("html, body").animate({
+			scrollTop : $("#login_Pop").attr("offsetTop") - 45
+		}, 0);
+		
+    	/*
         var login = eval("document.login");
         login.src = "inner_join.gnd";
         var uri = '팝업창 url'
@@ -33,6 +53,7 @@
         
         // 새로운 윈도우를 엽니다.
         open(url, "confirm",strFeature);
+        */
     }
 </script>
 
