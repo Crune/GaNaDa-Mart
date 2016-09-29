@@ -41,16 +41,16 @@ public class UpdateProAction implements SuperAction{
 		
 		try{
 		String pd_code = request.getParameter("pd_code");
-//		
+		System.out.println(pd_code);
 		Product product = new Product();
-		product.setPd_code(request.getParameter("pd_code"));
+		
 		product.setPd_name(request.getParameter("pd_name"));
 		product.setPd_price(Integer.parseInt(request.getParameter("pd_price")));
 		product.setPd_infocode1(request.getParameter("pd_infocode1"));
 		product.setPd_infocode2(request.getParameter("pd_infocode2"));
 		product.setPd_infocode3(request.getParameter("pd_infocode3"));
 		product.setPd_infocode4(request.getParameter("pd_infocode4"));
-
+		product.setPd_code(request.getParameter("pd_code"));
 	 	
 		ProductDao dbPro = ProductDao.getInstance();
 		dbPro.update(product);

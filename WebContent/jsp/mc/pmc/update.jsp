@@ -6,7 +6,7 @@
 <title>기본Product수정</title>
 </head>
 <body>  
-	<form method="post" name="productUpdate" action="updatePro.gnd">
+	<form method="post" name="productUpdate" action="./updatePro.gnd?pd_code=${product.getPd_code()}">
 		<table width="500" border="1" cellspacing="0" cellpadding="0"  align="center">
 	   		<tr>
 	    		<td align="right" colspan="2">
@@ -16,13 +16,13 @@
 	   		<tr>
 	    		<td width="170" align="center">상품명</td>
 	    		<td width="330">
-	    			<input type="hidden" name="pd_code" value="${pd_code }">
-	      			<input type="text" size="40" name="name" value="${pd_name }"></td>
+	    			<input type="hidden" name="pd_code" value="${product.getPd_code()}">
+	      			<input type="text" size="40" name="pd_name"></td>
 	  		</tr>
 	  		<tr>
 	    		<td align="center">가격</td>
 	    		<td width="330">
-					<input type="text" size="40" name="price" value="${pd_price }"></td>
+					<input type="text" size="40" name="pd_price" ></td>
 			<tr>
 	   
 				<td colspan=2 align="center"> 
