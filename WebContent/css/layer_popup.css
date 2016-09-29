@@ -10,7 +10,7 @@
 .layerArea {position:absolute; left:50%; top:200px; margin-left:-430px; visibility:hidden; z-index:10000;}
 
 /*** 팝업 레이아웃 ***/
-.popLayer {position:absolute; left:50%; top:200px; width:860px; margin-left:-430px; padding-top:10px; background:url(http://image.nike.co.kr/web/bg/bg_layerT_type1.png) no-repeat; z-index:10000;}
+.popLayer {position:absolute; left:50%; top:0px; width:860px; margin-left:-430px; padding-top:10px; background:url(http://image.nike.co.kr/web/bg/bg_layerT_type1.png) no-repeat; z-index:10000;}
 .popLayer .layerBox {position:relative; padding-bottom:10px; background:url(http://image.nike.co.kr/web/bg/bg_layerB_type1.png) no-repeat left bottom;}
 .popLayer .layerBox .contents {width:780px; padding:27px 40px 30px; background-color:#fff; zoom:1;}
 .popLayer .layerBox .contents:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}

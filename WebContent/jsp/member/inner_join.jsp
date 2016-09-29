@@ -1,29 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<!-- Style Sheet -->
+<link href="${pageContext.request.contextPath}/css/default.css"
+	rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/nike.css"
+	rel="stylesheet" type="text/css">
+
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.json-2.2.js"></script>
+<script
+	src="${pageContext.request.contextPath}/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.bxslider.js"></script>
+<script
+	src="${pageContext.request.contextPath}/js/jquery.jqzoom-core.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.json-2.2.js"></script>
+<script
+	src="${pageContext.request.contextPath}/js/jquery.word-break-keep-all.min.js"></script>
+
+<link href="${pageContext.request.contextPath}/css/jquery.jqzoom.css"
+	rel="stylesheet" type="text/css">
+
+<!-- CP Javascript -->
+<script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
+
+<!-- Custom Javascript -->
+<script src="${pageContext.request.contextPath}/js/default.js"></script>
+
 <script language="JavaScript">
-	function doNext(){
-		
+	function doNext() {
+
 	}
-	function doCancel(){
-		if (confirm("회원가입을 취소하시겠습니까?") == true){    //확인
-		    this.close();
-		}else{   //취소
-		    return;
+	function doCancel() {
+		if (confirm("회원가입을 취소하시겠습니까?") == true) { //확인
+			this.doClose();
+		} else { //취소
+			return;
 		}
-	}	
+	}
+function doClose() {		
+		window.top.location.href = gateUrl;
+	}
+	
+	
 	function checkIt() {
 		var memberForm = eval("document.memberForm");
-		if (!memberForm.memberName.value) {
-			alert("이름을 입력하세요");
+		var email = eval("document.memberForm.email1Address.value");
+		var exptext = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+		if (!memberForm.email1Address.value && !memberForm.memberName.value) {
+			alert("이름/이메일을 입력하세요.")
 			return false;
 		} else if (!memberForm.email1Address.value) {
-			alert("이메일을 입력하세요");
+			alert("이메일을 입력하세요.");
 			return false;
-		} else {
-			memberForm.submit();
-		}
+		} else if (!memberForm.memberName.value) {
+			alert("이름을 입력하세요.");
+			return false;
+		} else if (!exptext.test(email)) {
+			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우         
+			alert("정확한 이메일을 입력해주세요.");
+			return;
+		} else
+			chkEmail();
 	}
+	function chkEmail() {
+		var chk = false;
+		if (document.memberForm.email1Address.value != '') {
+			var email1Address = $("#loginEmail").val();
+			$.ajax({
+				url : "/overlap.gnd",
+				type : "GET",
+				data : {
+					"email" : email1Address
+				},
+				dataType : "text",
+				cache : false,
+				success : function(result) {
+					if (result == "-1") {
+						alert("사용 가능한 이메일입니다.");
+						return;
+					} else {
+						alert("이미 회원으로 가입되어 있는 이메일입니다.");
 
+					}
+				}
+			});
+		}
+
+	}
 </script>
 <div class="popLayer log">
 	<div class="layerBox clx">
@@ -47,7 +115,7 @@
 							<legend>로그인 관련 입력 폼</legend>
 							<div class="loginForm type02">
 								<div class="formBox">
-									<div class="speech type03"    >
+									<div class="speech type03">
 										<span class="over">이름을 입력해주세요<span class="arr"></span></span>
 									</div>
 									<label for="loginName" class="layerLabel">이름</label> <input
@@ -65,16 +133,16 @@
 										onchange="javascript:resetFlag();">
 								</div>
 							</div>
-							<a href="javascript:checkIt()" onclick="checkDuplicate();" class="loginBtn type02">중복확인</a>
+							<a href="#" onclick="javascript:checkIt();" class="loginBtn type02">중복확인</a>
 						</fieldset>
 					</form>
 
-				</divㅣ>
+				</div>
 				<!-- // .loginArea -->
 				<div class="starTxt alR">
 					<a href="#" class="btn-type1 btn-orange" onclick="doNext();"><span
-						class="right">다음</span></a> 
-					<a href="#" class="btn-type1 btn-gray ml05" onclick="doCancel();"><span
+						class="right">다음</span></a> <a href="#"
+						class="btn-type1 btn-gray ml05" onclick="doCancel();"><span
 						class="right">취소</span></a>
 				</div>
 			</div>
