@@ -16,16 +16,21 @@ public class OverlapAction implements SuperAction {
 
 	@Override
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		request.setCharacterEncoding("UTF-8");
+		
         HttpSession session = request.getSession();
         
         AccountDao dao = AccountDao.getInstance();
-
+        
+        String name = request.getParameter("name");	
         String email = request.getParameter("email"); 
+        
         int rst = dao.isExist("email", email);
         
 		session.setAttribute("ajaxStr", rst);
+		session.setAttribute("overlapName", name );
+		session.setAttribute("overlapEmail", email );
+		
 		return "/jsp/template/ajax.jsp";
 	}
-
 }

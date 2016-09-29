@@ -31,9 +31,7 @@
 <script src="${pageContext.request.contextPath}/js/default.js"></script>
 
 <script language="JavaScript">
-	function doNext() {
-
-	}
+var isChecked = false;
 	function doCancel() {
 		if (confirm("회원가입을 취소하시겠습니까?") == true) { //확인
 			this.doClose();
@@ -41,11 +39,10 @@
 			return;
 		}
 	}
-function doClose() {		
+	function doClose() {
 		window.top.location.href = gateUrl;
 	}
-	
-	
+
 	function checkIt() {
 		var memberForm = eval("document.memberForm");
 		var email = eval("document.memberForm.email1Address.value");
@@ -67,22 +64,23 @@ function doClose() {
 		} else
 			chkEmail();
 	}
-	function chkEmail() {
-		var chk = false;
+	function chkEmail() {		
 		if (document.memberForm.email1Address.value != '') {
 			var email1Address = $("#loginEmail").val();
+			var memberName = $("#loginName").val();
 			$.ajax({
 				url : "/overlap.gnd",
 				type : "GET",
 				data : {
-					"email" : email1Address
+					"email" : email1Address,
+					"name" : memberName
 				},
 				dataType : "text",
 				cache : false,
 				success : function(result) {
 					if (result == "-1") {
 						alert("사용 가능한 이메일입니다.");
-						return;
+						isChecked=true;
 					} else {
 						alert("이미 회원으로 가입되어 있는 이메일입니다.");
 
@@ -90,7 +88,14 @@ function doClose() {
 				}
 			});
 		}
-
+	}
+	function doNext() {
+		if (isChecked) {			
+			document.memberForm.submit();
+			
+		} else {
+			alert("본인인증을 위하여 이메일, 이름의 중복확인이 필요합니다.");
+		}
 	}
 </script>
 <div class="popLayer log">
@@ -133,7 +138,8 @@ function doClose() {
 										onchange="javascript:resetFlag();">
 								</div>
 							</div>
-							<a href="#" onclick="javascript:checkIt();" class="loginBtn type02">중복확인</a>
+							<a href="#" onclick="javascript:checkIt();"
+								class="loginBtn type02">중복확인</a>
 						</fieldset>
 					</form>
 

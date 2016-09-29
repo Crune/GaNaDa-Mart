@@ -1,0 +1,26 @@
+package ganada.action.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import ganada.action.common.SuperAction;
+
+public class Join2Action implements SuperAction {
+
+	public Join2Action() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		String sfd = (String)session.getAttribute("overlapName");
+		String sfd2 = (String)session.getAttribute("overlapEmail");
+		System.out.println(sfd);
+		System.out.println(sfd2);
+		return "/jsp/member/join2.jsp";
+	}
+
+}
