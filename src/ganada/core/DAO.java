@@ -110,10 +110,10 @@ public abstract class DAO {
         return obj;
     }
 
-    public List<Object> select(String startCode, String endCode) throws Exception {
+    public List<?> select(String startCode, String endCode) throws Exception {
         DB db = new DB();
         DBTable t = gT();
-        List<Object> objList = new ArrayList<Object>();
+        List objList = new ArrayList<Object>();
         try {
             db.S("*", t.getTableName(), t.getCNameCode() + " BETWEEN ? AND ?").var(startCode).var(endCode).exe();
             DB.OUTLN("┌ Selected Data ────…");
@@ -141,10 +141,10 @@ public abstract class DAO {
         return objList;
     }
     
-    public List<Object> search(String colName, String start, String... end) {
+    public List<?> search(String colName, String start, String... end) {
         DB db = new DB();
         DBTable t = gT();
-        List<Object> objList = new ArrayList<Object>();
+        List objList = new ArrayList<Object>();
         try {
             String endVar = start;
             if (end.length>0) endVar = end[0];

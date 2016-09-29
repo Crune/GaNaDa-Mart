@@ -12,7 +12,7 @@
 					<!-- 제품 특장점 -->
 					<div class="conArea" style="display: block;">
 						<!--BO 상품 상세설명 영역에 등록한 데이터 출력 영역 start-->
-						{상품설명1}
+						${pdp_infos.get(0).getPd_infocontent()}
 						<!--BO 상품 상세설명 영역에 등록한 데이터 출력 영역 end-->
 						<div class="bgM1_1 botm"></div>
 						<!-- bgM1_1추가 201406 -->
