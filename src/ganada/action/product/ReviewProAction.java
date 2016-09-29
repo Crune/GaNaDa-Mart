@@ -63,6 +63,7 @@ public class ReviewProAction implements SuperAction {
 		ItemReviewDao  ird = ItemReviewDao.getInstance();
 		ird.insert(review);
 		
+		
 		request.setAttribute("itemnum", itemnum);
 		request.setAttribute("sysName", sysName);
 		return "/jsp/review/reviewPro.jsp";

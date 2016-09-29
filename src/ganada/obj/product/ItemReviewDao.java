@@ -222,7 +222,41 @@ public class ItemReviewDao {
 	}
 
 	//nike엔 수정이 없음...
+public ItemReview getMember(String itemnum)throws Exception {
+	
+DB db = new DB();
+ItemReview member = null;
+try{
+	db.S("*","REVIEW","itemnum=?").var(itemnum).exe();
+	
+	if(db.next()){
+		member = new ItemReview();
+		member.setNum(db.getInt("num"));
+		member.setItemnum(db.getString("itemnum"));
+		member.setItemname(db.getString("itemname"));
+		member.setWriter(db.getString("writer"));
+		member.setSubject(db.getString("subject"));
+		member.setSiz(db.getInt("siz"));
+		member.setComfortable(db.getInt("comfortable"));
+		member.setWid(db.getInt("wid"));
+		member.setDura(db.getInt("dura"));
+		member.setItemsize(db.getString("itemsize"));
+		member.setWei(db.getString("wei"));
+		member.setHei(db.getString("hei"));
+		member.setAge(db.getString("age"));
+		member.setContent(db.getString("content"));
+		member.setStar(db.getInt("star"));
+		member.setReadcount(db.getInt("readcount"));
+		member.setReg_date(db.getTimestamp("reg_date"));
+	}
+	}catch(Exception ex){
+		ex.printStackTrace();
+	}finally {
+		db.finalize();
+}
+return member;
 
+}
 
 	public int deleteArticle(int num) {
 		DB db = new DB();
