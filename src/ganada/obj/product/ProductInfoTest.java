@@ -16,13 +16,14 @@ public class ProductInfoTest extends DBTester {
     public static void init() {
     	productInfoOrg = new ProductInfo(); 	
     	productInfoOrg.setPd_infocontent("상품정보들");
+        productInfoOrg.setPd_infotype("1");
     }
 
     @Test
     public void test() {
     	ProductInfoDao dao = ProductInfoDao.getInstance();
 		try {
-		    DB.OUTLN(dao.select("2").toString());
+		    dao.insert(productInfoOrg);
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

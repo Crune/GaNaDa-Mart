@@ -5,7 +5,7 @@
 	<div class="content" id="goodsContent" style="display: block">
 		<div class="loc-box">
 			<span> <a href="/type.gnd?code={분류코드명}">{상위분류}</a>
-			</span> <span> &nbsp;&gt;&nbsp; <a href="/type.gnd?code={분류코드명}">{pdp_catalog.cat_name}</a>
+			</span> <span> &nbsp;&gt;&nbsp; <a href="/type.gnd?code={분류코드명}">${pdp_catalog.cat_name}</a>
 			</span>
 		</div>
 		<div class="item-box clx">
