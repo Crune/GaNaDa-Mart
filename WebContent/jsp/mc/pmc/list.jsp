@@ -49,6 +49,12 @@ ${pd.getPd_infocode3()}</td>
 ${pd.getPd_infocode4()}</td>
 <td width="70">
 ${pd.getPd_reg_date()}</td>
+<td>
+<input type="button" value="수정" onclick="javascript:window.location='./update.gnd'">
+</td>
+<td>
+<input type="button" value="삭제" onclick="javascript:window.location='./delete.gnd'">
+</td>
 </tr>
 </c:forEach>
 </table>
