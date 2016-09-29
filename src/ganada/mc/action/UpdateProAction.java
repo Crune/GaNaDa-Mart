@@ -38,6 +38,8 @@ public class UpdateProAction implements SuperAction{
 //		if(!type.equals("image")){		
 //			f.delete();					
 //		}
+		
+		try{
 		String pd_code = request.getParameter("pd_code");
 //		
 		Product product = new Product();
@@ -52,7 +54,8 @@ public class UpdateProAction implements SuperAction{
 	 	
 		ProductDao dbPro = ProductDao.getInstance();
 		dbPro.update(product);
-		return null;
+		}catch(Exception e){e.printStackTrace();}
+		return "/jsp/mc/pmc/updatePro.jsp";
 	}
 
 }
