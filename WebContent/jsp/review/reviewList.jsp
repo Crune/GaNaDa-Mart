@@ -6,13 +6,17 @@
 의견이 있나요?<br />
 이 상품의 첫 리뷰를 남겨 보세요. <br />
 <input type="button" value="리뷰작성하기" 
-            onclick="javascript:window.location='./reviewForm.gnd'">
+            onclick="javascript:window.location='./reviewForm.gnd?item_num=${review.getItemnum()}'">
 </center>
 </c:if>
 <c:if test="${count > 0}">
 <center>
-<font size="6" color="black">리뷰</font><font size="4" color="orange">${count}</font>
+<font size="6" color="black">리뷰</font><font size="4" color="orange">${count}</font><br />
 <hr>
+<br />
+<input type="button" value="리뷰작성하기" 
+            onclick="javascript:window.location='./reviewForm.gnd?item_num=${review.getItemnum()}'">
+<br />
 <c:forEach var="review" items="${reviewLists}">
 
 

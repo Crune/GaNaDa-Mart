@@ -9,10 +9,10 @@
 </table>
 <hr>
 
-<form id="revForm" action="./reviewPro.gnd" method="post" encType="multipart/form-data">
-	<input type="hidden" name="itemname" value="운동화">
-    <input type="hidden" name="itemnum" value="45">
-    <input type="hidden" name="writer" value="writer">
+<form id="revForm" action="./reviewPro.gnd?itemnum=${review.getItemnum() }" method="post" encType="multipart/form-data">
+	<input type="hidden" name="itemname" value="${review.getItemname() }">
+    <input type="hidden" name="itemnum" value="${review.getItemnum() }">
+    <input type="hidden" name="writer" value="${review.getWriter() }">
 
 	<table>
 		<tr>
@@ -108,7 +108,8 @@
 	</table>
 	<hr>
 	<center>
-		<input type="submit" id="review" value="등록하기"> <input
+		<input type="submit" id="review" value="등록하기">
+		 <input
 			type="button" value="취소"
 			onclick="javascript:window.location='./item_review.gnd'">
 	</center>

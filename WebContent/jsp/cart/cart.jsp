@@ -18,7 +18,7 @@
 	  //debugger;
 	  var login_status = $("#cartForm").find("#userLogin").val();
 	  
-	  console.log("login+status : " + login_status);
+	  //console.log("login+status : " + login_status);
 	  
 	  if(login_status =='yes' || login_status=="YES"){
 		  $(location).attr('href',"<%=root%>/cartList.gnd");
@@ -30,10 +30,9 @@
   
   window.onload = init;
   </script>
-   <form id="cartForm" method="post">
-    <input type="text" id="userLogin" name ="userLogin" value="${login_status}"/>
-   
-   </form>
+   <form id="cartForm" method="post">                            
+    <input type="hidden" id="userLogin" name ="userLogin" value="${login_status}"/>
+  </form>
    
 </body>
 </html>
