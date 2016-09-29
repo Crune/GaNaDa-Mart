@@ -6,10 +6,10 @@
 /*	Author: Tommy
 /****************************************/
 
-@import url(/css/base.css);
-@import url(/css/layout.css);
-@import url(/css/layer_popup.css);
-@import url(/css/popup.css);
+@import url(base.css);
+@import url(layout.css);
+@import url(layer_popup.css);
+@import url(popup.css);
 
 /*** 모듈 타이틀 ***/
 .section-title {font-weight:bold;}
