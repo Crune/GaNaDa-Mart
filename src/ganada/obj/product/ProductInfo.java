@@ -4,7 +4,7 @@ public class ProductInfo {
 	private String pd_infocode;					//상품정보코드
 	private String pd_infocontent;				//상품정보내용
 	private String pd_infotype;
-	
+	private String pd_infoname;
 	
 	public String getPd_infotype() {
 		return pd_infotype;
@@ -20,6 +20,12 @@ public class ProductInfo {
 	}
 	public String getPd_infocontent() {
 		return pd_infocontent;
+	}
+	public String getPd_infoname() {
+		return pd_infoname;
+	}
+	public void setPd_infoname(String pd_infoname) {
+		this.pd_infoname = pd_infoname;
 	}
 	@Override
 	public String toString() {

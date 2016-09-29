@@ -14,6 +14,16 @@
         open(url, "open", 
         "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
     }
+	function openList(userinput) {
+    if (userinput.pd_infocode.value == "") {
+        alert("정보종류를 선택해주세요");
+        return;
+    }
+    url = "infoList.gnd?pd_infocode=" + userinput.pd_infocode.value ;
+    
+    open(url, "open", 
+    "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+}
 -->
 </script>
 
@@ -29,25 +39,17 @@
     <li><label for="pd_price">가격</label>
     <input id="pd_price" name="pd_price" type="text" size="10" placeholder="가격" maxlength="10">원
     
-    <li><label for="pd_infocode">정보코드</label>
-    <input id="pd_infocode" name="pd_infocode" type="text" size="50" placeholder="상품명" maxlength="50">
+    <li><label for="pd_infocode1">상품정보</label>
+    <input type="button" name="pd_infocode1" value="등록" onclick="window.open('./infoList.gnd?pd_infotype=1','win','width=1000,height=500,toolbar=0,scrollbars=0,resizable=0')"> 
+    <li><label for="pd_infocode2">배송/결제정보</label>
+    <input type="button" name="pd_infocode2" value="등록" onclick="window.open('./infoList.gnd?pd_infotype=2','win','width=1000,height=500,toolbar=0,scrollbars=0,resizable=0')"> 
+    <li><label for="pd_infocode3">유의사항</label>
+    <input type="button" name="pd_infocode3" value="등록" onclick="window.open('./infoList.gnd?pd_infotype=3','win','width=1000,height=500,toolbar=0,scrollbars=0,resizable=0')"> 
+    <li><label for="pd_infocode4">A/S정보</label>
+    <input type="button" name="pd_infocode4" value="등록" onclick="window.open('./infoList.gnd?pd_infotype=4','win','width=1000,height=500,toolbar=0,scrollbars=0,resizable=0')"> 
     
-    <input type="button" name="open" value="수정" OnClick="openUpdate(this.form)"> 
-    
-    <li><label for="pd_infocode">정보</label>
-    	<select name="pd_infotype">
-			<option value="" selected>정보구분</option>
-			<option value="1">상품정보</option>
-			<option value="2">배송/결재정보</option>
-			<option value="3">유의사항</option>
-			<option value="4">A/S정보</option>
-		</select>
-   	<c:forEach var="i" items="${piList1 }">
-				${i.pd_infocontent}
-	</c:forEach>
     
     <li class="label2">
-
     <input type="submit" id="inProduct" value="상품등록">
     </ul>
     </div>
