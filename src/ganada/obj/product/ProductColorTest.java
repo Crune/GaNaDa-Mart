@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import ganada.core.DB;
 import ganada.core.DBTester;
 
 public class ProductColorTest extends DBTester {
@@ -22,7 +23,10 @@ public class ProductColorTest extends DBTester {
     public void test() {
 		ProductColorDao dao = ProductColorDao.getInstance();
 		try {
-		    dao.insert(productColorOrg);
+		    for (Object cur : dao.search("pd_code","1")) {
+		        String name = ((ProductColor) cur).getC_name();
+		        DB.OUTLN(name);
+		    }
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

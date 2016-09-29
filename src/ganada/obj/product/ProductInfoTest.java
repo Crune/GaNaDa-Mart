@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import ganada.core.DB;
 import ganada.core.DBTester;
 
 public class ProductInfoTest extends DBTester {
@@ -21,7 +22,7 @@ public class ProductInfoTest extends DBTester {
     public void test() {
     	ProductInfoDao dao = ProductInfoDao.getInstance();
 		try {
-		    dao.insert(productInfoOrg);
+		    DB.OUTLN(dao.select("2").toString());
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

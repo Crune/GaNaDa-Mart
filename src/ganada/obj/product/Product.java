@@ -68,6 +68,12 @@ public class Product {
 	public void setPd_infocode4(String pd_infocode4) {
 		this.pd_infocode4 = pd_infocode4;
 	}
+	@Override
+	public String toString() {
+		return "Product [pd_code=" + pd_code + ", menu_code=" + menu_code + ", pd_name=" + pd_name + ", pd_price="
+				+ pd_price + ", pd_reg_date=" + pd_reg_date + ", pd_infocode1=" + pd_infocode1 + ", pd_infocode2="
+				+ pd_infocode2 + ", pd_infocode3=" + pd_infocode3 + ", pd_infocode4=" + pd_infocode4 + "]";
+	}
 	
 	/*private int num;				//상품이 등록된 게시글번호
 	private String name;			//상품이름

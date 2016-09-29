@@ -1,0 +1,955 @@
+@charset "utf-8";
+/****************************************/
+/*	Name: NIKE STORE
+/*	PART: Detail
+/*	Version: 1.0
+/*	Author: Tommy
+/****************************************/
+
+@import url(display.css);
+
+.table-type1 {border:1px solid #ccc; font-family:"돋움"; font-size:11px; letter-spacing:0px; border-collapse:collapse; }
+.table-type1 th {padding:0px; background-color:#eee; text-align: center; border:1px solid #ccc;  }
+.table-type1 td {padding:8px; border:1px solid #ccc; line-height: 17px; font-weight:normal; color:#666;}
+
+.table-type2 {width:100%; font-family:"돋움"; font-size:11px; text-align:center; color:#666; letter-spacing: 0;}
+.table-type2 th {height:23px; font-weight: bold; }
+.table-type2 td {height:29px;}
+
+.table-type2 thead {vertical-align:top;}
+
+.table-type2 tbody tr {background-color:#fff;}
+.table-type2 tbody tr.even {background-color:#eee;}
+.table-type2 tbody th {border:1px solid #e6e6e6;  font-size:12px;}
+.table-type2 tbody td {border:1px solid #e6e6e6;  font-size:12px;}
+
+.lnbWrap {position:absolute; left:23px; top:70px; z-index: 998;}
+.lnbWrap .loc {background:url(http://image.nike.co.kr/web/ico/ico_arr_left.png) 0 3px no-repeat; text-indent:10px;  font-size:12px; font-family: "돋움"; text-decoration:underline;}
+.lnbWrap .lnbCon > dl > dd {overflow:visible;}
+.lnbBlock {margin-top:18px;}
+
+.btn-type1.btn-gray3 {padding:0; background:url(http://image.nike.co.kr/web/btn/btn-gray-left3.png) no-repeat; color:#333; font-size:11px; height:30px; line-height:30px; }
+.btn-type1.btn-gray3 span.right {position:relative;  padding:0 0 0 10px; background:url(http://image.nike.co.kr/web/btn/btn-gray-right3.png) no-repeat right 0; text-indent:-20px;  color:#666;}
+.btn-type1.btn-gray3 span.right .arr {position:absolute !important; top:13px;  right:6px;  min-width:5px; height:7px; background:url(http://image.nike.co.kr/web/ico/ico-arrow.png) no-repeat 0px 0;}
+.btn-type1.btn-gray3 span.right .arr.up {background-position:0px -7px;}
+.btn-type1.btn-gray3 span.right .arr.link {height:9px; background-position:0px -14px;}
+.btn-type1.btn-gray3.size span.right {width:90px;}
+.btn-type1.btn-gray3.quantity span.right {width:75px;}
+
+/*** PDP ***/
+.Pdp {position:relative; width:100%;  padding-top:80px;} /* 20140228 수정 */
+.Pdp .content {position:relative;  width:960px;  margin:auto; padding-bottom: 50px;}
+.Pdp .content .loc-box {padding:15px 0 10px; font-family:"돋움"; font-size:12px; color:#333; }
+.Pdp .content .item-box {}
+.Pdp .content .item-box .right {float:right; width:384px; }
+.Pdp .content .item-box .right .info {position:relative; border-bottom:1px solid #eee;}
+.Pdp .content .item-box .right .info .tit {padding-bottom:7px; font-size:24px; font-weight:bold; color:#333;}
+.Pdp .content .item-box .right .info .loc {padding-bottom:20px; font-size:12px; font-weight:bold; color:#666;}
+.Pdp .content .item-box .right .info .price {padding-bottom:10px; font-size:16px; font-weight:bold; color:#333; } /* 2014-04-08 */
+
+/* 20140731 Start */
+.Pdp .content .item-box .right .info .price {display:inline-block; margin-left:5px; font-weight:bold;}
+.Pdp .content .item-box .right .info .price span.normal {font-size:16px; color:#333;}
+.Pdp .content .item-box .right .info .price span.discount {font-size:16px; color:#333; text-decoration:line-through; font-weight:lighter;} /* 20140805 수정 */
+.Pdp .content .item-box .right .info .price .sale {font-size:13px; color:#333;}
+/* 20140731 End */
+
+.Pdp .content .item-box .right .info .ra {position:absolute; top:65px; right:0; margin-top:8px; padding-bottom:4px; color:#666; } /* 2014-04-08 */
+.Pdp .content .item-box .right .info .ra > a {display:inline-block; margin-right:10px; text-decoration: underline;}
+.Pdp .content .item-box .right .info .star {display:inline-block; font-size:11px;}
+.Pdp .content .item-box .right .info .star .rating {display:inline-block; width:65px; height:13px; margin-right:3px; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat 0 -15px;}
+.Pdp .content .item-box .right .info .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.Pdp .content .item-box .right .info .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.Pdp .content .item-box .right .info .star  strong {margin-left:5px; font-size:11px; color:#fa5400; letter-spacing:0px; }
+/*  2014-04-08 start */
+.Pdp .content .item-box .right .info .ex {padding: 10px 0 30px; line-height:18px;}
+.Pdp .content .item-box .right .info .ex .add {display:block; position:absolute; right:0; text-decoration: underline; }
+/*  2014-04-08 end */
+
+.Pdp .content .item-box .right .item-list {margin-top:20px;}
+.Pdp .content .item-box .right .item-list ul.item {}
+.Pdp .content .item-box .right .item-list ul.item li {float:left; width:62px; height:62px; border:1px solid #ddd; background-color:#f5f5f5;}
+.Pdp .content .item-box .right .item-list ul.item li a {display:block; position:relative; width:100%; height:100%; }
+.Pdp .content .item-box .right .item-list ul.item li a:hover, .Pdp .content .item-box .right .item-list ul.item li a.on {width:58px; height:58px; border:2px solid #ddd; }
+.Pdp .content .item-box .right .item-list ul.item li a img { display:block; position:absolute; left:50%; top:50%; margin-left:-25px; margin-top:-25px;   }
+.Pdp .content .item-box .right .item-list .soldout-tit {padding:20px 0 10px; font-family:"돋움"; font-size:11px; color:#333; }
+
+.Pdp .content .item-box .right .btn-group {position:relative; margin-top:20px; left:0; width:384px; z-index:20;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1 {display:block;  background:url(http://image.nike.co.kr/web/btn/btn_pdp_type1.png) 0 0 no-repeat; width:100px;  height:40px; line-height: 40px; padding-left:0px; margin-right:4px; color:#666;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1 span {margin-left:10px;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1:hover {background-position: 0 -40px;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1.on {background-position: 0 -80px;}
+
+.Pdp .content .item-box .right .btn-group .size-area { float:left; position:relative; }
+.Pdp .content .item-box .right .btn-group .size-area .size-list {display:none; position:absolute; left:0; top:40px; width:263px; background:url(http://image.nike.co.kr/web/bg/bg_size_top.png) 0 0 no-repeat; z-index:10; }
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg {width:263px; margin-top:6px; background:url(http://image.nike.co.kr/web/bg/bg_size_bottom.png) 0 bottom no-repeat ; padding-bottom:6px; }
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul {background-color:#ddd; padding:0px 5px 0px;  }
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li {float:left; width:83px; height:28px; margin-top:1px; margin-left:1px;   text-align:center; line-height:28px;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a {display:block;  background-color:#fff; font-size:11px; color:#333;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a:hover {background-color:#999; color:#fff;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a.out {background-color:#e9e9e9; color:#a9a9a9; cursor:default;}
+
+.Pdp .content .item-box .right .btn-group .alert {display:block; position:absolute; top:-40px; left:-8px;  width:120px; height:36px; background:url(http://image.nike.co.kr/web/bg/bg_size_tip.png) 0 0 no-repeat; text-align: center;}
+.Pdp .content .item-box .right .btn-group .alert span {display:inline-block; width:100%; padding:10px 0; font-family:"돋움"; font-size:10px;  color:#fff; letter-spacing: 0px;}
+.Pdp .content .item-box .right .btn-group .alert-line {display:block; position:absolute; top:-2px; left:-2px; width:104px; height:44px; background:url(http://image.nike.co.kr/web/bg/bg_alert.png) 0 0 no-repeat;}
+
+.Pdp .content .item-box .right .btn-group .quantity-area {float:left; position:relative; }
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list {display:none; position:absolute; left:0; top:39px; width:100px; padding:9px 0; background:url(http://image.nike.co.kr/web/bg/bg_quantity_bottom.png) 0 bottom no-repeat ; z-index:9; }
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li {margin:0 6px 1px; width:88px; height:28px; text-align:center; line-height:28px;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a {display:block;  background-color:#fff; font-size:11px; color:#333;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a:hover {background-color:#999; color:#fff;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a.out {background-color:#e9e9e9; color:#a9a9a9; cursor:default;}
+.Pdp .content .item-box .right .btn-group .cart-area {float:left;}
+.Pdp .content .item-box .right .btn-group .btn-type1 .right {float:none;}
+
+.Pdp .content .item-box .right .btn-b {position:relative; padding:20px 0; z-index:10; border-bottom:1px solid #ddd;} /* 20140808 수정 */
+.Pdp .content .item-box .right .btn-b>a {display:block; position:relative; font-size:12px; font-weight: bold; text-decoration: underline;}
+.Pdp .content .item-box .right .btn-b>a.sizeFeet-btn {float:left;}
+.Pdp .content .item-box .right .btn-b>a.myLocker-btn {float:right;}
+
+/* 20140310 카드담기 s */
+.Pdp .content .item-box .right .btn-b>a.cart-btn {float:right; padding-left:20px; background:url(http://image.nike.co.kr/web/ico/ico_cart.png) 0 0 no-repeat;}
+.Pdp .content .item-box .right .btn-b>a:hover.cart-btn {background-position:0 -15px; color:#fa5400;}
+/* 20140310 카드담기 e */
+
+/*  20150904 s */
+.Pdp .content .item-box .right .item-noti {background:url(http://image.nike.co.kr/web/ico/pdp_free_shipping.png) no-repeat 0 21px; padding:20px 0 10px 65px; border-top:1px solid #eee;   line-height:17px; font-weight:bold;}
+.Pdp .content .item-box .right .item-noti .des {display:inline-block; width:320px; word-break:break-all}
+/*  20150904 e */
+
+.Pdp .content .item-box .right  >.notice {position:relative; left:0; width:100%; padding-top:15px;}/* 20140915 수정 */  
+.Pdp .content .item-box .right  >.notice .ico-alert {background:url(http://image.nike.co.kr/web/ico/ico-soldout.png) 0 1px no-repeat; margin-top:10px; font-size:12px; line-height:16px; color:#666;}
+.Pdp .content .item-box .right  >.notice .ico-alert:first-child {margin:0;}
+.Pdp .content .item-box .right  >.notice .ico-alert span {display:inline-block; padding-left:20px;}
+
+.Pdp .content .item-box .left {float:left; position:relative; width:576px; }
+.Pdp .content .item-box .left .nav {width:60px; height:476px;}
+.Pdp .content .item-box .left .nav > a {display:block; background:url(http://image.nike.co.kr/web/btn/btn_pdp_nav.png) 0 0 no-repeat; width:60px; height:40px; text-indent:-10000px;}
+.Pdp .content .item-box .left .nav > a.up { padding-bottom:15px;  }
+.Pdp .content .item-box .left .nav > a.down { margin-top:16px; background-position: -60px 0; }
+/* 20141211 수정 s */
+.Pdp .content .item-box .left .nav > span.dim {display:none; position:absolute; left:0; width:60px; height:40px; opacity:0.5; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); background:#fff; text-indent:-100000px}
+.Pdp .content .item-box .left .nav > span.dim.first {top:0;}
+.Pdp .content .item-box .left .nav > span.dim.last {bottom:74px;}
+/* 20141211 수정 e */
+.Pdp .content .item-box .left .nav .area {position:relative; overflow:hidden; height:365px; *height:370px;} /* 20141212 */
+.Pdp .content .item-box .left .nav .area ul.item {}
+.Pdp .content .item-box .left .nav .area ul.item li {width:60px; height:60px; background-color:#f5f5f5; margin-top:1px; *margin-top:0; *width:59px; *height:59px;} /* 20141212 */
+.Pdp .content .item-box .left .nav .area ul.item li:first-child {margin:0;}
+.Pdp .content .item-box .left .nav .area ul.item li a {display:block; position:relative; width:60px; height:60px;}
+/* .Pdp .content .item-box .left .nav .area ul.item li a:hover{ width:54px; height:54px; border:3px solid #ddd; } */
+.Pdp .content .item-box .left .nav .area ul.item li a:hover, .Pdp .content .item-box .left .nav .area ul.item li a.on{ width:54px; height:54px; border:3px solid #ddd; } /* 150615 */
+.Pdp .content .item-box .left .nav .area ul.item li a img {display:block; position:absolute; left:50%; top:50%; margin-left:-25px; margin-top:-25px;}
+.Pdp .content .item-box .left .viewer {position:absolute; top:0; left:80px; width:400px; height:400px; padding:38px; background-color:#f5f5f5;}
+.Pdp .content .item-box .left .viewer .expand-btn {display:none; position:absolute; top:50%; left:50%; margin-left:-30px; margin-top:-30px; background:url(http://image.nike.co.kr/web/btn/btn_pdp_expand.png) 0 0 no-repeat; width:61px; height:61px; text-indent: -10000px;}
+.Pdp .content .item-box .left .viewer .expand-btn:hover {background-position:0 -61px;}
+/*  2014-04-08 s */
+.Pdp .content .item-box .left .etc { margin-top:20px;  *padding-top:20px; width:576px; text-align: center;}
+.Pdp .content .item-box .left .etc ul {width:100%; margin:auto; margin-left:0px;}
+/*  2014-04-08 e */
+.Pdp .content .item-box .left .etc ul li {display:inline-block; *display:inline; *zoom:1; vertical-align:top; margin-left:10px;}
+.Pdp .content .item-box .left .etc ul li:first-child {margin:0;}
+.Pdp .content .item-box .left .etc ul li span {margin-left:5px; font-family:"돋움"; font-size:11px; color: #333;}
+.Pdp .content .item-box .left .etc .color-code {margin-top:20px;}
+
+.sizeGuide {display:none; }
+.sizeGuide .board {position:absolute; top:100px; left:50%; margin-left:-430px; padding:40px; background-color:#fff; border-radius:5px;  z-index:1002;}
+.sizeGuide .board.no-way {margin-left:-290px;}
+.sizeGuide .board .close {display:block; position:absolute; top:20px; right:20px; background:url(http://image.nike.co.kr/web/btn/btn_close_guide.png) 0 0 no-repeat; width:13px; height:13px; text-indent:-10000px;}
+.sizeGuide .board span.tit {display:block; font-size:20px; font-weight:bold; padding-bottom:20px;}
+.sizeGuide .board .guide-content {border-top:1px solid #eee;}
+.sizeGuide .board .guide-content > .guide-left {float:left;}
+.sizeGuide .board .guide-content > .guide-right {float:left; margin-left:20px;}
+
+.sizeGuide .board .guide-content .s-tit {display:block; font-size:12px; font-weight:bold; margin-top:20px; letter-spacing: 0;}
+.sizeGuide .board .guide-content .guide-table {position:relative; background:url(http://image.nike.co.kr/web/bg/bg_guideTable_top.png) 0 top no-repeat;  margin-top:20px; }
+.sizeGuide .board .guide-content .guide-table .guide-table-bottom {position:relative; padding-bottom:8px;  background:url(http://image.nike.co.kr/web/bg/bg_guideTable_bottom.png) 0 bottom no-repeat;  }
+.sizeGuide .board .guide-content .guide-table .guide-table-bottom .guide-table-content {position:relative;  width:488px;  background-color:#e6e6e6; top:4px;  padding:6px;}
+
+.sizeGuide .board .guide-content .cal-top {margin-top:20px; background:url(http://image.nike.co.kr/web/bg/bg_guide_top2.png) 0 top no-repeat; width:260px;  }
+.sizeGuide .board .guide-content .cal-top .cal-bottom {padding-bottom:8px; background:url(http://image.nike.co.kr/web/bg/bg_guide_bottom2.png) 0 bottom no-repeat;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content {position:relative;  border-left:1px solid #eee; border-right:1px solid #eee; top:4px; padding:16px 20px;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content > span {font-size:16px; font-weight:bold;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content img {display:block; padding:30px 0 10px;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content dl {margin-top:20px; font-family:"돋움"; font-size:11px;  color:#666;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content dt {font-weight:bold;}
+.sizeGuide .board .guide-content .cal-top .cal-bottom .cal-content dd {margin-top:10px; line-height: 17px; }
+
+.sizeGuide .board .guide-content .noti {display:block; margin-top:20px; font-family:"돋움", font-size:11px; }
+
+/* Full-screen */
+.zoom-Layer {display:none; position:absolute; left:0; top:0; overflow:hidden; width:100% ; height:700px; background:#fff; z-index:10000;}
+.zoom-Layer .control {width:246px; height:100%; background:url(http://image.nike.co.kr/web/bg/bg-noise.png); border-right:1px solid #dfdfdf; }
+.zoom-Layer .control .info {padding:13px;}
+.zoom-Layer .control .info .star {margin-top:8px; padding-bottom:4px; color:#666;  font-size:11px;}
+.zoom-Layer .control .info .star .rating {display:inline-block; width:65px; height:13px; margin-right:3px; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat 0 -15px;}
+.zoom-Layer .control .info .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.zoom-Layer .control .info .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+
+.zoom-Layer .control .info .tit {margin-top:13px; font-size:18px;  line-height:20px; font-weight:bolder; color:#333;}
+.zoom-Layer .control .info .path {padding-top:7px; font-size:11px; font-weight:bolder;  color:#666; }
+.zoom-Layer .control .info .price {padding:13px 0; font-size:15px; font-weight:bold; color:#333; }
+.zoom-Layer .control .info strong {color:#fa5400;}
+
+.zoom-Layer .control .item-area {padding:0px 11px; background:url(http://image.nike.co.kr/web/bg/bg-div-line2.gif) 0 0 repeat-x;}
+.zoom-Layer .control .item-area ul {padding:7px 0;}
+.zoom-Layer .control .item-area ul li {position:relative; float:left; width:70px; height:70px;  margin-right: 3px; margin-bottom:3px;}
+.zoom-Layer .control .item-area.detail ul li a{filter:alpha(opacity=50); opacity:.5;}
+.zoom-Layer .control .item-area.detail ul li a:hover, .zoom-Layer .control .item-area.detail ul li a.on  {filter:alpha(opacity=100); opacity:1;}
+.zoom-Layer .control .item-area.item ul li:hover, .zoom-Layer .control .item-area.item ul li.active { background:url(http://image.nike.co.kr/web/bg/bg_left_over.png) 0 0 no-repeat; }
+.zoom-Layer .control .item-area ul li a {display:block; position:relative;  width:55px; height:55px; left:50%; top:50%; margin-left:-27px; margin-top:-27px; }
+
+.zoom-Layer .imgBoard {position:absolute; left:247px; top:0;  }
+.zoom-Layer .imgBoard .img-area {position:relative;  margin:0 0px;  overflow:hidden; }
+.zoom-Layer .imgBoard .img-area ul.image {position:relative;  width:100%; margin:auto; }
+.zoom-Layer .imgBoard .img-area ul.image li { position:relative;   margin:auto;}
+.zoom-Layer .imgBoard .img-area ul.image li img {display:block;  width:100%; height:100%;  }
+
+.zoom-Layer a.close {display:block; position:absolute; top:0; right:0px; width:42px; height:42px; background:url(http://image.nike.co.kr/web/btn/btn-lookbook-close2.png) 0 0 no-repeat; text-indent: -10000px; }
+.zoom-Layer a.close:hover ,  .full-screen-Layer a.close:focus { background-position:0 -42px;}
+.zoom-Layer .rBtn {position:absolute; top:50%; right:0; height:128px; margin-top:-84px;}
+.zoom-Layer .rBtn > a {display:block; margin-top:1px; width:42px; height:42px; overflow:hidden; text-indent: -10000px; }
+.zoom-Layer .rBtn > a:first-child {margin:0;}
+.zoom-Layer .rBtn > a.rot {display:block; background:url(http://image.nike.co.kr/web/btn/btn_rotate.png) 0 0 no-repeat; }
+.zoom-Layer .rBtn > a.rot:hover ,  .full-screen-Layer .rBtn > a.rot:focus { background-position:0 -42px;}
+.zoom-Layer .rBtn > a.min{ background:url(http://image.nike.co.kr/web/btn/btn_min.png) 0 -42px no-repeat; }
+.zoom-Layer .rBtn > a.min:hover ,  .full-screen-Layer .rBtn > a.min:focus { background-position:0 -84px;}
+.zoom-Layer .rBtn > a.min.disable  { background-position:0 0px;}
+.zoom-Layer .rBtn > a.min.enable  { background-position:0 -128px;}
+.zoom-Layer .rBtn > a.max { background:url(http://image.nike.co.kr/web/btn/btn_max.png) 0 -42px no-repeat; }
+.zoom-Layer .rBtn > a.max:hover ,  .full-screen-Layer .rBtn > a.max:focus { background-position:0 -84px;}
+.zoom-Layer .rBtn > a.max.disable  { background-position:0 0px;}
+.zoom-Layer .rBtn > a.max.enable  { background-position:0 -128px;}
+
+/*** copyBlock2 ***/
+.copyBlockPdp {position:relative; width:100%; margin-top:-20px; text-align:center; }
+.copyBlockPdp .box {width:960px; margin:auto; padding-bottom:50px;}
+.copyBlockPdp .box .title {font-size:19px; font-weight:bold;}
+.copyBlockPdp .box p.content {width:620px; margin:18px auto 0; color:#666; font-family:'돋움'; line-height:18px; letter-spacing:-0.5px; word-break:break-word; }
+.bg-bottom {background-position: 0 bottom;}
+
+/* 20140513 수정 s */
+.Local-tab {position:relative; width:100%; padding:20px 0; text-align: center;}
+.Local-tab .conTab {}
+.Local-tab .conTab .tab {position:relative; background:url(http://image.nike.co.kr/web/bg/bg_tab.png) 0 0 no-repeat; width:547px; height:30px; margin:50px auto 30px;}
+.Local-tab .conTab .tab .active-tab {position:absolute; top:0; left:0; height:30px; line-height:30px; background:url(http://image.nike.co.kr/web/btn/btn_tab_local.png) 0 0 no-repeat; width:141px; height:40px; color:#fff; }
+.Local-tab .conTab .tab>ul>li {float:left; font-size:11px; font-weight:bold; color:#333; width:135px;  text-align:center; height:30px; line-height:30px; }
+.Local-tab .conTab .tab>ul>li >a {display:block;}
+.Local-tab .conTab .tab ul li .conArea {position:absolute; left:50%; top:50px; width:1180px; margin-left:-580px; padding:0 0px; text-align: left;} /* 201406 수정 */
+.Local-tab .conTab .tab ul li .conArea .group {margin-top: 40px;}
+.Local-tab .conTab .tab ul li .conArea .group.laundry {padding-top:40px;} /* 20131028 수정 */
+.Local-tab .conTab .tab ul li .conArea .group .left {float:left; width:200px; height:200px; padding:40px 58px; }
+.Local-tab .conTab .tab ul li .conArea .group .right {float:right; width:560px;  }
+.Local-tab .conTab .tab ul li .conArea .group p {font-size:14px; font-weight:bold; color:#212121; }
+.Local-tab .conTab .tab ul li .conArea .group ul {margin-top:15px; }
+.Local-tab .conTab .tab ul li .conArea .group ul li { padding-left:8px;  background:url(http://image.nike.co.kr/web/ico/ico-list-dot.png) 0 8px no-repeat;  line-height:19px; font-family:"돋움"; font-size:12px; color:#666; letter-spacing: 0px; font-weight: normal;}
+.Local-tab .conTab .tab ul li .conArea .group ul li .detail-btn {display:inline-block; background:url(http://image.nike.co.kr/web/btn/btn_tab_detail.png) 0 0 no-repeat; font-family:'NanumGothic', '나눔고딕';  width:69px; height:20px; font-size:10px; line-height:18px; margin-left:5px;  font-weight:bold; color:#fff; text-align: center; }
+.Local-tab .conTab .tab ul li .conArea .good-list {margin-top:60px;}
+.Local-tab .conTab .tab ul li .conArea .good-list > li {}
+.Local-tab .conTab .tab ul li .conArea .good-list > li > a {display:block; position:relative; width:222px; height:50px; line-height:50px; background:url(http://image.nike.co.kr/web/btn/btn_good_type2.png) 0 0 no-repeat;  font-size:13px;  font-weight:bold; text-indent:30px;  }
+.Local-tab .conTab .tab ul li .conArea .good-list > li > a:hover , .Local-tab .conTab .tab ul li .conArea .good-list > li > a:focus { background-position:0 -50px; color: #fa5400;}
+.Local-tab .conTab .tab ul li .conArea .good-list > li > a.on { background-position:0 -100px; color:#fa5400;}
+.Local-tab .conTab .tab ul li .conArea .good-list > li > .right-area {position:absolute; top:30px; left:320px;}
+/* 20140513 수정 e */
+
+/*** AboutList ***/
+.AboutList {position:relative; width:100%; padding-top:50px; text-align:center;}
+.AboutList .listBox {width:984px; margin:0 auto;}
+
+.Review {position:relative; width:100%; padding-top:50px;}
+.Review> .content { width:960px; margin:auto; text-align:center;  }
+.Review> .content .t-box {position:relative; }
+.Review> .content .t-box .star { padding-top:0px; color:#666;  font-size:11px; }
+.Review> .content .t-box .star .rating {display:inline-block; width:105px; height:20px; margin-right:3px;  background:url(http://image.nike.co.kr/web/ico/ico_star_b.png) repeat 0 0; text-align:left;}
+.Review> .content .t-box .star .rating > span {display:inline-block; *display:block; width:30px; height:20px; background:url(http://image.nike.co.kr/web/ico/ico_star_b.png) 0 -21px repeat; text-indent:-9999px; line-height:15px; *line-height:20px;}
+.Review> .content .t-box .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.Review> .content .t-box .star  span.grade {display:inline-block; margin-left:10px; line-height:20px; font-size:18px; font-weight:bold; color:#fa5400; vertical-align:bottom;} /* 20140522 수정 */
+.Review> .content .t-box .tit {display:inline-block;*display:inline;padding-top:15px; font-size:32px; font-weight:bold; }
+.Review> .content .t-box .tit .point {color:#FA5400;}
+.Review> .content .t-box .sub-tit {padding:20px 0px 20px; font-family:"돋움"; letter-spacing: -0.2; line-height:18px;}
+.Review> .content .t-box .review-info { display:none; position:absolute; left:380px; top:80px; width:190px; height:156px; background:url(http://image.nike.co.kr/web/bg/bg_review.png) 0 0 no-repeat; text-align: left; }
+.Review> .content .t-box .review-info ul { margin-top:30px; margin-left:25px;}
+.Review> .content .t-box .review-info ul li {padding-bottom:8px; height:12px; font-family: "돋움"; font-size:11px; color:#fff; }
+.Review> .content .t-box .review-info ul li .sTit {display:inline-block; margin-top:-3px; line-height:20px; vertical-align: top;}
+.Review> .content .t-box .review-info ul li .bar {display:inline-block; position:relative; width:94px; height:12px; margin-left:7px; background:url(http://image.nike.co.kr/web/bg/bg_review_bar.png) 0 0 no-repeat;}
+.Review> .content .t-box .review-info ul li .bar .light {display:inline-block; position:absolute; left:0; top:0; width:60px; height:12px; background:url(http://image.nike.co.kr/web/bg/bg_review_bar.png) 0 -12px no-repeat; text-indent: -10000px;}
+.Review> .content .t-box .review-info ul li .person {display:inline-block; margin-top:-2px; width:22px; line-height:20px;  text-align:right; color:#bababa; vertical-align: top;}
+.Review> .content .review-avg {margin-top:30px; padding-top:50px; padding-bottom:50px; height:auto; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;  }  /* 2014-04-08 */
+.Review> .content .review-avg ul {display:inline-block;width:100%}
+.Review> .content .review-avg ul li {float:left;  width:49%; padding-bottom:20px; }
+.Review> .content .review-avg ul li:after {display:block; clear:both; content:'';} /* 20140522 추가 */
+.Review> .content .review-avg ul li .box {position:relative;  }
+.Review> .content .review-avg ul li .box:after {display:block; clear:both; content:'';} /* 20140522 추가 */
+.Review> .content .review-avg ul li .box>div {display:inline-block; }
+.Review> .content .review-avg ul li .box>div.tit {float:left; width:60px; text-align:left; color:#666;}  /* 20140522 수정 */
+.Review> .content .review-avg ul li .box>div.tit span {font-size:12px; font-weight:bold;}
+/* 2014-04-08 s */
+.Review> .content .review-avg ul li .box>div.con {float:left; vertical-align: middle;}
+.Review> .content .review-avg ul li .box>div.con .gp {display:inline-block; position:relative; margin-top:0px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar.png) 0 0 no-repeat; width:346px; height:17px; }
+.Review> .content .review-avg ul li .box>div.con .gp span {position:absolute; top:0; left:0; width:50px; height:17px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar-on.png) 0 0 no-repeat; }
+.Review> .content .review-avg ul li .box>div.con .gp span.active1 {left:0px; background-position: 0px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active2 {left:50px; background-position: -51px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active3 {left:100px; background-position: -100px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active4 {left:148px; background-position: -149px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active5 {left:199px; background-position: -198px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active6 {left:247px; background-position: -247px 0;}
+.Review> .content .review-avg ul li .box>div.con .gp span.active7 {left:296px; background-position: -297px 0;}
+.Review> .content .review-avg ul li .box>div.con .tip {position:absolute; left:70px; top:-16px;  width:346px; height:18px;} /* 20140522 수정 */
+/* 2014-04-08 e */
+.Review> .content .review-avg ul li .box>div.con .tip span {position:absolute; display:block; font-family:"돋움"; font-size:11px;  color:#bababa; }
+.Review> .content .review-avg ul li .box>div.con .tip span.t1 {left:0px; } /* 2014-04-08 */
+.Review> .content .review-avg ul li .box>div.con .tip span.t2 { right:20px;}
+.Review> .content .line {border-bottom:1px solid #bababa; width: 940px;}
+
+
+.Review-list {position:relative; width:100%; margin-top:30px; padding-bottom:50px; }
+.Review-list >.content { width:960px; margin:auto; text-align:center;  }
+.Review-list >.content .group .list {position:relative;  width:100%; }
+.Review-list >.content .gruop .list> .box {position:relative; width:960px; padding:30px 0; border-bottom:1px solid #bababa; text-align: left; } /* 2014-04-08 */
+.Review-list >.content .gruop .list> .box .star {margin-top:8px; padding-bottom:4px; width:510px; color:#666;  font-size:11px;} /* 2014-04-08 */
+.Review-list >.content .gruop .list> .box .star .rating {display:inline-block; width:65px; height:13px; margin-right:3px; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat 0 -15px;}
+.Review-list >.content .gruop .list> .box .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/ico/ico_star.png) repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.Review-list >.content .gruop .list> .box .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.Review-list >.content .gruop .list> .box .review-title {padding: 10px 0 5px; font-size:20px; font-weight:bold;} /* 2014-04-08 */
+.Review-list >.content .gruop .list> .box >.tit {padding-bottom:15px; width:500px; font-size:20px; font-weight:bold; letter-spacing: -1.7px;}
+.Review-list >.content .gruop .list> .box >.tit-s {margin-top:15px; padding-bottom:15px; width:500px; font-family: "돋움"; font-size:12px; letter-spacing: -0.7px; }
+.Review-list >.content .gruop .list> .box >.tit-s a {font-weight:bold; text-decoration: underline;}
+.Review-list >.content .gruop .list> .box >.txt {width:510px; padding-bottom:15px;  font-family: "돋움"; font-size:12px; line-height:18px; letter-spacing: -0.7px; color:#666; word-break:break-all;}  /* 2014-04-08 */
+.Review-list >.content .gruop .list> .box >ul.img {padding-bottom:20px;}
+.Review-list >.content .gruop .list> .box >ul.img li {float:left;  padding-right:10px;}
+.Review-list >.content .gruop .list> .box >ul.img li>a {display:block; width:120px; height:80px; overflow:hidden; }
+.Review-list >.content .gruop .list> .box >ul.img li>a>img {width:100%;}
+.Review-list >.content .gruop .list> .box .best_review {margin-top:7px;} /* 20131216 베스트리뷰 스타일 추가 */
+
+.Review-list >.content .gruop .list> .box >ul.img li>.img-layer {display:none; position:absolute; top:100px; left:50%; margin-left:-270px; z-index:1001; }
+.Review-list >.content .gruop .list> .box >ul.img li>.img-layer .board {padding:20px; width:100%; width:500px; max-width:800px;  background-color:#fff; -webkit-box-shadow: 0 0 2px 1px #ccc; -moz-box-shadow:0 0 2px 1px #ccc; box-shadow:0 0 2px 1px #ccc;}
+.Review-list >.content .gruop .list> .box >ul.img li>.img-layer .board img {width:100%; height:100%;}
+.Review-list >.content .gruop .list> .box >ul.img li>.img-layer  a.close {position:absolute; top:0; right:-42px; width:42px; height:42px; background:url(http://image.nike.co.kr/web/btn/btn-lookbook-close2.png) 0 0 no-repeat; text-indent: -10000px; }
+.Review-list >.content .gruop .list> .box >ul.img li>.img-layer .close:hover ,  .lookbook-pop .area a.close:focus { background-position:0 -42px;}
+
+/* 2014-04-08 s */
+.Review-list >.content .gruop .list> .box >.etc a.recom-btn {display:inline-block; background:url(http://image.nike.co.kr/web/btn/btn_up.png) 0 0 no-repeat; width:59px; height:32px; line-height:32px; text-align: center; font-size:12px; font-weight:bold; color:#666; text-indent:13px;}
+.Review-list >.content .gruop .list> .box >.etc a.report-btn {display:inline-block; margin-left:10px; background:url(http://image.nike.co.kr/web/btn/btn_down.png) 0 0 no-repeat; width:59px; height:32px; line-height:32px; text-align: center; font-size:12px; font-weight:bold; color:#666; text-indent:13px;}
+/* 2014-04-08 e */
+.Review-list >.content .gruop .list> .box >.etc span.point {display:inline-block; padding:0 5px; font-weight:bold; color:#fa5400; }
+.Review-list >.content .gruop .list> .box >.etc a.report {display:inline-block; padding-left:10px; font-weight:bold; text-decoration: underline; }
+.Review-list >.content .gruop .list> .box >.eval {position:absolute; top:70px; right:0; width:320px; height:160px;}  /* 2014-04-08 */
+
+.Review-list >.content .gruop .list> .box >.eval .rate li {position:relative;  height:40px;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .tit {float:left; width:72px;    font-size:12px; font-weight:bold;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp {float:left; position:relative; width:245px; height:17px;  background:url(http://image.nike.co.kr/web/bg/bg-review-bar2.png) 0 0 no-repeat;  }
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span {position:absolute; top:0; left:0; width:34px; height:17px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar2-on.png) 0 0 no-repeat;  text-indent:-10000px;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active1  {left:0; background-position: 0px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active2  {left:35px; background-position: -35px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active3  {left:70px; background-position: -70px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active4  {left:105px; background-position: -105px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active5  {left:140px; background-position: -140px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active6  {left:175px; background-position: -175px 0;}
+.Review-list >.content .gruop .list> .box >.eval .rate li .gp span.active7  {left:210px; background-position: -210px 0;}
+
+
+.Review-list >.content .gruop .list> .box >.eval .rate li .tip {position:absolute; top:-15px; left:80px; font-family:"돋움"; font-size:11px; color:#bababa;  width:230px; } /* 2014-04-08 */
+.Review-list >.content .gruop .list> .box >.eval .rate li .tip .t1 {display:inline-block; }
+.Review-list >.content .gruop .list> .box >.eval .rate li .tip .t2 {display:inline-block; position:absolute; right:0;}
+/*{display:inline-block; position:relative; margin-top:0px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar.png) 0 0 no-repeat; width:346px; height:17px; }*/
+
+/* 리뷰 : 추천하기 버튼관련 20140513 s */
+.Review-list >.content .gruop .list> .box >.etc .etc_layer {position:absolute; bottom:70px; width:170px; cursor:pointer; *left:0px;}
+.Review-list >.content .gruop .list> .box >.etc .etc_layer .con_area {-moz-box-shadow:0 4px 15px rgba(0, 0, 0, .45); -webkit-box-shadow:0 4px 15px rgba(0, 0, 0, .45);
+box-shadow:0 4px 15px rgba(0, 0, 0, .45); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; line-height:1.5em; font-size:12px; background-color:#333; color:#fff; z-index:100; padding:12px 18px; position:relative;}
+.Review-list >.content .gruop .list> .box >.etc .etc_layer .etc_layer.close {position:absolute; top:5px; right:5px; *left:150px; width:16px; height:16px; background:url(http://image.nike.co.kr/web/ico/icon_etcLayerClose.png) no-repeat; text-indent: -10000px;}
+.Review-list >.content .gruop .list> .box >.etc .etc_layer .thank, .Review-list >.content .gruop .list> .box >.etc .etc_layer .cancel {display:block;}
+
+.Review-list >.content .gruop .list> .box >.etc .recom-btn.opacity, .Review-list >.content .gruop .list> .box >.etc .report-btn.opacity {opacity: 0.5;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50); cursor:default;}
+/* 리뷰 : 추천하기 버튼관련 20140513 e */
+
+.Review-write {position:relative; width:100%; background-color:#eee; padding-top:0px;} /* 2014-04-08 */
+.Review-write .content {width:960px;  margin:auto; overflow:hidden;}
+.Review-write .content h2 {  font-size:32px; padding:50px 0; font-weight:bold; color:#333;  text-align:center;}
+.Review-write .content >div {float:left;}
+.Review-write .content >div.review-check {width: 960px; padding-bottom:50px;}
+.Review-write .content >div.review-check .tit { padding-bottom:17px; font-size:24px; font-weight:bold; border-bottom:1px solid #bababa; }
+.Review-write .content >div.review-check .star {padding-top:30px; font-family:"돋움"; font-size:12px; color:#666;}
+.Review-write .content >div.review-check .star .rating {display:inline-block; width:167px; height:31px; background:url(http://image.nike.co.kr/web/ico/ico_star_w.png) repeat 0 -31px;}
+.Review-write .content >div.review-check .star .rating > span {display:inline-block; *display:block; width:100px; background:url(http://image.nike.co.kr/web/ico/ico_star_w.png) repeat; text-indent:-9999px; line-height:31px; *line-height:31px;}
+.Review-write .content >div.review-check .star  span.num {display:inline-block; margin-left:30px; font-size:18px; font-weight:bold; color:#fa5400;}
+.Review-write .content >div.review-check .star  span.txt {display:inline-block; padding-left:20px;}
+
+/* 2014-04-08 s */
+.Review-write .content >div.review-test {width: 960px; padding-bottom:30px;}
+.Review-write .content >div.review-test > .tit { padding-bottom:17px; font-size:24px; font-weight:bold; border-bottom:1px solid #bababa; }
+.Review-write .content >div.review-test  .review-avg {margin-top:50px;}
+.Review-write .content >div.review-test  .review-avg ul li {float:left;  width:410px; padding-bottom:20px; }
+.Review-write .content >div.review-test  .review-avg ul li.right {margin-left:140px;}
+.Review-write .content >div.review-test  .review-avg ul li .box {position:relative;  }
+.Review-write .content >div.review-test  .review-avg ul li .box:after {display:block; clear:both; content:'';} /* 20140522 */
+.Review-write .content >div.review-test  .review-avg ul li .box>div {display:inline-block; }
+.Review-write .content >div.review-test  .review-avg ul li .box>div.tit {float:left; width:60px; text-align:left; color:#666;} /* 20140522 */
+.Review-write .content >div.review-test  .review-avg ul li .box>div.tit span { font-size:12px; font-weight:bold;}
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con {float:left; vertical-align: middle;} /* 20140522 */
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .gp {display:inline-block; position:relative; margin-top:0px; background:url(http://image.nike.co.kr/web/bg/bg-review_w.png) 0 0 no-repeat; width:346px; height:17px; }
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .gp div.handle {position:absolute; top:-2px; background:url(http://image.nike.co.kr/web/bg/review_handle.png) 0 0 no-repeat; width:11px; height:21px;}
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .tip {position:absolute; left:50px; top:-13px;  width:346px;}
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .tip span {position:absolute; display:block; font-family:"돋움"; font-size:11px;  color:#bababa; }
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .tip span.t1 {left:20px; }
+.Review-write .content >div.review-test  .review-avg ul li .box>div.con .tip span.t2 { right:0px;}
+/* 2014-04-08 e */
+
+.Review-write .content >div.review-write {width: 960px; border-bottom:1px solid #bababa; }
+.Review-write .content >div.review-write > .tit {padding-bottom:17px; font-size:24px; font-weight:bold; border-bottom:1px solid #bababa;}
+.Review-write .content >div.review-write .board {position:relative; padding:20px 0 50px; }
+.Review-write .content >div.review-write .board span.tit {display:inline-block; width:90px; font-size:12px; height:25px; line-height:25px; font-weight:bold; vertical-align: top;}
+.Review-write .content >div.review-write .board span.sub-tit {display:block; position:absolute; top:40px; left:0px; font-size:12px; height:25px; line-height:25px; font-weight:bold; vertical-align: top;} /* 2014-04-08 */
+.Review-write .content >div.review-write .board .title span{display:inline-block; width:90px; }
+.Review-write .content >div.review-write .board .title input {  width:360px; height:27px; padding:0 10px; font-family:"돋움";  color:#666 !important; font-size:12px !important; line-height:12px;}
+.Review-write .content >div.review-write .board .review {position:relative; margin-top:10px;}
+.Review-write .content >div.review-write .board .review .tit_input {position:absolute; top:0; left: 92px;width: 360px; height: 30px; padding:0 10px;} /* 2014-04-08 */
+.Review-write .content >div.review-write .board .review textarea {margin-top:40px; width:360px; height:90px; padding:10px; line-height:12px; resize: none; text-indent: 0px;} /* 2014-04-08 */
+.Review-write .content >div.review-write .board .review .count {display:block; width:100px; padding-top:5px; margin-left:370px; font-family: "돋움"; font-size: 11px; color:#666; text-align:right;}
+.Review-write .content >div.review-write .board .img {position:relative; margin-top:10px;}
+/*.Review-write .content >div.review-write .board .img .btn {margin-left:8px;}*/
+.Review-write .content >div.review-write .board .img .file_text {width:290px; height:30px; margin-left:-3px;}
+.Review-write .content >div.review-write .board .img .file_wrap {display:inline-block; position:absolute;  top:0; left:390px;}
+.Review-write .content >div.review-write .board .img .file_btn {width:60px; top:0; width:82px; height:32px; border:none; background:url(http://image.nike.co.kr/web/btn/btn_file.png) 0 0 no-repeat; }
+.Review-write .content >div.review-write .board .img .file_add {position:absolute;  top:0; left:0; width:80px; height:30px; background-color: #fff; filter:alpha(opacity=0); opacity:0; border:1px solid red; }
+.Review-write .content >div.review-write .board .img ul {margin-top:5px; margin-left:90px; width:380px; height:80px;   border:1px solid #bababa;}
+.Review-write .content >div.review-write .board .img ul li {float:left; position:relative; width:80px; height:80px; max-width:80px; max-height:80px; margin-right: 5px;}
+.Review-write .content >div.review-write .board .img ul li img {width:100%; height:100%;}
+.Review-write .content >div.review-write .board .img ul li a.close {display:block; position:absolute; top:3px; right:3px; background:url(http://image.nike.co.kr/web/btn/btn_close_reviewimg.png) 0 0 no-repeat; width:9px; height:9px; text-indent:-10000px;}
+.Review-write .content >div.review-write .board .img .script {margin-top:10px;margin-left:90px;  font-family: "돋움"; color: #666;}
+.Review-write .content >div.review-write .board .script span {line-height:20px; }
+.Review-write .content >div.review-write .board .guide {position:absolute; top:30px; right:0; width:428px; padding:20px 20px; line-height:20px; background-color:#ddd; letter-spacing:-0.9px; font-size:12px; color:#666;}
+.Review-write .content >div.review-write .board .guide > span.title {padding-bottom:14px; font-size:12px; font-weight:bold; color:#333;}
+.Review-write .content >div.review-write .board .guide span {display:inline-block; }
+.Review-write .content >div.review-write .board .guide span.number {vertical-align:top; font-family: "돋움"; color:#666;}
+.Review-write .content >div.review-write .board .guide span.txt {width:380px; padding-left:5px; font-family: "돋움"; color:#666;}
+.Review-write .content >div.review-write .board .guide .g-btn {display:inline-block; margin-left:13px; text-decoration: underline; color:#333;}
+.Review-write .content >div.review-confirm {width:100%; padding:30px 0 50px; text-align:center; font-family: "돋움"; color:#666;}
+.Review-write .content >div.review-confirm .btn-area {margin-top:15px;}
+.Review-write .content >div.review-confirm .note {display:inline-block; margin-right:20px;}
+.Review-write .content >div.review-confirm label {text-decoration: underline; font-weight:bold;}
+
+/*** 제품 특장점 : beky ***/
+.Local-tab .conTab .tab ul li .conArea .group {position:relative; width:880px; margin:0 auto; padding:50px 0 30px; zoom:1;}/* 20140522 수정 */
+.Local-tab .conTab .tab ul li .conArea .group:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionL {float:left; margin:0 20px 0 20px; width:300px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionL img {display:block; position:relative; left:50%; top:50%; margin-top:-120px; margin-left:-120px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionL .imgArea {width:300px; height:300px; background-color:#f5f5f5; border:1px solid #f5f5f5;}
+
+.Local-tab .conTab .tab ul li .conArea .group .sectionR {float:left; width:530px; text-align:left;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > h2, .merit .conTab .sectionR > h3 {color:#333; font-size:32px; font-weight:bold; letter-spacing:-1.5px; line-height:28px; *line-height:32px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > h3 {margin-top:27px; font-size:16px; line-height:14px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > p {margin-top:21px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul {margin-top:19px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul li {padding-left: 10px; background: url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 7px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px;}
+
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie {position:absolute; top:350px; left:7px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li {float:left; position:relative; padding-left: 0px; width:90px; height:58px; margin-left:12px; border:1px solid #ddd; background:url(http://image.nike.co.kr/web/bg/bg-mov-board.png) 0 0 no-repeat;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li a >.btn {display:none; position:absolute; top:50%; left:50%; margin-left:-14px; margin-top:-14px; width:25px; height:25px; background:url(http://image.nike.co.kr/web/btn/btn-mov-play.png) 0 0 no-repeat;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li .tip {display:none; position:absolute; left:-14px; top:-50px; width:104px; height:47px; padding:8px; background:url(http://image.nike.co.kr/web/bg/bg_mov_tip.png) no-repeat; font-size: 10px; color:#fff; text-align: center; z-index:50;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li .tip span {display:inline-block; overflow:hidden; width:100px; height:27px; line-height:13px; letter-spacing:-0.5px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li:hover a >.btn {display:block;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR > ul.movie li:hover .tip {display:block;}
+
+.Local-tab .conTab .tab ul li .conArea .group .sectionR dl {padding-bottom:20px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR dl dt {font-size:14px; font-weight:bold;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR dl dt.tit {font-size:32px; line-height:48px;}
+.Local-tab .conTab .tab ul li .conArea .group .sectionR dl dd {font-size:12px; line-height:20px;}
+
+/*** 상품정보고시 : beky ***/
+.proInfo {width:100%; margin-top:20px; padding-bottom:10px; text-align:center;}/* 201406 수정 */
+.proInfo .infoArea {width:960px; margin:46px auto 0;}
+.proInfo .infoArea > dl {margin:0 0 10px 40px; zoom:1; line-height:normal;}/* 20140513 수정 */
+.proInfo .infoArea > dl:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+
+/* 2014-04-08 s */
+.proInfo .infoArea > dl dt {float:left; width:310px; margin-right:30px; color:#212121; font-size:14px; font-weight:bold; text-align:right;}
+.proInfo .infoArea > dl dd {float:left; width:530px; color:#666; font-family:"돋움"; text-align:left; letter-spacing:-0.1px; line-height:21px; font-weight:lighter;} /* 20140522 수정 */
+/* 2014-04-08 e */
+
+.layer-cart {
+	display:block;
+	z-index:1008;
+	position:absolute;
+	top:81px; /* 20140303 수정 */
+	overflow:hidden;
+	left:0;
+	height:0;
+	width:100%;
+	background-image:url(http://store.nike.com/nikestore/html/img/OneNike/bg-noise.png);
+	background-image:-webkit-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-moz-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-o-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-ms-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	-webkit-box-shadow:0 2px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow:0 2px 2px rgba(0,0,0,0.25);
+	box-shadow:0  2px 2px rgba(0,0,0,0.25);
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#33000000');
+	background-color:#fff;
+ }
+.layer-cart >div {position:relative; width:761px; margin:20px auto; padding:10px 0; }
+.layer-cart ul {}
+.layer-cart ul li {float:left; width:327px;   text-align:center; width:435px; font-size:12px; font-family:"돋움"; color:#333;}
+.layer-cart ul li:first-child {width:326px; background:url(http://image.nike.co.kr/web/bg/bg-div-line.gif) right 0 repeat-y;}
+.layer-cart ul li .title { font-size:20px; font-family:"나눔고딕"; font-weight:bolder; color:#333;}
+.layer-cart ul li .item-tit {font-weight:bold;}
+.layer-cart ul li .image {padding:10px 0;}
+.layer-cart ul li .order { margin-top:10px; font-weight:bold;}
+.layer-cart ul li .order span.size {display:inline-block; margin-right:15px;}
+.layer-cart ul li .order span.quantity {display:inline-block; margin-right:15px;}
+.layer-cart ul li .order span.price {color:#fa5400;}
+.layer-cart ul li .tPrice {margin-top:40px; font-size:16px; color:#fa5400; font-weight:bold;}
+.layer-cart ul li .dn {margin-top:10px; }
+.layer-cart ul li .btn {margin-top:40px;} /* 20140228 수정 */
+.layer-cart > div> .close {display:block; position:absolute; top:0; right:-20px; background:url(http://image.nike.co.kr/web/btn/btn_layer_close.png) 0 0 no-repeat; width:17px; height:16px; text-indent:-10000px;} /* 2014-04-08 */
+
+/* 상세정보 Start 20140522
+.Local-tab .conTab .tab ul li .conArea .merit .content {margin-top: 40px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .left {float:left; width:200px; height:200px; padding:40px 58px; }
+.Local-tab .conTab .tab ul li .conArea .merit .content .right {float:right; width:560px;  }
+.Local-tab .conTab .tab ul li .conArea .merit .content p {font-size:14px; font-weight:bold; color:#212121; }
+.Local-tab .conTab .tab ul li .conArea .merit .content ul {margin-top:15px; }
+.Local-tab .conTab .tab ul li .conArea .merit .content ul li { padding-left:8px;  background:url(http://image.nike.co.kr/web/ico/ico-list-dot.png) 0 8px no-repeat;  line-height:19px; font-family:"돋움"; font-size:12px; color:#666; letter-spacing: 0px; font-weight: normal;}
+.Local-tab .conTab .tab ul li .conArea .merit .content ul li .detail-btn {display:inline-block; background:url(http://image.nike.co.kr/web/btn/btn_tab_detail.png) 0 0 no-repeat; font-family:'NanumGothic', '나눔고딕';  width:69px; height:20px; font-size:10px; line-height:18px; margin-left:5px;  font-weight:bold; color:#fff; text-align: center; }
+.Local-tab .conTab .tab ul li .conArea .merit .content {position:relative; width:880px; margin:0 auto; padding:50px 0 0; zoom:1;}
+.Local-tab .conTab .tab ul li .conArea .merit .content:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionL {float:left; margin:0 20px 0 20px; width:300px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionL img {display:block; position:relative;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionL .imgArea {width:300px; height:300px; background-color:#f5f5f5; border:1px solid #f5f5f5;}
+
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR {float:left; width:530px; text-align:left;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > h2, .merit .conTab .sectionR > h3 {color:#333; font-size:32px; font-weight:bold; letter-spacing:-1.5px; line-height:28px; *line-height:32px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > h3 {margin-top:27px; font-size:16px; line-height:14px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > p {margin-top:21px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul {margin-top:19px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul li {padding-left: 10px; background: url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 7px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px;}
+
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie {position:absolute; top:350px; left:7px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li {float:left; position:relative; padding-left: 0px; width:90px; height:58px; margin-left:12px; border:1px solid #ddd; background:url(http://image.nike.co.kr/web/bg/bg-mov-board.png) 0 0 no-repeat;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li a >.btn {display:none; position:absolute; top:50%; left:50%; margin-left:-14px; margin-top:-14px; width:25px; height:25px; background:url(http://image.nike.co.kr/web/btn/btn-mov-play.png) 0 0 no-repeat;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li .tip {display:none; position:absolute; left:-14px; top:-50px; width:104px; height:47px; padding:8px; background:url(http://image.nike.co.kr/web/bg/bg_mov_tip.png) no-repeat; font-size: 10px; color:#fff; text-align: center; z-index:50;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li .tip span {display:inline-block; overflow:hidden; width:100px; height:27px; line-height:13px; letter-spacing:-0.5px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li:hover a >.btn {display:block;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR > ul.movie li:hover .tip {display:block;}
+
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR dl {padding-bottom:20px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR dl dt {font-size:14px; font-weight:bold;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR dl dt.tit {font-size:32px; line-height:48px;}
+.Local-tab .conTab .tab ul li .conArea .merit .content .sectionR dl dd {font-size:12px; line-height:20px;}
+/* 상세정보 End 20140522 */
+
+/* 상세정보 Start 20140522 */
+.conTab .merit {width:100%; margin:0; padding-bottom:50px; text-align:center;}
+.conTab .merit .content {position:relative; width:960px; margin:0 auto; padding:50px 0 0; zoom:1;}
+.conTab .merit .content:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+.conTab .merit .content .sectionL {float:left; margin:0 20px 0 50px; width:300px;}
+.conTab .merit .content .sectionL img {position:relative; display:block;}
+.conTab .merit .content .sectionL .imgArea {width:300px; height:300px; background-color:#f5f5f5; border:1px solid #f5f5f5;}
+
+.conTab .merit .content .sectionR {float:left; width:540px; text-align:left;}
+.conTab .merit .content .sectionR > h2, .conTab .merit .content .sectionR > h3 {color:#333; font-size:32px; font-weight:bold; letter-spacing:-1.5px; line-height:28px; *line-height:32px;}
+.conTab .merit .content .sectionR > h3 {margin-top:27px; font-size:16px; line-height:14px;}
+.conTab .merit .content .sectionR > p {margin-top:21px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px;}
+.conTab .merit .content .sectionR > ul {margin-top:19px;}
+.conTab .merit .content .sectionR > ul li {padding-left: 10px; background: url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 7px; color:#666; font-family:'돋움'; line-height:16px; letter-spacing:-0.5px; font-weight:lighter;}
+
+.conTab .merit .content .sectionR > ul.movie {position:absolute; top:350px; left:40px;}
+.conTab .merit .content .sectionR > ul.movie li {float:left; position:relative; padding-left:0px; margin-left:12px; background:url(http://image.nike.co.kr/web/bg/bg-mov-board.png) 0 0 no-repeat;}
+.conTab .merit .content .sectionR > ul.movie li a >.btn {display:none; position:absolute; top:50%; left:50%; margin-left:-14px; margin-top:-14px; width:25px; height:25px; background:url(http://image.nike.co.kr/web/btn/btn-mov-play.png) 0 0 no-repeat;}
+.conTab .merit .content .sectionR > ul.movie li .tip {display:none; position:absolute; left:-14px; top:-50px; width:104px; height:47px; padding:8px; background:url(http://image.nike.co.kr/web/bg/bg_mov_tip.png) no-repeat; font-size: 10px; color:#fff; text-align: center; z-index:50;}
+.conTab .merit .content .sectionR > ul.movie li .tip span {display:inline-block; overflow:hidden; width:100px; height:27px; line-height:13px; letter-spacing:-0.5px;}
+.conTab .merit .content .sectionR > ul.movie li:hover a >.btn {display:block;}
+.conTab .merit .content .sectionR > ul.movie li:hover .tip {display:block;}
+/* 상세정보 End 20140522 */
+
+/* 201406 상세정보 bg 추가 */
+.bgM1_1.botm {height:40px;}
+.bgM1_1.botm2 {height:40px; margin-top:50px;}
+/* 20140808 PDP 컬러옵션별가격정렬 추가 */
+.color_option {position:relative; background:#f5f5f5; width:382px; height:149px; margin-top:20px; border:1px solid #ddd; overflow-y:scroll; overflow-x:hidden;}
+.color_option table {width:100%; margin:5px 5px 0;}
+.color_option table td {padding:5px;}
+.color_option table td .word {width:290px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.color_option table td.price {text-align:right; padding-right:10px;}
+
+/* 20140821 옵션할인제품 추가 */
+.Pdp .content .item-box .right .color_option2 {margin-top:20px;}
+.Pdp .content .item-box .right .color_option2 h4 {font-size:12px;}
+.Pdp .content .item-box .right .color_option2 h4 span {margin-left:5px; font-weight:lighter;}
+.Pdp .content .item-box .right .color_option2 .item-list {margin-top:10px;}
+
+/* 150618 삭제 : str
+.Pdp .content .item-box .right .color_option2 .item-list ul.item li {float:left; width:64px; height:60px; border:none; background-color:#f5f5f5;}
+.Pdp .content .item-box .right .color_option2 .item-list ul.item li a {display:block; position:relative; width:100%; height:100%; }
+.Pdp .content .item-box .right .color_option2 .item-list ul.item li a:hover, .Pdp .content .item-box .right .color_option2 .item-list ul.item li a.on {width:62px; height:58px; border:1px solid #ddd; }
+.Pdp .content .item-box .right .color_option2 .item-list ul.item li a img { display:block; position:absolute; left:50%; top:50%; margin-left:-25px; margin-top:-25px;   }
+150618 삭제 : end */
+
+/* 150430 상품상세 : str */
+.Pdp .content .item-box .right .discount_pb{padding-bottom:20px;}
+.Pdp .content .item-box .right .info .price .ori_price{padding-right:5px; font-size:16px; color:#333; text-decoration:line-through; font-weight:bold;} /* 150528 */
+.Pdp .content .item-box .right .info .price .begin_date{display:block; font-size:13px; color:#333; font-weight:normal;}
+.Pdp .content .item-box .left .etc ul.sns_sec{width:auto; margin-left:200px;}
+/* 150430 상품상세 : end */
+
+/* 150615 상품확대 : str */
+.Pdp .content {width:1100px;}
+.Pdp .content .item-box .left{width:700px; z-index:60;}
+.Pdp .content .item-box .left .nav{height:620px;}
+.Pdp .content .item-box .left .viewer{width:620px; height:620px; padding:0; background:#f5f5f5;}
+.Pdp .content .item-box .left .viewer .zoomWindow{margin-top:0;}
+.Pdp .content .item-box .left .viewer .zoomWrapperImage img{padding:165px; box-sizing:border-box; max-width:2000px;}
+.Pdp .content .item-box .left .etc{width:620px; padding-left:80px;}
+
+.Pdp .content .item-box  .overlay_wrap{position:relative; z-index:50;}
+.Pdp .content .item-box  .overlay_wrap .overlay{display:none; position:absolute; right:0; top:0; width:384px; background:#fff; opacity:0.7; filter: alpha(opacity = 70);}
+
+.Pdp .content .line{width:100%; height:1px; border-bottom:1px solid #eee;}
+
+.Review> .content .t-box .tit{width:auto;}
+/* 150615 상품확대 : end */
+
+
+.txt_orange{color:#fa5400;} /* 150528 - 2015.08. */
+
+/* 150730 rsvp */
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1.btn-pdp-rsvp{background:url(http://image.nike.co.kr/web/btn/btn_pdp_rsvp.png) 0 0 no-repeat; cursor:default;}
+
+/* 150608 사이즈 차트 개선 : str */
+.Pdp .content .purchase_guide_msg{margin:15px 0; padding:13px 10px; background:#eee; border-radius:7px;}
+.Pdp .content .purchase_guide_msg dt{padding-bottom:10px; font-size:14px; font-style:italic; font-weight:bold; color:#333;}
+.Pdp .content .purchase_guide_msg dd{font-size:12px; font-weight:bold; color:#666; line-height:18px;}
+.Pdp .content .purchase_guide_msg dd span{color:#333;}
+.Pdp .content .btn_purchase_guide{padding-top:5px; font-size:12px; font-weight:bold;}
+.Pdp .content .btn_purchase_guide > a{color:#333; text-decoration:underline;}
+
+.product_size{width:960px; margin:0 auto; padding:30px 0 55px; font-weight:normal;}
+.product_size:after{content:""; clear:both; display:block;}
+.product_size .size_l{display:inline-block;*display:inline;float:none;width:330px;padding-left:20px;text-align:right;vertical-align:middle;zoom:1}
+.product_size .size_r{display:inline-block;*display:inline;float:none;width:480px; padding-left:20px; color:#666; line-height:18px;vertical-align:middle;zoom:1}
+.product_size .size_r h3{padding-bottom:20px; font-size:16px; color:#333;}
+.product_size .size_r .size_txt span{color:#333;}
+.product_size .size_unit{position:relative; width:100%; margin-top:20px;z-index:10}/* 150922 */
+.product_size .size_unit .size-area{display:inline-block;width:118px;margin-right:5px;}
+.product_size .size_unit .txt_unit{position:absolute; right:0; bottom:-5px; font-size:12px; color:#999; line-height:normal;}
+.product_size .size-area .btn-pdp-type1 {display:block;background:url(http://image.nike.co.kr/web/btn/btn_pdp_type1.png) 0 0 no-repeat;width:90px;height:40px;line-height: 40px;padding-left:10px;margin-right:4px; color:#666;}
+.product_size.set .size-area .btn-pdp-type1 {display:block;background:url(http://image.nike.co.kr/web/btn/btn_pdp_type2.png) 0 0 no-repeat;width:108px;height:40px;line-height: 40px;padding-left:10px;margin-right:4px; color:#666;}
+.product_size.one .size-area .btn-pdp-type1 {display:block;cursor:default;background:url(http://image.nike.co.kr/web/btn/btn_pdp_type_one.png) 0 0 no-repeat;width:108px;height:40px;line-height: 40px;padding-left:10px;margin-right:4px; color:#666;}/*150925*/
+/*.product_size .size-area .btn-pdp-type1 span {margin-left:10px;}*/
+.product_size .size-area .btn-pdp-type1:hover {background-position: 0 -40px;}
+.product_size .size-area .btn-pdp-type1.on {background-position: 0 -80px;}
+.product_size .size-area{position:relative;}
+.product_size .size-area .size-list{display:none; position:absolute; left:0; top:40px; width:263px; background:url(http://image.nike.co.kr/web/bg/bg_size_top.png) 0 0 no-repeat; z-index:10; }
+.product_size .size-area .size-list .bg {width:263px; margin-top:6px; background:url(http://image.nike.co.kr/web/bg/bg_size_bottom.png) 0 bottom no-repeat ; padding-bottom:6px; }
+.product_size .size-area .size-list .bg ul {background-color:#ddd; padding:0px 5px 0px;  }
+.product_size .size-area .size-list .bg ul li {float:left; width:83px; height:28px; margin-top:1px; margin-left:1px;   text-align:center; line-height:28px;}
+.product_size .size-area .size-list .bg ul li a {display:block;  background-color:#fff; font-size:11px; color:#333;}
+.product_size .size-area .size-list .bg ul li a.out {background-color:#e9e9e9; color:#a9a9a9; cursor:default;}
+.product_size .size-area .size-list .bg ul li a:hover {background-color:#999; color:#fff;}
+.product_size .size_table{position:relative; width:100%;padding-top:15px;}
+.product_size .size_table h4 {position:relative;color:#333;margin-bottom:5px;}
+.product_size .size_table .txt_unit {position:absolute;right:0;top:-5px;font-weight:normal;color:#999999;}
+.product_size.set .size_table .txt_unit {top:15px;}
+.product_size .size_table table{width:100%;}
+.product_size .size_table table thead th{padding:10px 0; background:#f8f8f8; font-size:13px; color:#666; text-align:center; border:1px solid #e5e5e5;}
+.product_size .size_table table tbody td{padding:10px 0; color:#666; text-align:center; border:1px solid #e5e5e5;}
+.product_size .note {margin-top:12px;color:#666;}
+/* 150608 사이즈 차트 개선 : end */
+
+
+/* 151013 리뷰 기능 개선 : str */
+.Review> .content .review-avg {margin-top:30px; padding-top:50px; padding-bottom:50px; height:auto;border-top:1px solid #e5e5e5; border-bottom:0px solid #e5e5e5;}
+.Review> .content .review-avg ul {display:inline-block;width:100%}
+
+#reviewInfo {position:relative;z-index:10;}
+#reviewInfo .btn-review-write{background:url(http://image.nike.co.kr/web/btn/btn-review-left.png) no-repeat;display:inline-block;height:37px;font-size:12px;line-height:37px;color:#fff;padding-left:10px;font-weight:bold;}
+#reviewInfo .btn-review-write span{background:url(http://image.nike.co.kr/web/btn/btn-review-right.png) right top no-repeat;display:inline-block;height:100%;padding:0 10px 0 0;min-width:110px;}
+
+.Review> .content .t-box .star .rating {display:inline-block; width:121px; height:20px; margin-right:3px;  background:url(http://image.nike.co.kr/web/ico/ico_review_star.png) repeat 0 0; text-align:left;}
+.Review> .content .t-box .star .rating > span {display:inline-block; *display:block; width:30px; height:20px; background:url(http://image.nike.co.kr/web/ico/ico_review_star.png) 0 -30px repeat; text-indent:-9999px; line-height:15px; *line-height:20px;}
+.Review> .content .t-box .tit{display:block;padding:15px 0; font-size:32px; font-weight:bold;}
+
+.Review .noreview {padding:6px 0 70px;}
+.Review .noreview .title {font-size:30px;line-height:34px;font-weight:bold;text-align:center;}
+.Review .noreview .t-box .sub-tit {padding:10px 0 5px;}
+.Review .noreview .t-box .star {margin-bottom:17px;}
+
+.reportBtn{display:inline-block;position:relative;width:100%;}
+.reportBtn > a{display:block;float:left;width:44px;height:23px;background:url(http://image.nike.co.kr/web/btn/btn_report.png) no-repeat;margin-left:4px;}
+.reportBtn > a.reportUp{margin:0;}
+.reportBtn > a.reportDown{background-position:left bottom;}
+.reportBtn > a.off{background-position:right top;}
+.reportBtn > a.off.reportDown{background-position:right bottom;}
+.reportBtn > a span{display:inline-block;height:23px;line-height:23px;font-size:11px;color:#666;padding-left:25px;}
+.reportBtn > a.off span{color:#b3b3b3;}
+.reportBtn .etc_layer {position:absolute;left:0px;bottom:33px;width:150px;cursor:pointer;}
+.reportBtn .etc_layer .con_area {position:relative;padding:15px 13px;font-size:11px;line-height:15px;color:#fff;background-color:#333;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;z-index:100;}
+.reportBtn .etc_layer a.close {position:absolute;left:auto;right:10px;top:10px;width:10px;bottom:auto;height:10px; background:url(http://image.nike.co.kr/web/newReview/icon_reportLayerClose.png) no-repeat; text-indent: -10000px;}
+.reportBtn .etc_layer .thank,
+.reportBtn .etc_layer .cancel {display:block;}
+
+.bestReview{padding:60px 0 100px 0;}
+.bestReview .contentwrap {width:960px;margin:auto;}
+.bestReview .contentwrap .title {font-size:20px;line-height:24px;font-weight:bold;padding-left:10px;}
+.bestReview .contentwrap .title .point {color:#FA5400;}
+.bestReview #bestReviewList{position:relative;border:1px solid #dbdbdb;padding:29px;margin-top:15px;background:#f7f7f7;}
+.bestReview #bestReviewList .bestReviewCon{background:#fff;border:1px solid #dbdbdb;padding:21px;}
+.bestReview #bestReviewList ul.Review-list{overflow:hidden;padding-bottom:0;}
+.bestReview #bestReviewList .bx-viewport {-webkit-transition:height 0.3s;transition:height 0.3s;}/*151110*/
+.bestReview #bestReviewList .bx-pager{text-align:center;position:absolute;left:0;bottom:7px;width:100%;}
+.bestReview #bestReviewList .bx-pager .bx-pager-item{display:inline-block;*display:inline;width:20px;text-align:center;}
+.bestReview #bestReviewList .bx-pager .bx-pager-item a{*margin:0 5px;font-size:12px;color:#666;font-weight:bold;}
+.bestReview #bestReviewList .bx-pager .bx-pager-item a.active{color:#000;text-decoration:underline;}
+.bestReview #bestReviewList .bx-controls-direction a{font-size:0;line-height:0;text-indent:-5000px;width:20px;height:32px;position:absolute;top:50%;margin-top:-16px;background:url(http://image.nike.co.kr/web/btn/btn_bestReview2.png) no-repeat;}
+.bestReview #bestReviewList .bx-controls-direction a.disabled {display:none;}
+.bestReview #bestReviewList .bx-controls-direction .bx-prev{left:5px;}
+.bestReview #bestReviewList .bx-controls-direction .bx-next{right:5px;background-position:left bottom;}
+
+/* 150921 수정 str */
+.bestReview .Review-list{margin:0;}
+/* 20160725 스토어리뷰 소스 수정 */
+/* 수정전 .bestReview .Review-list .conBox{overflow:hidden;padding-bottom:0px;} */
+.bestReview .Review-list .conBox{overflow:hidden;padding-bottom:0px;padding: 10px 0 50px !important;}
+/* 20160725 스토어리뷰 소스 수정 */
+.bestReview .Review-list .conBox.noImg2{padding:10px 0;}
+.bestReview .Review-list .conBox.noImg{padding:10px 0;background:url(http://image.nike.co.kr/web/bg/bg_bestLine.gif) 450px top repeat-y;}
+.bestReview .Review-list .conBox .img_l{float:left;width:460px;}
+.bestReview .Review-list .conBox .txt_r{float:left;width:375px;padding:15px 0 0 20px;}
+.bestReview .Review-list .conBox .txt_l{float:left;width:410px;position:relative;padding:0 40px 20px 10px;}
+.bestReview .Review-list .conBox .eval_r{float:left;width:375px;padding:15px 0 0 20px;margin:10px 0;min-height:270px;}
+.bestReview .Review-list .conBox .txt_box{padding:10px 20px 40px 10px;}
+.bestReview .Review-list .imglist {position:absolute;left:-5000em;top:-5000em;visibility:hidden;opacity:0;z-index:-1}
+
+
+.bestReview .Review-list .conBox .img_l div.bigImg{width:460px;height:335px;}
+.bestReview .Review-list .conBox .img_l div.bigImg a{display:block;width:100%;height:100%;}
+.bestReview .Review-list .conBox .img_l ul{overflow:hidden;width:102%;margin-top:7px;}
+.bestReview .Review-list .conBox .img_l ul li{overflow:hidden;float:left;width:110px;height:80px;margin-right:7px;position:relative;}
+/*.bestReview .Review-list .conBox .img_l ul li:first-child{margin:0;}*/
+.bestReview .Review-list .conBox .img_l ul li:last-child{margin-right:0px;}
+.bestReview .Review-list .conBox .img_l ul li img{width:100%;}
+.bestReview .Review-list .conBox .img_l ul li span{display:none;position:absolute;left:0;top:0;width:106px;height:76px;border:2px solid #fa5400;}
+.bestReview .Review-list .conBox .img_l ul li span.on{display:block}
+.bestReview .Review-list .conBox .img_l ul li.youtube em.cover {display:block;position:absolute;left:0;top:0;width:100%;height:100%;background:url(http://image.nike.co.kr/web/newReview/bg_bestreview_vod_cover.png) no-repeat center center}
+.bestReview .reportBtn{margin-top:20px;}
+
+.bestReview .Review-list .conBox .userlink{color:#999;font-size:11px;text-align:right;line-height:18px;position:absolute;right:30px;top:20px;}
+.bestReview .Review-list .conBox.noImg .userlink{right:440px;top:13px;}
+.bestReview .Review-list .conBox.noImg2 .userlink{right:20px;top:13px;}
+.bestReview .Review-list .conBox.noImg .reportBtn, .bestReview .Review-list .conBox.noImg2 .reportBtn{position:absolute;left:10px;bottom:0;}
+.bestReview .Review-list .conBox .userlink a{color:#999;background:url(http://image.nike.co.kr/web/newReview/arr_bestreview_morereview.png) right center no-repeat;display:inline-block;padding-right:10px;}
+.bestReview .Review-list .conBox .userlink span{text-decoration:underline;color:#999;}
+.bestReview .Review-list .conBox .star {padding-bottom:4px;font-size:11px;color:#999;}
+.bestReview .Review-list .conBox .star .rating {display:inline-block; width:71px; height:13px; background:url(http://image.nike.co.kr/web/ico/ico_review_star2.png) 0 0px no-repeat;}
+.bestReview .Review-list .conBox .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/ico/ico_review_star2.png) left -17px no-repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.bestReview .Review-list .conBox .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.bestReview .Review-list .conBox .userinfo{overflow:hidden;color:#999;font-size:11px;margin:10px 0;line-height:18px;}
+.bestReview .Review-list .conBox .userinfo p {margin-left:-11px;}
+.bestReview .Review-list .conBox .userinfo .tit {display:inline-block;padding-left:5px;margin-left:5px;line-height:11px;border-left:1px solid #999}
+.bestReview .Review-list .conBox .userinfo em{color:#666;}
+.bestReview .Review-list .conBox .subj{color:#444;font-size:16px;font-weight:bold;}
+.bestReview .Review-list .conBox .txt{color:#666;margin-top:15px;line-height:18px;overflow:hidden;}
+.bestReview .Review-list .conBox .txt .userTxt{min-height:90px;}
+.bestReview .Review-list .conBox.noImg .txt .userTxt, .bestReview .Review-list .conBox.noImg2 .txt .userTxt{height:auto;}
+.bestReview .Review-list .conBox .txtMore{color:#aeaeae;text-decoration:underline;}
+.bestReview .Review-list .conBox .eval {padding-top:40px;margin-top:20px;border-top:1px solid #e6e6e6;padding-bottom:10px;}  /* 2014-04-08 */
+.bestReview .Review-list .conBox.noImg .eval {padding-top:60px;margin:20px 0 0 15px;border-top:none;padding-bottom:10px;}  /* 2014-04-08 */
+.bestReview .Review-list .conBox .eval .rate li {position:relative;  height:20px; margin-top:20px;}
+.bestReview .Review-list .conBox .eval .rate li:first-child{margin-top:0;}
+.bestReview .Review-list .conBox .eval .rate li .tit {float:left; width:72px;    font-size:12px; font-weight:bold;}
+.bestReview .Review-list .conBox .eval .rate li .gp {float:left; position:relative; width:253px; height:11px;  background:url(http://image.nike.co.kr/web/bg/bg-review-bar3.png) no-repeat 0 0; margin-top:2px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span {position:absolute; top:0; left:0; width:37px; height:11px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar3-on.png) center 0 no-repeat;  text-indent:-10000px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active1  {left:0; background-position: 0px 0;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active2  {left:36px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active3  {left:72px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active4  {left:108px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active5  {left:144px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active6  {left:180px;}
+.bestReview .Review-list .conBox .eval .rate li .gp span.active7  {left:216px; background-position: right 0;}
+.bestReview .Review-list .conBox .eval .rate li .tip {position:absolute; top:-13px; left:76px; font-family:"돋움"; font-size:11px; color:#bababa;  width:244px; }
+.bestReview .Review-list .conBox .eval .rate li .tip .t1 {display:inline-block; }
+.bestReview .Review-list .conBox .eval .rate li .tip .t2 {display:inline-block; position:absolute; right:0;}
+/* 150921 수정 end */
+
+/* SORT */
+.sortCon{position:relative;background:#fff;}
+.sortCon p.sortTxt{padding:0 8px;font-size:11px;line-height:32px;color:#000;font-weight:bold;background:url(http://image.nike.co.kr/web/newReview/sortBg.png) 0 0 no-repeat;border:1px solid #c1c1c1;}
+.sortCon ul{display:none;overflow:hidden;position:absolute;left:0;top:33px;border:1px solid #c1c1c1;border-top:0}
+.sortCon li{padding:4px 0;cursor:pointer;background:#fff}
+.sortCon li span{padding:0 8px;display:block;font-size:11px;line-height:22px;color:#666;}
+.sortCon li.on span{border-left:2px solid #111;padding-left:6px;}
+.sortCon li input{display:none;}
+
+.ReviewNew {}
+.ReviewNew .contentwrap {width:960px;padding-bottom:80px;margin:auto;position:relative;}
+.ReviewNew .contentwrap .title {padding-bottom:10px;font-size:20px;line-height:24px;font-weight:bold;padding-left:10px;}
+.ReviewNew .contentwrap .title .point {color:#FA5400;}
+.ReviewNew .contentwrap .Review-list{margin-top:0;border-bottom:1px solid #dedede;border-top:1px solid #dedede;padding-bottom:0;padding-top:10px;}
+.ReviewNew .contentwrap .Review-list > li {position:relative;border-top:1px solid #dedede; padding:20px 0;overflow:hidden;}
+.ReviewNew .contentwrap .Review-list > li:first-child {border-top:0;}
+.ReviewNew .contentwrap .Review-list .reviewConL{float:left;width:570px;padding:0 20px 0 10px;}
+.ReviewNew .contentwrap .Review-list .reviewConR{float:left;width:350px;padding:0 10px 0 0;}
+.ReviewNew .contentwrap .Review-list .star {padding-bottom:20px;font-size:11px;color:#999;}
+.ReviewNew .contentwrap .Review-list .star .rating {display:inline-block; width:71px; height:13px; margin-right:3px; background:url(http://image.nike.co.kr/web/ico/ico_review_star2.png) 0 0px no-repeat;}
+.ReviewNew .contentwrap .Review-list .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/ico/ico_review_star2.png) left -17px no-repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.ReviewNew .contentwrap .Review-list .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.ReviewNew .contentwrap .Review-list .subj{color:#444px;font-size:16px;font-weight:bold;}
+.ReviewNew .contentwrap .Review-list .txt{color:#666;margin-top:12px;line-height:18px;overflow:hidden;width:}
+.ReviewNew .contentwrap .Review-list .txt .userTxt{}
+.ReviewNew .contentwrap .Review-list .txtMore{color:#aeaeae;text-decoration:underline;display:inline;}
+.ReviewNew .contentwrap .Review-list .imgUl{overflow:hidden;padding-top:20px;margin-right:-2px;}
+.ReviewNew .contentwrap .Review-list .imgUl li{float:left;width:140px;height:100px;overflow:hidden;margin-right:3px;position:relative;}
+.ReviewNew .contentwrap .Review-list .imgUl li a span{background:url(http://image.nike.co.kr/web/newReview/revewNewBg.png) no-repeat;position:absolute;left:0;top:0;width:100%;height:100%;display:none;}
+.ReviewNew .contentwrap .Review-list .imgUl li a:hover span{display:block;}
+.ReviewNew .contentwrap .Review-list .imgUl li img{width:100%;}
+.ReviewNew .contentwrap .Review-list .imgUl li.youtube em.cover {display:block;position:absolute;left:0;top:0;width:100%;height:100%;background:url(http://image.nike.co.kr/web/newReview/bg_review_vod_cover.png) no-repeat center center}
+.ReviewNew .contentwrap .Review-list .reportBtn{padding-top:20px;}
+.ReviewNew .contentwrap .Review-list li .imglist {position:absolute;left:-5000em;top:-5000em;visibility:hidden;opacity:0;z-index:-1}
+.ReviewNew .contentwrap .Review-list li .userlink{color:#999;font-size:11px;text-align:right;line-height:18px;}
+.ReviewNew .contentwrap .Review-list li .userlink a{color:#999;background:url(http://image.nike.co.kr/web/newReview/arr_bestreview_morereview.png) right center no-repeat;display:inline-block;padding-right:10px;}
+.ReviewNew .contentwrap .Review-list li .userlink span{text-decoration:underline;color:#999;}
+.ReviewNew .contentwrap .Review-list li .userinfo{overflow:hidden;color:#999;font-size:11px;margin:10px 0 30px 0;text-align:right;}
+.ReviewNew .contentwrap .Review-list li .userinfo p {margin-right:-11px}
+.ReviewNew .contentwrap .Review-list li .userinfo em{display:inline-block;padding-right:5px;margin-right:5px;color:#666;line-height:11px;border-right:1px solid #999;}
+.ReviewNew .contentwrap .Review-list li .eval {float:right;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li {position:relative;  height:20px; margin-top:20px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li:first-child{margin-top:0;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .tit {float:left; width:72px;    font-size:12px; font-weight:bold;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp {float:left; position:relative; width:253px; height:11px;  background:url(http://image.nike.co.kr/web/bg/bg-review-bar3.png) no-repeat 0 0; margin-top:2px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span {position:absolute; top:0; left:0; width:37px; height:11px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar3-on.png) center 0 no-repeat;  text-indent:-10000px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active1  {left:0; background-position: 0px 0;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active2  {left:36px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active3  {left:72px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active4  {left:108px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active5  {left:144px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active6  {left:180px;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .gp span.active7  {left:216px; background-position: right 0;}
+.ReviewNew .contentwrap .Review-list li .eval .rate li .tip {position:absolute; top:-13px; left:76px; font-family:"돋움"; font-size:11px; color:#bababa;  width:244px; }
+.ReviewNew .contentwrap .Review-list li .eval .rate li .tip .t1 {display:inline-block; }
+.ReviewNew .contentwrap .Review-list li .eval .rate li .tip .t2 {display:inline-block; position:absolute; right:0;}
+#ReviewNew .sortBox{position:absolute;right:10px;top:-7px;width:50%;z-index:5;}
+#ReviewNew .sortBox .photoSort{color:#000;font-size:12px;font-weight:bold;float:right;margin-right:20px;margin-top:9px;}
+#ReviewNew .sortCon{float:right;width:76px;}
+#ReviewNew .sortCon ul {width:74px;}
+#ReviewNew .sortCon p.sortTxt{background-position:58px 14px;}
+.ReviewNew .paging2{text-align:center;margin-top:40px;}
+.ReviewNew .paging2 a{display:inline-block;width:20px;height:20px;line-height:20px;font-size:13px;text-indent:0;font-weight:bold;color:#666;vertical-align:middle}
+.ReviewNew .paging2 a.active{color:#000;}
+.ReviewNew .paging2 a.prevBtn{font-size:13px;line-height:13px;color:transparent;background:url(http://image.nike.co.kr/web/btn/btn_paging2.png) left center no-repeat;}
+.ReviewNew .paging2 a.nextBtn{font-size:13px;line-height:13px;color:transparent;background:url(http://image.nike.co.kr/web/btn/btn_paging2.png) right center no-repeat;}
+
+
+
+#reivewImg{background:url(http://image.nike.co.kr/web/newReview/reivewImg.png);position:fixed;width:100%;height:100%;left:0;top:0;display:none;z-index:100;}
+#reivewImg .reivewImgCon{position:relative;width:100%;height:100%;}
+#reivewImg .reivewImgCon .viewImg{width:500px;height:500px;position:absolute;top:50%;margin-top:-200px;left:50%;margin-left:-250px;background:#000;}
+#reivewImg .reivewImgCon .viewImg ul{width:500px;height:500px;}
+#reivewImg .reivewImgCon .viewImg ul li{width:500px;height:500px;}
+#reivewImg .bx-pager{text-align:right;padding-top:10px;}
+#reivewImg .bx-pager a{color:#fff;display:none;font-size:15px;font-weight:bold;cursor:default;}
+#reivewImg .bx-pager a.active{display:inline;}
+#reivewImg .bx-controls-direction a{font-size:0;line-height:0;text-indent:-5000px;width:20px;height:32px;position:absolute;top:234px;background:url(http://image.nike.co.kr/web/btn/btn_bestReview.png) no-repeat;}
+#reivewImg .bx-controls-direction .bx-prev{left:-45px;}
+#reivewImg .bx-controls-direction .bx-next{right:-45px;background-position:left bottom;}
+#reivewImg .reivewImgCon .close{position:absolute;right:-28px;;top:-8px;width:28px;height:28px;background:url(http://image.nike.co.kr/web/newReview/btn_close_reviewImg.png) center center no-repeat;font-size:0;line-height:0;text-indent:-5000px;}
+
+
+.reviewWrite {display:none;padding:55px 0 0;background:#f7f7f7;border-top:1px solid #dbdbdb;}
+.reviewWrite .contentwrap {width:960px;margin:0 auto;}
+.reviewWrite .title {font-size:32px;color:#333333;text-align:center;}
+.reviewWrite .chk {margin-top:10px;font-family:Dotum,'돋움';text-align:center;}
+.reviewWrite .chk span {color:#fa5400;}
+.reviewWrite .section {display:inline-block;width:940px;padding:20px 10px 0;margin-bottom:0;}
+.reviewWrite .section span.required {position:absolute;left:-10px;top:3px;color:#fa5400;}
+.reviewWrite .section h3 {padding-bottom:15px;font-size:24px;color:#333333;border-bottom:1px solid #d6d6d6;}
+.reviewWrite .section .pdtevaluation {float:left;width:550px;padding-bottom:23px;margin-right:30px;}
+.reviewWrite .section .pdtevaluation .tit {display:inline-block;*float:left;width:80px;font-weight:bold;font-size:12px;line-height:16px;vertical-align:top}
+.reviewWrite .section .pdtevaluation .con {display:inline-block;*float:left;width:415px;font-size:12px;line-height:18px;vertical-align:top}
+.reviewWrite .section .pdtevaluation .review-check {margin-top:30px;}
+.reviewWrite .section .pdtevaluation .review-check .tit {margin-top:12px;position:relative;}
+.reviewWrite .section .pdtevaluation .review-check .star {display:inline-block;*float:left;margin-right:10px;font-family:"돋움"; font-size:12px; color:#666;}
+.reviewWrite .section .pdtevaluation .review-check .star .rating {display:inline-block; width:121px; height:20px; margin-top:8px; margin-left:0;  background:url(http://image.nike.co.kr/web/ico/ico_review_star.png) repeat 0 0;}
+.reviewWrite .section .pdtevaluation .review-check .star .rating > span {display:inline-block; *display:block; width:30px; height:20px; background:url(http://image.nike.co.kr/web/ico/ico_review_star.png) 0 -30px repeat; text-indent:-9999px; line-height:25px; *line-height:25px;}
+.reviewWrite .section .pdtevaluation .review-check span.num {display:inline-block; margin-left:30px; font-size:18px; font-weight:bold; color:#fa5400;}
+.reviewWrite .section .pdtevaluation .review-check span.txt {display:inline-block;*padding-top:10px;font-family:Dotum,"돋움";}
+.reviewWrite .section .pdtevaluation .review-avg {padding-top:35px;}
+.reviewWrite .section .pdtevaluation .review-avg ul li {padding-top:18px;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box {display:inline-block;position:relative;width:100%;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box:after {display:block;clear:both;content:'';}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con {position:relative;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .gp {display:inline-block; position:relative; margin-top:3px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar3.png) 0 0 no-repeat; width:253px; height:14px; }
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .gp div.handle {position:absolute; top:0px; background:url(http://image.nike.co.kr/web/bg/bg-review-bar3-on.png) center 0 no-repeat; width:37px; height:14px;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .tip {display:inline-block;width:244px;position:absolute;left:3px;top:-17px;font-family:Dotum,"돋움";font-size:11px;color:#aaaaaa;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .tip span.t1 {float:left;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box .con .tip span.t2 {float:right;}
+.reviewWrite .section .pdtevaluation .review-avg ul li .box em.avgTxt {position:absolute;left:270px;width:80px;top:-1px;color:#666666;font-style:italic;}
+.reviewWrite .section .pdtevaluation .review-recommend {margin-top:24px;}
+.reviewWrite .section .pdtevaluation .review-recommend .tit {width:135px;}
+.reviewWrite .section .pdtevaluation .review-recommend .con {width:360px;font-weight:bold;}
+.reviewWrite .section .pdtevaluation .review-recommend .con .radiobox {margin-left:20px;}
+.reviewWrite .section .userinfo {float:left;width:360px;}
+.reviewWrite .section .userinfo .tit {display:inline-block;*float:left;width:88px;font-weight:bold;font-size:12px;line-height:16px;vertical-align:middle}
+.reviewWrite .section .userinfo .size .tit {vertical-align:top}
+.reviewWrite .section .userinfo .con {display:inline-block;position:relative;*float:left;width:250px;font-size:12px;line-height:18px;vertical-align:middle;}
+.reviewWrite .section .userinfo .size {position:relative;display:inline-block;width:100%;padding-top:38px;z-index:10;}
+.reviewWrite .section .userinfo .weight{display:inline-block;width:100%;padding-top:25px;}
+.reviewWrite .section .userinfo .height, .reviewWrite .section .userinfo .age{display:inline-block;width:100%;padding-top:6px;}
+
+
+
+.reviewWrite .section .userinfo .size .sortCon{position:absolute;left:0;top:-8px;background:#fff;width:166px;z-index:5;}
+.reviewWrite .section .userinfo .size .sortCon p.sortTxt{background-position:144px 14px;}
+.reviewWrite .section .userinfo .size .sortCon ul {width:164px;}
+
+
+.reviewWrite .section .userinfo .con .textbox {width:128px;height:28px;padding-left:9px;margin-right:5px;border-radius:3px;border:1px solid #dbdbdb;vertical-align:middle;}
+.reviewWrite .section .userinfo .con .txt {display:inline-block;vertical-align:middle;margin-top:-2px;}
+.reviewWrite .section .conbox {position:relative;display:inline-block;width:100%;}
+.reviewWrite .section .conbox .tit {display:inline-block;*float:left;width:88px;margin-top:7px;font-weight:bold;font-size:12px;line-height:16px;vertical-align:top;position:relative;}
+.reviewWrite .section .conbox .con {position:relative;display:inline-block;*float:left;width:470px;font-size:12px;line-height:18px;vertical-align:top}
+.reviewWrite .section .conbox .writeform {float:left;width:570px;}
+.reviewWrite .section .conbox .writeform li {display:inline-block;width:100%;margin-bottom:10px;}
+.reviewWrite .section .conbox .writeform .byteChk {margin-top:3px;font-size:11px;font-family:Dotum,"돋움";text-align:right;letter-spacing:0}
+.reviewWrite .section .conbox .writeform .textbox {width:459px;height:28px;padding-left:9px;margin-right:5px;border-radius:3px;border:1px solid #dbdbdb;vertical-align:middle;}
+.reviewWrite .section .conbox .writeform .textarea {width:450px;height:190px;padding:5px 9px;margin-right:5px;line-height:18px;border-radius:3px;border:1px solid #dbdbdb;vertical-align:middle;}
+.reviewWrite .section .conbox .writeform .file_text {width:290px; height:30px; margin-left:-3px;}
+.reviewWrite .section .conbox .writeform .file_wrap {display:inline-block; position:absolute;right:0;top:0;}
+.reviewWrite .section .conbox .writeform .file_btn {width:60px; top:0; width:80px; height:30px; border:none; background:#fff;border:1px solid #dbdbdb;border-radius:3px;}
+.reviewWrite .section .conbox .writeform .file_add {position:absolute;  top:0; left:0; width:80px; height:30px; background-color: #fff; filter:alpha(opacity=0); opacity:0; border:1px solid red;}
+.reviewWrite .section .conbox .writeform .attachedlist {overflow-y:auto;overflow-x:hidden;height:90px;margin-top:5px;border-radius:3px;border:1px solid #dbdbdb;background:#fff;padding:5px;}
+.reviewWrite .section .conbox .writeform .attachedlist li {overflow:hidden;position:relative;float:left;display:block;width:109px;height:78px;margin:5px 2px;}
+.reviewWrite .section .conbox .writeform .attachedlist li > img {width:100%;min-height:100%}
+.reviewWrite .section .conbox .writeform .attachedlist li a.close{display:block;position:absolute;right:0;top:0;cursor:pointer;}
+.reviewWrite .section .conbox .writeform .youtubeinfo {position:relative;padding-left:10px;margin-top:4px;margin-bottom:10px;font-family:Dotum,"돋움";}
+.reviewWrite .section .conbox .writeform .youtubeinfo a {display:inline-block;text-decoration:underline;}
+.reviewWrite .section .conbox .writeform .youtubeinfo .layer_youtube {display:none;position:absolute;left:0;top:15px;}
+.reviewWrite .section .conbox .guide {float:right;width:320px; padding:16px 20px; line-height:20px; background-color:#ddd; letter-spacing:-0.9px; font-size:12px; color:#666;border-radius:5px;}
+.reviewWrite .section .conbox .guide h4 {padding-bottom:5px; font-size:12px; font-weight:bold; color:#333;}
+.reviewWrite .section .conbox .guide ol {padding-right:0px;font-family:Dotum,"돋움";}
+.reviewWrite .section .conbox .guide ol li {padding-left:14px;font-size:11px;}
+.reviewWrite .section .conbox .guide ol li .btn {display:inline-block;text-decoration:underline;}
+.reviewWrite .section .conbox .guide span {display:inline-block;}
+.reviewWrite .section .conbox .guide span.n {margin-left:-13px;vertical-align:top; font-family: "돋움"; color:#666;}
+.reviewWrite .section .conbox .guide .g-btn {display:inline-block; margin-left:13px; text-decoration: underline; color:#333;}
+.reviewWrite .review-confirm {width:100%; padding:30px 0 50px; margin-top:50px;text-align:center; font-family: "돋움"; color:#666;border-top:1px solid #d6d6d6;}
+.reviewWrite .review-confirm .btn-area {margin-top:25px;}
+.reviewWrite .review-confirm .btn-area a{border-radius:3px;color:#fff;height:40px;line-height:40px;text-align:center;display:inline-block;font-weight:bold;}
+.reviewWrite .review-confirm .btn-area a.register {width:160px;background:#333;margin-right:8px;}
+.reviewWrite .review-confirm .btn-area a.cancel {width:95px;background:#b0b0b0;}
+.reviewWrite .review-confirm .note {display:inline-block; margin-right:20px;}
+.reviewWrite .review-confirm label {text-decoration: underline; font-weight:bold;}
+/* 151013 리뷰 기능 개선 : end */
+
+/*20160705 store review css 수정*/
+.bestReview .Review-list .conBox .img_l ul {margin-top:0;}
+.bestReview .reportBtn {margin-top:10px;}
+.report_txt {margin-bottom:5px;}
+
+/* 20160729 store review css 수정 */
+.bestReview .Review-list .conBox .img_l ul {margin-top:10px;}
+
+/* 20160805 store review css 수정 */
+.bestReview .Review-list .conBox .img_l div.bigImg a {background-size: contain !important;}

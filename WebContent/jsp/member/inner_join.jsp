@@ -1,5 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script language="JavaScript">
+	function doNext(){
+		
+	}
+	function doCancel(){
+		if (confirm("회원가입을 취소하시겠습니까?") == true){    //확인
+		    this.close();
+		}else{   //취소
+		    return;
+		}
+	}	
+	function checkIt() {
+		var memberForm = eval("document.memberForm");
+		if (!memberForm.memberName.value) {
+			alert("이름을 입력하세요");
+			return false;
+		} else if (!memberForm.email1Address.value) {
+			alert("이메일을 입력하세요");
+			return false;
+		} else {
+			memberForm.submit();
+		}
+	}
+
+</script>
 <div class="popLayer log">
 	<div class="layerBox clx">
 		<div class="contents">
@@ -22,7 +47,7 @@
 							<legend>로그인 관련 입력 폼</legend>
 							<div class="loginForm type02">
 								<div class="formBox">
-									<div class="speech type03">
+									<div class="speech type03"    >
 										<span class="over">이름을 입력해주세요<span class="arr"></span></span>
 									</div>
 									<label for="loginName" class="layerLabel">이름</label> <input
@@ -40,16 +65,16 @@
 										onchange="javascript:resetFlag();">
 								</div>
 							</div>
-							<a href="#" onclick="checkDuplicate();" class="loginBtn type02">중복확인</a>
+							<a href="javascript:checkIt()" onclick="checkDuplicate();" class="loginBtn type02">중복확인</a>
 						</fieldset>
 					</form>
 
-				</div>
+				</divㅣ>
 				<!-- // .loginArea -->
 				<div class="starTxt alR">
 					<a href="#" class="btn-type1 btn-orange" onclick="doNext();"><span
-						class="right">다음</span></a> <a href="#"
-						class="btn-type1 btn-gray ml05" onclick="doCancel();"><span
+						class="right">다음</span></a> 
+					<a href="#" class="btn-type1 btn-gray ml05" onclick="doCancel();"><span
 						class="right">취소</span></a>
 				</div>
 			</div>

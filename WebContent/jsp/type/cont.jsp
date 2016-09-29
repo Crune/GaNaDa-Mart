@@ -79,11 +79,15 @@
 
 	<div class="global_gridwall">
 		<ul class="global_gridwall_list" id="add_goods_list">
-		
+		<script>
+		function fn_showGoodsDetail (code){
+			window.location.href="/pdp.gnd?code="+code;
+		}
+		</script>
 			<li class="global_gridwall_col">
 				<div class="global_gridwall_container">
 					<a href="#"
-						onclick="javascript:fn_showGoodsDetail({goodsNo:'NK31073834', colorOptionValueCode:'843975-001', displayNo:'NK1A50A02A03'}); return false;"
+						onclick="javascript:fn_showGoodsDetail(1); return false;"
 						class="global_gridwall_img" id="A_NK31073834_843975-001_A"> <img
 						id="_NK31073834_843975-001_"
 						src="http://image.nike.co.kr/goods/31/07/38/34/843975_COL_843975-001_180.png"
@@ -105,7 +109,7 @@
 			<li class="global_gridwall_col">
 				<div class="global_gridwall_container">
 					<a href="#"
-						onclick="javascript:fn_showGoodsDetail({goodsNo:'NK31073834', colorOptionValueCode:'843975-400', displayNo:'NK1A50A02A03'}); return false;"
+						onclick="javascript:fn_showGoodsDetail(2); return false;"
 						class="global_gridwall_img" id="A_NK31073834_843975-400_A"> <img
 						id="_NK31073834_843975-400_"
 						src="http://image.nike.co.kr/goods/31/07/38/34/843975_COL_843975-400_180.png"

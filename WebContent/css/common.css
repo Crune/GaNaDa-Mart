@@ -6,10 +6,10 @@
 /*	Author: Tommy
 /****************************************/
 
-@import url(http://www.nike.co.kr/com/css/base.css);
-@import url(http://www.nike.co.kr/com/css/layout.css);
-@import url(http://www.nike.co.kr/com/css/layer_popup.css);
-@import url(http://www.nike.co.kr/com/css/popup.css);
+@import url(/css/base.css);
+@import url(/css/layout.css);
+@import url(/css/layer_popup.css);
+@import url(/css/popup.css);
 
 /*** 모듈 타이틀 ***/
 .section-title {font-weight:bold;}

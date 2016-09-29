@@ -2,7 +2,7 @@
 	$.ajax({
 		type: "POST",
 		dataType : "html",
-		url: "./member/chkLoginAjax.gnd", 
+		url: "/member/chkLoginAjax.gnd", 
 		success: function(data){	
 			//alert(data);
 			
@@ -96,27 +96,6 @@
 				$("#loginForm_1 input[name=idSave]").prop("checked", true);
 				$("#id_text").hide();
 			}
-			
-			// 고객센터 호버
-			$('.global_right_nav').find('> ul > li > a').on('mouseenter', function(){
-				var $self = $(this)
-
-				if ($('.global_login_modal').css('display') == 'block') {
-					$self.parent().addClass('on')
-				}
-				else {
-					$self.next().stop().fadeIn(200);
-					$self.parent().addClass('on')
-				}
-			})
-			$('.global_right_nav').find('> ul > li').on('mouseleave', function(){
-				
-				$(this).removeClass('on')
-			})
-			$('.global_right_nav').find('li').on('mouseleave', function(){
-				$(this).removeClass('on')
-				$(this).find('ul').stop().fadeOut(200);
-			})
 		}
 	});	
 }catch(e){

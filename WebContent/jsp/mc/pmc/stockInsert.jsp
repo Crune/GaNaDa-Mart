@@ -20,7 +20,7 @@
 			    	<input id="amount" name="amount" type="text" size="10" placeholder="수량" maxlength="10">
 			    
 			    <li class="label2">
-			   		<input type="submit" id="stinProduct" value="상품수정">
+			   		<input type="submit" id="stinProduct" value="상품재고등록">
 			    
 		    </ul>
 	    </div>

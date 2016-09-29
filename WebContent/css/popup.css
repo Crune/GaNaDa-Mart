@@ -1,0 +1,255 @@
+#popTop {height:41px; background:url(http://image.nike.co.kr/web/pre/pop_bg.gif) repeat-x left top;}
+#popContent {background:#fff; padding:20px;}
+#popFooter { background:#403F3B; text-align:right;}
+.pop_bn { text-align:center; margin-top:20px;}
+
+.lps_btn_type1 { display:inline-block;  background:url(http://image.nike.co.kr/web/pre/add_L_btn.png) no-repeat;  font-weight:bold; font-family:verdana,'�������','���� ���','����','����', sans-serif !important; color:#fff; text-align: center; cursor:pointer;}
+.lps_btn_type1 span {display:inline-block;  margin-left:5px; height:26px; padding:0 10px; padding-right:15px; background:url(http://image.nike.co.kr/web/pre/add_R_btn.png) no-repeat right 0;  font-size:11px; line-height:28px; color:#fff }
+
+
+.pop_reviewTex { width:630px; position:relative;}
+	.pop_reviewTex strong { color:#323429; display:inline-block; font-size:12px; margin-bottom:10px;}
+	.pop_reviewTex em { color:#323429; font-size:14px; font-weight:bold;}
+	.pop_reviewTex span { color:#F26722; font-size:12px;}
+	.pop_reviewTex p { color:#323429; font-size:11px; line-height:1.4em;}
+	.pop_reviewTex a { position:absolute; bottom:0; right:0;}
+
+.pop_reviewTex01 {width:599px; background:#fff; border:1px solid #cccccc;}
+	.pop_reviewTex01 .tit {height:25px; color:#333; font-size:11px; font-weight:bold; background-color:#eee; padding:10px 0 0 19px;}
+	.pop_reviewTex01 .tit strong {font-size:14px; line-height:14px;}
+	.pop_reviewTex01 .tit span {color:#fa5400;}
+
+	.pop_reviewTex01 .txt1 {line-height:16px; font-size:11px; padding:20px;}
+	.pop_reviewTex01 .txt1 span {color:#ff6600; font-size:11px;}
+
+	.pop_reviewTex0 .btn-type1 {border:1px solid red;}
+
+	.in_pop_reviewTex01 {overflow:hidden;width:599px; margin:20px 0 10px 0;}
+	.in_pop_reviewTex01 .lt {float:left; width:270px; border-right:1px solid #cccccc; padding-left:10px;}
+	.in_pop_reviewTex01 .rt {float:left; width:270px; padding-left:20px;}
+	.in_pop_reviewTex01 ul {width:260px;}
+	.in_pop_reviewTex01 ul li {height:22px; color:#666; font-size:12px;}
+	.in_pop_reviewTex01 ul li span {display:inline-block; width:95px; color:#666; font-size:11px; font-weight:bold;}
+	.in_pop_reviewTex01 .rt p {color:#666; font-size:11px; line-height:16px; padding-bottom:10px;}
+
+.pop_reviewTex02 {width:630px; background:#edf0f0; border:1px solid #cccccc;}
+	.pop_reviewTex02 .tit {height:25px; color:#323429; font-size:11px; font-weight:bold; background:url(http://image.nike.co.kr/web/pre/bg_pop_reviewTex01_01.gif) repeat-x; padding:10px 0 0 19px; border-bottom:2px solid #bebebc;}
+	.pop_reviewTex02 .tit strong {font-size:14px; line-height:14px;}
+	.pop_reviewTex02 .tit span {color:#f26722;}
+
+	.pop_reviewTex02 .txt1 {line-height:16px; font-size:11px; padding:20px;}
+	.pop_reviewTex02 .txt1 span {color:#ff6600; font-size:11px;}
+
+.pop_reviewTex03 {width:540px; background:#edf0f0; border:1px solid #cccccc;}
+.pop_reviewTex03 .tit {height:25px; color:#323429; font-size:11px; font-weight:bold; background:url(http://image.nike.co.kr/web/pre/bg_pop_reviewTex01_01.gif) repeat-x; padding:10px 0 0 19px; border-bottom:2px solid #bebebc;}
+.pop_reviewTex03 .tit strong {font-size:14px; line-height:14px;}
+
+#popContent .minorConsent {margin:0;}
+#popContent .minorConsent table thead th span {color: #323429;}
+#popContent .minorConsent table tbody td {color: #323429;}
+.minorTxt {margin-top:10px;line-height:16px;font-size:11px;color:#939393;}
+
+#popContent01 { background:#fff; padding:20px;}
+
+#popContent01 .txt2 {width:600px; color:#666; font-size:11px; line-height:16px; margin:5px 0 15px;}
+#popContent01 .txt2 strong {display:inline-block; padding-bottom:10px; color:#333;}
+#popContent01 .txt3 {width:600px; color:#939393; font-size:11px; line-height:16px; margin-bottom:15px;}
+#popContent01 .red01 {color:#ff6600;}
+
+#popContent01 .table01 {width:600px; border-top:1px solid #bdbdbd; border-left:1px solid #bdbdbd; margin:5px 0 10px;}
+#popContent01 .table01 th {text-align:center; color:#545554; font-size:11px; font-weight:bold; background:#eee; border-right:1px solid #bdbdbd; border-bottom:1px solid #bdbdbd; padding:10px 0 6px 0;}
+#popContent01 .table01 td {text-align:center; color:#323429; font-size:11px; background:#fff; border-right:1px solid #bdbdbd; border-bottom:1px solid #bdbdbd; padding:10px 0 6px 0;}
+
+.pop_reviewList { width:650px; margin:17px 0 0;}
+	.pop_reviewList table { width:630px; border-top:1px #BDBDBD solid;}
+	.pop_reviewList table tr { background:url(http://image.nike.co.kr/web/pre/lin_m3.gif) repeat-x left bottom;}
+	.pop_reviewList table td  { vertical-align:top; padding:10px 0 15px;}
+	.pop_reviewList table td.lns00 { text-align:left; color:#323429; font-size:12px; font-weight:bold; border-bottom:0; padding:16px 0 0 15px;}	
+	.pop_reviewList table td.lns01 { text-align:center;}
+	.pop_reviewList table td.lns01 .tex { color:#323429; font-size:11px;} 
+	.pop_reviewList table td.lns01 div { margin:10px 0;}
+	.pop_reviewList table td.lns01 .icon {text-align:left; padding:0 0 0 35px;}
+	.pop_reviewList table td.lns01 .icon span {color:#f26722 !important; font-size:11px; font-weight:bold;} 
+	.pop_reviewList table td.lns01 .icon * {vertical-align:middle;}
+	.pop_reviewList table td.lns02 ul { display:inline-block;}
+	.pop_reviewList table td.lns02 ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.pop_reviewList table td.lns02 ul li  { float:left; padding:0 10px 8px; color:#6b6b6b; font-size:11px;}
+	.pop_reviewList table td.lns02 ul li.lon { background:url(http://image.nike.co.kr/web/pre/ci_n.gif) no-repeat 10px top; padding-left:25px;}
+	.pop_reviewList table td.lns02 p { margin-left:10px; color:#939393; font-size:11px;}
+	.pop_reviewList table td.lns02 p a { color:#939393; line-height:1.5em; font-size:11px;}
+	.pop_reviewList table td.lns02 p a:hover { color:#323429; line-height:1.5em; font-size:11px;}
+	.pop_reviewList table td.lns02 div { text-align:right; margin:10px 0 0; color:#6B6B6B; font-size:11px;}
+	.pop_reviewList table td.lns02 a.line { color:#323429; background:url(http://image.nike.co.kr/web/pre/bu_arrow4.gif) no-repeat right 2px; padding-right:8px; font-size:11px; position:relative; display:inline-block;}
+	.pop_reviewList table td.lns02 a.line .vew { position:absolute; top:-10px; left:70px; z-index:55; background:url(http://image.nike.co.kr/web/pre/review-trans.png) no-repeat left top; width:332px; height:239px; display:none;}
+	* html .pop_reviewList table td.lns02 a.line .vew {
+		background-image:none; 
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://image.nike.co.kr/web/pre/review-trans.png', sizingMethod='crop');
+	}
+	.pop_reviewList table td.lns02 a.line .vew div.fxn { text-align:left; margin:16px 0 0 11px;}
+	.pop_reviewList table td.lns02 a.line .vew div.fxn strong { color:#fff; font-weight:normal; font-size:11px;}
+	.pop_reviewList table td.lns02 a.line .vew div.ff_cont { text-align:left; margin:25px 0 0 11px;}
+	.pop_reviewList table td.lns02 a.line2 { color:#6B6B6B; font-size:11px; background:url(http://image.nike.co.kr/web/pre/bu_arrow4.gif) no-repeat right 4px; padding-right:8px;}
+	.pop_reviewList table td.lns02 div span { color:#F26722; font-weight:bold; font-size:11px; display:inline-block; background:url(http://image.nike.co.kr/web/pre/bn_best2.gif) no-repeat left top; padding:2px 0 2px 36px; margin:0 10px; vertical-align:middle;}
+	m
+	.reviewNT { width:850px !important;}
+	.reviewNT table { width:850px !important; border-top:2px #545554 solid;}
+	.reviewNT table tr { background:none;}
+	.reviewNT table tr td { border-bottom:1px #BABCBB solid;}
+	.reviewNT table td.lns02 div { text-align:left; margin:10px 10px 0;}
+
+.pop_reviewList01 { position:relative; width:601px; height:322px; margin:17px 0 0; overflow-y:scroll;  border-top:1px #BDBDBD solid;  border-bottom:1px #BDBDBD solid;}
+	.pop_reviewList01 table { width:582px;}
+	.pop_reviewList01 table tr { /*background:url(http://image.nike.co.kr/web/pre/lin_m3a.gif) repeat-x left bottom;*/}
+	.pop_reviewList01 table tr.nobg {background:none;}
+	.pop_reviewList01 table td  { vertical-align:top; padding:10px 0 15px;}
+	.pop_reviewList01 table td.lns00 { text-align:left; color:#323429; font-size:12px; font-weight:bold; border-bottom:0; padding:16px 0 0 15px;}	
+	.pop_reviewList01 table td.lns01 { text-align:center;}
+	.pop_reviewList01 table td.lns01 .tex { color:#323429; font-size:11px;} 
+	.pop_reviewList01 table td.lns01 div { margin:0;}
+	.pop_reviewList01 table td.lns02 ul { display:inline-block;}
+	.pop_reviewList01 table td.lns02 ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.pop_reviewList01 table td.lns02 ul li  { float:left; padding:0 10px 8px; color:#6b6b6b; font-size:11px;}
+	.pop_reviewList01 table td.lns02 ul li.lon { background:url(http://image.nike.co.kr/web/pre/ci_n.gif) no-repeat 10px top; padding-left:25px;}
+	.pop_reviewList01 table td.lns02 p { margin-left:10px; color:#666; font-size:11px;}
+	.pop_reviewList01 table td.lns02 p a { color:#323429; line-height:1.5em; font-size:11px;}
+	.pop_reviewList01 table td.lns02 p a:hover { color:#323429; line-height:1.5em; font-size:11px;}
+	.pop_reviewList01 table td.lns02 div { text-align:right; margin:10px 0 0; color:#6B6B6B; font-size:11px;}
+	.pop_reviewList01 table td.lns02 a.line { color:#323429; background:url(http://image.nike.co.kr/web/pre/bu_arrow4.gif) no-repeat right 2px; padding-right:8px; font-size:11px; position:relative; display:inline-block;}
+	.pop_reviewList01 table td.lns02 a.line .vew { position:absolute; top:-10px; left:70px; z-index:55; background:url(http://image.nike.co.kr/web/pre/review-trans.png) no-repeat left top; width:332px; height:239px; display:none;}
+	* html .pop_reviewList table td.lns02 a.line .vew {
+		background-image:none; 
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://image.nike.co.kr/web/pre/review-trans.png', sizingMethod='crop');
+	}
+	.pop_reviewList01 table td.lns02 a.line .vew div.fxn { text-align:left; margin:16px 0 0 11px;}
+	.pop_reviewList01 table td.lns02 a.line .vew div.fxn strong { color:#fff; font-weight:normal; font-size:11px;}
+	.pop_reviewList01 table td.lns02 a.line .vew div.ff_cont { text-align:left; margin:25px 0 0 11px;}
+	.pop_reviewList01 table td.lns02 a.line2 { color:#323429; font-size:11px; background:url(http://image.nike.co.kr/web/pre/bu_arrow4.gif) no-repeat right 4px; padding-right:8px;}
+	.pop_reviewList01 table td.lns02 div span { color:#F26722; font-weight:bold; font-size:11px; display:inline-block; padding:2px 0 2px 0; margin:0 10px 0 0; vertical-align:middle;}
+	m
+	.reviewNT { width:850px !important;}
+	.reviewNT table { width:850px !important; border-top:2px #545554 solid;}
+	.reviewNT table tr { background:none;}
+	.reviewNT table tr td { border-bottom:1px #BABCBB solid;}
+	.reviewNT table td.lns02 div { text-align:left; margin:10px 10px 0;}
+
+.estimate {padding-bottom:2px; border-bottom:1px solid #ddd;}
+
+.pop_catN h2 { font-size:14px; color:#333; padding-bottom:12px;}
+	.pop_catN h3 { color:#333; padding-bottom:8px;}
+	.pop_catN p { color:#666; font-size:11px; line-height:1.6em;}
+	.pop_catN div { margin-bottom:5px;}
+	.pop_catN div strong { color:#fa5400; font-size:14px;}
+	.pop_catN div em { color:#fa5400; font-size:12px; font-weight:bold; display:inline-block; margin-left:5px;}
+	.pop_catN div img { display:inline-block; margin-left:10px;}
+	.pop_catN div.asTen { border:1px #CCC solid; padding:10px; height:475px; overflow:auto;}
+	.pop_catN div.asTen h2 { color:#323429; margin-top:20px; padding-bottom:8px; font-size:12px;}
+	.pop_catN div.asTen p { color:#323429; font-size:11px; line-height:1.6em;}
+	.pop_catN div.tet { text-align:right; font-size:11px; color:#939393; line-height:1.6em;}
+
+.pop_catN div span { color:#A0A0A0; font-size:11px; display:inline-block; margin-left:10px;}
+	.pop_catN span { display:block; color:#A0A0A0; display:inline-block; padding-bottom:3px;}
+	.pop_catN em { display:block; color:#6D6D6D; font-size:11px;}
+	.pop_catN .cot { text-align:center; margin:15px 0 0 0;}
+	.ps01 { margin-top:-43px; }
+	.cn01 { display:inline-block; vertical-align:-3px; margin:0 0 0 30px; }
+
+.pop_cp h2 { font-size:14px; padding-bottom:10px; color:#323429;}
+.pop_cp h2.tin { font-size:14px; padding-bottom:20px; color:#323429; text-align:center;}
+	.pop_cp p { font-size:11px; color:#323429; padding-bottom:5px;}
+	.pop_cp p.cot { font-size:12px; color:#FF6600; padding:25px 0 20px; text-align:center; font-weight:bold;}
+	.pop_cp p.cot2 { font-size:11px; color:#545554; padding-top:20px; text-align:center; line-height:1.6em;}
+	.pop_cp p.cot2  strong { font-size:11px; color:#545554; padding:5px;}
+	.pop_cp div.cot { font-size:11px; color:#545554; padding:15px 20px 15px; background:#F5F5F5; border:1px #BDBDBD solid; line-height:2em;}
+	.pop_cp span { font-size:11px; color:#FF6600; font-weight:normal;}
+	.pop_cp table { margin:8px 0 0 0; width:100%;}
+	.pop_cp table th { font-size:11px; color:#545554; border:1px #BDBDBD solid; padding:7px 10px 5px; font-weight:bold; background:#e1e4e4}
+	.pop_cp table td { font-size:11px; color:#323429; border:1px #BDBDBD solid; padding:7px 10px 5px; line-height:1.6em; background:#f0f2f3;}
+	.pop_cp table td strong { font-size:11px; color:#545554;}
+	.pop_cp table td em { font-size:11px; color:#939393; font-weight:bold;}
+	.pop_cp table td.re { text-align:right;}
+	.pop_cp table td span { font-size:12px; color:#939393;}
+	.pop_cp table .teC { text-align:center;}
+	.pop_cp table td.teC { color:#545554;}
+	.pop_cp table td.teR { text-align:right;}
+	.pop_cp table td.teR strong { color:#939393;}
+	.pop_cp table td.teR span { color:#FF6600;}
+	.pop_cp .txt02 span { color:#FF6600;}
+	.pop_cp table.cnt strong { color:#545554 !important;}
+	.pop_cp table.cnt div {  float:right; font-weight:bold;}
+	.pop_cp table.cnt div.cle { color:#545554;}
+	.pop_cp table.cnt div.clt { color:#FF6600; font-size:14px;}
+	.pop_cp table.cnt strong.clt { color:#FF6600 !important;;}
+	.pop_cp p.tits { margin-top:10px; padding-bottom:0; font-size:12px; font-weight:bold;}
+	.pop_cp p.tits strong { color:#FF6600;}
+	.pop_cp p.tits span { color:#939393; display:inline-block; margin-left:10px;}
+	.pop_cp .order_no table {  margin:0;}
+	.pop_cp .order_no table th { background:none; border:none; border-bottom:1px #BDBDBD solid;}
+	.pop_cp .order_no table td { border:none; border-bottom:1px #BDBDBD solid; font-size:12px;}
+	.txt01 { font-size:11px; color:#939393; padding:10px 5px 0; line-height:1.6em;}
+	.txt02 { font-size:11px; color:#323429; padding:5px 0 0; line-height:1.6em;}
+	
+	.tins { margin:15px 0 20px !important;}
+	.tins th {background:#dcdedf !important;}
+	.tins td { text-align:center; color:#545554 !important; background:#f0f2f3 !important;}
+	.tins td.tis { text-align:left;}
+	.tins td.tis strong {color:#545554 !important; font-size:12px !important; }
+	
+	.tatcon { border-bottom:1px #BABCBB solid; background:#F5F5F5; padding:15px 10px 7px;}
+	.tatcon:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon dl { width:160px; float:right;}
+	.tatcon dl .tin_gm:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon dl dt { float:left; width:70px; text-align:right;}
+	.tatcon dl dd { float:left; width:90px; text-align:right; margin-bottom:7px; font-weight:bold;}
+	.tatcon dl dt.ts { font-weight:bold; margin-top:5px;}
+	.tatcon dl dt.ts2 { font-weight:bold; color:#FF6600; margin-top:5px;}
+	.tatcon dl dd.ts { color:#FF6600;}
+	.tatcon dl dd.ts strong { font-family:Tahoma; font-size:18px; color:#FF6600;}
+	.tatcon dl dt strong {color:#545554;}
+
+	.tatcon02 { overflow:hidden; border-bottom:1px #BABCBB solid; background:#d9dada; padding:15px 10px 7px;}
+	.tatcon02:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon02 dl { width:200px; float:right;}
+	.tatcon02 dl .tin_gm:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon02 dl dt { float:left; width:90px; text-align:right; padding-right:20px;}
+	.tatcon02 dl dd { float:left; width:90px; text-align:right; margin-bottom:7px; font-weight:bold;}
+	.tatcon02 dl dt.ts { font-weight:bold; margin-top:5px;}
+	.tatcon02 dl dt.ts2 { font-weight:bold; color:#FF6600; margin-top:5px;}
+	.tatcon02 dl dd.ts { color:#FF6600;}
+	.tatcon02 dl dd.ts strong { font-family:Tahoma; font-size:18px; color:#FF6600;}
+	.tatcon02 dl dt strong {color:#545554;}
+
+	.tatcon03 { overflow:hidden; border-bottom:1px #BABCBB solid; background:#dbdcdc; padding:15px 10px 7px;}
+	.tatcon03 dl { width:160px; float:right;}
+	.tatcon03 dl .tin_gm:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon03 dl dt { float:left; width:70px; text-align:right;}
+	.tatcon03 dl dd { float:left; width:90px; text-align:right; margin-bottom:7px; font-weight:bold;}
+	.tatcon03 dl dt.ts { font-weight:bold; margin-top:5px;}
+	.tatcon03 dl dt.ts2 { font-weight:bold; color:#FF6600; margin-top:5px;}
+	.tatcon03 dl dd.ts { color:#FF6600;}
+	.tatcon03 dl dd.ts strong { font-family:Tahoma; font-size:18px; color:#FF6600;}
+	.tatcon03 dl dt strong {color:#545554;}
+
+	.tatcon04 { overflow:hidden; border-bottom:1px #BABCBB solid; background:#dbdcdc; padding:15px 10px 7px;}
+	.tatcon04 dl { width:200px; float:right;}
+	.tatcon04 dl .tin_gm:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+	.tatcon04 dl dt { float:left; width:90px; text-align:right;}
+	.tatcon04 dl dd { float:left; width:90px; text-align:right; margin-bottom:7px; font-weight:bold;}
+	.tatcon04 dl dt.ts { font-weight:bold; margin-top:5px;}
+	.tatcon04 dl dt.ts2 { font-weight:bold; color:#FF6600; margin-top:5px;}
+	.tatcon04 dl dd.ts { color:#FF6600;}
+	.tatcon04 dl dd.ts strong { font-family:Tahoma; font-size:18px; color:#FF6600;}
+	.tatcon04 dl dt strong {color:#545554;}
+	
+.tin_gm { background:#f0f2f3; border:5px #cdcfcf solid; padding:10px; display:block;}
+.tin_gm:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.tin_gm p { background:#e0e1e2; padding:5px 0; text-align:center; font-size:12px; margin-bottom:10px;}
+.tin_gm ul { display:inline-block; border-right:1px #BABCBB solid; float:left; margin-right:20px;}
+.tin_gm ul li { margin:0 20px 5px 0; font-size:11px;}
+.tin_gm ul li span { color:#939393;}
+	
+.btn_order {margin-top:10px;}
+
+
+
+
+

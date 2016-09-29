@@ -1,0 +1,1014 @@
+@charset="utf-8";
+
+/* common */
+input.g_error {border:1px solid #ff2626;}
+.mt-10 {margin-top:-10px;}
+.mt-20 {margin-top:-20px;}
+.mt0 {margin-top:0 !important;}
+.mr10 {margin-right:10px;}
+.mr20 {margin-right:20px;}
+.clear:after {content:'';display:block;clear:both;}
+.clear .fl {float:left;}
+.clear .fr {float:right;}
+.fz11 {font-size:11px;}
+.fz13 {font-size:13px;}
+.fz14 {font-size:14px;}
+
+.tar {text-align:right;}
+a.g_btn_type1 {display:inline-block;height:23px;padding:0 15px;line-height:23px;text-align:center;color:#fff;border-radius:2px;background:#333;white-space:nowrap;}
+a.g_btn_type1.l-2 {height:auto;line-height:1.5;padding:3px 10px;}
+a.g_btn_type1.h30 {height:30px;line-height:30px;}
+a.g_btn_type1.black {background:#111;}
+a.g_btn_type2 {display:inline-block;height:21px;padding:0 15px;line-height:21px;text-align:center;color:#111;border:1px solid #333;border-radius:2px;white-space:nowrap;}
+a.g_btn_type3 {display:inline-block;height:23px;padding:0 15px;line-height:23px;text-align:center;color:#fff;border-radius:2px;background:#ff5400;white-space:nowrap;}
+a.g_btn_type4 {display:inline-block;height:21px;padding:0 15px;line-height:21px;text-align:center;color:#111;border:1px solid #ccc;border-radius:2px;background:#e6e6e6;white-space:nowrap;}
+h1 a.g_btn_type1 {height:23px;margin-left:10px;padding:0 15px;line-height:23px;font-size:12px;vertical-align:top;}
+.fc_org {color:#fa5400;}
+.fc_red {color:#ff2626;}
+.fc_gray {color:#777;}
+
+.global_check_box {position:absolute; opacity:0; width:0 !important; height:0 !important;}
+.global_check_box + label {position:relative; display:inline-block; padding:4px 0 4px 22px;}
+.global_check_box + label:after {position:absolute; display:inline-block; width:14px; height:14px; top:4px; left:0; box-sizing:border-box; border:1px solid #bbb; border-radius:2px; background-repeat:no-repeat; background-size:13px; content:""; overflow:hidden;}
+.global_check_box:checked + label:after {background:url('http://image.nike.co.kr/global/global_check_box_on.gif') no-repeat 1px 2px;}
+
+.g_btn_area {margin-top:25px;text-align:center;}
+.g_btn_area > a {display:inline-block;min-width:140px;height:40px;line-height:40px;margin:0 2px;padding:0 10px;text-align:center;font-size:13px;color:#fff;border-radius:3px;background:#000;}
+.g_btn_area > a.btn_type1 {background:#111;}
+.g_btn_area > a.btn_type2 {background:#fa5400;}
+.g_btn_area > a.small {min-width:30px;height:25px;line-height:25px;font-size:11px;}
+.g_btn_area.right {text-align:right;}
+
+.btn_bgColor {display:inline-block; min-width:40px; /*height:25px;*/ padding:3px 15px 7px; border-radius:2px; background:#333; color:#fff; text-align:center; /*line-height:25px;*/ vertical-align:middle; box-sizing:border-box}
+.btn_bgColor.dimm {background:#aaa;}
+
+.g_caution {padding-left:20px;font-size:14px;font-weight:normal;color:#222;background:url(http://image.nike.co.kr/web/global/g_ico_caution.gif) no-repeat left center;}
+.g_caution.black {padding-left:17px;font-size:13px;font-weight:normal;color:#565656;background:url(http://image.nike.co.kr/web/global/g_ico_cautionB.gif) no-repeat left center;}
+
+.g_posr {position:relative;}
+
+.g_noti_lst {margin-top:30px;}
+.g_noti_lst .tit {font-size:14px;font-weight:bold;color:#222;}
+.g_noti_lst ul {margin-top:10px;}
+.g_noti_lst ul li {padding-left:10px;line-height:1.5;color:#777;background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 8px;}
+
+/*table style 변경*/
+.global_content .orderList table th {height:39px;padding:0;font-size:12px;border-top:1px solid #111;}
+.global_content .orderList table td {border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;}
+/*.global_content .orderList table td .status {margin-bottom:2px;}*/
+.global_content .orderList table td.lns05 strong {display:inline-block;margin:3px 0;}
+.global_content .orderList table td.lns07 {background:#fafafa;}
+
+.global_content .orderList table td .store_date {padding-left:15px;}
+.global_content .orderList table td .store_date p {text-align:left;}
+.global_content .orderList table td .store_date > p:after {content:'';display:block;clear:both;}
+.global_content .orderList table td .store_date span.t {display:block;float:left;width:28px;height:15px;color:#565656;}
+.global_content .orderList table td .store_date span.d {display:block;float:left;max-width:95px;margin-left:3px;color:#111;}
+.global_content .orderList table td .store_date .btn {margin-top:8px;text-align:center;}
+
+
+.global_content ul.tabN {height:auto;border:1px solid #dfdfdf;border-top:1px solid #333;background:#f7f7f7;}
+.global_content ul.tabN li {margin-right:0;}
+.global_content .pop_reviewList {width:900px}
+.global_content .pop_reviewList table th {padding-left:160px;font-size:16px;}
+.global_content .pop_reviewList table td.lns01 div.g_thumnail {position:relative;margin-top:-30px;}
+.global_content .pop_reviewList table td.lns02 div span {padding-left:0;font-size:14px;font-weight:normal;color:#222;background:none;}
+.global_content .pop_reviewList table td.lns02 p.icon {margin-top:20px;}
+.global_content .reviewNT table {width:100% !important;border-top:1px solid #333;}
+.global_content .reviewNT table td.lns02 div {margin:0 10px;}
+.global_content .reviewNT table td.lns02 div.g_posr {padding:0;}
+.global_content .reviewNT table td.lns02 .g_btn {position:absolute;top:-30px;right:-10px;margin:0;}
+
+
+.tbl_style_01 table {width:100%;border-top:1px solid #666;border-bottom:1px solid #999;color:#111;table-layout:fixed;}
+.tbl_style_01 table label {padding:0;text-indent:-9999em; }
+.tbl_style_01 table th {height:39px;}
+.tbl_style_01 table th .global_check_box + label {top:-7px}
+.tbl_style_01 table th .global_check_box + label {top:0;width:50px;left:50%;padding-left:15px;text-indent:0;}
+.tbl_style_01 table th .global_check_box + label span {display:inline-block;margin-top:1px;}
+.tbl_style_01 table th .global_check_box + label:after {top:2px;}
+.tbl_style_01 table td {padding:9px 10px 10px;text-align:center;border-top:1px solid #e5e5e5;}
+.tbl_style_01 table td .date {display:block;margin-top:5px;color:#444;}
+.tbl_style_01 table td.left {text-align:left;}
+.tbl_style_01 table td.left .txt_elips {width:460px}
+.tbl_style_01 table td.no_data {padding:80px 0;}
+.tbl_style_01 table td .global_check_box + label {top:-9px}
+.tbl_style_01 table td .btn_question {display:inline-block;overflow:hidden;width:92%;margin-top:5px;white-space:nowrap;text-overflow:ellipsis;}
+.tbl_style_01 table td a.g_btn_type1 {width:77px;padding:0;}
+.tbl_style_01 table td a.g_btn_type2 {width:75px;padding:0;}
+.tbl_style_01 table td a.g_btn_type2.w90 {width:90px;padding:0;}
+
+.tbl_style_01 .wish_item {padding-left:9px; text-align:left;}
+.tbl_style_01 .wish_item:after {display:block; clear:both; content:"";}  
+.tbl_style_01 .wish_item .goods {float:left; width:25%; margin-right:20px;}
+.tbl_style_01 .wish_item .wist_product {float:right; width:70%; padding-top:30px;}
+.tbl_style_01 .wish_item .wist_product strong {display:block; padding-bottom:7px;}
+.tbl_style_01 .wish_item .wist_product .txt_elips {display:inline-block; width:200px; color:#666; }
+.tbl_style_01 .wish_item .wist_product span + a {margin:-5px 0 0 10px}
+.tbl_style_01 .cost_price {display:block; text-decoration:line-through; color:#999;}
+.tbl_style_01 .cost_price strong, .tbl_style_01 .price strong {font-weight:normal; }
+.tbl_style_01 .btn_sns.on {background:#fa5400; border-color:#fa5400; color:#fff;}
+.tbl_style_01 .wishlist_bottom {padding:7px 30px 7px 0; border-bottom:1px solid #999;}
+.tbl_style_01 .wishlist_bottom:after {display:block; clear:both; content:"";}
+.tbl_style_01 .wishlist_bottom .btn_area {float:right;}
+.tbl_style_01 .wishlist_bottom .btn_area a {margin-left:3px;}
+.tbl_style_01 .btn_delete {margin-bottom:10px;}
+.tbl_style_01 td.order_state span + .btn_bgColor {margin-top:10px;}
+.tbl_style_01.line_b td {padding:21px 10px 22px;}
+.tbl_style_01.line_m td {padding:16px 10px 17px;}
+
+.tbl_style_01 table td .answer {overflow:hidden;width:90%;margin-top:5px;padding-left:15px;background:url(http://image.nike.co.kr/global/arr_answer.gif) no-repeat left 3px;white-space:nowrap;text-overflow:ellipsis;}
+.tbl_style_01 table td .answer.is_active {white-space:normal;text-overflow:normal;}
+.tbl_style_01 tr.answer td {padding:0;border:none;}
+.tbl_style_01 tr.answer td > div {display:none;padding:35px 50px;text-align:left;background:#f9f9f9;}
+.tbl_style_01 tr.answer td > div .q {position:relative;padding-left:55px;}
+.tbl_style_01 tr.answer td > div .q em.t {position:absolute;top:-2px;left:0;font-size:15px;font-weight:bold;color:#222;}
+.tbl_style_01 tr.answer td > div .q span strong {display:inline-block;margin-right:10px;}
+.tbl_style_01 tr.answer td > div .q > p {margin-top:7px;}
+.tbl_style_01 tr.answer td > div .a {position:relative;margin-top:20px;padding-left:55px;}
+.tbl_style_01 tr.answer td > div .a em.t {position:absolute;top:0;left:0;font-size:15px;font-weight:bold;color:#fa5400;}
+.tbl_style_01 tr.answer td > div .info_top {padding-bottom:25px;}
+.tbl_style_01 tr.answer td > div .info_top ul:after {content:'';display:block;clear:both;}
+.tbl_style_01 tr.answer td > div .info_top ul li {float:left;margin-left:21px;padding-left:22px;background:url(http://image.nike.co.kr/global/global_bar2.gif) no-repeat left center;}
+.tbl_style_01 tr.answer td > div .info_top ul li:first-child {margin-left:0;padding-left:0;background:none;}
+.tbl_style_01 tr.answer td > div .info_top ul li > strong {display:inline-block;padding-right:3px;}
+.tbl_style_01 tr.answer td > div .info_top ul li > span {display:inline-block;}
+.tbl_style_01 tr.answer td > div .info {margin-top:20px;padding-top:17px;border-top:1px solid #e4e4e4;}
+.tbl_style_01 tr.answer td > div .info:after {content:'';display:block;clear:both;}
+.tbl_style_01 tr.answer td > div .info > strong {float:left;margin-left:30px;}
+.tbl_style_01 tr.answer td > div .info > strong:first-child {margin-left:0;}
+.tbl_style_01 tr.answer td > div .info > span {float:left;margin-left:8px;}
+.tbl_style_01 tr.answer td.is_active {border-top:1px solid #e5e5e5;}
+.tbl_style_01 tr.answer td.is_active > div {display:block;}
+	
+.tbl_style_01 tr td .g_btn_cancle {margin-top:8px;}
+.tbl_style_01 tr td .g_btn_cancle a {display:inline-block;height:23px;line-height:23px;padding:0 17px;color:#fff;border-radius:2px;background:#000;}
+.tbl_style_01 tr td .store_date {padding-left:15px;}
+.tbl_style_01 tr td .store_date > p:after {content:'';display:block;clear:both;}
+.tbl_style_01 tr td .store_date span.t {display:block;float:left;width:28px;height:15px;color:#565656;}
+.tbl_style_01 tr td .store_date span.d {display:block;float:left;max-width:95px;margin-left:3px;color:#111;}
+.tbl_style_01 tr td .store_date .btn {margin-top:8px;text-align:center;}
+.tbl_style_01 tr td .store_date .btn a {display:inline-block;height:21px;line-height:21px;padding:0 15px;border:1px solid #333;border-radius:2px;}
+.tbl_style_01 tr td .res_step {padding-top:18px;color:#111;}
+.tbl_style_01 tr td .res_step.step1 {background:url(http://image.nike.co.kr/web/global/res_step1.gif) no-repeat center top;}
+.tbl_style_01 tr td .res_step.step2 {background:url(http://image.nike.co.kr/web/global/res_step2.gif) no-repeat center top;}
+.tbl_style_01 tr td .res_step.step3 {background:url(http://image.nike.co.kr/web/global/res_step3.gif) no-repeat center top;}
+.tbl_style_01 tr td .res_step.none {padding-top:0;}
+.tbl_style_01 tr td .order_step {padding-top:18px;color:#111;}
+.tbl_style_01 tr td .order_step.step1 {background:url(http://image.nike.co.kr/web/global/order_step1.gif) no-repeat center top;}
+.tbl_style_01 tr td .order_step.step2 {background:url(http://image.nike.co.kr/web/global/order_step2.gif) no-repeat center top;}
+.tbl_style_01 tr td .order_step.step3 {background:url(http://image.nike.co.kr/web/global/order_step3.gif) no-repeat center top;}
+.tbl_style_01 tr td .order_step.step4 {background:url(http://image.nike.co.kr/web/global/order_step4.gif) no-repeat center top;}
+.tbl_style_01 tr td .order_step + p {margin-top:5px;}
+.tbl_style_01 tr td p + p {margin-top:5px;}
+.tbl_style_01 .g_total_area {padding:25px 18px;line-height:1;text-align:right;font-size:14px;color:#111;border-bottom:1px solid #e1e1e1;background:#fafafa;}
+.tbl_style_01 .g_total_area > span {display:inline-block;padding:0 4px;}
+.tbl_style_01 .g_total_area > span img {vertical-align:1px;}
+.tbl_style_01 .g_total_area em {font-weight:bold;color:#fa5400;}
+.tbl_style_01 .g_total_area:after {content:'';display:block;clear:both;}
+.tbl_style_01 .g_total_area .fl {float:left;}
+.tbl_style_01 .g_total_area .fl .btn_cn_save {margin-top:-3px;}
+
+.g_tbl_noti {margin-top:40px;}
+.g_tbl_noti .title {font-size:16px;}
+.g_tbl_noti .tar {margin-top:-7px;font-size:11px;color:#747474;}
+.g_tbl_noti table {width:100%;margin-top:7px;border:1px solid #ebebeb;}
+.g_tbl_noti table th {border-top:1px solid #ebebeb;background:#fafafa;}
+.g_tbl_noti table th > p {padding:15px 0;}
+.g_tbl_noti table th.left {text-align:left;}
+.g_tbl_noti table th.left > p {padding:0 20px;font-weight:normal;}
+.g_tbl_noti table th a img {vertical-align:-3px;}
+.g_tbl_noti table th > div {position:relative;}
+.g_tbl_noti table td {border-top:1px solid #ebebeb;border-left:1px solid #ebebeb;}
+.g_tbl_noti table tr:first-child th,
+.g_tbl_noti table tr:first-child td {border-top:none;}
+.g_tbl_noti table td > p {padding:15px 0;}
+.g_tbl_noti table td > div {padding:25px;line-height:1.5;}
+.g_tbl_noti table td p {line-height:1.8;}
+.g_tbl_noti table td .t {margin-top:20px;font-size:13px;font-weight:bold;color:#111;}
+.g_tbl_noti table td .t:first-child {margin-top:0;}
+.g_tbl_noti table td ul {margin-top:10px;}
+.g_tbl_noti table td ul li {margin-top:3px;padding-left:8px;line-height:1.5;background:url(http://image.nike.co.kr/web/global/dot.gif) no-repeat left 8px;}
+.g_tbl_noti table td ul li > strong,
+.g_tbl_noti table td ul li > span {display:inline-block;padding:0 1px;vertical-align:top;}
+.g_tbl_noti table td ul li .desc {color:#999;}
+.g_tbl_noti table td .btn_a {margin-top:20px;}
+.g_tbl_noti table td .btn_a a {display:inline-block;height:23px;line-height:23px;padding:0 15px;color:#111;border:1px solid #000;border-radius:2px}
+.g_tbl_noti table td p + p {margin-top:5px;}
+.g_tbl_noti table td .clear .fl {margin-left:20px;padding-left:20px;background:url(http://image.nike.co.kr/global/global_bar2.gif) no-repeat left center;}
+.g_tbl_noti table td .clear .fl.bgn {background:none;}
+.g_tbl_noti table td .clear .fl:first-child {margin-left:0;padding-left:0;background:none;}
+.g_tbl_noti table td .clear.lh30 .fl {line-height:30px;}
+.g_tbl_noti table td .txt_line {padding:12px 0;border-top:1px solid #e9e9e9;}
+.g_tbl_noti table td .global_sect_menu_list {margin-top:0;}
+.g_tbl_noti table td .global_sect_menu_list li {margin-top:0;padding-left:0;background:#fff;}
+.g_tbl_noti table td .noti_box_scr {overflow:auto;width:90%;height:135px;padding:5%;border:1px solid #bbb;}
+.g_tbl_noti.t_line {margin-top:10px;border-top:1px solid #333;}
+.g_tbl_noti.t_line table {margin-top:0;border:none;border-bottom:1px solid #ebebeb;}
+.g_tbl_noti.t_line table td > div {padding:15px 30px;}
+.g_tbl_noti.t_line.form {margin-top:40px;}
+.g_tbl_noti.t_line.form table td > p,
+.g_tbl_noti.t_line.form table td > div {padding:10px 20px;line-height:1.5;}
+.g_tbl_noti.t_line.form table td input {height:28px;line-height:28px;vertical-align:top;}
+.g_tbl_noti.t_line.form table td .g_btn_type1 {height:30px;line-height:30px;}
+.g_tbl_noti.t_line.form table td .clear .fl {margin:0 5px 0 0;padding:0;background:none;}
+.g_tbl_noti.t_line.form table td .clear .fl input[type="radio"] {vertical-align:middle;}
+.g_tbl_noti.t_line.form table td .clear.radio .fl {margin-right:20px;}
+.g_tbl_noti.t_line.form table td .global_sect_menu.number,
+.g_tbl_noti.t_line.form table td .global_sect_menu.number .global_sect_field {height:28px;line-height:28px;}
+.g_tbl_noti.t_line.form table td .global_sect_menu.number .global_sect_menu_list {top:29px;}
+
+
+/*매장안내*/
+.global_store_guide {position:relative;margin-top:100px;}
+.global_store_guide .store_sect_find {position:absolute;top:100px;left:110px;width:280px;background:#fff;z-index:100;}
+.global_store_guide .store_find {padding:20px 10px;border-bottom:1px solid #d9d9d9;}
+.global_store_guide .store_find input {width:180px;height:39px;line-height:39px;padding:0 30px 0 40px;border-radius:5px}
+.global_store_guide .store_find > a {display:inline-block;position:absolute;top:20px;left:10px;width:40px;height:38px;line-height:38px;background:url('http://image.nike.co.kr/web/global/global_ico_search2.gif') no-repeat center;}
+.global_store_guide .store_lst {overflow:auto;height:410px;}
+.global_store_guide .store_lst .store_loading {padding:100px 0 30px;text-align:center;font-weight:bold;color:#111;border-bottom:1px solid #d9d9d9;background:url(http://image.nike.co.kr/web/global/global_loading.gif) no-repeat center 50px;}
+.global_store_guide .store_lst .no_store {padding:65px 0;text-align:center;font-weight:bold;color:#111;border-bottom:1px solid #d9d9d9;}
+.global_store_guide .store_lst ul li {position:relative;/*width:180px;*/line-height:1.5;font-size:12px;color:#444;}
+.global_store_guide .store_lst ul li a {display:block;padding:10px 20px 10px 55px;}
+.global_store_guide .store_lst ul li a:hover {background:#f9f9f9;}
+.global_store_guide .store_lst ul li .num {display:inline-block;position:absolute;top:10px;left:20px;width:28px;height:45px;line-height:35px;text-align:center;font-size:14px;color:#fff;background:url(http://image.nike.co.kr/web/global/g_ico_mapFlag02.png) no-repeat;}
+.global_store_guide .store_lst ul li .store_name {font-size:12px;font-weight:bold;color:#111;}
+.global_store_guide .store_lst ul li .store_nc {margin-top:5px;}
+.global_store_guide .store_lst ul li .store_nc > span {display:inline-block;padding:1px 3px;line-height:1.1;font-size:10px;color:#fff;border-radius:2px;background:#fa5400;}
+.global_store_guide .store_lst ul li .store_nc > span.black {background:#000;}
+.global_store_guide .store_lst ul li .store_address {margin-top:3px;}
+.global_store_guide .store_lst ul li .store_address > strong {display:inline-block;color:#111;}
+.global_store_guide .store_lst ul li .store_tel {margin-top:5px;}
+.global_store_guide .store_lst ul li .store_dist {margin-top:8px;}
+.global_store_guide .store_lst ul li.store_direct .num {background:url(http://image.nike.co.kr/web/global/g_ico_mapFlag01.png) no-repeat;}
+.global_store_guide .store_lst_view {border-top:1px solid #d9d9d9;}
+.global_store_guide .store_lst_view a {display:block;padding:15px 25px;font-weight:bold;color:#111;background:url(http://image.nike.co.kr/web/global/global_map_next.gif) no-repeat 240px center;}
+
+.global_store_guide .global_store_layer {position:absolute;width:260px;padding:20px;border-radius:3px;box-shadow:3px 3px 6px #999;background:#fff;}
+.global_store_guide .global_store_layer .store_direct {display:inline-block;width:17px;height:17px;margin:0 5px 0 0;vertical-align:top;background:url(http://image.nike.co.kr/web/global/ico_store_direct.gif) no-repeat;}
+.global_store_guide .global_store_layer .store_name {margin-top:8px;font-size:16px;font-weight:bold;color:#111;}
+.global_store_guide .global_store_layer .store_nc {display:inline-block;}
+.global_store_guide .global_store_layer .store_nc > span {display:inline-block;margin:0 2px;padding:1px 4px;line-height:1.2;vertical-align:top;letter-spacing:0;font-size:12px;color:#fff;border-radius:3px;background:#fa5400;}
+.global_store_guide .global_store_layer .store_nc > span.black {background:#000;}
+.global_store_guide .global_store_layer dl {margin-top:15px;padding:5px 0 10px;line-height:1.5;border-top:1px solid #e5e5e5;}
+.global_store_guide .global_store_layer dl dt {display:inline-block;width:85px;margin-top:10px;vertical-align:top;font-weight:bold;color:#111;}
+.global_store_guide .global_store_layer dl dd {display:inline-block;width:165px;margin-top:10px;vertical-align:top;color:#111;}
+.global_store_guide .global_store_layer dl dd > p {margin-bottom:3px;}
+.global_store_guide .global_store_layer .store_layer_close {position:absolute;top:15px;right:15px;}
+.global_store_guide .global_store_layer .arr {display:inline-block;position:absolute;bottom:-21px;right:30px;width:27px;height:22px;background:url(http://image.nike.co.kr/web/global/global_arr_store.png) no-repeat;}
+
+.global_store_guide .map_area {overflow:hidden;width:100%;height:850px;}
+
+.global_store_lst {width:900px;margin:160px auto 60px}
+.global_store_lst.w980 {width:980px;}
+.global_store_lst > h2 {text-align:center;font-size:28px;color:#111;}
+.global_store_lst > ul.global_storeGrid {margin-left:-100px;}
+.global_store_lst > ul.global_storeGrid .grid-item {float:left;width:220px;padding:55px 0 0 100px;}
+.global_store_lst > ul.global_storeGrid .grid-item a:hover {text-decoration:underline;}
+.global_store_lst > ul.global_storeGrid .grid-item .gloabl_area {font-size:20px;font-weight:bold;color:#111;}
+.global_store_lst > ul.global_storeGrid .grid-item .s_name {display:block;margin-top:20px;font-size:14px;font-weight:bold;color:#111;}
+.global_store_lst > ul.global_storeGrid .grid-item .s_address {display:block;margin-top:5px;}
+.global_store_lst .g_store_searchBox {margin-top:60px;padding:25px 60px;border:1px solid #e1e1e1;border-top:1px solid #999;background:#f5f5f5;}
+.global_store_lst .g_store_searchBox ul:after {content:'';display:block;clear:both;}
+.global_store_lst .g_store_searchBox > ul > li {float:left;width:48%;}
+.global_store_lst .g_store_searchBox > ul > li.last {width:45%;padding-left:6%;border-left:1px solid #e1e1e1;}
+.global_store_lst .g_store_searchBox ul li .t {font-size:14px;font-weight:bold;color:#111;}
+.global_store_lst .g_store_searchBox ul li .con {margin-top:15px;}
+.global_store_lst .g_store_searchBox ul li .con input {height:28px;line-height:28px;vertical-align:top;}
+.global_store_lst .g_store_searchBox ul li .con .g_btn_type1 {height:30px;line-height:30px;}
+.global_store_lst .g_store_searchBox ul li .con:after {content:'';display:block;clear:both;}
+.global_store_lst .g_store_searchBox ul li .con .fl {float:left;margin-right:5px;}
+.global_store_lst .g_store_searchBox ul li .con .global_sect_menu {background:#fff;}
+.global_store_lst .g_store_searchBox + .tbl_style_01 {margin-top:30px;}
+.global_store_lst .tbl_style_01 table td.left p {padding-left:55px;}
+
+
+.g_review_prod {position:relative;min-height:80px;padding-left:100px;}
+.g_review_prod .img {position:absolute;top:0;left:0;}
+.g_review_prod > p {line-height:1.5;color:#666;}
+.g_review_prod > p a {color:#111;}
+.g_review_prod .tit {padding-top:10px;color:#111;}
+.g_review_prod .btn {position:absolute;top:50%;right:0;margin-top:-15px;}
+.g_review_prod .btn a {display:inline-block;height:30px;padding:0 20px;line-height:30px;color:#fff;border-radius:3px;background:#333;}
+
+.g_reserve_prod {position:relative;min-height:80px;padding:10px 0 10px 120px;}
+.g_reserve_prod .img {position:absolute;top:50%;left:0;margin-top:-50px;}
+.g_reserve_prod > p {overflow:hidden;width:100%;line-height:1.5;color:#666;white-space:nowrap;text-overflow:ellipsis;}
+.g_reserve_prod > p a {color:#111;}
+.g_reserve_prod .tit {overflow:hidden;width:100%;padding-top:10px;color:#111;white-space:nowrap;text-overflow:ellipsis;}
+.g_reserve_prod .btn {position:absolute;top:50%;right:0;margin-top:-15px;}
+.g_reserve_prod .btn a {display:inline-block;height:30px;padding:0 20px;line-height:30px;color:#fff;border-radius:3px;background:#333;}
+
+.global_sect_menu.small {width:165px;height:24px;font-size:12px;}
+.global_sect_menu.small .global_sect_field {width:165px;height:24px;padding-top:0;line-height:24px;}
+.global_sect_menu.small .global_sect_field:after {background:url(http://image.nike.co.kr/web/global/global_select_miniarrow.gif) no-repeat center;}
+.global_sect_menu.small .global_sect_field span {display:block;overflow:hidden;height:24px;text-align:left;font-size:12px;}
+.global_sect_menu.small .global_sect_menu_list {top:25px;width:167px;min-width:152px;}
+.global_sect_menu.small .global_sect_menu_list li a {padding-left:10px;text-align:left;font-size:12px;}
+
+.global_sect_menu.middle {width:135px;height:28px;font-size:12px;}
+.global_sect_menu.middle .global_sect_field {width:135px;height:28px;padding-top:0;line-height:28px;}
+.global_sect_menu.middle .global_sect_field:after {background:url(http://image.nike.co.kr/web/global/global_select_miniarrow.gif) no-repeat center;}
+.global_sect_menu.middle .global_sect_field span {display:block;overflow:hidden;height:28px;text-align:left;font-size:12px;}
+.global_sect_menu.middle .global_sect_menu_list {top:29px;width:137px;min-width:132px;}
+.global_sect_menu.middle .global_sect_menu_list li a {padding-left:10px;text-align:left;font-size:12px;}
+
+.global_sect_menu.number {width:75px;height:24px;font-size:12px;}
+.global_sect_menu.number .global_sect_field {width:75px;height:24px;padding-top:0;line-height:24px;}
+.global_sect_menu.number .global_sect_field:after {background:url(http://image.nike.co.kr/web/global/global_select_miniarrow.gif) no-repeat center;}
+.global_sect_menu.number .global_sect_field span {display:block;overflow:hidden;height:24px;text-align:left;font-size:12px;}
+.global_sect_menu.number .global_sect_menu_list {overflow:auto;top:25px;width:76px;min-width:52px;max-height:350px;border-right:1px solid #bbb;}
+.global_sect_menu.number .global_sect_menu_list li {border-right:none;}
+.global_sect_menu.number .global_sect_menu_list li a {padding-left:10px;text-align:left;font-size:12px;}
+.global_sect_menu.number.w145 {width:143px;}
+.global_sect_menu.number.w145 .global_sect_field {width:143px;}
+.global_sect_menu.number.w145 .global_sect_menu_list {width:144px;}
+.global_sect_menu.number.w180 {width:178px;}
+.global_sect_menu.number.w180 .global_sect_field {width:178px;}
+.global_sect_menu.number.w180 .global_sect_menu_list {width:179px;}
+
+.Pdp .content .item-box .right .btn-group .cart-area .btn-type1 {border-radius:3px}
+.Pdp .content .item-box .right .btn-group .cart-area .btn-type1 .right {width:54px;border-radius:2px}
+.Pdp .content .item-box .right .btn-group .g_btn_wish {float:left;width:100%;margin-top:15px;text-align:right;}
+.Pdp .content .item-box .right .btn-group .g_btn_wish a {display:inline-block;padding:0 4px 0 20px;text-decoration:underline;font-size:13px;font-weight:bold;/*background:url(http://image.nike.co.kr/global/g_ico_wish.gif) no-repeat left center;*/}
+.Pdp .content .item-box .right .btn_sizechart_store a {font-size:13px;font-weight:bold;}
+
+.Pdp .content .item-box .right a.btn_storeStock.bt_reserve_service {margin:20px 0 0;padding:0 10px;font-size:12px;color:#fff;text-decoration:none;border-radius:1px;background:#111;}
+.Pdp .content .item-box .right a.btn_storeStock.bt_reserve_service span {display:block;height:22px;line-height:22px;padding-right:10px;font-size:12px;color:#fff;text-decoration:none;background:url(http://image.nike.co.kr/web/global/arr_white.gif) no-repeat right center;}
+.Pdp .content .item-box .right a.btn_storeStock.bt_reserve_service + p {margin-top:5px;color:#888;}
+
+.global_gnb ~ .Pdp, .global_gnb ~ form > .Pdp {padding-top:130px;}
+.global_wishCartArea {position:fixed;top:-190px;left:0;width:100%; z-index:199}
+.global_wishCartArea .right-area {position:relative;width:100%;height:285px; /*background-image:-webkit-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png); */background-color:#fff;  border-bottom:1px solid #bbb;box-shadow:2px 2px 5px #bbb}
+.global_wishCartArea #global_wishArea {position:relative;width:400px;height:287px;margin:0 auto;}
+.global_wishCartArea #global_wishArea .title {padding-top:35px;text-align:center;font-size:20px;font-weight:bold;color:#333;}
+.global_wishCartArea #global_wishArea .prod_area {position:relative;width:195px;margin-top:27px;padding:0 0 0 175px;}
+.global_wishCartArea #global_wishArea .prod_area .img {position:absolute;top:0;left:0;}
+.global_wishCartArea #global_wishArea .prod_area .tit {font-size:12px;color:#111;}
+.global_wishCartArea #global_wishArea .prod_area .opt .color {color:#666;}
+.global_wishCartArea #global_wishArea .prod_area .opt > span {display:inline-block;margin:4px 5px 0 0;font-weight:bold;color:#111;}
+.global_wishCartArea #global_wishArea .prod_area .price {margin-top:9px;padding-top:4px;font-size:17px;color:#fa5400;border-top:1px solid #ccc;}
+.global_wishCartArea #global_wishArea .prod_area .price strong {font-family:helvetica;font-size:18px;}
+.global_wishCartArea #global_wishArea .prod_area .btn {margin-top:10px;}
+.global_wishCartArea #global_wishArea .prod_area .btn a {display:block;height:40px;text-align:center;line-height:40px;color:#fff;border-radius:2px;background:#111;}
+.global_wishCartArea .wish_close {display:block;position:absolute;top:10px;right:10px;background:url(http://image.nike.co.kr/web/btn/btn_layer_close.png) 0 0 no-repeat; width:17px; height:16px; text-indent:-100 00px;}
+
+
+.layer-cart {
+	display:block;
+	z-index:199;
+	position:fixed;
+	top:-190px;
+	overflow:hidden;
+	left:0;
+	height: 285px;
+	width:100%;
+	background-image:url(http://store.nike.com/nikestore/html/img/OneNike/bg-noise.png);
+	background-image:-webkit-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-moz-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-o-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:-ms-linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	background-image:linear-gradient(top,rgba(255,255,255,0.1) 0,rgba(0,0,0,0.1) 100%),url(http://image.nike.co.kr/web/gnb/bg-noise.png);
+	-webkit-box-shadow:0 2px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow:0 2px 2px rgba(0,0,0,0.25);
+	box-shadow:0  2px 2px rgba(0,0,0,0.25);
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#33000000');
+	background-color:#fff;
+	}
+.layer-cart > div {position:relative;width:100%;margin:20px auto;padding:10px 0; }
+.layer-cart ul {width:761px;margin:0 auto;}
+.layer-cart ul li {position:relative;float:none;width:100%;margin:0 auto;text-align:left;line-height:1.3em;font-size:12px;color:#333;}
+.layer-cart ul li:first-child {width:100%;height:105px;text-align:left;background:none;}
+.layer-cart ul li .title {text-align:center;font-size:20px;font-family:"나눔고딕";font-weight:bold;color:#333;}
+.layer-cart ul li .item-tit {margin-top:25px;padding-left:360px;font-weight:bold;}
+.layer-cart ul li .image {position:absolute;top:30px;left:215px;padding:10px 0;}
+.layer-cart ul li .info {padding-left:360px;}
+.layer-cart ul li .order {width:195px;margin-top:5px;padding-left:360px;font-weight:bold;}
+.layer-cart ul li .order span.size {display:inline-block; margin-right:15px;}
+.layer-cart ul li .order span.quantity {display:inline-block; margin-right:15px;}
+.layer-cart ul li .order span.price {display:block;margin-top:10px;padding-top:10px;font-size:16px;color:#fa5400;border-top:1px solid #ccc;}
+.layer-cart ul li .order span.price strong {vertical-align:-1px;font-size:18px;}
+.layer-cart ul li .tPrice {margin-top:40px;font-size:16px;color:#fa5400;font-weight:bold;}
+.layer-cart ul li .dn {margin-top:10px; }
+.layer-cart ul li .btn {padding-left:360px;} /* 20140228 수정 */
+.layer-cart > div> .close {display:block;position:absolute;top:-10px;right:10px;width:17px;height:16px;background:url(http://image.nike.co.kr/web/btn/btn_layer_close.png) 0 0 no-repeat;text-indent:-10000px;} /* 2014-04-08 */
+.layer-cart .btn-type1.btn-black {width:185px;}
+
+
+.layerStoreStock .listwrap {height:253px;}
+.layerStoreStock .listwrap table td .center {text-align:center;}
+.layerStoreStock .listwrap table td .center a.btn_bgColor {padding:5px 8px 9px;border-radius:0;}
+.layerStoreStock .con {padding:20px 25px;}
+.layerStoreStock .con .top .pdttxt p{font-weight:bold; font-size:13px}
+.layerStoreStock{height:570px}
+.layerStoreStock .con .top .pdttxt .note{border-top:0; padding-top:0; margin-top:10px; font-size:12px; font-weight:normal; color:#949393; line-height:16px; padding-left:6px; text-indent:-6px}
+.layerStoreStock .con {padding:23px 27px 20px;}
+.layerStoreStock .con .global_sect_menu.fr {float:right;margin-bottom:10px;}
+.stock_reserve_service {display:none;position:fixed;left:50%;top:50%;width:530px;height:610px;margin-top:-282px;margin-left:-265px;background:#fff;z-index:999;}
+.stock_reserve_service .pophead {position:relative;}
+.stock_reserve_service .pophead .logo {height:32px;background:#333333;}
+.stock_reserve_service .pophead .btn_close {position:absolute;right:0;top:0;}
+.stock_reserve_service .con {position:relative;padding:23px 27px 20px;}
+.stock_reserve_service .con .top {display:inline-block;overflow:hidden;width:100%;padding-bottom:16px;}
+.stock_reserve_service .con .top .pdtimg {float:left;margin-right:13px;border:1px solid #cfcfcf;}
+.stock_reserve_service .con .top .pdtimg img {width:60px;height:60px;}
+.stock_reserve_service .con .top .pdttxt {float:left;}
+.stock_reserve_service .con .top .pdttxt h2 {padding-top:9px;font-size:20px;color:#333333;}
+.stock_reserve_service .con .top .pdttxt p {margin-top:4px;font-size:13px;color:#666666;}
+.stock_reserve_service .con .note {padding-top:12px;color:#999999;border-top:1px solid #e1e1e1;}
+.stock_reserve_service .con .nodata {padding:65px 0 60px;text-align:center;}
+.stock_reserve_service .con .nodata p {padding-top:35px;line-height:18px;color:#838383;background:url(http://image.nike.co.kr/web/stock/bg_storestock_nodata.png) no-repeat center top;}
+.stock_reserve_service .con .postxt {padding-top:170px;border-top:1px solid #e1e1e1;}
+.stock_reserve_service .con .postxt p em {color:#666666;}
+.stock_reserve_service .g_tbl_noti table {table-layout:fixed}
+.stock_reserve_service .g_tbl_noti table td p {line-height:1.3;}
+
+.stock_reserve_service .g_noti {margin-top:15px;line-height:1.5;color:#777;}
+.stock_reserve_service .g_btn_area {margin-top:0;}
+
+#content.global_content {width:1130px;padding:0 40px;}
+.global_content:after {content:'';display:block;clear:both;}
+.global_content .global_mypage_lnb {float:left;width:180px;padding:160px 0 60px;}
+.global_content .global_mypage_lnb .global_nav_tit {margin-bottom:11px;}
+.global_content .global_mypage_lnb .global_nav_tit h2 {font-size:18px;font-weight:normal;}
+.global_content .global_mypage_lnb .global_nav_tit span {display:inline-block;margin-right:16px;width:50px;height:22px;line-height:23px;text-align:center;vertical-align:2px;font-size:12px;font-weight:bold; color:#fff; background:#000; border-radius:2px; }
+.global_content .g_title {margin-top:30px;}
+.global_content .g_title + .g_tbl_noti {margin-top:20px;}
+/*.global_content .g_title h3 {float:left;font-size:18px;line-height:30px;}
+.global_content .g_title h4 {float:left;font-size:16px;line-height:30px;}
+.global_content .g_title h4 > span {display:inline-block;padding-left:5px;font-size:13px;color:#666;}*/
+
+.global_mypage_lnb ul:after {display:block; clear:both; content:"";}
+	.global_mypage_lnb ul {padding:15px 0;border-top:1px solid #d9d9d9;}
+	.global_mypage_lnb ul li {padding:5px 0;}
+	.global_mypage_lnb ul li a {color:#fa5400;}
+	.global_mypage_lnb ul li:last-child {margin-bottom:0;}
+	.global_mypage_lnb ul li a {color:#111;}
+	.global_mypage_lnb ul li a.active,
+	.global_mypage_lnb ul li a.is_active {font-weight:bold;color:#fa5400;}
+
+.global_gnb ~ #content.global_content .cat_order {width:900px;padding-top:160px;}
+
+.global_content .cat_order {float:right;padding:160px 0 60px;}
+	.global_content .cat_order .mycat {width:900px;border-bottom:none;}
+	.global_content .cat_order .mycat h1 {padding-bottom:30px;text-align:center;}
+	.global_content .cat_order h2.tit3.g_title_line {padding-bottom:10px;border-bottom:1px solid #999;}
+	.global_content .cat_order h2.tit3.g_title_line + .texyN3 {margin-top:-25px;}
+	.global_content .cat_order div.texRE div {margin-top:-3px;}
+	.global_content .cat_order div.texRE div.nt {margin-top:-9px;}
+
+.global_content .mypage_point {margin:10px 0 30px; padding:14px 0; border:1px solid #e1e1e1; background:#f5f5f5;}
+	.global_content .mypage_point ul:after {display:block; clear:both; content:"";}
+	.global_content .mypage_point ul > li {float:left;width:16.5%;padding:16px 0 14px;text-align:center;font-size:14px;font-weight:bold;border-left:1px solid #d8d8d8;}
+	.global_content .mypage_point li:first-child {border-left:none;}
+	.global_content .mypage_point li a {display:block;margin-top:6px;font-size:23px;font-weight:normal;color:#111;}
+	.global_content .mypage_point li a span {display:inline-block;padding:0 3px;vertical-align:-2px;font-size:27px;font-weight:bold;color:#fa5400;}
+
+.global_content .cat_order .join3 {height:auto;margin-top:20px;padding:20px;border:1px solid #e1e1e1;background:#f5f5f5;}
+.global_content .cat_order .join3 strong {display:inline-block;margin-right:5px;line-height:30px;font-size:14px;}
+.global_content .cat_order .join3 input {width:70px;height:30px;padding:0;text-align:center;font-size:12px;letter-spacing:0;border:1px #ccc solid;color:#666;}
+.global_content .cn_tex #txt_period {color:#fa5400;}
+
+.global_content .ln03 {margin-top:20px;text-align:center;}
+
+.global_content select {min-width:100px;height:30px;line-height:30px;}
+.global_content .deposit_tit {margin-top:16px;font-family:'Malgun Gothic';font-size:15px;font-weight:bold;color:#222;}
+.global_content .deposit_tit em {color:#ff5400;}
+.global_content .deposit_txt + .deposit_txt {margin-top:0;}
+
+
+/* wishlist */
+.global_gnb ~ #wrap > .contents.global_content {width:1130px;padding:0 40px;}
+
+.contents.global_content .g_content_wrap {float:right;width:900px;padding-top:160px;padding-bottom:60px}
+.contents.global_content .global_mypage_lnb {padding-top:80px;}
+.contents.global_content .g_content_wrap h3 {margin-top:0;text-align:center;}
+.g_content_wrap .lockerTop {background:none;width:900px;}
+.g_content_wrap .lockerTop .selectBtn {right:0;}
+.g_content_wrap .lockerTop .listTab > span {font-family:'나눔고딕';}
+.g_content_wrap .listTable {border-top:1px solid #333; border-bottom:1px solid #ccc;}
+.g_content_wrap .listTable table {width:100%;text-align:center;}
+.g_content_wrap .listTable table thead tr th {height:39px;border-bottom:1px solid #ccc; color:#333;font-family:'나눔고딕';line-height:27px; letter-spacing:-1px;}
+.g_content_wrap .listTable table tbody tr td {padding:15px 0; border-top:1px solid #eee; color:#333;font-family:'나눔고딕';letter-spacing:-0.2px;}
+.g_content_wrap .listTable table tbody tr td.alL {padding-left:12px;}
+.g_content_wrap .listTable table tbody tr td.price {font-weight:bold;}
+.g_content_wrap .listTable table tbody tr td.price .sale {color:#ccc;font-weight:normal;display:block;text-decoration: line-through;margin-bottom:2px;}
+.g_content_wrap .listTable table tbody tr td.order {color:#666; font-weight:bold;}
+.g_content_wrap .listTable table tbody tr td.dataNo {padding:50px 0 67px; color:#666;}
+.g_content_wrap .listTable table tbody tr td .btn-type6 span {min-width:20px;}
+.g_content_wrap .listTable table tbody tr td > a.btn {display:block; width:100%;}
+.g_content_wrap .listTable table tbody tr td > a.btn .pro_img_box {position:relative;display:inline-block;vertical-align:middle;}
+.g_content_wrap .listTable table tbody tr td > a.btn .pro_img_box img {float:none;}
+.g_content_wrap .listTable table tbody tr td > a.btn .pro_img_box .soldout {display:block;position:absolute;bottom:0;left:0;width:100%;line-height:22px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);text-align: center;}
+.g_content_wrap .listTable table tbody tr td > a.btn dl {display:inline-block;vertical-align:middle;float:none;max-width:270px;margin-left:20px;}
+.g_content_wrap .listTable table tbody tr td > a.btn dl dt {margin:1px 0 6px;}
+.g_content_wrap .listTable table tbody tr td > a.btn dl dd {color:#666; font-size:11px; line-height:15px;}
+
+/*.g_content_wrap .listTable table th .global_check_box + label {top:-7px}*/
+.g_content_wrap .listTable table th .global_check_box + label {top:0;width:50px;left:35%;padding-left:15px;text-indent:0;}
+.g_content_wrap .listTable table th .global_check_box + label span {display:inline-block;margin-top:1px;line-height:1;}
+.g_content_wrap .listTable table th .global_check_box + label:after {top:10px;}
+
+.g_content_wrap .btn-type6.btn-black span.right {min-width:60px;}
+.g_content_wrap .btn-tbl-type2.btn-white02 {display:inline-block; width:68px; height:23px; border:1px solid #ccc; border-radius:2px; background:#e6e6e6; color:#111; text-align:center; line-height:23px; vertical-align:middle;}
+.g_content_wrap .btn-tbl-type2.btn-white02 span.right {background:none;}
+
+.paging {width:100%; margin-top:10px; text-align:center;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { .paging {margin-top:24px} }
+.paging > a {display:inline-block; padding:0 9px; border-left:1px solid #ccc; color:#666; font-weight:bold; line-height:19px;}
+*:first-child + html .paging > a {text-indent:0px;}
+.paging > a.fir {border:none;}
+.paging > a.prev, .paging > a.next {overflow:hidden; position:relative; top:10px; *top:0; width:27px; height:27px; padding:0; border:none; background:url(http://image.nike.co.kr/web/btn/btn_paging.png) no-repeat; *font-size:0; text-indent:-9999px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { .paging > a.prev, .paging > a.next {top:-4px;} }
+.paging > a.prev {background-position:0 0;}
+.paging > a.prev:hover, .paging > a.prev:focus, .paging > a.prev:active {background-position:0 -27px;}
+.paging > a.next {background-position:-27px 0;}
+.paging > a.next:hover, .paging > a.next:focus, .paging > a.next:active {background-position:-27px -27px;}
+.paging > a.on, .paging > a:hover, .paging > a:focus, .paging > a:active {color:#fa5400;}
+
+.g_content_wrap .paging > a {border:none;cursor:pointer;font-family:Tahoma;font-size:13px;}
+.g_content_wrap .paging > a.prev {background:url(http://image.nike.co.kr/web/pre/category/btn_prev.gif) no-repeat center;}
+.g_content_wrap .paging > a.next {background:url(http://image.nike.co.kr/web/pre/category/btn_next.gif) no-repeat center;}
+.g_content_wrap .paging > a.prev,
+.g_content_wrap .paging > a.next {top:8px;*top:0;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.g_content_wrap .paging > a.prev,.g_content_wrap .paging > a.next {top:8px;}
+}
+
+/* promotion */
+.g_promotion_top {position:relative;}
+.g_promotion_top .texyN4 {position:absolute;top:-38px;right:0;margin:0;font-size:13px;}
+.g_promotion_top a.g_btn_promotion {position:absolute;top:50%;right:0;margin-top:-15px;height:30px;line-height:30px;padding:0 12px;color:#fff;border-radius:3px;background:#333;}
+
+#promotionCode.layer_pop_new {display:none;left:50%;margin:-225px 0 0 -185px;z-index:1000}
+#promotionCode.layer_pop_new .layer_bg {width:310px;height:auto;padding:30px;border-radius:3px;}
+#promotionCode.layer_pop_new .txt_box {border:none;}
+#promotionCode.layer_pop_new .txt_box p.tit {font-size:14px;}
+#promotionCode.layer_pop_new .form_box {padding:0 0 20px;border-bottom:1px solid #ccc;background:none;}
+#promotionCode.layer_pop_new .form_box input[type="text"] {width:308px;height:38px;padding:0;text-indent:5px;line-height:38px;border:1px solid #000;}
+#promotionCode.layer_pop_new .form_box a {display:block;height:40px;line-height:40px;margin-top:12px;text-align:center;color:#fff;background:#111;}
+#promotionCode.layer_pop_new .btn_close {top:34px;right:40px;}
+#promotionCode.layer_pop_new .txt_box li {padding-left:10px;line-height:1.5;color:#777;background:url(http://image.nike.co.kr/web/ico/bl_dot.png) no-repeat left 6px;}
+
+
+.alert_vew08 div.btn_close8 {top:34px;right:40px;}
+.alert_vew08 div.tq .tq01 .title {margin-bottom:20px;border-bottom:1px solid #ddd;}
+.alert_vew08 div.tq .tq01 .em01 {text-align:center;}
+.alert_vew08 div.tq .tq01 .em01 p {margin-bottom:15px;}
+.alert_vew08 div.tq .tq01 .em02 {width:200px;margin-left:37px;}
+.alert_vew08 div.tq .tq01 .em02 .prod_name {margin-top:10px;font-size:18px;font-weight:bold;color:#222;}
+.alert_vew08 div.tq .tq01 .em02 div {text-align:left;}
+.alert_vew08 div.tq .tq02 {background:#fff;}
+.alert_vew08 div.tq .option_area {margin:20px auto 0;}
+.alert_vew08 div.tq .option_area li {padding: 0;margin-left: 10px;width: 55px;height: 55px;}
+.alert_vew08 div.tq .option_area li a {display:block;position:relative;}
+.alert_vew08 div.tq .option_area li.active a:after {content:'';position:absolute;top:0;left:0;border:2px solid #333;box-sizing:border-box;width:100%;height:100%;}
+
+
+.global_content .order_no {border-top:1px solid #333;}
+.order_no table td p.blt1 img {margin-top:-5px;}
+.global_content .orderTmx5 {margin-top:10px;}
+.global_content .orderTmx5 .order_no {width:700px;}
+.global_content .order_no table th {padding:8px 5px;font-weight:bold;border-bottom:1px solid #ebebeb;background:#f9f9f9;}
+.global_content .order_no table td {border-bottom:1px solid #ebebeb;}
+.global_content .order_no table tr.tns th {background:#f9f9f9;}
+.global_content .order_no table tr.tns th.left {text-align:left;font-size:12px;color:#333;}
+.global_content .order_no table tr.tns td {background:none;}
+.global_content .order_no table td p.g_name {margin-bottom:5px;font-size:13px;}
+.global_content .order_no table td p.g_name strong {font-size:13px;}
+.global_content .order_etc {width:700px;border:none;}
+.global_content .order_etc .etc_close,
+.global_content .order_etc .etc_view {border:1px solid #ebebeb;border-top:none;background:#f9f9f9;}
+.global_content .order_etc .etc {width:700px;border:none;}
+.global_content .order_etc .etc p {padding:0;}
+.global_content .order_etc .etc table {width:100%;margin:10px 0;padding:0;}
+.global_content .orderRt2 {width:180px;}
+.global_content .orderRt2 div {border-top:1px solid #333;border-radius:0;background:none;}
+.global_content .orderRt2 div dl {margin:0;}
+.global_content .orderRt2 div dl dt {width:60px;}
+.global_content .orderRt2 div dl dd {width:95px;}
+.global_content .orderRt2 div dl dt.con {padding:7px 0 7px 15px;}
+.global_content .orderRt2 div dl dt.con2 {padding:7px 0 7px 15px;}
+.global_content .orderRt2 div dl dd.con {padding:7px 10px 7px 0;}
+.global_content .orderRt2 div dl dd.con2 {padding:7px 10px 7px 0;color:#ff5400;}
+.global_content .orderRt2 div strong.te01 {margin:0;border-top:1px solid #d1d1d1;background:#f9f9f9;}
+.global_content .orderRt2 div strong.te02 {margin:0;padding-top:5px;background:#f9f9f9;}
+.global_content .orderRt2 div strong.te02 em {vertical-align:-2px;}
+.global_content .order_no .btn_cn {padding:0;text-align:center;}
+.global_content .order_etc .etc table {border-top:1px solid #333;}
+
+
+
+/* mypage_review3 */
+.orderList_b.gigiiboc table th {padding: 12px 0 10px !important;}
+.orderList_b.gigiiboc table td {padding: 28px 0px !important;position:relative;}
+.orderList_b.gigiiboc a.g_btn_type1 {position:absolute;top:20px;right:20px;padding:4px 27px !important;color:#fff}
+.orderList_b.gigiiboc table td.lins a:hover {text-decoration:none;}
+
+/* mypage_user */
+.global_content .btn-type1.btn-orange {background:none;}
+.global_content .btn-type1.btn-gray {background:none;}
+#wrap .contents.global_content {width: 1130px;padding:0 !important;margin: 0 auto;}
+#wrap .contents.global_content .global_mypage_lnb {float:left;width:180px;padding-top:160px;text-align:left}
+#wrap .contents.global_content .cat_order {float:right;position:relative;width:900px;padding:160px 0 60px;}
+#wrap .contents.global_content:after {content: '';display: block;clear: both;}
+#wrap .contents.global_content .cat_order h2.tit3 {padding-top: 30px;}
+#wrap .contents.global_content .cat_order .tabN {margin-top: 15px;overflow:hidden}
+#wrap .contents.global_content .cat_order .tabN li {float:left;}
+
+#wrap .contents.global_content .contentBox {padding-top:0;}
+#wrap .contents.global_content .contentBox .memberInfo {background:none;}
+#wrap .contents.global_content .contentBox .memberInfo .infoBox .data {width:auto;padding:0;border:none;}
+#wrap .contents.global_content .contentBox.bgM1_1 {background:none;}
+#wrap .contents.global_content .memberInfo .infoBox .data .basic {float:none;width:100%;padding:0;border:0;}
+#wrap .contents.global_content .memberInfo .infoBox .data .address {float:none;width:100%;padding:0;border:0;}
+#wrap .contents.global_content .contentBox .memberInfo .infoBox {background:none;}
+.contents.global_content .infoInput table {width:100%;border-top:1px solid #111;}
+.contents.global_content .infoInput > table tbody tr th,
+.contents.global_content .infoInput > table tbody tr td {font-family:'나눔고딕', 'nanumgothic';}
+.contents.global_content .infoInput > table tbody tr th {border-bottom:1px solid #ebebeb;background:#f9f9f9;}
+.contents.global_content .infoInput > table tbody tr th p {padding:0;text-align:center;background:none;}
+.contents.global_content .infoInput > table tbody tr td {padding:10px;border-bottom:1px solid #ebebeb;}
+.contents.global_content .infoInput > table tbody tr td input[type="radio"] {vertical-align:middle;}
+.contents.global_content .checkType01 {font-family:'나눔고딕', 'nanumgothic';}
+.contents.global_content .layerLabel,
+.contents.global_content .layerLabel02 {width:100%;padding:0;text-align:center;background:none;}
+.contents.global_content .btnAlign {text-align:center;border:none;}
+.contents.global_content .memberInfo .infoBox .data .withdraw {display:block;height:50px;line-height:50px;padding:0 30px;text-decoration:none;border-top:1px solid #000;border-bottom:1px solid #ebebeb;background:url(http://lecs.nike.co.kr/NKS1/web/ico/ico-arrow-right02.png) no-repeat 870px 22px #f9f9f9;}
+
+/* mypage_receipt_list */
+.global_content .cat_order .join3 {margin:5px 0 30px;border-top:1px solid #999}
+.global_content .tdnt table th {padding: 12px 0 12px !important;}
+.global_content .tdnt table td {font-weight:normal;}
+
+.global_content .orderList_b table td  strong.pic {color:#333;font-weight:normal;}
+.global_content .tdnt table td .pro_title {display:block;text-align:left;font-weight:bold;padding:0px 0px 5px 40px;}
+.global_content .tdnt table td .pro_option {display:block;text-align:left;padding:0px 0px 5px 40px;}
+.global_content .tdnt table td .pro_size {display:block;text-align:left;padding:0px 0px 5px 40px;}
+
+.global_content .memberInfo .infoBox .data .address .info {margin-top:10px;}
+.global_content .memberInfo .infoBox .data .address .info dd {position:relative;}
+.global_content .memberInfo .infoBox .data .address .info dd .g_btn_a {position:absolute;top:-10px;right:0;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable {border-top:1px solid #333;border-bottom:1px solid #999;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .thead {height:40px;line-height:40px;font-weight:bold;color:#333;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .thead:after {content:'';display:block;clear:both;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .thead .t1 {float:left;width:800px;text-align:center;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .thead .t2 {float:right;width:90px;text-align:center;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add.no-data {padding:80px 0;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add {padding:20px 0;border-top:1px solid #e5e5e5;border-bottom:none;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add span {display:block;margin:2px 0}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add > .btn-tbl-type2 {top:50%;margin-top:-12px;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add > .btn-tbl-type2.btn1 {top:50%;margin-top:-25.5px;right:20px}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add > .btn-tbl-type2.btn2 {bottom: 50%;margin-top: 4.5px;right: 20px;}
+.global_content .memberInfo .infoBox .data .address .info dd .dataTable .add .checkType03 {margin:0}
+
+/*ê³„ì¢Œê´€ë¦¬*/
+.global_content .nmFL {width:100%;}
+.global_content .nmFR {width:100%;}
+.global_content .orderList table td strong {display:inline-block;padding:0 5px;}
+
+
+/* mypage_receipt_tax */
+#wrap.tax .contents .txt {margin-top:0}
+#wrap.tax div.tax_apply {margin-top: 40px;border-top:1px solid #333}
+#wrap.tax div.tax_apply dl {width:100%;line-height:50px;height:50px;padding:0;}
+#wrap.tax div.tax_apply dl dt.bs_nm {margin:0;padding:0;}
+#wrap.tax div.tax_apply dl dd {margin:0;padding:0;}
+#wrap.tax div.tax_apply dl dd p {margin:0}
+#wrap.tax div.tax_apply dl dd .vmid {margin-left:5px}
+#wrap.tax .orderList_b table th {border-top:1px solid #333;padding:12px 0}
+#wrap.tax .orderList_b table td {padding:24px 0}
+#wrap.tax .orderList_b table td strong {color:#fa5400}
+
+
+/*layer pop*/
+/*.popLayer.typeS .btnAlign {text-align:center;border:none;}*/
+.contents .layerLabel,
+.contents .layerLabel02 {font-family:'나눔고딕', 'nanumgothic';}
+.popLayer.typeS select {min-width:83px;padding:4px 4px 4px 0;}
+.contents .inputType03 {vertical-align:top;}
+.popLayer.typeS .contents .btnAlign {text-align:center;border-top:none;}
+.contents .inputType06 {width:343px;}
+.popLayer.typeS .layerBox .contents .sectionL {width:410px;padding-right:0;}
+.popLayer.typeS .layerBox .contents .sectionR,
+.popLayer.typeS .layerBox .contents .sectionR02 {width:410px;padding:0;border:none;}
+.popLayer.typeS .layerBox .contents .sectionR h4 {padding:30px 0 0;font-size:14px;border:none;}
+.popLayer.typeS .layerBox .contents .desc {margin-top:10px;padding:0;border:none;background:none;}
+
+.popLayer.typeS .contents .close {top:30px;right:45px;}
+
+/* mypage_receipt_popup */
+#popContent.global_content .tin_gm {padding-bottom: 0;width: 100%;border: none;padding: 0;background:none}
+#popContent.global_content .tin {padding:20px 0 40px;}
+#popContent.global_content .tin_gm p {margin-bottom: 10px;padding: 10px 20px;text-align: left;}
+#popContent.global_content .tin_gm ul {border:none;margin:10px 0 0 0}
+#popContent.global_content .tin_gm ul.first {float:left;width:60%;}
+#popContent.global_content .tin_gm ul.second {float:right;width:40%;}
+
+#popContent.global_content .orderList_b table th {border-top: 1px #333 solid;padding:10px 0 !important;}
+#popContent.global_content .orderList_b table td strong {color:#333}
+#popContent.global_content .orderList_b table td {padding:20px 0 !important;}
+
+#popContent.global_content .tatcon02 {background:#fafafa}
+#popContent.global_content .txt01 {padding:10px 0 30px;}
+#popContent.global_content .pop_bn {margin:20px 0 50px}
+
+.global_content .alert_vew10 {}
+.global_content .alert_vew10 input[type=text] {height:29px;vertical-align:top;}
+.global_content .alert_vew10 .png_bg {width:400px;padding:0 25px;}
+.alert_vew10 div.tq {width:100%;padding:0;}
+.alert_vew10 div.tq .tq01 {width:100%;}
+.alert_vew10 div.tq .tq03 {padding-top:5px;}
+.alert_vew10 div.tq .tq03 dl:after {content:'';display:block;clear:both;}
+.alert_vew10 div.tq .tq03 dl dt {float:left;width:30%;height:36px;margin:7px 0 0;padding-top:4px;text-align:center;border-bottom:1px solid #ebebeb;}
+.alert_vew10 div.tq .tq03 dl dd {float:left;width:70%;height:40px;margin:7px 0 0;border-bottom:1px solid #ebebeb;}
+.alert_vew10 div.tq .tq05 {margin:15px 0 30px;}
+.alert_vew10 div.btn_close {top:25px;right:25px;}
+
+/*review pop*/
+.pop_reviewTex01 {padding:20px 0;font-family:'나눔고딕', 'nanumgothic';border:none;}
+.pop_reviewTex01:after {content:'';display:block;clear:both;}
+.pop_reviewTex01 .tit {float:left;padding:0;font-family:'나눔고딕', 'nanumgothic';font-size:16px;background:none;}
+.pop_reviewTex01 .tit strong {font-family:'나눔고딕', 'nanumgothic';font-size:16px;}
+.pop_reviewTex01 .tit span {font-family:'나눔고딕', 'nanumgothic';font-size:16px;}
+.pop_reviewTex01 .tit a span {font-family:'나눔고딕', 'nanumgothic';font-size:12px;color:#fff;}
+.pop_reviewTex01 .tit .lps_btn_type1 {margin-left:10px;vertical-align:2px;}
+.pop_reviewTex01 .tit .lps_btn_type1 span {display:inline-block;line-height:26px;font-size:11px;}
+.in_pop_reviewTex01 {float:right;width:auto;margin:8px 0 0;font-family:'나눔고딕', 'nanumgothic';}
+.in_pop_reviewTex01 .lt {border:none;}
+.in_pop_reviewTex01 ul li {text-align:right;font-family:'나눔고딕', 'nanumgothic';}
+.in_pop_reviewTex01 ul li span {text-align:left;}
+.pop_reviewList01 {border-top:1px solid #ccc;}
+.pop_reviewList01 table td.lns00 {padding-left:100px;}
+.pop_reviewList01 table td.lns01 > div {margin-top:-23px;}
+.pop_reviewList01 table td.lns02 div {margin-left:10px;text-align:left;}
+.pop_reviewList01 table td.lns02 div:after {content:'';display:block;clear:both;}
+.pop_reviewList01 table td.lns02 div a.access_btn_report {float:right;margin-top:-2px;}
+
+.popLayer .layerBox .contents h4 {padding-bottom:10px;font-size:16px;}
+
+
+
+
+
+/* 20160714 1:1 이메일문의 내역 */
+#content.inquiry .tit3 {margin-bottom:20px;}
+#content.inquiry .tit3 a {float:right}
+#content.inquiry .orderList td {padding: 21px 10px 22px;}
+#content.inquiry .orderList td.no_data {padding: 80px 0;text-align:center;}
+#content.inquiry .orderList tr.answer {display:none;padding: 35px 50px;background: #f9f9f9;line-height: 1.5;}
+#content.inquiry .orderList tr.answer .is_active {padding: 35px 50px;text-align: left;background: #f9f9f9;}
+#content.inquiry .orderList tr.answer .q {position:relative;padding-left: 55px;text-align:left;}
+#content.inquiry .orderList tr.answer .a {position:relative;margin-top: 20px;padding-left: 55px;text-align:left;}
+#content.inquiry .orderList tr.answer .t {position:absolute;top:0;left:0;}
+#content.inquiry .orderList tr.answer .q span {margin-top:20px;display:block;}
+#content.inquiry .orderList tr.answer .q span strong {padding:0 5px 0 0;margin-bottom:10px;}
+#content.inquiry .orderList tr.answer .q .t {font-size: 15px;font-weight: bold;color: #222;}
+#content.inquiry .orderList tr.answer .q .pro {text-align:left;padding:22px;}
+#content.inquiry .orderList tr.answer .q .pro img {margin-right:25px;}
+#content.inquiry .orderList tr.answer .q .pro p {display:inline-block;}
+#content.inquiry .orderList tr.answer .a .t {font-size: 15px;font-weight: bold;color: #fa5400;}
+#content.inquiry .orderList table td.lins p.lt {background:url(http://image.nike.co.kr/web/pre/myshop/arr_answer.gif) no-repeat left 9px;}
+
+/* 20160712 취소팝업,교환팝업,반품팝업 공통 */
+#popContent.mypage_cancle {max-width:990px;margin:0 auto;line-height:1.5}
+#popContent.mypage_cancle .title {display:block;font-weight:bold;font-size: 22px;margin:35px 0 25px;padding:0} /* 타이틀 */
+#popContent.mypage_cancle .tits {margin-bottom:10px;} /* 주문번호표기란 */
+#popContent.mypage_cancle .title2 {display:block;font-weight:bold;font-size: 14px;margin:30px 0px 15px;padding:0} /* 타이틀2 */
+#popContent.mypage_cancle .title2 span,
+#popContent.mypage_cancle .title2 strong {font-weight:bold;display: inline-block;padding-left: 10px;font-size: 13px;color: #fa5400;} /* 타이틀2 부제 */
+#popContent.mypage_cancle .orderList {position:relative;} /* 상품리스트 */
+#popContent.mypage_cancle .cancle_btn {position:absolute;bottom:20px;left:20px;} /* 취소버튼 */
+#popContent.mypage_cancle .righ {margin:0 10px;} /* +-= 기호 간격 */
+#popContent.mypage_cancle .orderList th {padding:13px 0 11px;border-top: 1px #333 solid;} /* 상품리스트 th border,padding 값 */
+#popContent.mypage_cancle .orderList td {padding:15px 0 12px;border-top: 1px #ccc solid;border-bottom: 1px #ccc solid;} /* 상품리스트 td border,padding 값 */
+#popContent.mypage_cancle .clear-btn {display: inline-block;min-width: 140px;height: 40px;line-height: 40px;margin: 0 2px;padding: 0 10px;text-align: center;font-size: 13px;color: #fff;border-radius: 3px;background: #fa5400;}
+#popContent.mypage_cancle .cancle-btn {display: inline-block;min-width: 140px;height: 40px;line-height: 40px;margin: 0 2px;padding: 0 10px;text-align: center;font-size: 13px;color: #fff;border-radius: 3px;background: #111;}
+
+/* 20160712 mypage_cancle_pop 취소팝업 */
+#popContent.popup1 .orderList td.lns02 div.dummy45 img {width:inherit;height:inherit;}
+#popContent.popup1 .orderList td.lns04 {text-align:center;padding-left:0}
+#popContent.popup1 .orderList td.lns04 div {float:none}
+#popContent.popup1 .orderList td.lns04 input[type=text] {margin:0}
+#popContent.popup1 .orderList td.lns09 {text-align:center;}
+#popContent.popup1 .orderList td.lns09 strong.saleAmount_strong {color: #fa5400;}
+#popContent.popup1 .orderList td.lns12 {padding:0 10px;}
+#popContent.popup1 .orderList td.lns12 select {height:24px;width:100%}
+#popContent.popup1 .orderList td.lns02 div.ms strong {font-size:1em;padding:0 0 5px;}
+#popContent.popup1 .orderList td.lns02 div.ms span {font-size:1em;padding:0 0 5px;}
+#popContent.popup1 .orderList td.lns02 div.ms p {font-size:1em;padding:0 0 5px;}
+#popContent.popup1 .orderList td.lns08 {padding: 25px 18px;background: #fafafa;font-size: 14px;color: #111;border-bottom: 1px solid #e1e1e1;line-height: 1;text-align: right;}
+#popContent.popup1 .orderList td.lns08 p {}
+#popContent.popup1 .orderList_b th {padding:10px 0 !important;text-align:center;border-top: 1px solid #333;font-weight:bold;}
+#popContent.popup1 .orderList_b td {padding:20px 0 !important;text-align:center;}
+#popContent.popup1 .tdnt table td.cons3 strong em {color: inherit !important;}
+#popContent.popup1 .tatcon {padding: 25px 18px;line-height: 1;text-align: right;font-size: 14px;color: #111;border-bottom: 1px solid #e1e1e1;background: #fafafa;}
+#popContent.popup1 .odagree_type02 > p {margin-top: 10px;padding: 25px;border: 1px solid #eaeaea;background: #fbfbfb;font-size:1em}
+#popContent.popup1 .g_agree_box {margin-top: 10px;padding: 25px;border: 1px solid #eaeaea;background: #fbfbfb;}
+#popContent.popup1 .tdnt table td a.g_btn_type1  {color:#fff}
+#popContent.popup1 .g_realAccount {display:none;}
+#popContent.popup1 .g_realAccount .g_btn_type1 {width:50px;height:26px;line-height:26px;}
+#popContent.popup1 .g_realAccount > div:after {content:'';display:block;clear:both;}
+#popContent.popup1 .g_realAccount em {font-weight:bold;color:#000;}
+#popContent.popup1 .global_sect_menu {width:165px;height:26px;margin:0 auto;font-size:12px;float:left;margin-right:2px;position:relative;}
+#popContent.popup1 .global_sect_menu .global_sect_field {display:block;width:100%;height:26px;position:relative;}
+#popContent.popup1 .global_sect_menu .global_sect_field span {display:block;height:24px;line-height:24px;border:1px solid #ccc;padding:0 10px;}
+#popContent.popup1 .global_sect_menu .global_sect_field:after {position: absolute;top: 50%;right: 10px;display: inline-block;margin-top: -4px;width: 18px;height: 10px;background: url('http://image.nike.co.kr/web/global/global_select_arrow2.gif') no-repeat;line-height: 1px;vertical-align: middle;content: '';}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list {display:none;position: absolute;top: 26px;left: 0;width:165px;}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li {line-height:32px;border:1px solid #ccc;border-top:none;height:32px;background:#fff}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li a {display:block;position:relative;}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li a:after {display:none;content:'';position:absolute;top:50%;left:0px;margin-top:-11px;border-left:2px solid #111;height:22px;}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li.active a:after {display:block;}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li.active a {background:#eee}
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li a:hover,
+#popContent.popup1 .global_sect_menu .global_sect_menu_list li.active a:hover {background:#e5e5e5}
+#popContent.popup1 .raStep_enr .fl {display:block;float:left;margin-right:2px;}
+
+/* 20160712 mypage_change_pop 교환팝업 */
+#popContent.popup2 .pop_cp p.tits span {float:right;color:#333}
+#popContent.popup2 .orderList table td.lns02 div.dummy45 img {width: inherit;height: inherit;}
+#popContent.popup2 .orderList table td.lns02 div.ms {float:none;display:inline-block;vertical-align:middle;}
+#popContent.popup2 .orderList table td.lns02 div.ms strong {display:block;width:130px;margin:0;padding:0}
+#popContent.popup2 .orderList table td.lns02 div.ms span {display:block;width:130px;margin:0;padding:0}
+#popContent.popup2 .orderList table td.lns02 div.ms p {display:block;width:130px;margin:0;padding:0}
+#popContent.popup2 .orderList table td.lns03 strong {font-weight:normal}
+#popContent.popup2 .global_sect_menu {float:none}
+#popContent.popup2 .orderList table td.lns03 input {width: 25px;text-align: right;padding-right: 5px;line-height: 18px;height: 18px;}
+#popContent.popup2 .popup2-btn1 {width: auto;padding: 3px 10px;height: auto;line-height: 1.5;text-align: center;color: #fff;border-radius: 2px;background: #333;white-space: nowrap;display:inline-block;}
+#popContent.popup2 .orderList td {text-align:center;}
+#popContent.popup2 .orderList td.lns13 {color: #fa5400;}
+#popContent.popup2 .orderList td.lns13 span {color: #333;}
+#popContent.popup2 .orderList td.lns02 {text-align:left;}
+#popContent.popup2 .orderList table td.lns03 > div {display:inline-block;vertical-align:middle;float:none;}
+#popContent.popup2 .orderList table td.lns03 div.be {display:inline-block;vertical-align:middle;float:none;}
+#popContent.popup2 .order_no {border-top:1px solid #333;}
+#popContent.popup2 .order_no table tr.tns3 th {text-align:center;background: #fafafa;}
+#popContent.popup2 .order_no table tr.tns3 td {background:#fff;padding: 15px 30px;color:#333;}
+#popContent.popup2 .order_no table td span {color:#333;}
+#popContent.popup2 .order_no table tr.tns3 p.delivery label {color:#333}
+#popContent.popup2 .order_no table td select {margin:10px 0;height: 2.5em;}
+#popContent.popup2 .orderList table td.lns12 select {height: 2.5em;margin-bottom:0}
+
+/* 옵션변경 layer */
+.g_option_change {display:none;position:absolute;top:300px;left:50%;width:470px;min-height:470px;margin-left:-250px;padding:30px 40px;background:#fff;z-index:121;}
+.g_option_change h2 {padding:7px 0 10px;font-size:18px;border-bottom:1px solid #e5e5e5;color:#111;}
+.g_option_change .prod_area {position:relative;min-height:190px;margin-top:20px;padding:17px 0 0 220px;}
+.g_option_change .prod_area .img {display:block;position:absolute;top:0;left:0;width:180px;text-align:center;}
+.g_option_change .prod_area .img .lnk {display:block;margin-top:7px;text-align:center;font-size:13px;color:#777;text-decoration:underline;}
+.g_option_change .prod_area .t {font-size:19px;font-weight:bold;color:#111;}
+.g_option_change .prod_area .t a {color:#111;}
+.g_option_change .prod_area .d {font-size:13px;color:#777;}
+.g_option_change .prod_area .price {margin-top:18px;font-size:18px;}
+.g_option_change .prod_area .price strong {font-size:20px;color:#ff5400;}
+.g_option_change .prod_area .global_sect_menu {margin-top:10px;}
+.g_option_change .opt_slide {position:relative;margin-top:25px;}
+.g_option_change .opt_slide .slide_con {overflow:hidden;width:440px;margin:0 auto;}
+.g_option_change .opt_slide .slide_con ul {overflow:hidden;height:80px;margin:0 auto;}
+.g_option_change .opt_slide .slide_con ul:after {content:'';display:block;clear:both;}
+.g_option_change .opt_slide .slide_con ul li {float:left;margin-left:10px;}
+.g_option_change .opt_slide .slide_con ul li:first-child {margin-left:0;}
+.g_option_change .opt_slide .bt-prev {display:inline-block;position:absolute;top:0;left:-3px;height:80px;width:13px;background:url(http://image.nike.co.kr/web/global/arr_slide_p.gif) no-repeat center;}
+.g_option_change .opt_slide .bt-next {display:inline-block;position:absolute;top:0;right:-3px;height:80px;width:13px;background:url(http://image.nike.co.kr/web/global/arr_slide_n.gif) no-repeat center;}
+.g_option_change .btn_area {margin-top:40px;text-align:center;}
+.g_option_change .btn_area .g_btn_type1 {width:130px;height:40px;line-height:40px;margin:0 2px;font-size:13px;}
+.g_option_change .btn_area .g_btn_type3 {width:130px;height:40px;line-height:40px;margin:0 2px;font-size:13px;}
+.g_option_change .btn_close {position:absolute;top:40px;right:40px;}
+.bg_cover {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:url(http://image.nike.co.kr/web/global/bg_cover.png) repeat;z-index:10;}
+
+/* 옵션변경 layer */
+/* .g_deli_change {display:none;position:absolute;top:680px;left:50%;width:640px;min-height:450px;margin-left:-360px;padding:30px 40px;background:#fff;z-index:11;}
+.g_deli_change h2 {padding:7px 0 10px;font-size:18px;color:#111;}
+.g_deli_change .g_tbl_noti.t_line {margin-top:0;}
+.g_deli_change .g_tbl_noti.t_line table td > div {min-height:26px;padding:8px 15px;}
+.g_deli_change .g_tbl_noti table td {border-left:none;}
+.g_deli_change .g_tbl_noti table td ul {margin-top:0;}
+.g_deli_change .g_tbl_noti table td ul li {margin-top:0;padding-left:0;background:#fff;}
+.g_deli_change .global_sect_menu_list li a {padding:5px 0 5px 16px;}
+.g_deli_change .g_tbl_noti table td .clear .fl {margin-left:5px;padding-left:0;background:none;}
+.g_deli_change .g_tbl_noti table td a.g_btn_type1 {height:26px;line-height:26px;}
+.g_deli_change .btn_area {margin-top:40px;text-align:center;}
+.g_deli_change .btn_area .g_btn_type1 {width:130px;height:40px;line-height:40px;margin:0 2px;font-size:13px;}
+.g_deli_change .btn_area .g_btn_type3 {width:130px;height:40px;line-height:40px;margin:0 2px;font-size:13px;}
+.g_deli_change .btn_close {position:absolute;top:40px;right:40px;}
+ */
+
+/* 20160712 mypage_return_pop 반품팝업 */
+#popContent.popup3 .pop_cp p.tits span {float:right;color:#333}
+#popContent.popup3 .orderList table td.lns02 div.dummy45 img {width: inherit;height: inherit;}
+#popContent.popup3 .orderList table td.lns02 div.ms {float:none;display:inline-block;vertical-align:middle;}
+#popContent.popup3 .orderList table td.lns02 div.ms strong {display:block;width:130px;margin:0;padding:0}
+#popContent.popup3 .orderList table td.lns02 div.ms span {display:block;width:130px;margin:0;padding:0}
+#popContent.popup3 .orderList table td.lns02 div.ms p {display:block;width:130px;margin:0;padding:0}
+#popContent.popup3 .orderList table td.lns04 strong {font-weight:normal}
+#popContent.popup3 .orderList table td.lns04 input {width: 25px;text-align: right;padding-right: 5px;line-height: 18px;height: 18px;}
+#popContent.popup3  .popup3-btn1 {width: auto;padding: 3px 10px;height: auto;line-height: 1.5;text-align: center;color: #fff;border-radius: 2px;background: #333;white-space: nowrap;display:inline-block;}
+#popContent.popup3 .orderList td {text-align:center;}
+#popContent.popup3 .orderList td.lns13 {color: #fa5400;}
+#popContent.popup3 .orderList td.lns13 span {color: #333;}
+#popContent.popup3 .orderList td.lns02 {text-align:left;}
+#popContent.popup3 .orderList table td.lns04 > div {display:inline-block;vertical-align:middle;float:none;}
+#popContent.popup3 .orderList table td.lns04 div.be {display:inline-block;vertical-align:middle;float:none;}
+#popContent.popup3 .order_no {border-top:1px solid #333;}
+#popContent.popup3 .order_no table tr.tns3 th {text-align:center;background: #fafafa;}
+#popContent.popup3 .order_no table tr.tns3 td {background:#fff;padding: 15px 30px;color:#333;}
+#popContent.popup3 .order_no table td span {color:#333;}
+#popContent.popup3 .order_no table tr.tns3 p.delivery label {color:#333}
+#popContent.popup3 .orderList table td.lns12 select {height: 2.5em;margin-bottom: 0;}
+#popContent.popup3 .orderTmx7 table th {padding:10px 0}
+#popContent.popup3 .orderTmx7 table td {padding:10px 0}
+
+/* 20160712 mypage_cancle_list 취소교환반품내역조회 */
+#content.mypage_cancle_list .orderList table td {padding: 9px 10px 10px;}
+#content.mypage_cancle_list .orderList table td.no_data {padding: 80px 0;}
+#content.mypage_cancle_list .orderList table td.lns02 {text-align:center;}
+#content.mypage_cancle_list .orderList table td.lns02 div.ms {display:inline-block;float:none;vertical-align:middle;}
+#content.mypage_cancle_list .orderList table td.lns02 div.con {width:200px;margin:0;text-align:left;}
+#content.mypage_cancle_list .orderList table td.lns02 div.con strong {padding:0 0 5px;font-weight:bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기본 li 셀렉트 */
+/* .global_sect_menu {width:165px;height:26px;margin:0 auto;font-size:12px;float:left;margin-right:2px;position:relative;text-align:left}
+.global_sect_menu .global_sect_field {display:block;width:100%;height:26px;position:relative;}
+.global_sect_menu .global_sect_field span {display:block;height:24px;line-height:24px;border:1px solid #ccc;padding:0 10px;}
+.global_sect_menu .global_sect_field:after {position: absolute;top: 50%;right: 10px;display: inline-block;margin-top: -4px;width: 18px;height: 10px;background: url('http://image.nike.co.kr/web/global/global_select_arrow2.gif') no-repeat;line-height: 1px;vertical-align: middle;content: '';}
+.global_sect_menu .global_sect_menu_list {display:none;position: absolute;top: 26px;left: 0;width:165px;z-index: 9999999999;}
+.global_sect_menu .global_sect_menu_list li {line-height:32px;border:1px solid #ccc;border-top:none;height:32px;background:#fff}
+.global_sect_menu .global_sect_menu_list li a {display:block;position:relative;padding:0 10px}
+.global_sect_menu .global_sect_menu_list li a:after {display:none;content:'';position:absolute;top:50%;left:0px;margin-top:-11px;border-left:2px solid #111;height:22px;}
+.global_sect_menu .global_sect_menu_list li.active a:after {display:block;}
+.global_sect_menu .global_sect_menu_list li.active a {background:#eee}
+.global_sect_menu .global_sect_menu_list li a:hover,
+.global_sect_menu .global_sect_menu_list li.active a:hover {background:#e5e5e5} */
+
+/* 기본 li 셀렉트 스몰 */
+/* .global_sect_menu.small {width:165px;height:26px;font-size:12px;position:relative;text-align:left}
+.global_sect_menu.small .global_sect_field {display:inline-block;width:100%;height:26px;position:relative;}
+.global_sect_menu.small .global_sect_field span {display:block;height:24px;line-height:24px;border:1px solid #ccc;padding:0 10px;}
+.global_sect_menu.small .global_sect_field:after {position: absolute;top: 50%;right: 10px;display: inline-block;margin-top: -4px;width: 18px;height: 10px;background: url('http://image.nike.co.kr/web/global/global_select_arrow2.gif') no-repeat;line-height: 1px;vertical-align: middle;content: '';}
+.global_sect_menu.small .global_sect_menu_list {display:none;position: absolute;top: 26px;left: 0;width:165px;z-index: 9999999999;}
+.global_sect_menu.small .global_sect_menu_list li {line-height:32px;border:1px solid #ccc;border-top:none;height:32px;background:#fff}
+.global_sect_menu.small .global_sect_menu_list li a {display:block;position:relative;padding:0 10px}
+.global_sect_menu.small .global_sect_menu_list li a:after {display:none;content:'';position:absolute;top:50%;left:0px;margin-top:-11px;border-left:2px solid #111;height:22px;}
+.global_sect_menu.small .global_sect_menu_list li.active a:after {display:block;}
+.global_sect_menu.small .global_sect_menu_list li.active a {background:#eee}
+.global_sect_menu.small .global_sect_menu_list li a:hover,
+.global_sect_menu.small .global_sect_menu_list li.active a:hover {background:#e5e5e5}
+ */
+
+
+/* 폰트설정 */
+body {color:#333}
+#content.global_content ,
+.contents.global_content {font-family: arial !important;}
+.contents.global_content .address .info .mb16.lh18 {color:#333;font-family: arial !important;}
+
+/* 회원정보관리 패스워드 변경팝업 디자인 수정 */
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox {border-top: 1px solid #333;border-bottom: 1px solid #efefef;padding: 13px 0px;background: #fff url(http://image.nike.co.kr/web/global/formBox_bg.gif) repeat-y left top}
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox label {position: absolute;top: 50%;left: 10px;margin-top: -7.5px;}
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox input {width: 258px;margin-left: 146px;}
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox div {position: static;margin-left: 146px;margin-top: 5px;}
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox div .over {display: block;position: static;padding: 0px;background-color: rgb(255, 255, 255);border-radius: 0px;color: #fa5400;font-size: 11px;text-align: left;letter-spacing: 0px;z-index: 0;}
+.popLayer.typeS .layerBox .contents .sectionL.user_form .formBox div .arr {display:none;}
+
+
+/* warp 수정 */
+#wrap {padding:0}
+
+
+/* [퍼블리싱] 영수증 신청발급  상단 텍스트 아래 여백 다름 */
+.cat_order h2.tit3 {padding-top: 30px;padding-bottom: 10px;margin-bottom: 9px;border-bottom: 1px solid #fff;}
+.global_content ul.tabN {margin:0 0 20px}
+.global_content .cat_order .join3 {margin:0 0 20px}
+.global_content .cat_order h2.tit3.g_title_line {border-bottom: 1px solid #999;}
+.lockerTop {margin:0 0 20px;}
+.deposit_txt {margin:0}
+.global_content .deposit_txt + .deposit_txt {margin:0 0 10px}
+.global_content .cat_order h2.tit3.g_title_line + .texyN3 {margin-top:-35px;}
+.g_promotion_top .texyN4 {font-size:12px;top:-37px}
+.global_content .cat_order .join3 {margin:20px 0 20px}
+.global_content p.poA {margin: -36px 0px 20px;line-height: 16px;}
+#content.inquiry .tit3 a {bottom:6px;}
+#wrap .contents.global_content .cat_order .tabN {margin: 0 0 20px;}
+
+/* PDP-매장재고예약서비스-팝업창 문구수정 */
+.g_reserve_prod .img img {max-width:100px;}
+.stock_reserve_service .con .top .pdttxt .note {border-top: 0;padding-top: 0;margin-top: 10px;font-size: 12px;font-weight: normal;color: #949393;line-height: 16px;padding-left: 6px;text-indent: -6px;}
+.stock_reserve_service {height: 636px;margin-top:-318px}
+
+.layerStoreStock {min-height: 570px;height: auto;padding-bottom: 30px;}
+.stock_reserve_service {min-height: 636px;height: auto;padding-bottom: 30px;}

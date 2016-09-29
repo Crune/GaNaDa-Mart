@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+.Pdp .content {padding-bottom:80px;}
+.Pdp .content .item-box .right .info {border-bottom:0;}/*151106*/
+.Pdp .content .item-box .right .info .price .date {display:block;font-size:12px;color:#333;}
+.Pdp .content .item-box .right .info .ra {margin-top:6px;}
+.Pdp .content .item-box .right .info .star .rating {display:inline-block; width:65px; height:13px; margin-right:3px; background:url(http://image.nike.co.kr/web/flatui/ico_star2.png) repeat 0 -15px;}
+.Pdp .content .item-box .right .info .star .rating > span, x:-moz-any-link, x:default {line-height:14px;}
+.Pdp .content .item-box .right .info .star .rating > span {display:inline-block; *display:block; background:url(http://image.nike.co.kr/web/flatui/ico_star2.png) repeat; text-indent:-9999px; line-height:15px; *line-height:13px;}
+.Pdp .content .item-box .right .box {border-top:1px solid #eeeeee;}
+.Pdp .content .item-box .right .color-code {display:inline-block;width:100%;padding-top:20px;}
+.Pdp .content .item-box .right .color-code .fll {float:left;}
+.Pdp .content .item-box .right .color-code .flr {float:right;}
+.Pdp .content .item-box .right .item-list {margin-top:15px;margin-bottom:20px;}
+.Pdp .content .item-box .right .item-list ul.item li {margin-right:-1px;}
+.Pdp .content .item-box .right a.btn_storeStock {display:inline-block;padding-right:8px;margin-top:0;margin-right:10px;margin-bottom:20px;text-decoration:underline;background:url(http://image.nike.co.kr/web/stock/bul_pdp_itemnoti.png) no-repeat right center;}
+.Pdp .content .item-box .right .box.soldout {position:relative;}
+.Pdp .content .item-box .right .box.soldout a.btn_storeStock {position:absolute;right:0;top:21px;}/*151106*/
+.Pdp .content .item-box .right .guide_msg {padding:13px 10px;margin-top:20px;color:#333;font-size:12px;line-height:18px;background:#eeeeee;border-radius:3px;}/*151106*/
+.Pdp .content .item-box .right .guide_msg span {display:block;margin-top:7px;line-height:16px;color:#666;}
+.Pdp .content .item-box .right .btn_sizechart_store {padding:15px 0 0;}/*151106*/
+.Pdp .content .item-box .right .btn_sizechart_store.borderT {margin-top:15px;border-top:1px solid #eee;} /* 151030 */
+.Pdp .content .item-box .right .btn_sizechart_store a {display:inline-block;padding-right:8px;margin-right:10px;text-decoration:underline;background:url(http://image.nike.co.kr/web/stock/bul_pdp_itemnoti.png) no-repeat right center;}
+.Pdp .content .item-box .right .btn-group {padding:18px 0;margin-top:0;border-bottom:1px solid #eee;}/*151106*/
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1 {width:98px;height:36px;line-height:36px;background:#dddddd url(http://image.nike.co.kr/web/flatui/arr_pdp_selectType.png) no-repeat right center;border:1px solid #e9e9e9;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1:hover {background-color:#fff;background-position:right center;border:1px solid #c4c4c4;}
+.Pdp .content .item-box .right .btn-group .btn-pdp-type1.on {background-color:#fff;background-position:right center;border:1px solid #c4c4c4}
+.Pdp .content .item-box .right .btn-group .size-area .size-list {top:41px;width:252px;padding:7px 5px;background:#fff;border:1px solid #c1c1c1;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg {width:auto;max-height:195px;padding:0;margin:0;background:none;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg .arr {display:block;position:absolute;left:-1px;top:-6px;width:98px;height:6px;background:#fff;border-right:1px solid #c1c1c1;border-left:1px solid #c1c1c1;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul {padding:0;background:transparent;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li {float:left;width:83px;height:28px;margin-top:1px;margin-left:1px;text-align:center;line-height:28px;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a {display:block;background-color:#ffffff;font-size:11px;color:#333;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a:hover {background-color:#d6d6d6;color:#333333;}
+.Pdp .content .item-box .right .btn-group .size-area .size-list .bg ul li a.out {background-color:#f4f4f4; color:#a5a5a5; cursor:default;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list {top:37px;width:98px;height:auto;padding-bottom:5px;background:#fff;border:1px solid #c1c1c1;border-top:0;/*background:url('http://image.nike.co.kr/web/flatui/bg_quantity_bottom2.png') no-repeat;*/}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list .bg {}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li {width:auto;height:26px;margin:0 5px 1px;line-height:26px;text-align:left;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a {padding-left:6px;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a:hover {background-color:#d6d6d6;color:#333333;}
+.Pdp .content .item-box .right .btn-group .quantity-area .quantity-list ul li a.out {background-color:#ededed; color:#a5a5a5; cursor:default;}
+.Pdp .content .item-box .right .btn-group .alert-line {top:-3px;}
+.Pdp .content .item-box .right .btn-group .cart-area {height:38px;}
+.btn-type1 {height:38px;vertical-align:top;}
+.btn-type1.btn-black {background:#222222;}
+.btn-type1.btn-orange {margin-top:0;background:#fa5400;}
+.btn-type1 span {height:38px;line-height:38px;}
+.btn-type1.btn-black span.right,
+.btn-type1.btn-orange span.right {background:none;}
+/*160822_공지사항수정*/
+.Pdp .content .item-box .right .item-noti {margin-top:0;border-top:0;font-weight: normal;text-align: left;}
+.Pdp .content .item-box .right .item-noti a { font-weight: 600; text-decoration: underline;}
+/*160822_공지사항수정*/
+.bgM1_1 {background:url(http://image.nike.co.kr/web/flatui/bg_pdp_line.gif) no-repeat center top;}
+.listBox .unit .info .color {border-bottom:1px solid #dddddd;}
+.Local-tab .conTab .tab {width:548px;height:28px;background:#f7f7f7;border:1px solid #dfdfdf;}
+.Local-tab .conTab .tab .active-tab {top:-1px;width:143px;background:url(http://image.nike.co.kr/web/flatui/bg_pdp_localtab.png) no-repeat;}
+.Local-tab .conTab .tab>ul>li {width:137px;height:28px;line-height:28px;}
+.Local-tab .conTab .tab>ul>li >a {color:#333;}
+.proInfo .infoArea > dl dt {text-align:left;}
+.product_size .size-area .btn-pdp-type1 {background:url(http://image.nike.co.kr/web/flatui/arr_pdp_selectType.png) no-repeat right center;border:1px solid #c1c1c1;}
+.product_size .size-area .btn-pdp-type1:hover {background-position:right center}
+.product_size .size-area .btn-pdp-type1.on {background-position:right center;}
+.product_size .size-area .size-list {top:41px;width:252px;padding:7px 5px;background:#fff;border:1px solid #c1c1c1;}
+.product_size .size-area .size-list .bg {width:auto;max-height:195px;padding:0;margin:0;background:none;}
+.product_size .size-area .size-list .bg .arr {display:block;position:absolute;left:-1px;top:-6px;width:100px;height:6px;background:#fff;border-right:1px solid #c1c1c1;border-left:1px solid #c1c1c1;}
+.product_size .size-area .size-list .bg ul {padding:0;background:transparent;}
+.product_size .size-area .size-list .bg ul li {float:left;width:83px;height:28px;margin-top:1px;margin-left:1px;text-align:center;line-height:28px;}
+.product_size .size-area .size-list .bg ul li a  {display:block;background-color:#ffffff;font-size:11px;color:#333;}
+.product_size .size-area .size-list .bg ul li a:hover {background-color:#d6d6d6;color:#333333;}
+.product_size .size-area .size-list .bg ul li a.out {background-color:#f4f4f4; color:#a5a5a5; cursor:default;}
+.product_size.one .size-area .btn-pdp-type1 {cursor:default;background-image:none;}
+.product_size.set .size-area .btn-pdp-type1 {width:90px;background:url(http://image.nike.co.kr/web/flatui/arr_pdp_selectType.png) no-repeat right center;border:1px solid #c1c1c1;}
+.product_size.set .size-area .btn-pdp-type1:hover {background-position:right center}
+.product_size.set .size-area .btn-pdp-type1.on {background-position:right center;}
+
+
+
+#reviewInfo .btn-review-write {background:#fa5400;}
+#reviewInfo .btn-review-write span {background:none;}

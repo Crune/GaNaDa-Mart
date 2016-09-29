@@ -20,7 +20,7 @@ public class ProductDao extends DAO {
 		@Override
 		protected DBTable gT() {
 	    	if (t == null) {
-	    		t = new DBTable("product", "pd_code");
+	    		t = new DBTable(null, "product", "pd_code", "PD_REG_DATE", "");
 	    		t.setCls("ganada.obj.product.Product");
 	    	}
 			return t;
@@ -57,6 +57,7 @@ public class ProductDao extends DAO {
 		    }
 
 		
+	
 		 public int getCount() throws Exception {
 			 return count();
 		 }

@@ -1,8 +1,12 @@
 package ganada.obj.common;
 
-public class Menu {
+import java.io.Serializable;
 
-    public static final int TYPE_NORMAL = 0;
+public class Menu implements Serializable {
+
+	private static final long serialVersionUID = -5786091089301352432L;
+	
+	public static final int TYPE_NORMAL = 0;
     public static final int TYPE_EVENT = 1;
     public static final int TYPE_PAGE = 2;
 

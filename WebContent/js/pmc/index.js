@@ -7,6 +7,9 @@ $(document).ready(function(){
 	$("#upProduct").click(function(){
 		window.location = "./update.gnd";
 	});
+	$("#productInfo").click(function(){
+		window.location = "./infoInsert.gnd";
+	});
 	$("#review").click(function(){
 		window.location = "./delete.gnd";
 	});

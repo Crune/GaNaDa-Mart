@@ -19,10 +19,12 @@ public class DBTest extends DBTester {
     public void test() {
         DB db = new DB();
         try {
+        	/*
             db.sql("SELECT COUNT(*) FROM MEMBER WHERE ID=?").var("test1").exe();
             if (db.next()) {
                 System.out.println(db.exe().getInt(1));
             }
+            */
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

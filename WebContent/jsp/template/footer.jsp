@@ -131,14 +131,7 @@ h4.global_footer_link_tit a {
 	</div>
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js"></script>
-
-<!-- CP Javascript -->
-<script src="${pageContext.request.contextPath}/js/global_renewal.js"></script>
 <script src="${pageContext.request.contextPath}/js/LogInOut.js"></script>
 
-<!-- Custom Javascript -->
-<script src="${pageContext.request.contextPath}/js/default.js"></script>
 </body>
 </html>
