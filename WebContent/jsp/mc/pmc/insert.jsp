@@ -1,9 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+
+<script language="JavaScript">
+<!--
+    function openUpdate(userinput) {
+        if (userinput.pd_infocode.value == "") {
+            alert("정보종류를 선택해주세요");
+            return;
+        }
+        url = "infoUpdate.gnd?pd_infocode=" + userinput.pd_infocode.value ;
+        
+        open(url, "open", 
+        "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+    }
+-->
+</script>
+
     <input type="button" value="목록으로" onclick="javascript:window.location='./list.gnd'">
-<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
+	<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
     <form id="inform" action="./insertPro.gnd" method="post">
     <div id="productForm" class="box">
     <ul>
@@ -13,10 +28,13 @@
     <input id="pd_name" name="pd_name" type="text" size="50" placeholder="상품명" maxlength="50">
     <li><label for="pd_price">가격</label>
     <input id="pd_price" name="pd_price" type="text" size="10" placeholder="가격" maxlength="10">원
-    <li><label for="pd_infocode1">정보코드1</label>
-    <input id="pd_infocod1e" name="pd_infocode1" type="text" size="50" placeholder="상품명" maxlength="50">
     
-     <li><label for="pd_infocode">정보</label>
+    <li><label for="pd_infocode">정보코드</label>
+    <input id="pd_infocode" name="pd_infocode" type="text" size="50" placeholder="상품명" maxlength="50">
+    
+    <input type="button" name="open" value="수정" OnClick="openUpdate(this.form)"> 
+    
+    <li><label for="pd_infocode">정보</label>
     	<select name="pd_infotype">
 			<option value="" selected>정보구분</option>
 			<option value="1">상품정보</option>
