@@ -15,7 +15,7 @@
     }
 -->
 </script>
-<form id="inform" action="./infoInsert.gnd" method="post">
+<form id="inform" action="./infoUpdate.gnd" method="post">
    <table>
 	   	<c:forEach var="i" items="${piList }">
 	 		<tr>
@@ -28,9 +28,9 @@
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="submit" id="inProduct" value="정보등록">
-	<input type="button" name="openUpdate" value="수정" OnClick="openUpdate(this.form)"> 
-    <input type="button" value="닫기" onclick="setInfo()">
+    <input type="button" name="openUpdate" value="정보등록" OnClick="javascript:window.location='./infoInsert.gnd'"> 
+    <input type="submit" value="정보수정">
+	<input type="button" value="닫기" onclick="setInfo()">
 </form>
 <script language="javascript">
 <!--
