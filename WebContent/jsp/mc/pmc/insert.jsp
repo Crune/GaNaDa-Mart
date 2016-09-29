@@ -26,9 +26,6 @@
 		</select>
    	<c:forEach var="i" items="${piList1 }">
 				${i.pd_infocontent}
-				<textarea name="pd_infocontent" rows="13" cols="35">
-	 					${i.pd_infocontent }
-	 			</textarea>
 	</c:forEach>
     
     <li class="label2">
