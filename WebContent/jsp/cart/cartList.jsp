@@ -42,6 +42,23 @@
 	  
   }
   
+   function wishlistItem(item_num, cart_id){
+	  
+	  var result = confirm('상품을 위시리스트에 담았습니다.');
+      if(result) {
+    	  var form  = $("#wishlistForm");
+    	  
+    	  console.log(form);
+    	  
+    	  form.find("#cart_id").val(cart_id);
+    	  form.find("#item_num").val(item_num);
+    	  
+    	  form.submit();
+      } else {
+          
+      }
+  }
+  
   function deleteItem(item_num, cart_id){
 	  
 	  var result = confirm('정말 삭제하시겠습니까?');
@@ -59,6 +76,7 @@
       }
   }
   
+ 
   function changeAmount(item_id, cnt, type){
 	  
 	  var id ="qty_" + item_id + "_" + cnt;
@@ -126,7 +144,11 @@
      <input type="hidden" id ="item_cnt" name="item_cnt" value="" />
      <input type="hidden" id ="cart_id" name="cart_id" value="" />
    </form>
-   <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
+     <form id="wishlistForm" method="post" action="<%=root%>/wishList.gnd">
+     <input type="hidden" id="item_num" name="item_num" value="" />
+     <input type="hidden" id="cart_id" name="cart_id" value="" />
+     
+     <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
      <input type="hidden" id="item_num" name="item_num" value="" />
      <input type="hidden" id="cart_id" name="cart_id" value="" />
    </form>
@@ -216,7 +238,7 @@
 					      <input type="hidden" id="finalPricePerGoods" name="finalPricePerGoods" value="${vo.item_total}">
 					   </td>
 					   <td class="lns06">
-						  <a href="javascript:openLogin();"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
+						  <a href="javascript:void(0)" onclick="javascript:wishlistItem('${vo.item_num}', '${vo.cart_id}')"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
 						  <a href="javascript:void(0)" onclick="javascript:deleteItem('${vo.item_num}', '${vo.cart_id}')"> <img src="<%=root%>/img/cart/btn_delete.gif" alt="삭제"></a>
 				        </td>
 					</tr>
