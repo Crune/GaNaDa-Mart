@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <form id="stdeform" action="./stockDeletePro.gnd" method="post">
+    <form name="infoDeleteForm" action="./stockDeletePro.gnd" method="post">
 	    <div id="productForm" class="box">
 		    <ul>
 			   	<input id="st_code" name="st_code" type="hidden" placeholder="상품코드" value="${st_code }">
