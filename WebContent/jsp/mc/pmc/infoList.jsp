@@ -45,11 +45,11 @@
 <!--
 	function setInfo(){		
 		var pd_infotype = ${pd_infotype};
-		if(pd_infotype=='1'){
+		if(pd_infotype==1){
 			opener.document.inform.pd_infocode1.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype=='2'){
+		}else if(pd_infotype==2){
 			opener.document.inform.pd_infocode2.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype=='3'){
+		}else if(pd_infotype==3){
 			opener.document.inform.pd_infocode3.value=document.infoListForm.pd_infocode.value;
 		}else{
 			opener.document.inform.pd_infocode4.value=document.infoListForm.pd_infocode.value;
