@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <form id="inform" action="./infoUpdatePro.gnd" method="post">
+    <form name="inform" action="./infoUpdatePro.gnd" method="post" onSubmit="return checkIt()">
 	    <table>
 	  		  <input id="pd_infocode" name="pd_infocode" type="hidden" value="${pi.pd_infocode }">
 		 	  <input id="pd_infopyte" name="pd_infotype" type="hidden" value="${pi.pd_infotype }">
@@ -22,13 +22,13 @@
 		</table>
 	    <input type="submit" id="inProduct" value="정보수정">
 	    <input type="button" value="닫기" onclick="setInfo()">
+	    <input type="button" name="back" value="뒤로가기" onClick="javascript:history.go(-1);"/>
     </form>
 <script language="javascript">
 <!--
-  function setInfo()
-    {		
-    	opener.document.userinput.pd_infocode.value="${pi.pd_infocode}";
-		self.close();
-	}
-		-->
+	function setInfo()
+	    {		
+	    	window.close();
+		}
+-->
 </script>
