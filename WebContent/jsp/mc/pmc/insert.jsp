@@ -33,7 +33,7 @@
     <div id="productForm" class="box">
     <ul>
  	<li><label for="menu_code">메뉴코드</label>
-    <input id="menu_code" name="menu_code" type="text" size="50" placeholder="상품명" maxlength="50">
+    <input id="menu_code" name="menu_code" type="text" size="50" placeholder="메뉴코드" maxlength="50">
     <li><label for="pd_name">상품명</label>
     <input id="pd_name" name="pd_name" type="text" size="50" placeholder="상품명" maxlength="50">
     <li><label for="pd_price">가격</label>

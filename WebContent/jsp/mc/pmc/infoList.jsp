@@ -13,9 +13,15 @@
         open(url, "open", 
         "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
     }
+	function checkIt() {
+    if(!document.infoUpdateForm.pd_infocode.value) {
+        alert("수정할 정보를 골라주세요");
+        return false;
+    }
+}
 -->
 </script>
-<form name=infoUpdateForm action="./infoUpdate.gnd" method="post">
+<form name=infoUpdateForm action="./infoUpdate.gnd" method="post" onSubmit="return checkIt()">
    <table>
 	   	<c:forEach var="i" items="${piList }">
 	 		<tr>

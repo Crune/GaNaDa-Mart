@@ -1,7 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <form id="inform" action="./infoInsertPro.gnd" method="post">
+<script language="javascript">
+<!--
+	function checkInfo(cksub) {
+    if(!cksub.pd_infoname.value) {
+        alert("수정할 정보를 골라주세요");
+        return false;
+    }
+    if(!cksub.pd_infocontent.value) {
+        alert("수정할 정보를 골라주세요");
+        return false;
+    }
+-->
+</script>
+    <form name="infoInsertForm" action="./infoInsertPro.gnd" method="post" onSubmit="return checkInfo(this.form)">
 	    <table>
 	    	<input name="pd_infotype" type="hidden" value="${pd_infotype}">
 		  	<tr>
@@ -17,7 +30,7 @@
 			<tr>
 				<td>정보이름</td>
 				<td>
-					<input type="text" name="pd_infoname" size="30" placeholder="정보이름" maxlength="30">
+					<input type="text" name="pd_infoname" size="30" maxlength="30">
 				</td>
 			</tr>
 	 		<tr>
@@ -27,14 +40,15 @@
 	 			</td>
 			</tr>
 		</table>
-	    <input type="submit" id="inProduct" value="상품등록">
+	    <input type="submit" value="상품등록">
 	    <input type="button" value="닫기" onclick="setInfo()">
+	    <input type="button" name="back" value="뒤로가기" onClick="javascript:history.go(-1);"/>
     </form>
 <script language="javascript">
 <!--
-  function setInfo()
+	function setInfo()
     {		
     	window.close();
 	}
-		-->
+-->
 </script>
