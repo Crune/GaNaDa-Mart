@@ -40,6 +40,7 @@ function doJoinCancel(){
 		}
 	}    
 </script>
+
 <div class="popLayer">
  	<div class="layerBox clx">
     <div class="contents">
