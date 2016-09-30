@@ -16,14 +16,8 @@ public class InfoListAction implements SuperAction{
 		ProductInfoDao dbPro = ProductInfoDao.getInstance();
 		
 		List<ProductInfo> piList = (List<ProductInfo>) dbPro.search("pd_infotype", pd_infotype);
-//		List<ProductInfo> piList2 = (List<ProductInfo>) dbPro.search("pd_infotype", "2");
-//		List<ProductInfo> piList3 = (List<ProductInfo>) dbPro.search("pd_infotype", "3");
-//		List<ProductInfo> piList4 = (List<ProductInfo>) dbPro.search("pd_infotype", "4");
-		
+
 		request.setAttribute("piList", piList);
-//		request.setAttribute("piList2", piList2);
-//		request.setAttribute("piList3", piList3);
-//		request.setAttribute("piList4", piList4);
 		request.setAttribute("pd_infotype", pd_infotype);
 		request.setAttribute("count", count);
 		

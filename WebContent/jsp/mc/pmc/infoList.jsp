@@ -15,7 +15,7 @@
     }
 -->
 </script>
-<form id="inform" action="./infoUpdate.gnd" method="post">
+<form name=infoUpdateForm action="./infoUpdate.gnd" method="post">
    <table>
 	   	<c:forEach var="i" items="${piList }">
 	 		<tr>
@@ -32,15 +32,15 @@
     <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./infoInsert.gnd?pd_infotype=${pd_infotype}'"> 
     <input type="submit" value="정보수정">
     <input type="button" value="선택정보등록" onclick="setInfo()">
-	<input type="button" value="닫기" onclick="close()">
+    <input type="button" value="닫기" onclick="clo()">
     </form>
 <script language="javascript">
 <!--
 	function setInfo(){		
-		opener.document.inform.pd_infocode1.value="a";
+		opener.document.inform.pd_infocode${pd_infotype}.value=document.infoUpdateForm.pd_infocode.value;
 		window.close();
 	}
-	function close()
+	function clo()
 	{		
 		window.close();
 	}
