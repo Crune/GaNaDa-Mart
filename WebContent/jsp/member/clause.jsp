@@ -29,10 +29,20 @@
 <!-- Custom Javascript -->
 <script src="${pageContext.request.contextPath}/js/default.js"></script>
 
-<<script type="text/javascript">
+<script language="JavaScript">
 	function doJoinCancel(){
-		return "/jsp/member/join2.jsp";
+		if (confirm("회원가입을 취소하시겠습니까?")==true) { //확인
+			self.opener = self;
+			window.close();
+			opener.parent.location="/page.gnd?code=MAIN";			
+		} else { //취소
+			return false;
+		}
 	}
+	function doAgree(){
+		location.href="/join2.gnd";
+	}
+	
 </script>
 <div class="popLayer">
  	<div class="layerBox clx">

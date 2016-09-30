@@ -47,7 +47,7 @@
         
         // 새로운 윈도우를 엽니다.
         open(url, "confirm", 
-        "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+        "toolbar=yes, location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=300, height=700");
     }
 </script>
 

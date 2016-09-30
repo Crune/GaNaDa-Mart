@@ -16,10 +16,11 @@ public class Join2Action implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String sfd = (String)session.getAttribute("overlapName");
-		String sfd2 = (String)session.getAttribute("overlapEmail");
-		System.out.println(sfd);
-		System.out.println(sfd2);
+		String oln = (String)session.getAttribute("overlapName");
+		String ole = (String)session.getAttribute("overlapEmail");
+		session.setAttribute("oln", oln);
+		session.setAttribute("ole", ole);
+		
 		return "/jsp/member/join2.jsp";
 	}
 

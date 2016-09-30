@@ -32,15 +32,19 @@
 
 <script language="JavaScript">
 var isChecked = false;
-	function doCancel() {
-		if (confirm("회원가입을 취소하시겠습니까?") == true) { //확인
-			this.doClose();
+	function doCancel() {		
+		
+		if (confirm("회원가입을 취소하시겠습니까?")==true) { //확인
+			self.opener = self;
+			window.close();
+			opener.parent.location="/page.gnd?code=MAIN";			
 		} else { //취소
-			return;
+			return false;
 		}
-	}
+	}	
 	function doClose() {
 		window.top.location.href = gateUrl;
+		
 	}
 
 	function checkIt() {
@@ -83,7 +87,6 @@ var isChecked = false;
 						isChecked=true;
 					} else {
 						alert("이미 회원으로 가입되어 있는 이메일입니다.");
-
 					}
 				}
 			});
@@ -91,10 +94,11 @@ var isChecked = false;
 	}
 	function doNext() {
 		if (isChecked) {			
-			document.memberForm.submit();
-			
+			document.memberForm.submit();	
+			location.href="/clause.gnd";
 		} else {
-			alert("본인인증을 위하여 이메일, 이름의 중복확인이 필요합니다.");
+			alert("본인인증을 위하여 이메일, 이름의 중복확인이 필요합니다.");	
+			isChecked=false;
 		}
 	}
 </script>
