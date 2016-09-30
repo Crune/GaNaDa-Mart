@@ -14,6 +14,7 @@ public class InfoUpdateProAction implements SuperAction{
 		request.setCharacterEncoding("UTF-8");
 		
 		String pd_infocode = request.getParameter("pd_infocode");
+		String pd_infotype = request.getParameter("pd_infotype");
 		
 		ProductInfo pi = new ProductInfo();
 		pi.setPd_infocode(request.getParameter("pd_infocode"));
@@ -23,8 +24,9 @@ public class InfoUpdateProAction implements SuperAction{
 		
 		ProductInfoDao dbPro = ProductInfoDao.getInstance();
 		dbPro.update(pi);
-		
+
 		request.setAttribute("pd_infocode", pd_infocode);
+		request.setAttribute("pd_infotype", pd_infotype);
 		
 		return "/jsp/mc/pmc/infoUpdatePro.jsp";
 	}

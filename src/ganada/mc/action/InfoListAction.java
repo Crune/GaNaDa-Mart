@@ -12,7 +12,7 @@ import ganada.obj.product.ProductInfoDao;
 public class InfoListAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String pd_infotype = request.getParameter("pd_infotype");
-		
+		int count = 0;
 		ProductInfoDao dbPro = ProductInfoDao.getInstance();
 		
 		List<ProductInfo> piList = (List<ProductInfo>) dbPro.search("pd_infotype", pd_infotype);
@@ -24,6 +24,9 @@ public class InfoListAction implements SuperAction{
 //		request.setAttribute("piList2", piList2);
 //		request.setAttribute("piList3", piList3);
 //		request.setAttribute("piList4", piList4);
+		request.setAttribute("pd_infotype", pd_infotype);
+		request.setAttribute("count", count);
+		
 		
 		
 		return "/jsp/mc/pmc/infoList.jsp";

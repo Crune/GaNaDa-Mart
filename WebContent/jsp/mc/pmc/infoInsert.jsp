@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <form id="inform" action="./infoInsertPro.gnd" method="post">
 	    <table>
-	    	<tr>
+	    	<input name="pd_infotype" type="hidden" value="${pd_infotype}">
+		  	<tr>
 	    		<td>
-	    			<select name="pd_infotype">
-				    	<option value="" selected>정보구분</option>
-				    	<option value="1">상품정보</option>
-				    	<option value="2">배송/결재정보</option>
-				    	<option value="3">유의사항</option>
-				    	<option value="4">A/S정보</option>
+	    			<select name="pd_infotype" disabled>
+				    	<option value="1" <c:if test="${pd_infotype=='1'}">selected</c:if>>상품정보</option>
+				    	<option value="2" <c:if test="${pd_infotype=='2'}">selected</c:if>>배송/결재정보</option>
+				    	<option value="3" <c:if test="${pd_infotype=='3'}">selected</c:if>>유의사항</option>
+				    	<option value="4" <c:if test="${pd_infotype=='4'}">selected</c:if>>A/S정보</option>
 				    </select>
 				</td>
 			</tr>

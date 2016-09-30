@@ -25,19 +25,24 @@
 			 	<td>
 			 		${i.pd_infoname }
 				</td>
+				<td>${i.pd_infocode }</td>
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./infoInsert.gnd'"> 
+    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./infoInsert.gnd?pd_infotype=${pd_infotype}'"> 
     <input type="submit" value="정보수정">
-    <input type="button" value="선택정보등록">
-	<input type="button" value="닫기" onclick="setInfo()">
+    <input type="button" value="선택정보등록" onclick="setInfo()">
+	<input type="button" value="닫기" onclick="close()">
     </form>
 <script language="javascript">
 <!--
-  function setInfo()
-    {		
-    	window.close();
+	function setInfo(){		
+		opener.document.inform.pd_infocode1.value="a";
+		window.close();
 	}
-		-->
+	function close()
+	{		
+		window.close();
+	}
+-->
 </script>
