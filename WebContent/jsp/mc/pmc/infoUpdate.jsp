@@ -27,8 +27,7 @@
 <!--
   function setInfo()
     {		
-    	opener.document.userinput.pd_infocode.value="${pi.pd_infocode}";
-		self.close();
+    	window.close();
 	}
 		-->
 </script>

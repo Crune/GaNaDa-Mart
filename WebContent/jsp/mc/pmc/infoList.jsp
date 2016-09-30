@@ -28,16 +28,16 @@
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="button" name="openUpdate" value="정보등록" OnClick="javascript:window.location='./infoInsert.gnd'"> 
+    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./infoInsert.gnd'"> 
     <input type="submit" value="정보수정">
+    <input type="button" value="선택정보등록">
 	<input type="button" value="닫기" onclick="setInfo()">
-</form>
+    </form>
 <script language="javascript">
 <!--
   function setInfo()
     {		
-    	opener.document.userinput.pd_infocode.value="${pi.pd_infocode}";
-		self.close();
+    	window.close();
 	}
 		-->
 </script>
