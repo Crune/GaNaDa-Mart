@@ -10,14 +10,10 @@ import javax.servlet.jsp.JspWriter;
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
 import ganada.action.common.SuperAction;
+import ganada.core.NULL;
 import ganada.obj.member.Account;
 
 public class ChkLoginAjaxAction implements SuperAction {
-
-    private Object nullChk(Object checkObj, Object nullReplace) {
-        if (checkObj == null) return nullReplace;
-        else return checkObj;
-    }
     
     @Override
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -35,12 +31,12 @@ public class ChkLoginAjaxAction implements SuperAction {
         if (loginId == null || account == null) {
             loginId = "guest";
         } else {            
-            mile = (double) nullChk(account.getMile(), mile);
-            memberCode = (String) nullChk(account.getCode(), memberCode);
-            memberName = (String) nullChk(account.getName(), memberName);
+            mile = (double) NULL.R(account.getMile(), mile);
+            memberCode = (String) NULL.R(account.getCode(), memberCode);
+            memberName = (String) NULL.R(account.getName(), memberName);
             
-            cartId = (String) nullChk(session.getAttribute("cartId"), cartId);
-            cartCount = (String) nullChk(session.getAttribute("cartCount"), "1");
+            cartId = (String) NULL.R(session.getAttribute("cartId"), cartId);
+            cartCount = (String) NULL.R(session.getAttribute("cartCount"), "1");
         }
         String result = loginId+tk+cartCount+tk+mile+tk+memberCode+tk+memberName+tk;
         session.setAttribute("ajaxStr", result);
