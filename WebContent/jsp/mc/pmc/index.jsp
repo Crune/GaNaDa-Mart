@@ -6,6 +6,7 @@
 
 
 <button id ="inProduct">상품등록</button></br>
+<button id ="list">상품목록</button></br>
 <button id="productInfo">상품정보 등록</button></br>
 <button id ="upProduct">상품 수정/삭제</button></br>
 
