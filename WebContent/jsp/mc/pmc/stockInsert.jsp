@@ -4,8 +4,8 @@
 	    <div id="productForm" class="box">
 		    <ul>
 			   	<input name="pd_code" type="hidden" value="${pd_code }">
-			   <li><label for="c_code">색상</label>
-				<input type="text" name="c_code"> 
+			   <li><label for="c_name">색상코드</label>
+			    <input type="text" name="c_code" readonly placeholder="색상등록버튼으로 등록가능">
     			<input type="button" name="c_codebt" value="색상등록" onclick="window.open('./colorList.gnd?pd_code=${pd_code}','win','width=1000,height=500,toolbar=0,scrollbars=0,resizable=0')"> 
    
 			    <li><label for="pd_size">사이즈</label>
