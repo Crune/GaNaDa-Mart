@@ -79,6 +79,33 @@ public class CartDao {
        }
 		return cart_list;
   }
+   
+   
+   public Cart getOneCart(int cart_id) throws Exception {
+	   DB db = new DB();
+	   Cart cart= new Cart();
+	   try {
+		   db.S("*", "CART_ITEM", "CART_ID=?").var(cart_id).exe(); 
+		   
+		   if(db.next()) {   
+	           cart.setCart_id(db.getInt("CART_ID"));
+	           cart.setItem_id(db.getString("ITEM_ID"));
+	           cart.setItem_cl(db.getString("ITEM_COLOR"));
+	           cart.setItem_size(db.getString("ITEM_SIZE"));
+	           cart.setItem_cnt(db.getInt("ITEM_COUNT"));
+	           cart.setUser_id(db.getString("USER_ID"));
+	           cart.setItem_image(db.getString("ITEM_IMAGE"));
+	       }
+		   
+	   }catch(Exception ex){
+	       ex.printStackTrace();
+	   }finally{
+	       db.finalize();
+	   }
+	   return cart;
+ }
+	 
+   
  
    //장바구니에서 수량을 변경했을 경우 실행되는 메소드
    public void updateCart(Cart cart) throws Exception {
@@ -86,7 +113,7 @@ public class CartDao {
 	   	DB.Update sql = db.new Update("CART_ITEM");
 	   	try {
 	       	 sql.setWhere("CART_ID", cart.getCart_id());
-	         sql.set("ITEM_NUM", cart.getItem_num());
+	         sql.set("ITEM_COUNT", cart.getItem_num());
 	         sql.set("ITEM_TOTAL", cart.getItem_total());
 	         sql.run();
 	        }catch(Exception ex) {

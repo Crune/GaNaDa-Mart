@@ -77,13 +77,18 @@
   }
   
  
-  function changeAmount(item_id, cnt, type){
+  function changeAmount(item_id, cnt, type){ 
 	  
 	  var id ="qty_" + item_id + "_" + cnt;
-	  var itemCnt  = Number($("#"+id).val());  //수량값 가져오기
+	  var itemCnt  = Number($("#"+id).val());  //수량값 가져오기 
+	  
+	  /*
+	  	$(# + 가져올 값을 가지고 있는 input 의 id).val() >> 값을 get
+	  	$(# + 가져올 값을 가지고 있는 input 의 id).val(값) >> 값을 set
+	  */
 	  
 	  if(type =="up"){
-		  itemCnt = itemCnt +1;  //가져온 수량에서 1개 늘린다...
+		  itemCnt = itemCnt +1;  // 가져온 수량에서 1개 늘린다.
 		  $("#"+id).val(itemCnt);		  
 	  }else if(type =="down"){		  
 		  if(itemCnt ==1){
@@ -96,20 +101,21 @@
 	  } 
   }
   
-  function modifyAmount(cart_id, item_id, cnt){
+  function modifyAmount(cart_id, item_id, cnt){  //업데이트 
   
 	  
  	 var id ="qty_" + item_id + "_" + cnt;
  	 var itemCnt  = Number($("#"+id).val());
-
+	 var currentTotal = $("#finalPricePerGoods").val(); //제품 한개의 총금액
+	 var currentTotal_price = $("#total-item_price").val(); //현재 총 결제 예상금액 
  	 $("#updateForm").find("#cart_id").val(cart_id);
- 	 
+ 	 $("#updateForm").find("#item_cnt").val(item_cnt);
  	 var form  =  $("#updateForm");
  	 var url  = "<%=root%>/cartUpdate.gnd";
  	 
  	
- 	$.ajax({
-		type:"post",
+ 	$.ajax({   
+		type:"post" ,
 		dataType:"json",
 		url:url,
 		data:form.serialize(),
@@ -119,7 +125,7 @@
 			var price  = 0;
 			if(result.code !=null){
 				price = result.code;			
-				$("#"+goods_id).html(numbeComma(price) +"원");			
+				$("#"+goods_id).html(numberComma(price) +"원");			
 			}
 		},
 		fail:function(){
@@ -131,7 +137,7 @@
   //정규식을 이용한 천단위 콤마찍기 로직
   //안쓰려고했는데 스크립트에 포메터 넣으면 오류
   //이유는 스크립트가 로딩될때 숫자를 문자로 인식
-  function numbeComma(number) {
+  function numberComma(number) {
 	    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 	 
@@ -141,7 +147,7 @@
   </script>
    <form id="cartForm" method="post"></form>
    <form id="updateForm" method="post">
-     <input type="hidden" id ="item_cnt" name="item_cnt" value="" />
+     <input type="hidden" id ="item_cnt" name="item_cnt" value="" /> 
      <input type="hidden" id ="cart_id" name="cart_id" value="" />
    </form>
      <form id="wishlistForm" method="post" action="<%=root%>/wishList.gnd">
@@ -253,6 +259,7 @@
 					   <div class="total">
 						 <p>총 결제 예정금액</p>
 						 <strong id ="order_total_pay"><em>${total_price}</em> 원</strong>
+						 <input type="hidden" id="total_item_price" value="${total_item_price}"/>
 						</div>
 					  </td>
 					</tr>

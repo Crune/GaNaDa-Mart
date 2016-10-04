@@ -63,6 +63,7 @@ public class CartListAction implements SuperAction{
 		request.setAttribute("itemList", cartList);  // 장바구니 리스트
 		request.setAttribute("order_price", Commas.format(order_price));  //주문금액
 		request.setAttribute("discount_price", Commas.format(total_discount_price));  //할인금액
+		request.setAttribute("total_item_price", total_price); //계산을 위한 총 결제 예정금액
 		request.setAttribute("total_price", Commas.format(total_price));  //총 결제예정금액
 
 		//장바구니 리스트화면으로 이동 
