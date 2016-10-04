@@ -35,9 +35,39 @@
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${c_code}'"> 
+    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${pd_code}'"> 
     <input type="button" value="정보수정" onClick="mySubmit(1)">
-    <input type="button" value="선택정보등록" onclick="setInfo()">
+    <input type="button" value="선택정보등록" onClick="setInfo()">
     <input type="button" value="선택정보삭제" onClick="mySubmit(2)">
-    <input type="button" value="닫기" onclick="clo()">
-    </form>
+    <input type="button" value="닫기" onClick="clo()">
+</form>
+<script language="javascript">
+<!--
+	function setInfo(){		
+		var pd_infotype = ${pd_infotype};
+		if(pd_infotype==1){
+			opener.document.inform.pd_infocode1.value=document.infoListForm.pd_infocode.value;
+		}else if(pd_infotype==2){
+			opener.document.inform.pd_infocode2.value=document.infoListForm.pd_infocode.value;
+		}else if(pd_infotype==3){
+			opener.document.inform.pd_infocode3.value=document.infoListForm.pd_infocode.value;
+		}else{
+			opener.document.inform.pd_infocode4.value=document.infoListForm.pd_infocode.value;
+		}
+		window.close();
+	}
+	function mySubmit(index){
+		if(index==1){
+			document.colorListForm.action='./colorUpdate.gnd';
+		}
+		if(index==2){
+			document.colorListForm.action='./colorDeletePro.gnd?pd_code=${pd_code}';
+		}
+		document.colorListForm.submit();
+ 	}
+	function clo()
+	{		
+		window.close();
+	}
+-->
+</script>
