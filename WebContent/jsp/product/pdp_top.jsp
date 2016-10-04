@@ -14,12 +14,12 @@
 			</div>
 			<div class="right">
 				<div class="info">
-					<div class="tit">${pdp_product.pd_name}</div>
+					<div class="tit">${curProduct.getProduct().getPd_name()}</div>
 					<!-- 카테고리 -->
 					<div class="loc">{한줄설명}</div>
 					<div class="price">
 						<span id="itemOriAmtArea" class="ori_price" style="display: none;">{원래가격}원</span>
-						<span id="itemPriceArea">${pdp_product.pd_price}원</span>
+						<span id="itemPriceArea">${curProduct.getProduct().getPd_price()}원</span>
 					</div>
 					<div class="ra">
 						<div class="star">
