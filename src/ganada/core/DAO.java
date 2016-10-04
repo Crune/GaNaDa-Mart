@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import com.oreilly.servlet.MultipartRequest;
+
 public abstract class DAO {
 	
 	abstract protected DBTable gT();
@@ -44,6 +48,25 @@ public abstract class DAO {
         return str+result ;
     }
     
+    public static final int maxCut = 30;
+    public static String cutter(Object value) {
+    	return cutter(value, maxCut);
+    }
+    public static String cutter(Object value, int max) {
+    	String result = value+"";
+    	String returnChar = "┘";
+    	result = result.replace("\r\n", returnChar);
+    	result = result.replace("\r", returnChar);
+    	result = result.replace("\n", returnChar);
+    	result = result.replace("\t", "↔");
+    	result = result.trim();
+    	if (max > 0 && !result.isEmpty() && result.length() > max) {
+    		result = result.substring(0, max) + "…";
+    	}
+		return result;
+    	
+    }
+    
     public static String cName(Method m) {
     	String result = m.getName();
     	if (result.startsWith("get") || result.startsWith("set")) {
@@ -51,94 +74,41 @@ public abstract class DAO {
             return result;       
     	} else return null;
     }
-    
-    public void insert(Object obj) throws Exception {
-        DB db = new DB();
-        DBTable t = gT();
-        DB.Insert sql = db.new Insert(t.getTableName());
-        try {
-            DB.OUTLN("\r\n┌ Insert Data ────…");
-            sql.inSql(t.getCNameCode(), t.getTableName() + "_SEQ.NEXTVAL");
-            for (Method m : t.getter()) {
-            	Object getValue = m.invoke(obj);
-            	if (getValue != null) {
-                    sql.in(cName(m), getValue);
-                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+"\t <-"+m.getName()+""+getValue);
-            	}
-            }
-            if ( !t.getCNameReg().isEmpty() ) {
-                sql.inSql(t.getCNameReg(), "sysdate");
-                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameReg(),2)+" <- sysdate");
-            } else if (!t.getCNameMod().isEmpty() ) {
-                sql.inSql(t.getCNameMod(), "sysdate");
-                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+" <- sysdate");
-            }
-            DB.OUTLN(" -ㆍInsert Start...! ───…");
-            sql.run();
-            DB.OUTLN("SQL.R: Insert Started!");
-            DB.OUTLN("└────…");
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-    }
 
-    public Object select(String code) throws Exception {
-        DB db = new DB();
+    public Object bind(MultipartRequest request) throws Exception {
+    	return bind(request);
+    }
+    
+    public Object bind(HttpServletRequest request) throws Exception {
         DBTable t = gT();
         Object obj = t.getVoCls().newInstance();
         try {
-            db.S("*", t.getTableName(), t.getCNameCode() + "=?").var(code).exe();
-            DB.OUTLN("*"+"/"+t.getTableName()+"/"+t.getCNameCode() + "=?");
-            if (db.next()) {
-                DB.OUTLN("┌ Selected Data ────…");
-                for (Method m : t.setter()) {
-            		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                    m.invoke(obj, value);
-                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
-                }
-                DB.OUTLN("└────…");
-            } else {
-                DB.OUTLN(" » No data.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
-        }
-        return obj;
-    }
-
-    public List<?> select(String startCode, String endCode) throws Exception {
-        DB db = new DB();
-        DBTable t = gT();
-        List objList = new ArrayList<Object>();
-        try {
-            db.S("*", t.getTableName(), t.getCNameCode() + " BETWEEN ? AND ?").var(startCode).var(endCode).exe();
-            DB.OUTLN("┌ Selected Data ────…");
-            int count = 0;
-            while (db.next()) {
-                Object obj = t.getVoCls().newInstance();
-                for (Method m : t.setter()) {
-            		Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-            		m.invoke(obj, value);
-                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
-                }
-        		objList.add(obj);
-                DB.OUTLN("\tㆍ────…");
-                count++;
-            }
-            if (count==0) {
-                DB.OUTLN(" » No data.");
+            DB.OUTLN("┌ Binding Data ────…");
+            for (Method m : t.setter()) {
+            	String data = request.getParameter(cName(m).toLowerCase());
+            	if (data != null) {
+            		Object value = cVO(m.getParameterTypes()[0], data);
+	                m.invoke(obj, value);
+	                DB.OUTLN(" »\tField: "+tabber(cName(m),2)+m.getName()+"("+cutter(value)+")");
+            	}
             }
             DB.OUTLN("└────…");
+        	
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            db.finalize();
         }
-        return objList;
+		return obj;    	
+    }    
+    
+    public Object select(String code) throws Exception {
+    	return select(code, code).get(0);
+    }
+
+    public List<?> selects(String code) throws Exception {    	
+    	return select(code, code);
+    }
+    public List<?> select(String startCode, String endCode) throws Exception {    	
+    	return search(gT().getCNameCode(), startCode, endCode);
     }
     
     public List<?> search(String colName, String start, String... end) {
@@ -149,14 +119,17 @@ public abstract class DAO {
             String endVar = start;
             if (end.length>0) endVar = end[0];
             db.S("*", t.getTableName(), colName + " BETWEEN ? AND ?").var(start).var(endVar).exe();
-            DB.OUTLN("┌ Searched Data ────…");
+            DB.OUTLN("┌ Selected Data ────…");
             int count = 0;
             while (db.next()) {
                 Object obj = t.getVoCls().newInstance();
                 for (Method m : t.setter()) {
-                    Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                    m.invoke(obj, value);
-                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"("+value+")");
+                	if (db.getString(cName(m)) != null) {
+	                    DB.OUT(" »\tColumn: "+tabber(cName(m),2)+m.getName()+"(");
+	                    Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
+	                    DB.OUT(cutter(value)+")\r\n");
+	                    m.invoke(obj, value);
+                	}
                 }
                 objList.add(obj);
                 DB.OUTLN("\tㆍ────…");
@@ -174,6 +147,38 @@ public abstract class DAO {
         return objList;   
     }
 
+    public void insert(Object obj) throws Exception {
+        DB db = new DB();
+        DBTable t = gT();
+        DB.Insert sql = db.new Insert(t.getTableName());
+        try {
+            DB.OUTLN("\r\n┌ Insert Data ────…");
+            sql.inSql(t.getCNameCode(), t.getTableName() + "_SEQ.NEXTVAL");
+            for (Method m : t.getter()) {
+            	Object getValue = m.invoke(obj);
+            	if (getValue != null && !cName(m).equals(t.getCNameCode())) {
+                    sql.in(cName(m), getValue);
+                    DB.OUTLN(" »\tColumn: "+tabber(cName(m),2)+"\t <-"+m.getName()+" / "+cutter(getValue));
+            	}
+            }
+            if ( !t.getCNameReg().isEmpty() ) {
+                sql.inSql(t.getCNameReg(), "sysdate");
+                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameReg(),2)+"\t <- sysdate");
+            } else if (!t.getCNameMod().isEmpty() ) {
+                sql.inSql(t.getCNameMod(), "sysdate");
+                DB.OUTLN(" »\tColumn: "+tabber(t.getCNameMod(),2)+"\t <- sysdate");
+            }
+            DB.OUTLN(" -ㆍInsert Start...! ───…");
+            sql.run();
+            DB.OUTLN("SQL.R: Insert Started!");
+            DB.OUTLN("└────…");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.finalize();
+        }
+    }
+    
     public void update(Object obj) throws Exception {
         DB db = new DB();
         DBTable t = gT();
@@ -192,11 +197,11 @@ public abstract class DAO {
                 if (getValue != null && !isModCol && !isRegCol) {
                 	if (name.equals(t.getCNameCode())) {
                 		sql.setWhere(t.getCNameCode(), getValue);
-                        DB.OUTLN(" »\tTarget: "+tabber(name,2)+m.getName()+"("+getValue+")");
+                        DB.OUTLN(" »\tTarget: "+tabber(name,2)+m.getName()+"("+cutter(getValue)+")");
                 		isValidate = true;
                 	} else {
                 		sql.set(name, getValue);
-                        DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+getValue+")");
+                        DB.OUTLN(" »\tColumn: "+tabber(name,2)+m.getName()+"("+cutter(getValue)+")");
                     }
                 }
             }       
@@ -241,17 +246,21 @@ public abstract class DAO {
     }
 
     public int count(String code) throws Exception {
+		return count(null, code);
+    }
+
+    public int count(String column, String data) throws Exception {
 		DB db = new DB();
         DBTable t = gT();
 		int x = 0;
-		code = (String) NULL.R(code, "0");
-		int num = Integer.parseInt(code);
 		
 		try {
-			if (num==0) {
+			if (column==null && data == null) {
 				db.S("count(*)", t.getTableName()).exe();
+			} else if (column == null) {
+				db.S("count(*)", t.getTableName(), t.getCNameCode()+"=?").var(data).exe();
 			} else {
-				db.S("count(*)", t.getTableName(), t.getCNameCode()+"=?").var(num).exe();
+				db.S("count(*)", t.getTableName(), column+"=?").var(data).exe();
 			}
 			if(db.next()){
 				x = db.exe().getInt(1);
@@ -264,32 +273,23 @@ public abstract class DAO {
 		return x;
     }
 
-    public int isSame(String keyColumnName, String target, String varColumnName, String var) throws Exception {
+    public int isExist(String whereColumnName, String whereVar) throws Exception {
+		return isSame(whereColumnName, whereVar, whereColumnName, whereVar);
+    }    
+    
+    public int isSame(String whereColumnName, String whereVar, String selectColumnName, String conditionVar) throws Exception {
 		DB db = new DB();
         DBTable t = gT();
 		int x = -1;
 		try {
-		    db.S(varColumnName, t.getTableName(), keyColumnName+"=?").var(target).exe();
+		    db.S(selectColumnName, t.getTableName(), whereColumnName+"=?").var(whereVar).exe();
+		    if (conditionVar == null) {
+		    	conditionVar = whereVar;
+	    	}
 		    if (db.next()) {
-			String dst = db.exe().getString(varColumnName);
-			x = (dst.equals(var)) ? 1 : 0;
+				String dst = db.exe().getString(selectColumnName);
+				x = (dst.equals(conditionVar)) ? 1 : 0;
 		    }
-		} catch (Exception ex) {
-		    ex.printStackTrace();
-		} finally {
-		    db.finalize();
-		}
-		return x;
-    }
-
-    public int isExist(String keyColumnName, String target) throws Exception {
-		DB db = new DB();
-        DBTable t = gT();
-		int x = -1;
-	
-		try {
-		    db.S(keyColumnName, t.getTableName(), keyColumnName+"=?").var(target).exe();
-		    x = db.next() ? 1 : -1;
 		} catch (Exception ex) {
 		    ex.printStackTrace();
 		} finally {

@@ -4,14 +4,7 @@ public class NULL {
 
     @SuppressWarnings("finally")
     public static String toDQ(String checkStr) {
-        try {
-            if (checkStr == null) return "";
-            else return checkStr;
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            return "";
-        }
+        return (String) R(checkStr, "");
     }
     
     

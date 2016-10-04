@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ch11.logon.LogonDBBean;
-import ch11.logon.LogonDataBean;
 import ganada.action.common.SuperAction;
 import ganada.obj.member.Account;
 import ganada.obj.member.AccountDao;
@@ -20,6 +18,7 @@ public class Join2Action implements SuperAction {
 
 	@Override
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		/*
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		String oln = (String)session.getAttribute("overlapName");
@@ -53,7 +52,7 @@ public class Join2Action implements SuperAction {
 		}
 		
 		
-		
+		*/
 		return "/jsp/member/join2.jsp";
 	}
 

@@ -10,4 +10,5 @@
 <jsp:include page='/jsp/product/pdp_top.jsp' flush="false" />
 <jsp:include page='/jsp/product/pdp_reco.jsp' flush="false" />
 <jsp:include page='/jsp/product/pdp_detail.jsp' flush="false" />
+<jsp:include page='/jsp/product/pdp_review.jsp' flush="false" />
 <jsp:include page='${urlFooter}' flush="false" />

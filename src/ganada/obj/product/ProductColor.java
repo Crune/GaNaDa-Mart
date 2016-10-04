@@ -2,8 +2,7 @@ package ganada.obj.product;
 
 public class ProductColor {
 	private String c_code;				//색상코드
-	private String pd_code;				//이미지코드
-	private String im_code;				//이미지코드
+	private String pd_code;				//상품코드
 	private String c_name;				//색상이름
 	
 	public String getC_code() {
@@ -17,12 +16,6 @@ public class ProductColor {
 	}
 	public void setPd_code(String pd_code) {
 		this.pd_code = pd_code;
-	}
-	public String getIm_code() {
-		return im_code;
-	}
-	public void setIm_code(String im_code) {
-		this.im_code = im_code;
 	}
 	public String getC_name() {
 		return c_name;

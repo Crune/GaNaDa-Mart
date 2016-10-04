@@ -2,7 +2,7 @@
 
     pageEncoding="EUC-KR"%>
 
-<%@ page import="ganada.action.member.SearchService" %>
+<%@ page import="ganada.obj.member.AccountDao" %>
 
 <!DOCTYPE html>
 
@@ -16,7 +16,7 @@
 
 </head>
 
-<%
+<%--
 
    request.setCharacterEncoding("euc-kr");
 
@@ -34,7 +34,7 @@
 
    String userId = searchService.searchId(userName, Phone);
 
-%>
+--%>
 
 <body>
 
@@ -54,17 +54,17 @@
 
      <table width="750px" align="center" border=0; style="background-color:white; margin-top:3%" >
 
-      <%if(userId!= null){ %>
+      <%--if(userId!= null){ --%>
 
       <tr>
 
-       <td><%=userName %>님의 아이디는</td>
+       <td><%--=userName --%>님의 아이디는</td>
 
       </tr>
 
       <tr>
 
-      <td><h1><%=userId %></h1>입니다.</td>
+      <td><h1><%--=userId --%></h1>입니다.</td>
 
       </tr>
 
@@ -88,11 +88,11 @@
 
       </table>
 
-      <%} else{%>
+      <%--} else{--%>
 
       <tr>
 
-      <td><%=userName %>님!</td>
+      <td><%--=userName --%>님!</td>
 
       </tr>
 
@@ -124,7 +124,7 @@
 
       </table>   
 
-      <%} %>
+      <%--} --%>
 
       
 
