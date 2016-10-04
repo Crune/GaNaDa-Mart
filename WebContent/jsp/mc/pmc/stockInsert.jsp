@@ -6,7 +6,7 @@
     <form id="stinform" action="./stockInsertPro.gnd" method="post">
 	    <div id="productForm" class="box">
 		    <ul>
-			   	<input id="pd_code" name="pd_code" type="hidden" placeholder="상품코드" value="${pd_code }">
+			   	<input name="pd_code" type="hidden" value="${pd_code }">
 			    <li><label for="c_code">색상</label>
 			    	<select id="c_code" name="c_code">
 				    	<option value="" selected>색상</option>
