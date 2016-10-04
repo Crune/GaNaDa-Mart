@@ -20,23 +20,14 @@
 	</table>
     <input type="button" name="colorUpdate" value="새정보등록" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${pd_code}'"> 
     <input type="button" value="정보수정" onClick="colorSubmit(1)">
-    <input type="button" value="선택정보등록" onClick="setInfo()">
+    <input type="button" value="선택정보등록" onClick="setColor()">
     <input type="button" value="선택정보삭제" onClick="colorSubmit(2)">
     <input type="button" value="닫기" onClick="clo()">
 </form>
 <script language="javascript">
 <!--
-	function setInfo(){		
-		var pd_infotype = ${pd_infotype};
-		if(pd_infotype==1){
-			opener.document.inform.pd_infocode1.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype==2){
-			opener.document.inform.pd_infocode2.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype==3){
-			opener.document.inform.pd_infocode3.value=document.infoListForm.pd_infocode.value;
-		}else{
-			opener.document.inform.pd_infocode4.value=document.infoListForm.pd_infocode.value;
-		}
+	function setColor(){		
+		opener.document.inform.c_code.value=document.infoListForm.c_code.value;
 		window.close();
 	}
 	function colorSubmit(index){
