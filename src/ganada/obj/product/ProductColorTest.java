@@ -14,8 +14,7 @@ public class ProductColorTest extends DBTester {
 
     @BeforeClass
     public static void init() {
-    	productColorOrg = new ProductColor(); 	
-    	productColorOrg.setIm_code("1");						
+    	productColorOrg = new ProductColor(); 					
     	productColorOrg.setC_name("블랙");	
     }
 
