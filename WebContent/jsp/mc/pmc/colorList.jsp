@@ -8,7 +8,7 @@
             alert("정보종류를 선택해주세요");
             return;
         }
-        url = "infoUpdate.gnd?pd_infocode=" + userinput.pd_infocode.value ;
+        url = "colorUpdate.gnd?pd_code=" + userinput.c_code.value ;
         
         open(url, "open", 
         "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
@@ -23,51 +23,21 @@
 </script>
 <form name=colorListForm action="./colorUpdate.gnd" method="post" onSubmit="return checkIt()">
    <table>
-	   	<c:forEach var="i" items="${piList }">
+	   	<c:forEach var="i" items="${cList }">
 	 		<tr>
 	 			<td>정보내용
-	 				<input type="radio" name="pd_infocode" value="${i.pd_infocode }">
+	 				<input type="radio" name="c_code" value="${i.c_code }">
 	 			</td>
 			 	<td>
-			 		${i.pd_infoname }
+			 		${i.c_name }
 				</td>
-				<td>${i.pd_infocode }</td>
+				<td>${i.c_code }</td>
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./infoInsert.gnd?pd_infotype=${pd_infotype}'"> 
+    <input type="button" name="openUpdate" value="새정보등록" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${c_code}'"> 
     <input type="button" value="정보수정" onClick="mySubmit(1)">
     <input type="button" value="선택정보등록" onclick="setInfo()">
     <input type="button" value="선택정보삭제" onClick="mySubmit(2)">
     <input type="button" value="닫기" onclick="clo()">
     </form>
-<script language="javascript">
-<!--
-	function setInfo(){		
-		var pd_infotype = ${pd_infotype};
-		if(pd_infotype==1){
-			opener.document.inform.pd_infocode1.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype==2){
-			opener.document.inform.pd_infocode2.value=document.infoListForm.pd_infocode.value;
-		}else if(pd_infotype==3){
-			opener.document.inform.pd_infocode3.value=document.infoListForm.pd_infocode.value;
-		}else{
-			opener.document.inform.pd_infocode4.value=document.infoListForm.pd_infocode.value;
-		}
-		window.close();
-	}
-	function mySubmit(index){
-		if(index==1){
-			document.infoListForm.action='./infoUpdate.gnd';
-		}
-		if(index==2){
-			document.infoListForm.action='./infoDeletePro.gnd?pd_infotype=${pd_infotype}';
-		}
-		document.infoListForm.submit();
- 	}
-	function clo()
-	{		
-		window.close();
-	}
--->
-</script>
