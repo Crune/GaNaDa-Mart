@@ -34,6 +34,12 @@ public class DBTable {
 	public DBTable(Class OBJ, String TABLE_NAME, String COL_NAME_CODE) {
 		set(OBJ, TABLE_NAME, COL_NAME_CODE, "", "");
 	}
+	public DBTable(String TABLE_NAME, String COL_NAME_CODE, String COL_NAME_REG) {
+		set(voCls, TABLE_NAME, COL_NAME_CODE, COL_NAME_REG, "");
+	}	
+	public DBTable(String TABLE_NAME, String COL_NAME_CODE, String COL_NAME_REG, String COL_NAME_MOD) {
+		set(voCls, TABLE_NAME, COL_NAME_CODE, COL_NAME_REG, COL_NAME_MOD);
+	}	
 	public DBTable(Class OBJ, String TABLE_NAME, String COL_NAME_CODE, String COL_NAME_REG, String COL_NAME_MOD) {
 		set(OBJ, TABLE_NAME, COL_NAME_CODE, COL_NAME_REG, COL_NAME_MOD);
 	}	
