@@ -31,8 +31,8 @@ public class ReviewProAction implements SuperAction {
 		ItemReview review = new ItemReview();
 		String star = mr.getParameter("star");
 		String itemsize = mr.getParameter("itemsize");
-		String itemnum = mr.getParameter("itemnum");
-		String itemname = mr.getParameter("itemname");
+		String pd_code = mr.getParameter("pd_code");
+		String pd_name = mr.getParameter("pd_name");
 		String writer = mr.getParameter("writer");
 		String siz = mr.getParameter("siz");
 		String wei = mr.getParameter("wei");
@@ -44,8 +44,8 @@ public class ReviewProAction implements SuperAction {
 		String subject = mr.getParameter("subject");
 		String content = mr.getParameter("content");
 
-		review.setItemnum(itemnum);
-		review.setItemname(itemname);
+		review.setPd_code(pd_code);
+		review.setPd_name(pd_name);
 		review.setWriter(writer);
 		review.setStar(Integer.parseInt(star));
 		review.setItemsize(itemsize);
@@ -64,7 +64,7 @@ public class ReviewProAction implements SuperAction {
 		ird.insert(review);
 		
 		
-		request.setAttribute("itemnum", itemnum);
+		request.setAttribute("pd_code", pd_code);
 		request.setAttribute("sysName", sysName);
 		return "/jsp/review/reviewPro.jsp";
 	}
