@@ -20,6 +20,7 @@ public class MCPageAction implements SuperAction {
             actions.put("main", new MCMainAction());
             actions.put("product", new ListAction());
             actions.put("productInsert", new InsertAction());
+            actions.put("productUpdate", new UpdateAction());
             actions.put("error", new MCErrorAction());      
             
             HttpSession session = request.getSession();
