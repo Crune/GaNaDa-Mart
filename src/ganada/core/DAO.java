@@ -76,17 +76,36 @@ public abstract class DAO {
     }
 
     public Object bind(MultipartRequest request) throws Exception {
-    	return bind(request);
+        return bind(null, request);
     }
-    
+
     public Object bind(HttpServletRequest request) throws Exception {
+        return bind(request, null);
+    }    
+    
+    public Object bind(HttpServletRequest req, MultipartRequest mreq) throws Exception {
         DBTable t = gT();
         Object obj = t.getVoCls().newInstance();
         try {
             DB.OUTLN("┌ Binding Data ────…");
             for (Method m : t.setter()) {
-            	String data = request.getParameter(cName(m).toLowerCase());
-            	if (data != null) {
+                
+            	String dataU="", dataL="", data="";
+            	if (req == null) {
+                    dataU = mreq.getParameter(cName(m).toUpperCase());
+            	    dataL = mreq.getParameter(cName(m).toLowerCase());
+            	}
+                if (mreq == null) {
+                    dataU = req.getParameter(cName(m).toUpperCase());
+                    dataL = req.getParameter(cName(m).toLowerCase());
+                }
+
+                if (dataU==null) dataU = "";
+                if (dataL==null) dataL = "";
+                data = (dataU.length()>0)?dataU:(dataL.length()>0)?dataL:"";
+                
+                DB.OUTLN("\tDATA:"+m.getName()+"/"+dataU+"/"+dataL+">"+data);
+            	if (!data.isEmpty()) {
             		Object value = cVO(m.getParameterTypes()[0], data);
 	                m.invoke(obj, value);
 	                DB.OUTLN(" »\tField: "+tabber(cName(m),2)+m.getName()+"("+cutter(value)+")");

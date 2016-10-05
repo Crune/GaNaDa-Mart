@@ -18,16 +18,16 @@
 			</tr>
 		</c:forEach>
 	</table>
-    <input type="button" name="colorUpdate" value="새정보등록" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${pd_code}'"> 
-    <input type="button" value="정보수정" onClick="colorSubmit(1)">
-    <input type="button" value="선택정보등록" onClick="setColor()">
-    <input type="button" value="선택정보삭제" onClick="colorSubmit(2)">
+    <input type="button" name="colorUpdate" value="색상종류추가" OnClick="javascript:window.location='./colorInsert.gnd?pd_code=${pd_code}'"> 
+    <input type="button" value="선택색상변경" onClick="colorSubmit(1)">
+    <input type="button" value="선택색상등록" onClick="setColor()">
+    <input type="button" value="선택색상삭제" onClick="colorSubmit(2)">
     <input type="button" value="닫기" onClick="clo()">
 </form>
 <script language="javascript">
 <!--
 	function setColor(){		
-		opener.document.inform.c_code.value=document.infoListForm.c_code.value;
+		opener.document.stinform.c_code.value=document.colorListForm.c_code.value;
 		window.close();
 	}
 	function colorSubmit(index){
