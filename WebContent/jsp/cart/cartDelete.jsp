@@ -13,7 +13,7 @@
 <script type="text/javascript">
 
 	function  resultProcess(){
-		  var resultCode = $("#resultForm").find("#resultCode").val();
+		  var resultCode  = $("#resultForm").find("#resultCode").val();
 		  
 		  if(resultCode  ="Sucess"){
 			  $(location).attr('href',"<%=root%>/cartList.gnd");

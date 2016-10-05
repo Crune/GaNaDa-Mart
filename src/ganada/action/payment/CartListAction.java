@@ -1,6 +1,5 @@
 package ganada.action.payment;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class CartListAction implements SuperAction{
 		int order_price  = 0;
 		int total_discount_price  =0; // 혹시나 할인율 적용하면 쓰려고 만들어만 놓
 		int total_price = 0; // 카트리스트 총 금액 
-		DecimalFormat Commas = new DecimalFormat("#,###");
+		//DecimalFormat Commas = new DecimalFormat("#,###");
 		
 		//사용자가 지닌 장바구니 정보가 있을 시 각각의 상품에 대한 가격정보 및 총가격을 구해야한다.
 		if(cartList !=null && cartList.size() > 0){
@@ -61,10 +60,9 @@ public class CartListAction implements SuperAction{
 		total_price = order_price - total_discount_price;  // 총 예산가격에서 할인가격을 빼면 실제 예상 결제금액이 나온다.
 		
 		request.setAttribute("itemList", cartList);  // 장바구니 리스트
-		request.setAttribute("order_price", Commas.format(order_price));  //주문금액
-		request.setAttribute("discount_price", Commas.format(total_discount_price));  //할인금액
-		request.setAttribute("total_item_price", total_price); //계산을 위한 총 결제 예정금액
-		request.setAttribute("total_price", Commas.format(total_price));  //총 결제예정금액
+		request.setAttribute("order_price", order_price);  //주문금액
+		request.setAttribute("discount_price", total_discount_price);  //할인금액
+		request.setAttribute("total_price", total_price);  //  총 결제예정금액
 
 		//장바구니 리스트화면으로 이동 
 		return "/jsp/cart/cartList.jsp";

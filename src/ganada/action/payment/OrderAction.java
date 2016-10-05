@@ -10,6 +10,7 @@ public class OrderAction implements SuperAction{
 	@Override
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
+		String cart_ids   = request.getParameter("cart_ids");
 		return "/jsp/order/order.jsp";
 	}
 

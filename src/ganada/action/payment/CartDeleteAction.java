@@ -16,8 +16,7 @@ public class CartDeleteAction implements SuperAction, DataBinding{
 		
 		Cart cartSVO = (Cart)request.getAttribute("cart");
 		
-		
-		int result  = 0;
+		int result  =0;
 		CartDao dao  = CartDao.getInstance();
 		result  = dao.deleteCart(cartSVO.getCart_id());
 		
