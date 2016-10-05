@@ -3,8 +3,8 @@
 	
 <table>
 	<tr>
-		<td><font size="4"> 상품 평가</font></td>
-		<td>작성자 정보</td>
+		<td width = "450"><font size="4"> 상품 평가</font></td>
+		<td width = "400">작성자 정보</td>
 	</tr>
 </table>
 <hr>

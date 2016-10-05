@@ -4,8 +4,9 @@ import java.sql.Timestamp;
 
 public class ItemReview {
 	private int num; //게시글 번호
-	private String itemname;// 상품명
-	private String itemnum;//게시한 상품등록번호
+	private String pd_name;// 상품명
+	private String pd_code;//게시한 상품등록번호
+	private String ac_code;
 	private String writer;//작성자
 	private String subject;//제목
 	private int siz;
@@ -18,11 +19,9 @@ public class ItemReview {
 	private String age;
 	private String content;//내용
 	private int star;//별점
-	private int readcount;//조회수
+	private int vote_up;
+	private int vote_down;
 	private Timestamp reg_date;//등록일
-	private int ref;//게시글 그룹번호
-	private int re_step;//게시글 계층 정렬 번호
-	private int re_level;//게시글 계층 번호
 	private String img;
 	public int getNum() {
 		return num;
@@ -30,17 +29,36 @@ public class ItemReview {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public String getItemname() {
-		return itemname;
+
+	public String getPd_name() {
+		return pd_name;
 	}
-	public void setItemname(String itemname) {
-		this.itemname = itemname;
+	public void setPd_name(String pd_name) {
+		this.pd_name = pd_name;
 	}
-	public String getItemnum() {
-		return itemnum;
+	public String getPd_code() {
+		return pd_code;
 	}
-	public void setItemnum(String itemnum) {
-		this.itemnum = itemnum;
+	public void setPd_code(String pd_code) {
+		this.pd_code = pd_code;
+	}
+	public String getAc_code() {
+		return ac_code;
+	}
+	public void setAc_code(String ac_code) {
+		this.ac_code = ac_code;
+	}
+	public int getVote_up() {
+		return vote_up;
+	}
+	public void setVote_up(int vote_up) {
+		this.vote_up = vote_up;
+	}
+	public int getVote_down() {
+		return vote_down;
+	}
+	public void setVote_down(int vote_down) {
+		this.vote_down = vote_down;
 	}
 	public String getWriter() {
 		return writer;
@@ -114,35 +132,12 @@ public class ItemReview {
 	public void setStar(int star) {
 		this.star = star;
 	}
-	public int getReadcount() {
-		return readcount;
-	}
-	public void setReadcount(int readcount) {
-		this.readcount = readcount;
-	}
+
 	public Timestamp getReg_date() {
 		return reg_date;
 	}
 	public void setReg_date(Timestamp reg_date) {
 		this.reg_date = reg_date;
-	}
-	public int getRef() {
-		return ref;
-	}
-	public void setRef(int ref) {
-		this.ref = ref;
-	}
-	public int getRe_step() {
-		return re_step;
-	}
-	public void setRe_step(int re_step) {
-		this.re_step = re_step;
-	}
-	public int getRe_level() {
-		return re_level;
-	}
-	public void setRe_level(int re_level) {
-		this.re_level = re_level;
 	}
 
 	
@@ -155,10 +150,10 @@ public class ItemReview {
 	}
 	public String toString() {
 	    
-	    String result = "ItemReview{"+num+", "+itemname+", "+itemnum+", "+writer+", "+subject
+	    String result = "ItemReview{"+num+", "+pd_name+", "+pd_code+", "+ac_code+" "+writer+", "+subject
             +siz+", "+comfortable+", "+wid+", "+dura+", "+itemsize
-            +wei+", "+hei+", "+age+", "+content+", "+star
-            +readcount+", "+reg_date+", "+ref+", "+re_step+", "+re_level+"img"+"}";
+            +wei+", "+hei+", "+age+", "+content+", "+star+", "+reg_date+", "+"img"+","
+            		+vote_up+", "+vote_down+"}";
             
 	    return result;
 	}

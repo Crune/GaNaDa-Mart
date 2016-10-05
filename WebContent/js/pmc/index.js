@@ -3,7 +3,9 @@ $(document).ready(function(){
 	$("#inProduct").click(function(){//상품등록 도메인으로 수정해야됨
 		window.location = "./insert.gnd";
 	});
-	
+	$("#list").click(function(){
+		window.location = "./list.gnd";
+	});
 	$("#upProduct").click(function(){
 		window.location = "./update.gnd";
 	});

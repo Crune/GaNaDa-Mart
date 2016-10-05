@@ -13,8 +13,8 @@ public class ItemReviewTest extends DBTester {
     @BeforeClass
     public static void init() {
     	ItemReviewOrg = new ItemReview();
-    	ItemReviewOrg.setItemname("나이키 머큐리얼 베이퍼 XI FG");
-    	ItemReviewOrg.setItemnum("55");
+    	ItemReviewOrg.setPd_name("나이키 머큐리얼 베이퍼 XI FG");
+    	ItemReviewOrg.setPd_code("55");
     	ItemReviewOrg.setWriter("kkk");
     	ItemReviewOrg.setSubject("최고의 축구화");
     	ItemReviewOrg.setSiz(0);
