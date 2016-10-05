@@ -11,7 +11,6 @@
     </div>
 </div>
 
-<br />
 <c:if test ="${count == 0 }">
 등록된 상품이 없습니다.
 </c:if>
@@ -49,7 +48,7 @@ ${pd.getPd_infocode4()}</td>
 <td>
 '<fmt:formatDate value="${pd.getPd_reg_date()}" pattern="yy MM-dd" /><br />
 </td>
-<td>
+<td align="right">
 <div class="btn-group btn-group-xs" role="group">
 <button class="btn btn-default" onclick="javascript:window.location='./mc.gnd?menu=productUpdate&pd_code=${pd.getPd_code()}'">수정</button>
 <button class="btn btn-default" onclick="javascript:window.location='./delete.gnd?pd_code=${pd.getPd_code()}'">관리</button>
