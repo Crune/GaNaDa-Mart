@@ -6,8 +6,7 @@
 
 등록된 상품 목록 <font size="3" color="red">${count}</font><br /> 
 <br />
-<input type="button" value="상품등록" onclick="javascript:window.location='./insert.gnd'">
-<input type="button" value="관리자 메인" onclick="javascript:window.location='./index.gnd'">
+<input type="button" value="상품등록" onclick="javascript:window.location='./mc.gnd?menu=productInsert'">
 <br />
 <c:if test ="${count == 0 }">
 등록된 상품이 없습니다.
@@ -50,7 +49,7 @@ ${pd.getPd_infocode4()}</td>
 <td width="70">
 ${pd.getPd_reg_date()}</td>
 <td>
-<input type="button" value="수정" onclick="javascript:window.location='./update.gnd?pd_code=${pd.getPd_code()}'">
+<input type="button" value="수정" onclick="javascript:window.location='./mc.gnd?menu=productUpdate&pd_code=${pd.getPd_code()}'">
 </td>
 <td>
 <input type="button" value="삭제" onclick="javascript:window.location='./delete.gnd?pd_code=${pd.getPd_code()}'">

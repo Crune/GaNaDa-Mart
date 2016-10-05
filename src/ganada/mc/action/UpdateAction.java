@@ -16,7 +16,8 @@ public class UpdateAction implements SuperAction{
 		Product product = (Product)dbPro.select(pd_code);
 		
 		request.setAttribute("product", product);
-		}catch(Exception e){e.printStackTrace();}
+		}catch(Exception e){e.printStackTrace();}		
+		
 		return "/jsp/mc/pmc/update.jsp";
 	}
 
