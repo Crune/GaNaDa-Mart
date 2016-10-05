@@ -52,7 +52,7 @@ ${pd.getPd_infocode4()}</td>
 <input type="button" value="삭제" onclick="javascript:window.location='./delete.gnd?pd_code=${pd.getPd_code()}'">
 </td>
 <td>
-<input type="button" value="관리" onclick="javascript:window.location='./mc.gnd?menu=stockList&pd_code=${pd.getPd_code()}'">
+<input type="button" value="관리" onclick="javascript:window.location='./mc.gnd?menu=stock&pd_code=${pd.getPd_code()}'">
 </td>
 </tr>
 </c:forEach>
