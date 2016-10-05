@@ -43,7 +43,7 @@ ${pd.getPd_infocode3()}</td>
 <td width="30" align="center">
 ${pd.getPd_infocode4()}</td>
 <td width="70">
-'<fmt:formatDate value="${pd.getPd_reg_date()}" pattern="yy mm-dd" /><br />
+'<fmt:formatDate value="${pd.getPd_reg_date()}" pattern="yy MM-dd" /><br />
 </td>
 <td>
 <input type="button" value="수정" onclick="javascript:window.location='./mc.gnd?menu=productUpdate&pd_code=${pd.getPd_code()}'">

@@ -40,7 +40,8 @@ public class ProductDao extends DAO {
 						+ " WHERE pif.PD_INFOCODE=p.PD_INFOCODE1"
 						+ " AND pif2.PD_INFOCODE=p.PD_INFOCODE2"
 						+ " AND pif3.PD_INFOCODE=p.PD_INFOCODE3"
-						+ " AND pif4.PD_INFOCODE=p.PD_INFOCODE4";
+						+ " AND pif4.PD_INFOCODE=p.PD_INFOCODE4"
+						+ " ORDER BY PD_REG_DATE DESC";
 			    db.sql(sql).exe();
 		    	while(db.next()){
 			    	Product product = new Product();
