@@ -32,7 +32,7 @@ public class InsertProAction implements SuperAction{
 		
 
 		
-		return "/jsp/mc/pmc/insert.jsp";
+		return "/jsp/mc/pmc/insertPro.jsp";
 	}
 
 }

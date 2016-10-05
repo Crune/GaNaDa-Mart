@@ -9,10 +9,10 @@ import ganada.obj.product.StockDao;
 public class StockDeleteProAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-		String st_code = request.getParameter("st_code");
+		String sk_code = request.getParameter("sk_code");
 		
 		StockDao dbPro = StockDao.getInstance();
-		dbPro.delete(st_code);
+		dbPro.delete(sk_code);
 		
 		return "/jsp/mc/pmc/stockDeletePro.jsp";
 	}

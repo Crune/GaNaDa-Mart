@@ -37,26 +37,9 @@
 	  });
 	  
 	  $("#order").bind("click", function(){
-		  $(location).attr('href',"<%=root%>/orderForm.gnd");
+		  orderItem();
 	  });	
 	  
-  }
-  
-   function wishlistItem(item_num, cart_id){
-	  
-	  var result = confirm('상품을 위시리스트에 담았습니다.');
-      if(result) {
-    	  var form  = $("#wishlistForm");
-    	  
-    	  console.log(form);
-    	  
-    	  form.find("#cart_id").val(cart_id);
-    	  form.find("#item_num").val(item_num);
-    	  
-    	  form.submit();
-      } else {
-          
-      }
   }
   
   function deleteItem(item_num, cart_id){
@@ -76,19 +59,18 @@
       }
   }
   
- 
-  function changeAmount(item_id, cnt, type){ 
+  function changeAmount(item_id, cnt, type){
 	  
 	  var id ="qty_" + item_id + "_" + cnt;
-	  var itemCnt  = Number($("#"+id).val());  //수량값 가져오기 
+	  var itemCnt  = Number($("#"+id).val());  //수량값 가져오기
 	  
 	  /*
-	  	$(# + 가져올 값을 가지고 있는 input 의 id).val() >> 값을 get
-	  	$(# + 가져올 값을 가지고 있는 input 의 id).val(값) >> 값을 set
+	     $(# + 가져올 값을 가지고있는  input 의 id).val()  >> 값을 get
+	     $(# + 가져올 값을 가지고있는  input 의 id).val(값)  >> 값을  get	  
 	  */
 	  
 	  if(type =="up"){
-		  itemCnt = itemCnt +1;  // 가져온 수량에서 1개 늘린다.
+		  itemCnt = itemCnt +1;  //가져온 수량에서 1개 늘린다...
 		  $("#"+id).val(itemCnt);		  
 	  }else if(type =="down"){		  
 		  if(itemCnt ==1){
@@ -101,21 +83,24 @@
 	  } 
   }
   
-  function modifyAmount(cart_id, item_id, cnt){  //업데이트 
+  function modifyAmount(cart_id, item_id, cnt){
   
 	  
  	 var id ="qty_" + item_id + "_" + cnt;
  	 var itemCnt  = Number($("#"+id).val());
-	 var currentTotal = $("#finalPricePerGoods").val(); //제품 한개의 총금액
-	 var currentTotal_price = $("#total-item_price").val(); //현재 총 결제 예상금액 
+ 	 var currentTotal  = $("#finalPricePerGoods_"+cart_id).val();  //  현재 제품한개의 총금액
+ 	 var currentTtoal_price  =$("#total_item_price").val();  // 현재 총 결제 예상금액
+
+ 	 
  	 $("#updateForm").find("#cart_id").val(cart_id);
- 	 $("#updateForm").find("#item_cnt").val(item_cnt);
+ 	 $("#updateForm").find("#item_cnt").val(itemCnt);
+ 	 
  	 var form  =  $("#updateForm");
  	 var url  = "<%=root%>/cartUpdate.gnd";
  	 
  	
- 	$.ajax({   
-		type:"post" ,
+ 	$.ajax({
+		type:"post",
 		dataType:"json",
 		url:url,
 		data:form.serialize(),
@@ -123,9 +108,15 @@
 			console.log(result);
 			var goods_id  ="total_goods_"+cart_id;
 			var price  = 0;
-			if(result.code !=null){
-				price = result.code;			
-				$("#"+goods_id).html(numberComma(price) +"원");			
+			if(result!=null){
+				price = result.total_price;		
+				var cart_total_price  = (currentTtoal_price - currentTotal) + price;
+				console.log(price);
+				$("#"+goods_id).html(numberComma(price) +"원");  // 디스플레이용 합계금액
+				$("#finalPricePerGoods_"+cart_id).val(price); // 계산용 합계금액
+				$("#order_total_price").html(numberComma(cart_total_price)+"원");// 디스플레이용 상품주문금액
+				$("#order_total_pay").html("<em>"+numberComma(cart_total_price) +"</em> 원");  // 디스플레이용 총 예상금액
+				$("#total_item_price").val(cart_total_price); // 계산용 총 예상금액
 			}
 		},
 		fail:function(){
@@ -134,27 +125,38 @@
 	});
   }
   
-  //정규식을 이용한 천단위 콤마찍기 로직
-  //안쓰려고했는데 스크립트에 포메터 넣으면 오류
-  //이유는 스크립트가 로딩될때 숫자를 문자로 인식
+  //정규식을 이용한 천단위 콤마찍기 로직....
+  // 안쓰려고했는데 스크립트에 포메터 넣으면 오류난다..
+  //이유는 스크립트가 로딩될때 숫자를 문자로 인식하네 아오...
   function numberComma(number) {
 	    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  
+  var cart_idArr=[];
+  
+  function orderItem(){
+	  $(":checkbox[name='cart_check']:checked").each(function(index,obj){
+		  cart_idArr.push(obj.value);
+	  });
+	  
+	  var cartForm  = $("#cartForm");
+	  
+	  cartForm.find("#cart_ids").val(cart_idArr.join(','));
+	  
+  }
 	 
-  //페이지 로드되자마자 해당 펑션을 실행시키도록 함
-  //제이쿼리함수써도 되는데 이게 더 보기 좋아서 사용
+  //페이지 로드되자마자 해당 펑션을 실행시키도록 함...
+  // 제이쿼리함수써도 되는데 이게 더 보기 좋아서 그냥 씀...
   window.onload = init;
   </script>
-   <form id="cartForm" method="post"></form>
+   <form id="cartForm" method="post" action="<%=root%>/orderItem.gnd">
+     <input type="hidden" id ="cart_ids" name="cart_ids" value="" />
+   </form>
    <form id="updateForm" method="post">
-     <input type="hidden" id ="item_cnt" name="item_cnt" value="" /> 
+     <input type="hidden" id ="item_cnt" name="item_cnt" value="" />
      <input type="hidden" id ="cart_id" name="cart_id" value="" />
    </form>
-     <form id="wishlistForm" method="post" action="<%=root%>/wishList.gnd">
-     <input type="hidden" id="item_num" name="item_num" value="" />
-     <input type="hidden" id="cart_id" name="cart_id" value="" />
-     
-     <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
+   <form id="deletecartForm" method="post" action="<%=root%>/cartDelete.gnd">
      <input type="hidden" id="item_num" name="item_num" value="" />
      <input type="hidden" id="cart_id" name="cart_id" value="" />
    </form>
@@ -209,7 +211,7 @@
 					<c:forEach var="vo" items="${itemList}" varStatus="status">
 					 <tr>
 					  <td class="lns01">
-					   <input type="checkbox" id="check_${vo.item_id}" name="cart_check" value="${vo.item_id}" checked="checked">
+					   <input type="checkbox" id="check_${vo.cart_id}" name="cart_check" value="${vo.cart_id}" checked="checked">
 					 </td>
 					  <td class="lns02">
 						   <div class ="ms">
@@ -229,7 +231,7 @@
 					   </td>
 					   <td class="lns04">
                          <label class="hidden" for="amountType02">수량입력</label>
-                         <input name="qty" title="수량선택" class="qty" id="qty_${vo.item_id}_${status.count}" readonly="readonly" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="1">
+                         <input name="qty" title="수량선택" class="qty" id="qty_${vo.item_id}_${status.count}" readonly="readonly" style="-ms-ime-mode: disabled;" type="text" maxlength="4" value="${vo.item_cnt}">
 						  <div class="option">
 				               <a href="javascript:void(0);" onclick="javascript:changeAmount('${vo.item_id}', ${status.count}, 'up')"><img alt="수량증가" src="<%=root%>/img/cart/up_arrow.png"></a>
 							   <a href="javascript:void(0);" onclick="javascript:changeAmount('${vo.item_id}', ${status.count}, 'down')"><img alt="수량감소" src="<%=root%>/img/cart/down_arrow.png"></a>
@@ -241,10 +243,10 @@
 				       </td>
 				       <td class="lns05">
 						  <strong id="total_goods_${vo.cart_id}"><fmt:formatNumber value="${vo.item_total}" pattern="#,###" />원</strong>
-					      <input type="hidden" id="finalPricePerGoods" name="finalPricePerGoods" value="${vo.item_total}">
+					      <input type="hidden" id="finalPricePerGoods_${vo.cart_id}" name="finalPricePerGoods_${vo.cart_id}" value="${vo.item_total}">
 					   </td>
 					   <td class="lns06">
-						  <a href="javascript:void(0)" onclick="javascript:wishlistItem('${vo.item_num}', '${vo.cart_id}')"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
+						  <a href="javascript:openLogin();"><img src="<%=root%>/img/cart/btn_cat.gif" alt="보관하기"></a>
 						  <a href="javascript:void(0)" onclick="javascript:deleteItem('${vo.item_num}', '${vo.cart_id}')"> <img src="<%=root%>/img/cart/btn_delete.gif" alt="삭제"></a>
 				        </td>
 					</tr>
@@ -252,14 +254,14 @@
 				    <tr>
 					 <td colspan="6" class="lns07">
 					   <div>
-					    <p>상품주문금액 <strong id="order_total_price">${order_price}원</strong></p>
-					    <p>할인금액 - <strong id="order_total_discount">${discount_price}원</strong></p>
+					    <p>상품주문금액 <strong id="order_total_price"><fmt:formatNumber value="${order_price}" pattern="#,###" />원</strong></p>
+					    <p>할인금액 - <strong id="order_total_discount"><fmt:formatNumber value="${discount_price}" pattern="#,###" />원</strong></p>
 						<p>배송비 + <strong id="order_total_delivery">0원</strong></p>
 					   </div>								
 					   <div class="total">
 						 <p>총 결제 예정금액</p>
-						 <strong id ="order_total_pay"><em>${total_price}</em> 원</strong>
-						 <input type="hidden" id="total_item_price" value="${total_item_price}"/>
+						 <strong id ="order_total_pay"><em><fmt:formatNumber value="${total_price}" pattern="#,###" /></em> 원</strong>
+						 <input type="hidden" id="total_item_price" value="${total_price}"/>
 						</div>
 					  </td>
 					</tr>

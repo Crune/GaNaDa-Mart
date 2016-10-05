@@ -30,7 +30,7 @@
 	    <jsp:include page="/jsp/mc/breadcrumb.jsp" flush="false" />
 	</div>
 	<div class="row">
-	    <div class="col-md-3 menu">
+	    <div class="col-md-2 menu">
             <jsp:include page="/jsp/mc/menu.jsp" flush="false" />
 	    </div>
-	    <div class="col-md-9 contents">
+	    <div class="col-md-10 contents">

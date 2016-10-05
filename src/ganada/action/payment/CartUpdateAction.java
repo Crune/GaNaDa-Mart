@@ -12,9 +12,10 @@ import org.json.simple.JSONObject;
 
 import ganada.obj.payment.Cart;
 import ganada.obj.payment.CartDao;
+import ganada.obj.product.Product;
 
 @WebServlet("/cartUpdate.gnd")
-public class CartUpdateAction extends HttpServlet{ //독립적인 서블릿
+public class CartUpdateAction extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,45 +29,46 @@ public class CartUpdateAction extends HttpServlet{ //독립적인 서블릿
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	public void executeAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String item_cnt_str = request.getParameter("item_cnt");  // 업데이트할 제품 개수
+		String cart_id_str  = request.getParameter("cart_id");  // 장바구니 id
 		
-		String item_cnt_str = request.getParameter("item_cnt");
-		String cart_id_str  = request.getParameter("cart_id");
-
-		int cart_id = 0;
-		int item_cnt = 0;
 		
-		if(cart_id_str !=null){
+		int cart_id  = 0;
+		int item_cnt  = 0;
+		
+		if(cart_id_str !=null){  // 넘어온값이 있는지 체크
 			cart_id = Integer.parseInt(cart_id_str);
 		}
+	
 		if(item_cnt_str !=null){
-			item_cnt = Integer.parseInt(item_cnt_str);
+			item_cnt  = Integer.parseInt(item_cnt_str);
 		}
-		
+
 		try{
 			
-			if(cart_id > 0){
-		
-			int result  =0;
-			CartDao dao  = CartDao.getInstance();	
+			if(cart_id > 0){	//장바구니 아이디가 정상이라면
 			
-			Cart cart = dao.getOneCart(cart_id);
-			
-			cart.setCart_id(cart_id);
-			cart.setItem_cnt(item_cnt);
-			
-			dao.updateCart(cart);
-			// int total_pd_price = 
-					
-			JSONObject jObj  = new JSONObject();
-			
-			jObj.put("code", new Integer(10000));
-			response.getWriter().write(jObj.toString());	
-	   }
-	}catch(Exception e){
-		e.printStackTrace();
+				CartDao dao  = CartDao.getInstance();	
+				Cart cart = dao.getOneCart(cart_id);  // 해당 장바구니 내용 가져오기
+				Product pVo  = dao.getProduct(cart.getItem_id()); // 장바구니에 담긴 물품정보 가져오기
+				cart.setCart_id(cart_id);  // 장바구니 id
+				cart.setItem_cnt(item_cnt); // 수량
+				
+				dao.updateCart(cart); //수량 업데이트
+				
+				int total_pd_price  = pVo.getPd_price() * item_cnt; // 총 금액
+				
+				JSONObject jObj  = new JSONObject();
+				
+				jObj.put("total_price", total_pd_price);  
+				
+				response.getWriter().write(jObj.toString());  //JSON 객체 린턴을 위해서 쓴다.
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }
-	}
-

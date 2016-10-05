@@ -18,7 +18,9 @@ public class MCPageAction implements SuperAction {
     public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         try {
             actions.put("main", new MCMainAction());
-            actions.put("main", new MCMainAction());
+            actions.put("product", new ListAction());
+            actions.put("productInsert", new InsertAction());
+            actions.put("productUpdate", new UpdateAction());
             actions.put("error", new MCErrorAction());      
             
             HttpSession session = request.getSession();
