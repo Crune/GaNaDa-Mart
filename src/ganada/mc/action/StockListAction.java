@@ -9,6 +9,7 @@ import ganada.action.common.SuperAction;
 import ganada.obj.product.Stock;
 import ganada.obj.product.StockDao;
 
+@MCAction("stock")
 public class StockListAction implements SuperAction{
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String pd_code = request.getParameter("pd_code");

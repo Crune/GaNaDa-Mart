@@ -9,6 +9,9 @@ import java.util.List;
 import ganada.action.common.SuperAction;
 import ganada.core.DB;
 
+@MCAction("product")
+@MCType(url="product", name="상품")
+@MCMenu("상품목록")
 public class ListAction implements SuperAction{
 
 

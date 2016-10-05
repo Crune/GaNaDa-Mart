@@ -26,11 +26,8 @@
 	<div class="row upperRow">
 	    <jsp:include page="/jsp/mc/top.jsp" flush="false" />
 	</div>	
-	<div class="row upperRow">
-	    <jsp:include page="/jsp/mc/breadcrumb.jsp" flush="false" />
-	</div>
 	<div class="row">
-	    <div class="col-md-2 menu">
-            <jsp:include page="/jsp/mc/menu.jsp" flush="false" />
-	    </div>
-	    <div class="col-md-10 contents">
+    	<div class="col-md-10 contents">
+			<div class="row upperRow">
+			    <jsp:include page="/jsp/mc/breadcrumb.jsp" flush="false" />
+			</div>

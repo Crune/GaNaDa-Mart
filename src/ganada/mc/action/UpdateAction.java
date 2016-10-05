@@ -7,6 +7,8 @@ import ganada.action.common.SuperAction;
 import ganada.obj.product.Product;
 import ganada.obj.product.ProductDao;
 
+@MCAction("productUpdate")
+@MCMenu("상품수정")
 public class UpdateAction implements SuperAction{
 
 	

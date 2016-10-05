@@ -9,6 +9,7 @@ import ganada.obj.product.ProductColorDao;
 import ganada.obj.product.Stock;
 import ganada.obj.product.StockDao;
 
+@MCAction("stockUpdate")
 public class StockUpdateAction implements SuperAction {
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {

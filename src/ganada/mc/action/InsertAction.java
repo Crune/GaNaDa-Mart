@@ -9,6 +9,7 @@ import ganada.action.common.SuperAction;
 import ganada.obj.product.ProductInfo;
 import ganada.obj.product.ProductInfoDao;
 
+@MCAction("productInsert")
 public class InsertAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

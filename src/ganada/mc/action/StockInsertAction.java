@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ganada.action.common.SuperAction;
 
+@MCAction("stockInsert")
 public class StockInsertAction implements SuperAction {
 
 	

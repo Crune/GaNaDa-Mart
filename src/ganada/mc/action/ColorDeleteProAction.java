@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import ganada.action.common.SuperAction;
 import ganada.obj.product.ProductColorDao;
 
+@MCAction("ColorDelPro")
 public class ColorDeleteProAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");

@@ -6,6 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import ganada.action.common.SuperAction;
 
+@MCAction("main")
+@MCType(url="main", name="메인")
+@MCMenu("시작")
 public class MCMainAction implements SuperAction {
 
     @Override
