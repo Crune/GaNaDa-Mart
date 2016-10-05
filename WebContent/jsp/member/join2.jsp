@@ -38,7 +38,43 @@ function doJoinCancel(){
 		} else { //취소
 			return false;
 		}
-	}    
+	}
+function checkIt(){
+	var userinput = eval("document.infoInput");
+    if(!userinput.loginId.value) {
+        alert("아이디 정보를 입력해 주세요");
+        return false;
+    }
+    
+    if(!userinput.password.value ) {
+        alert("패스워드 정보를 입력해 주세요");
+        return false;
+    }
+    if(!userinput.repwd.value ) {
+        alert("패스워드를 한번 더 입력해 주세요");
+        return false;
+    }
+    if(userinput.password.value != userinput.repwd.value)
+    {
+        alert("패스워드와 패스워드확인 정보가 일치하지 않습니다");
+        return false;
+    }
+   
+    if(!userinput.birthdayDurationTimeYear.value) {
+        alert("사용자 이름을 입력하세요");
+        return false;
+    }
+    if(!userinput.jumin1.value  || !userinput.jumin2.value )
+    {
+        alert("주민등록번호를 입력하세요");
+        return false;
+    }
+}
+function memberJoin(){
+	location.href="/joinRequest.gnd";
+}
+
+
 </script>
 
 <div class="popLayer">
@@ -79,7 +115,7 @@ function doJoinCancel(){
                   <td>
                     <div class="formBox">
                       <div class="speech type05"><span class="over">4~15자리의 영문숫자를 조합하여 사용 가능합니다.<br>숫자만으로는 안됩니다.<br>특수문자는 사용하실 수 없습니다.<span class="arr02"></span></span></div>
-					  <input type="text" class="inputType01" style="width:120px;" name="loginId" id="loginId" onkeyup="wordCheck(this);" onfocus="helpView('loginId');" onblur="$('#loginIdHelp').hide();" maxlength="15">
+					  <input type="text" class="inputType01" style="width:120px;" name="id" id="loginId" onkeyup="wordCheck(this);" onfocus="helpView('loginId');" onblur="$('#loginIdHelp').hide();" maxlength="15">
                       <a class="btn-type6 btn-black ml03" href="#" name="showDuplChkDiv"><span class="right">중복확인</span></a>
                     </div>
                   </td>
@@ -89,7 +125,7 @@ function doJoinCancel(){
                   <td>
                     <div class="formBox">
                       <div class="speech type06"><span class="over">6~12자의 영문숫자를 조합해서 정해주십시오.<br>아이디 및 이메일 등과 같거나 포함하면 안됩니다. <br>단일 문자열, 연속 문자열 등 쉬운 패스워드는 안됩니다.<br> 기타 일반 정보 등으로부터 추측이 용이한 <br>패스워드는 피해주십시오.<span class="arr02"></span></span></div>
-					  <input type="password" class="inputType02" style="width:195px;" name="password" id="password" onkeyup="passwordCheck(this);" onfocus="helpView('password');" onblur="$('#passwordHelp').hide(),secCheck();" maxlength="12">  
+					  <input type="password" class="inputType02" style="width:195px;" name="passwd" id="password" onkeyup="passwordCheck(this);" onfocus="helpView('password');" onblur="$('#passwordHelp').hide(),secCheck();" maxlength="12">  
                      <span class="txt03">보안등급</span><span id="secLevel" class="txt03"></span>
                     </div>
                   </td>
@@ -103,7 +139,7 @@ function doJoinCancel(){
                   <td>
 					
 					
-					<select class="selectType01" title="년도 선택" id="birthdayDurationTimeYear" name="birthdayDurationTimeYear" onchange="checkAge(this.value);" style="height:20;">
+					<select class="selectType01" title="년도 선택" id="birthday" name="b_year" onchange="checkAge(this.value);" style="height:20;">
 						<option value="">년도</option>
 						 
 						
@@ -418,7 +454,7 @@ function doJoinCancel(){
 						
 					</select>
 					<span class="bir">년</span>
-					<select class="selectType02" title="월 선택" id="birthdayDurationTimeMonth" name="birthdayDurationTimeMonth">
+					<select class="selectType02" title="월 선택" id="birthdayDurationTimeMonth" name="b_month">
 						<option value="">월</option>
 						
 							<option value="1"> 1 </option>
@@ -447,7 +483,7 @@ function doJoinCancel(){
 						
 					</select>
 					<span class="bir">월</span>
-					<select class="selectType02" title="일 선택" id="birthdayDurationTimeDay" name="birthdayDurationTimeDay">
+					<select class="selectType02" title="일 선택" id="birthdayDurationTimeDay" name="b_day">
 						<option value="">일</option>
 						
 							<option value="1"> 1 </option>
@@ -514,32 +550,32 @@ function doJoinCancel(){
 						
 					</select> 
 					<span class="bir">일</span> 
-					<input type="radio" id="solar" class="ml10" name="lunarAndSolarSectionCode" checked="checked" value="S"><label class="radioType" for="solar">양력</label>
-					<input type="radio" id="lunar" class="ml05" name="lunarAndSolarSectionCode" value="L"><label class="radioType" for="lunar">음력</label>
+					<input type="radio" id="solar" class="ml10" name="lunisolar" checked="checked" value="S"><label class="radioType" for="solar">양력</label>
+					<input type="radio" id="lunar" class="ml05" name="lunisolar" value="L"><label class="radioType" for="lunar">음력</label>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row"><p><span class="star">성별</span></p></th>
                   <td>
-					<input type="radio" id="female" name="genderSectionCode" checked="checked" value="F"><label class="radioType" for="female">여성</label>
-					<input type="radio" id="male" name="genderSectionCode" class="ml05" value="M"><label class="radioType" for="male">남성</label>
+					<input type="radio" id="female" name="gender" checked="checked" value="F"><label class="radioType" for="female">여성</label>
+					<input type="radio" id="male" name="gender" class="ml05" value="M"><label class="radioType" for="male">남성</label>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row"><label for="infoNumber" class="layerLabel02">연락처</label></th>
                   <td class="num">
-					<input type="text" name="cableTelephoneRegionNo" id="cableTelephoneRegionNo" class="inputType03 fir" title="지역번호" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
-					<input type="text" name="cableTelephoneTelephoneExchangeNo" id="cableTelephoneTelephoneExchangeNo" class="inputType03" title="연락처 앞자리" value="" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
-					<input type="text" name="cableTelephoneEndNo" id="cableTelephoneEndNo" class="inputType03" title="연락처 뒷자리" value="" onkeyup="numCheck(this.id);" style="width:53px;" maxlength="4">
+					<input type="text" name="c_first" id="cableTelephoneRegionNo" class="inputType03 fir" title="지역번호" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
+					<input type="text" name="c_second" id="cableTelephoneTelephoneExchangeNo" class="inputType03" title="연락처 앞자리" value="" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
+					<input type="text" name="c_third" id="cableTelephoneEndNo" class="inputType03" title="연락처 뒷자리" value="" onkeyup="numCheck(this.id);" style="width:53px;" maxlength="4">
                   </td>
                 </tr>
                 <tr>
                   <th scope="row" class="verT"><label for="infoCellular" class="layerLabel02"><span class="star">휴대폰</span></label></th>
                   <td class="num">
-					<input type="text" name="cellSectionNo" id="cellSectionNo" class="inputType03 fir" title="통신사번호" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="3"> -
-					<input type="text" name="cellTelephoneExchangeNo" id="cellTelephoneExchangeNo" class="inputType03" title="휴대폰 앞자리" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
-					<input type="text" name="cellEndNo" id="cellEndNo" class="inputType03" title="휴대폰 뒷자리" onkeyup="numCheck(this.id);" style="width:53px;" maxlength="4">
-					<p class="mt10"><input type="checkbox" name="chkSms" id="chkSms" checked="checked"><label class="checkType01" for="chkSms">SMS 정보를 수신하겠습니다.</label></p>
+					<input type="text" name="p_first" id="cellSectionNo" class="inputType03 fir" title="통신사번호" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="3"> -
+					<input type="text" name="p_second" id="cellTelephoneExchangeNo" class="inputType03" title="휴대폰 앞자리" onkeyup="numCheck(this.id);" style="width:50px;" maxlength="4"> -
+					<input type="text" name="p_third" id="cellEndNo" class="inputType03" title="휴대폰 뒷자리" onkeyup="numCheck(this.id);" style="width:53px;" maxlength="4">
+					<p class="mt10"><input type="checkbox" name="sms_allow" id="chkSms" checked="checked"><label class="checkType01" for="chkSms">SMS 정보를 수신하겠습니다.</label></p>
 					<p class="pointTxt mt05">패스워드 분실 시 확인 받을 수 있는 휴대폰 번호를 입력해 주세요.</p>
                   </td>
                 </tr>
@@ -547,9 +583,9 @@ function doJoinCancel(){
                 <tr>
                   <th scope="row" class="verT"><p class="lh18">개인정보 보관<br><span class="star">기간 설정</span></p></th>
                   <td class="num">
-					<input type="radio" id="year01" name="prsnInfoAvalTermCode" value="01" checked="checked"><label class="radioType" for="year01">1년</label>
-					<input type="radio" id="year02" name="prsnInfoAvalTermCode" value="02" class="ml05"><label class="radioType" for="year02">3년</label>
-					<input type="radio" id="year03" name="prsnInfoAvalTermCode" value="03" class="ml05"><label class="radioType" for="year03">영구</label>
+					<input type="radio" id="year01" name="info_store_term" value="01" checked="checked"><label class="radioType" for="year01">1년</label>
+					<input type="radio" id="year02" name="info_store_term" value="02" class="ml05"><label class="radioType" for="year02">3년</label>
+					<input type="radio" id="year03" name="info_store_term" value="03" class="ml05"><label class="radioType" for="year03">영구</label>
 					<p class="checkType01 mt10 lh18">- 정보통신망 이용촉진 및 정보 보호 등에 관한 법률 제29조 제2항에 따라 설정된 개인정보 보관 기간 동안 NIKE.COM의<br>&nbsp;&nbsp;사용이력이 없는 경우 휴면계정으로 되며, 휴면계정의 개인정보는 안전하게 분리 보관 처리됩니다.</p>
 					<p class="checkType01 mt05 lh18">- 개인정보 보관 기간 설정은 회원정보관리에서 수정 가능합니다.</p>
 					<p class="checkType01 mt05 lh18">- NIKE.COM 사용 이력이 없어 휴면계정이 된 경우 계정 활성화 요청에 의해 활성화 가능합니다.</p>      				

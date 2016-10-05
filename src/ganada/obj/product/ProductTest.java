@@ -28,7 +28,9 @@ public class ProductTest extends DBTester {
     public void test() {
 		ProductDao dao = ProductDao.getInstance();
 		try {
-		    dao.search("pd_code","1");
+		    for (Product cur : dao.getInfoName()) {
+		    	System.out.println(cur.toString());
+		    }
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

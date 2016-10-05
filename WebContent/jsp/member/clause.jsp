@@ -39,9 +39,22 @@
 			return false;
 		}
 	}
-	function doAgree(){
-		location.href="/join2.gnd";
+	function doAgree(){	
+		location.href="/join2.gnd";		
 	}
+	var checkflag = "false";
+	function doAllAgree(field) {
+		if (checkflag == "false") {
+		for (i = 0; i < field.length; i++) {
+		field[i].checked = true;}
+		checkflag = "true";
+		return "Uncheck All"; }
+		else {
+		for (i = 0; i < field.length; i++) {
+		field[i].checked = false; }
+		checkflag = "false";
+		return "Check All"; }
+		}	
 	
 </script>
 <div class="popLayer">
@@ -540,7 +553,7 @@ NIKE는 사용자 생선 콘텐츠를 사전에 검열하지 않습니다. NIKE�
 	<!-- //150730 추가 : end -->
           
           <p class="allCheck">
-            <input type="checkbox" onclick="doAllAgree();" id="termsOk"><label class="checkType02" for="termsOk">위 모든 항목에 동의합니다.</label>
+            <input type="checkbox" onclick="this.value=doAllAgree(this.form.checkbox)" id="termsOk"><label class="checkType02" for="termsOk">위 모든 항목에 동의합니다.</label>
           </p>
           <div class="alR mt20">
             <span class="txt04 mr17">가입을 원하시면 ‘이용약관’에 동의하셔야 합니다.</span>
