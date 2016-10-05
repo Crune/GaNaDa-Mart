@@ -1,12 +1,15 @@
 package ganada.action.common;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ganada.core.Action;
 import ganada.obj.common.BannerHTMLDao;
 import ganada.obj.common.ContentsPageDao;
 
+@Action("/type.gnd")
 public class CatalogPageAction implements SuperAction {
     
     @Override

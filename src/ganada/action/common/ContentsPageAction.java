@@ -1,21 +1,27 @@
 package ganada.action.common;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ganada.core.Action;
 import ganada.obj.*;
 import ganada.obj.common.BannerHTML;
 import ganada.obj.common.BannerHTMLDao;
 import ganada.obj.common.ContentsPage;
 import ganada.obj.common.ContentsPageDao;
 
+@Action("/page.gnd")
 public class ContentsPageAction implements SuperAction {
     
-    private static ContentsPageDao pageDao;
+	private static ContentsPageDao pageDao;
     private static BannerHTMLDao bannerDao;
 
     @Override

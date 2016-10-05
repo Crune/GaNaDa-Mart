@@ -1,11 +1,17 @@
 package ganada.core;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
+import java.util.jar.JarFile;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -15,114 +21,112 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sun.xml.internal.ws.util.ReadAllStream;
+
 import ganada.action.common.*;
 
 import ganada.mc.action.*;
 
 public class DispatcherAction extends HttpServlet {
 
-    private static final long serialVersionUID = 8798431058519727326L;
+	private static final long serialVersionUID = 8798431058519727326L;
 
-    private Map<String, SuperAction> map = new HashMap<String, SuperAction>();
-    private SuperAction notFoundAction = new NotFoundAction();
-    
-    private SuperAction headerAction = new HeaderAction();
-    private SuperAction footerAction = new FooterAction();
-    private SuperAction headerMCAction = new MCHeaderAction();
-    private SuperAction footerMCAction = new MCFooterAction();
+	private Map<String, SuperAction> map = new HashMap<String, SuperAction>();
+	private SuperAction notFoundAction = new NotFoundAction();
 
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        String path = config.getInitParameter("propertiesPath");
-        path = config.getServletContext().getRealPath(path);
-        Properties p = new Properties();
-        FileReader f = null;
-        try {
-            f = new FileReader(path);
-            p.load(f);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	private SuperAction headerAction = new HeaderAction();
+	private SuperAction footerAction = new FooterAction();
+	private SuperAction headerMCAction = new MCHeaderAction();
+	private SuperAction footerMCAction = new MCFooterAction();
 
-        for (Object key : p.keySet()) {
-            String value = p.getProperty((String) key);
-            try {
-                Class actionClass = Class.forName(value);
-                Object instance = actionClass.newInstance();
-                String tab = "\t";
-                for (int i=2;i<4;i++)
-                	tab += (key.toString().length()<8*i)?"\t":"";
-                String msg = " +@ url " +key +tab +instance.getClass().getName();
-                System.out.println(msg);
-                map.put((String) key, (SuperAction) instance);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		if (map.isEmpty()) {
+			Set<String> pack = new HashSet<String>();
+			pack.add("ganada.action.common");
+			pack.add("ganada.action.member");
+			pack.add("ganada.action.payment");
+			pack.add("ganada.action.product");
 
-    @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
+			for (String packStr : pack) {
+				Set<Class> set = Reflections.getClasses(packStr);
+				for (Class cls : set) {
+					if (cls.isAnnotationPresent(Action.class)) {
+						String key = ((Action) cls.getAnnotation(Action.class)).value();
+						DB.OUTLN(" +A url @ " + DAO.tabber(key, 4) + cls.getName());
+						try {
+							map.put(key, (SuperAction) cls.newInstance());
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
 
-            String path = request.getContextPath();
-            String uri = request.getRequestURI();
-            if (uri.indexOf(path) == 0) // sub domain check
-                uri = uri.substring(path.length());
+			String path = config.getInitParameter("propertiesPath");
+			path = config.getServletContext().getRealPath(path);
+			Properties p = new Properties();
+			FileReader f = null;
+			try {
+				f = new FileReader(path);
+				p.load(f);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	
+			for (Object key : p.keySet()) {
+				String value = p.getProperty((String) key);
+				Class actionClass;
+				Object instance = null;
+				try {
+					actionClass = Class.forName(value);
+					instance = actionClass.newInstance();
+					DB.OUTLN(" +P url @ " + DAO.tabber((String) key, 4) + instance.getClass().getName());
+					map.put((String) key, (SuperAction) instance);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
-            System.out.println("\r\n────────────────────────────────────────────");
-            System.out.println("\r\n호출URI: " + uri);
+	}
 
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
 
-            SuperAction sa = map.get(uri);
-            sa = (sa == null) ? notFoundAction : sa;
+			String path = request.getContextPath();
+			String uri = request.getRequestURI();
+			if (uri.indexOf(path) == 0) // sub domain check
+				uri = uri.substring(path.length());
 
-            // START - Data Binding
-            HashMap<String, Object> model = new HashMap<String, Object>();
-            model.put("session", request.getSession());
-            if (sa instanceof DataBinding) {
-                prepareRequestData(request, model, (DataBinding) sa);
-            }
-            for (String key : model.keySet()) {
-                request.setAttribute(key, model.get(key));
-            }
-            // END - Data Binding
+			System.out.println("\r\n────────────────────────────────────────────");
+			System.out.println("\r\n호출URI: " + uri);
 
-            HttpSession session = request.getSession();
-            String url = "";
-            
-            url = headerAction.executeAction(request, response);
-            session.setAttribute("urlHeader", (String) url);
-            url = footerAction.executeAction(request, response);
-            session.setAttribute("urlFooter", (String) url);
-            
-            url = headerMCAction.executeAction(request, response);
-            session.setAttribute("urlMCHeader", (String) url);
-            url = footerMCAction.executeAction(request, response);
-            session.setAttribute("urlMCFooter", (String) url);
-            
-            String view = sa.executeAction(request, response);
-            if (view != null) {
-                RequestDispatcher rd = request.getRequestDispatcher(view);
-                rd.forward(request, response);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+			SuperAction sa = map.get(uri);
+			sa = (sa == null) ? notFoundAction : sa;
 
-    private void prepareRequestData(HttpServletRequest request, HashMap<String, Object> model, DataBinding dataBinding)
-            throws Exception {
-        Object[] dataBinders = dataBinding.getDataBinders();
-        String dataName = null;
-        Class<?> dataType = null;
-        Object dataObj = null;
-        for (int i = 0; i < dataBinders.length; i += 2) {
-            dataName = (String) dataBinders[i];
-            dataType = (Class<?>) dataBinders[i + 1];
-            dataObj = ServletRequestDataBinder.bind(request, dataType, dataName);
-            model.put(dataName, dataObj);
-        }
-    }
+			HttpSession session = request.getSession();
+			String url = "";
+
+			url = headerAction.executeAction(request, response);
+			session.setAttribute("urlHeader", (String) url);
+			url = footerAction.executeAction(request, response);
+			session.setAttribute("urlFooter", (String) url);
+
+			url = headerMCAction.executeAction(request, response);
+			session.setAttribute("urlMCHeader", (String) url);
+			url = footerMCAction.executeAction(request, response);
+			session.setAttribute("urlMCFooter", (String) url);
+
+			String view = sa.executeAction(request, response);
+			if (view != null) {
+				RequestDispatcher rd = request.getRequestDispatcher(view);
+				rd.forward(request, response);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -5,11 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ganada.action.common.SuperAction;
-import ganada.core.DataBinding;
 import ganada.obj.payment.Cart;
 import ganada.obj.payment.CartDao;
 
-public class CartDeleteAction implements SuperAction, DataBinding{
+public class CartDeleteAction implements SuperAction {
 
 	@Override
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -34,9 +33,4 @@ public class CartDeleteAction implements SuperAction, DataBinding{
 		return "/jsp/cart/cartDelete.jsp";
 	}
 
-	@Override
-	public Object[] getDataBinders() {
-		// TODO Auto-generated method stub
-		return new Object[]{"cart",  ganada.obj.payment.Cart.class};
-	}
 }
