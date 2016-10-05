@@ -2,6 +2,7 @@ package ganada.mc.action;
 import ganada.obj.product.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,9 @@ public class ListAction implements SuperAction{
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+        HttpSession session = request.getSession();
+        session.setAttribute("curMCMenuSub", "product");
+        
 		List<Product> plist = new ArrayList<>();
 		String pd_code = request.getParameter("pd_code");
 		int count = 0;

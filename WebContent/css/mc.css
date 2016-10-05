@@ -44,3 +44,8 @@ select{font-size:12px;}
 .contDiv {position:absolute; left:50%; top:50px; width:860px; margin-left:-430px; padding-top:10px; z-index:10000;}
 .menu {}
 .contents {}
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+}
