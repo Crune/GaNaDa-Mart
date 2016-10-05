@@ -27,6 +27,8 @@ public class DispatcherAction extends HttpServlet {
     private SuperAction notFoundAction = new NotFoundAction();
     private SuperAction headerAction = new HeaderAction();
     private SuperAction footerAction = new FooterAction();
+    private SuperAction headerMCAction = new MCHeaderAction();
+    private SuperAction footerMCAction = new FooterAction();
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -71,12 +73,6 @@ public class DispatcherAction extends HttpServlet {
             System.out.println("\r\n────────────────────────────────────────────");
             System.out.println("\r\n호출URI: " + uri);
 
-            // MC 헤더 푸터 적용 {
-            if (uri.contains("/mc/")) {
-                headerAction = new MCHeaderAction();
-                footerAction = new MCFooterAction();
-            }
-            // } MC 헤더 푸터 적용
 
             SuperAction sa = map.get(uri);
             sa = (sa == null) ? notFoundAction : sa;
@@ -94,12 +90,17 @@ public class DispatcherAction extends HttpServlet {
 
             HttpSession session = request.getSession();
             String url = "";
+
+            url = headerMCAction.executeAction(request, response);
+            session.setAttribute("urlMCHeader", (String) url);
+            url = footerMCAction.executeAction(request, response);
+            session.setAttribute("urlMCFooter", (String) url);
+                
             url = headerAction.executeAction(request, response);
             session.setAttribute("urlHeader", (String) url);
-
             url = footerAction.executeAction(request, response);
             session.setAttribute("urlFooter", (String) url);
-
+            
             String view = sa.executeAction(request, response);
             if (view != null) {
                 RequestDispatcher rd = request.getRequestDispatcher(view);

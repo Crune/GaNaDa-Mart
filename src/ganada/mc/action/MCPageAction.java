@@ -33,7 +33,7 @@ public class MCPageAction implements SuperAction {
             session.setAttribute("curMCMenu", menu);
             
             String url = actions.get(menu).executeAction(request, response);
-            session.setAttribute("urlCont", (String) url);
+            session.setAttribute("urlMCCont", (String) url);
             
         } catch (Exception e) {
             e.printStackTrace();
