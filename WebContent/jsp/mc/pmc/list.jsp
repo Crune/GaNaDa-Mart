@@ -19,10 +19,10 @@
 <td align = "center" width="30"> 메뉴코드 </td>
 <td align = "center" width="100"> 상품 명 </td>
 <td align = "center" width="50"> 가격 </td>
-<td align = "center" width="30"> infocode1 </td>
-<td align = "center" width="30"> infocode2 </td>
-<td align = "center" width="30"> infocode3 </td>
-<td align = "center" width="30"> infocode4 </td>
+<td align = "center" width="70"> 상품정보 </td>
+<td align = "center" width="70"> 배송정보 </td>
+<td align = "center" width="70"> 유의사항 </td>
+<td align = "center" width="70"> A/S정보 </td>
 <td align = "center" width="70"> 등록일 </td>
 <td align = "center" width="30"> 수정 </td>
 <td align = "center" width="30"> 삭제 </td>

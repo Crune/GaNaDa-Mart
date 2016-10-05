@@ -17,16 +17,16 @@ public class ListAction implements SuperAction{
 		String pd_code = request.getParameter("pd_code");
 		int count = 0;
 
-	
-
 		ProductDao process = ProductDao.getInstance();
 		count = process.getCount();
 		
 		if(count > 0){
-			for (Object obj : process.select("1", "999999999999999")) {
+		/*	for (Object obj : process.getInfoName()) {
 				plist.add((Product) obj);
-			}
+			}*/
+			plist = process.getInfoName();
 		}
+		
 		System.out.println(plist.toString());
 		request.setAttribute("plist", plist);
 		request.setAttribute("count", new Integer(count));
