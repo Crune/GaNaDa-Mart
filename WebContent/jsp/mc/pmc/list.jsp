@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
 등록된 상품 목록 <font size="3" color="red">${count}</font>
 <input type="button" value="상품등록" onclick="javascript:window.location='./mc.gnd?menu=productInsert'">
 <br />
@@ -42,7 +43,7 @@ ${pd.getPd_infocode2()}</td>
 ${pd.getPd_infocode3()}</td>
 <td width="30" align="center">
 ${pd.getPd_infocode4()}</td>
-<td width="70">
+<td width="70" align="center">
 '<fmt:formatDate value="${pd.getPd_reg_date()}" pattern="yy MM-dd" /><br />
 </td>
 <td>

@@ -1,5 +1,6 @@
 package ganada.obj.product;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,9 +66,24 @@ public class ProductDao extends DAO {
 			return productList;
 			//return select(pd_code, pd_code);
 		    }
-
+/*
+		public int productDelete(String pd_code) throws Exception {
+			DB db = new DB();
+			int x = -1;
+			try{
+				db.sql("select ").exe();
+				
+				String sql = "delete from product where pd_code=?";
+				db.sql(sql).var(pd_code).exe();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				 db.finalize();
+			}
+			return x;
 		
-	
+		}
+	*/
 		 public int getCount() throws Exception {
 			 return count();
 		 }
