@@ -35,10 +35,11 @@ public class CartUpdateAction extends HttpServlet{
 		String item_cnt_str = request.getParameter("item_cnt");  // 업데이트할 제품 개수
 		String cart_id_str  = request.getParameter("cart_id");  // 장바구니 id
 		
+		
 		int cart_id  = 0;
 		int item_cnt  = 0;
 		
-		if(cart_id_str !=null){  // 넘어온값이 있는지 체그
+		if(cart_id_str !=null){  // 넘어온값이 있는지 체크
 			cart_id = Integer.parseInt(cart_id_str);
 		}
 	
@@ -48,7 +49,7 @@ public class CartUpdateAction extends HttpServlet{
 
 		try{
 			
-			if(cart_id > 0){	//정버규나 아이디가 정상적이라면...
+			if(cart_id > 0){	//장바구니 아이디가 정상이라면
 			
 				CartDao dao  = CartDao.getInstance();	
 				Cart cart = dao.getOneCart(cart_id);  // 해당 장바구니 내용 가져오기
@@ -64,7 +65,7 @@ public class CartUpdateAction extends HttpServlet{
 				
 				jObj.put("total_price", total_pd_price);  
 				
-				response.getWriter().write(jObj.toString());  //JSON 객체 린턴을 위해서 쓴다..
+				response.getWriter().write(jObj.toString());  //JSON 객체 린턴을 위해서 쓴다.
 			}
 		}catch(Exception e){
 			e.printStackTrace();
