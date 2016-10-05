@@ -30,6 +30,14 @@
 <script src="${pageContext.request.contextPath}/js/default.js"></script>
 
 <script language="JavaScript">
+
+
+	$(function(){
+		$(window).load(function(){
+			document.body.scrollIntoView(true);
+			parent.document.all.frameLogin.height = document.body.scrollHeight; 
+		});
+	});
 	function doJoinCancel(){
 		if (confirm("회원가입을 취소하시겠습니까?")==true) { //확인
 			self.opener = self;
