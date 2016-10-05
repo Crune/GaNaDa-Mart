@@ -1,5 +1,6 @@
 package ganada.obj.product;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +27,23 @@ public class ProductDao extends DAO {
 			return t;
 		}
 
-		public List getArticle(String pd_code) throws Exception {
-			/*
+		
+		
+		public List<Product> getInfoName() throws Exception {
 			DB db = new DB();
 			List<Product> productList = new ArrayList<Product>();
 			try {
-			    db.S("*", "product").exe();
+				String sql = "SELECT pd_code, menu_code, pd_name, pd_price, pd_reg_date,"
+						+ " pif.pd_infoname as info1, pif2.pd_infoname as info2, pif3.pd_infoname as info3, pif4.pd_infoname as info4"
+						+ " from PRODUCT p,"
+						+ " PRODUCT_INFO pif,PRODUCT_INFO pif2,"
+						+ " PRODUCT_INFO pif3,PRODUCT_INFO pif4"
+						+ " WHERE pif.PD_INFOCODE=p.PD_INFOCODE1"
+						+ " AND pif2.PD_INFOCODE=p.PD_INFOCODE2"
+						+ " AND pif3.PD_INFOCODE=p.PD_INFOCODE3"
+						+ " AND pif4.PD_INFOCODE=p.PD_INFOCODE4"
+						+ " ORDER BY PD_REG_DATE DESC";
+			    db.sql(sql).exe();
 		    	while(db.next()){
 			    	Product product = new Product();
 			    	product.setPd_code(db.getString("pd_code"));
@@ -39,10 +51,10 @@ public class ProductDao extends DAO {
 			    	product.setPd_name(db.getString("pd_name"));
 			    	product.setPd_price(db.getInt("pd_price"));
 			    	product.setPd_reg_date(db.getTimestamp("pd_reg_date"));
-			    	product.setPd_infocode1(db.getString("pd_infocode1"));
-			    	product.setPd_infocode2(db.getString("pd_infocode2"));
-			    	product.setPd_infocode3(db.getString("pd_infocode3"));
-			    	product.setPd_infocode4(db.getString("pd_infocode4"));
+			    	product.setPd_infocode1(db.getString("info1"));
+			    	product.setPd_infocode2(db.getString("info2"));
+			    	product.setPd_infocode3(db.getString("info3"));
+			    	product.setPd_infocode4(db.getString("info4"));
 			    	productList.add(product);
 			    	
 				}
@@ -52,12 +64,26 @@ public class ProductDao extends DAO {
 			    db.finalize();
 			}
 			return productList;
-			*/
-			return select(pd_code, pd_code);
+			//return select(pd_code, pd_code);
 		    }
-
+/*
+		public int productDelete(String pd_code) throws Exception {
+			DB db = new DB();
+			int x = -1;
+			try{
+				db.sql("select ").exe();
+				
+				String sql = "delete from product where pd_code=?";
+				db.sql(sql).var(pd_code).exe();
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				 db.finalize();
+			}
+			return x;
 		
-	
+		}
+	*/
 		 public int getCount() throws Exception {
 			 return count();
 		 }

@@ -14,8 +14,11 @@ public class InsertProAction implements SuperAction{
 
 		request.setCharacterEncoding("UTF-8");
 		
-		Product pd = new Product();
-		int pd_price = Integer.parseInt(request.getParameter("pd_price"));
+		ProductDao process = ProductDao.getInstance();
+		Product pd = (Product) process.bind(request);		
+		
+	//	int pd_price = Integer.parseInt(request.getParameter("pd_price"));
+		/*
 		pd.setMenu_code(request.getParameter("menu_code"));
 		pd.setPd_name(request.getParameter("pd_name"));
 		pd.setPd_price(pd_price);
@@ -23,14 +26,9 @@ public class InsertProAction implements SuperAction{
 		pd.setPd_infocode2(request.getParameter("pd_infocode2"));
 		pd.setPd_infocode3(request.getParameter("pd_infocode3"));
 		pd.setPd_infocode4(request.getParameter("pd_infocode4"));
-		
-		ProductDao process = ProductDao.getInstance();
+		*/
 		
 		process.insert(pd);
-		
-		
-		
-
 		
 		return "/jsp/mc/pmc/insertPro.jsp";
 	}

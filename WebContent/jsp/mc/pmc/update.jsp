@@ -3,8 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <input type="button" value="목록으로" onclick="javascript:window.location='./mc.gnd?menu=product'">
-	 
-    <form id="inform" name="inform" action="./insertPro.gnd" method="post">
+	
+    <form id="inform" name="inform" action="./updatePro.gnd" method="post">
+    <input type="hidden" name="pd_code" value="${product.pd_code }">
     <div id="productForm" class="box">
     <ul>
  	<li><label for="menu_code">메뉴코드</label>

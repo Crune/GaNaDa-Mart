@@ -14,12 +14,6 @@ public class Stock {
 	public void setSk_code(String sk_code) {
 		this.sk_code = sk_code;
 	}
-/*	public String getSt_code() {
-		return st_code;
-	}
-	public void setSt_code(String st_code) {
-		this.st_code = st_code;
-	}*/
 	public String getC_code() {
 		return c_code;
 	}
@@ -44,4 +38,5 @@ public class Stock {
 	public void setPd_code(String pd_code) {
 		this.pd_code = pd_code;
 	}
+	
 }

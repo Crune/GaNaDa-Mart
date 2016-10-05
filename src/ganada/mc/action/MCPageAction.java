@@ -21,6 +21,9 @@ public class MCPageAction implements SuperAction {
             actions.put("product", new ListAction());
             actions.put("productInsert", new InsertAction());
             actions.put("productUpdate", new UpdateAction());
+            actions.put("stock", new StockListAction());
+            actions.put("stockInsert", new StockInsertAction());
+            actions.put("stockUpdate", new StockUpdateAction());
             actions.put("error", new MCErrorAction());      
             
             HttpSession session = request.getSession();
@@ -33,7 +36,7 @@ public class MCPageAction implements SuperAction {
             session.setAttribute("curMCMenu", menu);
             
             String url = actions.get(menu).executeAction(request, response);
-            session.setAttribute("urlCont", (String) url);
+            session.setAttribute("urlMCCont", (String) url);
             
         } catch (Exception e) {
             e.printStackTrace();

@@ -12,7 +12,6 @@ public class Product {
 	private String pd_infocode2;		//상품정보코드
 	private String pd_infocode3;		//상품정보코드
 	private String pd_infocode4;		//상품정보코드
-	private String pd_infocode5;		//상품정보코드
 	
 	public String getPd_code() {
 		return pd_code;

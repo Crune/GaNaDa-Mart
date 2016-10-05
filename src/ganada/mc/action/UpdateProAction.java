@@ -41,9 +41,10 @@ public class UpdateProAction implements SuperAction{
 		
 		try{
 		String pd_code = request.getParameter("pd_code");
-		System.out.println(pd_code);
-		Product product = new Product();
-		
+		System.out.println(pd_code);	
+		ProductDao dbPro = ProductDao.getInstance();
+		Product product = (Product) dbPro.bind(request);
+		/*
 		product.setPd_name(request.getParameter("pd_name"));
 		product.setPd_price(Integer.parseInt(request.getParameter("pd_price")));
 		product.setPd_infocode1(request.getParameter("pd_infocode1"));
@@ -51,8 +52,7 @@ public class UpdateProAction implements SuperAction{
 		product.setPd_infocode3(request.getParameter("pd_infocode3"));
 		product.setPd_infocode4(request.getParameter("pd_infocode4"));
 		product.setPd_code(request.getParameter("pd_code"));
-	 	
-		ProductDao dbPro = ProductDao.getInstance();
+	 	*/
 		dbPro.update(product);
 		}catch(Exception e){e.printStackTrace();}
 		return "/jsp/mc/pmc/updatePro.jsp";
