@@ -3,13 +3,10 @@ package ganada.action.member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import ganada.action.common.SuperAction;
 import ganada.obj.member.Account;
 import ganada.obj.member.AccountDao;
-import ganada.obj.member.Phone;
-import ganada.obj.member.PhoneDao;
 
 public class JoinRequestAction implements SuperAction {
 
