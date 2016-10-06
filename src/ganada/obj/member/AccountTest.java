@@ -19,16 +19,16 @@ public class AccountTest extends DBTester{
 	    account = new Account();
 
         account = new Account();
-        account.setName("쌜리");
+        account.setName("test2");
         account.setInfo("");
         
-        account.setEmail("sally@test.com");
-        account.setId("sally");
-        account.setPasswd("4844");
+        account.setEmail("test55@test.com");
+        account.setId("test");
+        account.setPasswd("123123");
         
-        account._setBirthday("2000-01-01");
-        account.setLunisolar(1);
-        account.setGender(1);
+        account._setBirth("2002-01-01");
+        account.setLunisolar(0);
+        account.setGender(0);
 
         account.setContact("");
         account.setPhone("");

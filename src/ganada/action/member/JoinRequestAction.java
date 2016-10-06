@@ -11,9 +11,9 @@ import ganada.obj.member.AccountDao;
 import ganada.obj.member.Phone;
 import ganada.obj.member.PhoneDao;
 
-public class JoinRequest implements SuperAction {
+public class JoinRequestAction implements SuperAction {
 
-	public JoinRequest() {
+	public JoinRequestAction() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,13 +27,13 @@ public class JoinRequest implements SuperAction {
 			
 			Account account = new Account();
 			account = (Account) dao.bind(request);			
-			account._setBirthday(request.getParameter("b_year")+"-"+request.getParameter("b_month")+"-"+request.getParameter("b_day"));
+			account._setBirth(request.getParameter("b_year")+"-"+request.getParameter("b_month")+"-"+request.getParameter("b_day"));
 			account.setContact(request.getParameter("c_first")+"-"+request.getParameter("c_second")+"-"+request.getParameter("c_third"));
 			account.setPhone(request.getParameter("p_first")+"-"+request.getParameter("p_second")+"-"+request.getParameter("p_third"));
 			account.setEmail(ole);
 			account.setName(oln);
 			dao.insert(account);
-		
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

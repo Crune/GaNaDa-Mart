@@ -17,6 +17,32 @@
 <!-- Custom Javascript -->
 <script src="${pageContext.request.contextPath}/js/default.js"></script>
 <script language="JavaScript">
+function openConfirmid() {    	
+    // 아이디를 입력했는지 검사
+    if (document.joinClass.id.value == "") {
+        alert("아이디를 입력하세요");
+        return;
+    }
+    $(".global_login_modal").hide();
+	$('.global_right_nav').find('.global_login a').removeClass('active');
+
+	var loginBack = document.getElementById("login_background");
+	loginBack.style.height = document.body.clientHeight + 100 + "px";
+	loginBack.style.visibility = "visible";
+	//	비활성화 효과  end	-->
+	var frameLogin = document.getElementById("frameLogin");
+	$("#login_Pop").css({
+		"visibility" : "hidden"
+	});
+	$("#frameLogin").src = "";
+	frameLogin.src = "confirmId.gnd";
+
+	document.getElementById("login_Pop").style.visibility = "visible";
+	$("html, body").animate({
+		scrollTop : $("#login_Pop").attr("offsetTop") - 45
+	}, 0);
+
+}
 	$(function() {
 		$(window).load(function() {
 			document.body.scrollIntoView(true);
@@ -33,7 +59,7 @@
 		}
 	}
 	function checkIt() {
-		/*
+		
 		var userinput = eval("document.joinClass");
 		if (!userinput.id.value) {
 			alert("아이디 정보를 입력해 주세요");
@@ -61,17 +87,23 @@
 			alert("주민등록번호를 입력하세요");
 			return false;
 		}
-		 */
+		 
 	}
 
 	function memberJoin() {
 		$('#joinForm').submit();
 	}
+
+  
 </script>
+
 <form method="post" id="joinForm" action="/joinRequest.gnd" name="joinClass" onSubmit="return checkIt()">
-	<div class="popLayer">
+	<div class="popLayer" >
 		<div class="layerBox clx">
 			<div class="contents">
+<div class="layerArea" id="login_Pop">
+	<iframe src="" allowtransparency="false" id="frameLogin" name="login" width="840px" height="400px" frameborder="0" marginwidth="0" scrolling="no"></iframe>
+</div>
 				<h4>회원가입 정보입력</h4>
 				<ul class="step clx">
 					<li>본인인증</li>
@@ -112,7 +144,7 @@
 											</div>
 											<input type="text" class="inputType01" style="width: 120px;" name="id" id="loginId" onkeyup="wordCheck(this);" onfocus="helpView('loginId');" onblur="$('#loginIdHelp').hide();"
 												maxlength="15">
-											<a class="btn-type6 btn-black ml03" href="#" name="showDuplChkDiv">
+											<a class="btn-type6 btn-black ml03" href="javascript:openConfirmid();" name="showDuplChkDiv" >
 												<span class="right">중복확인</span>
 											</a>
 										</div>
@@ -294,18 +326,18 @@
 											<option value="30">30</option>
 											<option value="31">31</option>
 										</select> <span class="bir">일</span>
-										<input type="radio" id="solar" class="ml10" name="lunisolar" checked="checked" value="S">
+										<input type="radio" id="solar" class="ml10" name="lunisolar" checked="checked" value="0">
 										<label class="radioType" for="solar">양력</label>
-										<input type="radio" id="lunar" class="ml05" name="lunisolar" value="L">
+										<input type="radio" id="lunar" class="ml05" name="lunisolar" value="1">
 										<label class="radioType" for="lunar">음력</label>
 									</td>
 								</tr>
 								<tr>
 									<th scope="row"><p><span class="star">성별</span></p></th>
 									<td>
-										<input type="radio" id="female" name="gender" checked="checked" value="F">
+										<input type="radio" id="female" name="gender" checked="checked" value="0">
 										<label class="radioType" for="female">여성</label>
-										<input type="radio" id="male" name="gender" class="ml05" value="M">
+										<input type="radio" id="male" name="gender" class="ml05" value="1">
 										<label class="radioType" for="male">남성</label>
 									</td>
 								</tr>
@@ -367,4 +399,9 @@
 		</div>
 		<!-- // .layerBox -->
 	</div>
+	<div id="login_background"
+	style="visibility: hidden; width: 2000px; height: 100%; position: absolute;
+	 top: -100px; left: 0px; z-index: 499; background: black; filter: alpha(opacity = 70);
+	  opacity: 0.7; -moz-opacity: 0.7"></div>
 </form>
+

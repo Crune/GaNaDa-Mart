@@ -25,11 +25,7 @@ public class Join2Action implements SuperAction {
 		String ole = (String)session.getAttribute("overlapEmail");
 		session.setAttribute("oln", oln);
 		session.setAttribute("ole", ole);
-		
-		
-		
-		
-		
+				
 		return "/jsp/member/join2.jsp";
 	}
 

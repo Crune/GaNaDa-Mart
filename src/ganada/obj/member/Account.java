@@ -18,7 +18,7 @@ public class Account {
 	private String id;
 	private String passwd;	
 	
-	private Timestamp birthday;
+	private Timestamp birth;
 	
 	private int lunisolar;
     public final static int LS_LUNAR = -1;
@@ -79,16 +79,16 @@ public class Account {
             e.printStackTrace();
         }
     }
-    public Timestamp getBirthday() {
-        return birthday;
+    public Timestamp getBirth() {
+        return birth;
     }
-    public void setBirth(Timestamp birthday) {
-        this.birthday = birthday;
+    public void setBirth(Timestamp birth) {
+        this.birth = birth;
     }
-    public void _setBirthday(String birthday) {
+    public void _setBirth(String birth) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            dateFormat.parse(birthday);
+            dateFormat.parse(birth);
         } catch (ParseException e) {
             e.printStackTrace();
         }
