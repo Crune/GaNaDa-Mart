@@ -42,8 +42,7 @@
     <input type="button" value="닫기" onclick="clo()">
     </form>
 <script language="javascript">
-<!--
-	function setInfo(){		
+function setInfo(){		
 		var pd_infotype = ${pd_infotype};
 		if(pd_infotype==1){
 			opener.document.inform.pd_infocode1.value=document.infoListForm.pd_infocode.value;
@@ -69,5 +68,4 @@
 	{		
 		window.close();
 	}
--->
 </script>
