@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="Pdp">
 	<div class="content" id="goodsContent" style="display: block">
@@ -18,23 +17,21 @@
 					<!-- 카테고리 -->
 					<div class="loc">{한줄설명}</div>
 					<div class="price">
-						<span id="itemOriAmtArea" class="ori_price" style="display: none;">{원래가격}원</span>
-						<span id="itemPriceArea">${curProduct.getProduct().getPd_price()}원</span>
+						<span id="itemOriAmtArea" class="ori_price" style="display: none;">{원래가격}원</span> <span id="itemPriceArea">${curProduct.getProduct().getPd_price()}원</span>
 					</div>
 					<div class="ra">
 						<div class="star">
-							<a href="#" class="go_review"> <span class="rating"> <span
-									style="width: 64px;">{평가점수}</span>
-							</span>
-							</a> <strong>({평가갯수})</strong>
+							<a href="#" class="go_review">
+								<span class="rating"> <span style="width: 64px;">{평가점수}</span>
+								</span>
+							</a>
+							<strong>({평가갯수})</strong>
 						</div>
 					</div>
 					<div class="line"></div>
 					<div class="right_sub_cont">
 						<p>추가정보</p>
-						<p class="view_more">
-							<a href="#" id="btnCardBenefit">더보기</a>
-						</p>
+						<p class="view_more"><a href="#" id="btnCardBenefit">더보기</a></p>
 					</div>
 					<style type="text/css">
 .right_sub_cont {
@@ -66,20 +63,18 @@
 					<div id="colorList" class="item-list">
 						<!-- 색상 목록 시작 -->
 						<ul class="item clx">
-							<li><a href="#" class="on" title="704943-005"> <img
-									src="{이미지주소}" alt=""
-									onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
-							</a></li>
+							<li><a href="#" class="on" title="704943-005">
+									<img src="{이미지주소}" alt="" onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
+								</a></li>
 						</ul>
 						<!-- 색상 목록 종료 -->
 					</div>
 				</div>
-
 				<div class="box">
 					<div class="btn-group clx" id="itemBtnArea">
-						<div class="size-area" id="sizeArea" data-value="240"
-							onclick="javascript:fn_catalystSizeList();">
-							<a href="#" class="btn-pdp-type1 size"> <span id="selectSize">사이즈</span>
+						<div class="size-area" id="sizeArea" data-value="240" onclick="javascript:fn_catalystSizeList();">
+							<a href="#" class="btn-pdp-type1 size">
+								<span id="selectSize">사이즈</span>
 							</a>
 							<div class="size-list" style="display: none;">
 								<div class="bg">
@@ -111,8 +106,8 @@
 							</div>
 						</div>
 						<div id="qtyArea" class="quantity-area" data-value="240">
-							<a href="#" class="btn-pdp-type1 quantity"> <span
-								id="selectQty">수량</span>
+							<a href="#" class="btn-pdp-type1 quantity">
+								<span id="selectQty">수량</span>
 							</a>
 							<div class="quantity-list" style="display: none;">
 								<div class="bg">
@@ -136,12 +131,11 @@
 							</div>
 						</div>
 						<div class="cart-area">
-							<a href="javascript:cartSubmit('10');"
-								class="btn-type1 btn-black" id="cartBtn"> <span
-								class="right" style="width: 56px;">장바구니</span>
-							</a> <a href="javascript:checkDirectBuy();"
-								class="btn-type1 btn-orange"> <span class="right"
-								style="width: 56px;">구매하기</span>
+							<a href="javascript:cartSubmit('10');" class="btn-type1 btn-black" id="cartBtn">
+								<span class="right" style="width: 56px;">장바구니</span>
+							</a>
+							<a href="javascript:checkDirectBuy();" class="btn-type1 btn-orange">
+								<span class="right" style="width: 56px;">구매하기</span>
 							</a>
 						</div>
 						<div class="g_btn_wish">
@@ -149,17 +143,14 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="guide_msg"
-					style="padding: 13px 10px; margin-top: 12px; color: #666; font-size: 12px; line-height: 18px;">
+				<div class="guide_msg" style="padding: 13px 10px; margin-top: 12px; color: #666; font-size: 12px; line-height: 18px;">
 					<!-- h3 style="font-size:12px"-->
-					<div class="guide_msg"
-						style="padding: 13px 10px; margin-top: 12px; color: #666; font-size: 12px; line-height: 18px;">
+					<div class="guide_msg" style="padding: 13px 10px; margin-top: 12px; color: #666; font-size: 12px; line-height: 18px;">
 						<h3 style="font-size: 12px; font-weight: normal;">
 							{가이드}<br>
 						</h3>
 					</div>
-					<style type="text/css">
+<style type="text/css">
 .store-btn {
 	text-decoration: underline;
 	font-weight: 600;
@@ -182,17 +173,15 @@
 </style>
 					<!--/h3-->
 				</div>
-
 			</div>
 			<div class="left">
 				<div class="nav">
 					<div class="area">
 						<ul id="thumbImgList" class="item">
 							<c:forEach begin="0" end="5" var="curImgNum">
-								<li data-index="${curImgNum }"><a href="#" class="on"
-									title=""> <img src="{이미지주소}" alt="{이미지 설명}"
-										onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
-								</a></li>
+								<li data-index="${curImgNum }"><a href="#" class="on" title="">
+										<img src="{이미지주소}" alt="{이미지 설명}" onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
+									</a></li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -206,29 +195,19 @@
 							<c:if test="${curBigImgNum != 0 }">
 								<li style="display: none;">
 							</c:if>
-							<a href="{원본이미지주소}" class="jqzoom" title="" rel="undefined"
-								style="outline-style: none; text-decoration: none;">
+							<a href="{원본이미지주소}" class="jqzoom" title="" rel="undefined" style="outline-style: none; text-decoration: none;">
 								<div class="zoomPad">
-									<img src="{큰이미지주소}" alt="상품 이미지"
-										onerror="this.src='${pageContext.request.contextPath}/img/no-img/400x400.gif'"
-										width="520" style="padding: 50px; opacity: 1;" title="">
-									<div class="zoomPup"
-										style="cursor: -webkit-zoom-in; top: 237px; left: 500px; width: 119px; height: 192px; position: absolute; border-width: 1px; display: block;"></div>
-									<div class="zoomWindow"
-										style="position: absolute; display: none; z-index: 5001; left: 636px; top: 0px;">
+									<img src="{큰이미지주소}" alt="상품 이미지" onerror="this.src='${pageContext.request.contextPath}/img/no-img/400x400.gif'" width="520" style="padding: 50px; opacity: 1;" title="">
+									<div class="zoomPup" style="cursor: -webkit-zoom-in; top: 237px; left: 500px; width: 119px; height: 192px; position: absolute; border-width: 1px; display: block;"></div>
+									<div class="zoomWindow" style="position: absolute; display: none; z-index: 5001; left: 636px; top: 0px;">
 										<div class="zoomWrapper" style="width: 384px;">
-											<div class="zoomWrapperTitle"
-												style="width: 100%; position: absolute; display: none;"></div>
-											<div class="zoomWrapperImage"
-												style="width: 100%; height: 620px;">
-												<img src="{확대한큰이미지주소}"
-													style="position: absolute; border: 0px; display: block; left: -1616.13px; top: -767.742px;">
+											<div class="zoomWrapperTitle" style="width: 100%; position: absolute; display: none;"></div>
+											<div class="zoomWrapperImage" style="width: 100%; height: 620px;">
+												<img src="{확대한큰이미지주소}" style="position: absolute; border: 0px; display: block; left: -1616.13px; top: -767.742px;">
 											</div>
 										</div>
 									</div>
-									<div class="zoomPreload"
-										style="visibility: hidden; top: 288.5px; left: 265px; position: absolute;">Loading
-										zoom</div>
+									<div class="zoomPreload" style="visibility: hidden; top: 288.5px; left: 265px; position: absolute;">Loading zoom</div>
 								</div>
 							</a>
 							</li>
