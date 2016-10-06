@@ -73,7 +73,7 @@ body {min-width:710px;}
 
 
 .global_gnb_middle {position:relative; padding:0 30px; border-bottom:1px solid #e5e5e5;}
-.global_gnb_middle .global_gnb_logo span {display:block; width:49px; height:17px; background:url('http://image.nike.co.kr/global/global_gnb_logo.png') no-repeat 0 0; text-indent:-999em;}
+.global_gnb_middle .global_gnb_logo span {display:block; width:47px; height:47px; background:url('/img/logo.png') no-repeat 0 0; text-indent:-999em;}
 
 .global_gnb_middle h1 {display:inline-block; width:25%; vertical-align:middle;}
 .global_gnb_middle .global_gnb_logo a {display:block; width:50px;}
@@ -673,7 +673,7 @@ body {min-width:710px;}
 .global_gnb_top {padding:0px 24px 0px 0; border-bottom:1px solid #e1e1e1; *zoom:1;}
 .global_left_nav > em, 
 .global_left_nav a {padding:0 20px; display:inline-block; height:38px; line-height:38px; border-right: 1px solid #e5e5e5;color: #8D8D8D; letter-spacing: 0; min-width:50px; text-align:center}
-.global_gnb_middle .global_gnb_logo span {display:block; width:60px; height:25px; background:url('http://image.nike.co.kr/global/global_gnb_logo_new.png') no-repeat 0 0; text-indent:-999em;}
+.global_gnb_middle .global_gnb_logo span {display:block; width:47px; height:47px; background:url('/img/logo.png') no-repeat 0 0; text-indent:-999em;}
 .global_ico_jordan span {display:block; width:auto; height:38px; background:url('http://image.nike.co.kr/global/global_ico_jordan_new.png') no-repeat center center; text-indent:-999em;}
 .global_ico_jordan span:hover{background:url('http://image.nike.co.kr/global/global_ico_jordan_new_on.png') no-repeat center center;}
 .global_right_nav .cart span:first-child {display:block; width:18px; height:35px; line-height:35px; background:url('http://image.nike.co.kr/global/global_ico_cart_new.png') no-repeat center center; opacity:1; text-indent:-999em; }
