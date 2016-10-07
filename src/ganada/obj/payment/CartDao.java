@@ -2,10 +2,12 @@ package ganada.obj.payment;
 
 import java.util.ArrayList;
 
+import ganada.core.DAO;
 import ganada.core.DB;
+import ganada.core.DBTable;
 import ganada.obj.product.Product;
 
-public class CartDao {
+public class CartDao  extends DAO {
 	
 	private static CartDao instance;
 
@@ -18,7 +20,17 @@ public class CartDao {
 	}
 
 	private CartDao(){}
-    
+
+	private static DBTable t;
+	@Override
+	protected DBTable gT() {
+		if (t == null) {
+			t = new DBTable("Cart_Item", "CART_ID", "REGDT");
+			t.setCls("ganada.obj.payment.Cart");
+		}
+		return t;
+	}
+
     public void insertCart(Cart cart) throws Exception{
 	DB db = new DB();
 	DB.Insert sql = db.new Insert("Cart_Item");

@@ -38,22 +38,32 @@
 					window.location.href = "/pdp.gnd?code=" + code;
 				}
 			</script>
-<c:forEach begin="1" end="4" var="pd_code">
-			<li class="global_gridwall_col">
+<c:forEach var="curProduct" items="prdList">
+	<c:set var="prd" value="${curProduct.product}"/>
+	<c:set var="cat1" value="${curProduct.catalogUpUp}"/>
+	<c:set var="cat2" value="${curProduct.catalogUp}"/>
+	<c:set var="cat3" value="${curProduct.catalog}"/>
+	<c:set var="reviews" value="${curProduct.reviews}"/>
+	<c:set var="colos" value="${curProduct.colos}"/>
+	<c:set var="images" value="${curProduct.images}"/>
+	<c:set var="stocks" value="${curProduct.stocks}"/>
+	<c:set var="infos" value="${curProduct.infos}"/>
+
+	<li class="global_gridwall_col">
 				<div class="global_gridwall_container">
-					<a href="#" onclick="javascript:fn_showGoodsDetail(${pd_code}); return false;" class="global_gridwall_img" id="A_NK31073834_843975-001_A">
+					<a href="#" onclick="javascript:fn_showGoodsDetail(${prd.pd_code}); return false;" class="global_gridwall_img" id="A_NK31073834_843975-001_A">
 						<img id="_NK31073834_843975-001_" src="http://image.nike.co.kr/goods/31/07/38/34/843975_COL_843975-001_180.png" alt="나이키 에어 줌 스트롱">
 					</a>
 					<div class="global_gridwall_item">
 						<div class="gridwall_customization_opt">
 							<div class="gridwall_item_soldout">
-								3
+								${colos.size()}
 								<span>컬러</span>
 							</div>
 						</div>
-						<span class="gridwall_item_title">나이키 에어 줌 스트롱</span>
-						<span class="gridwall-item__subtitle">WOMEN 신발 트레이닝 &amp; 짐</span>
-						<span class="gridwall-item__price"> 139,000원 </span>
+						<span class="gridwall_item_title">${prd.pd_name}</span>
+						<span class="gridwall-item__subtitle">${curProduct.getTypeText()}</span>
+						<span class="gridwall-item__price"> <fmt:formatNumber value="${prd.getPd_price()}"/>원 </span>
 					</div>
 				</div>
 			</li>
