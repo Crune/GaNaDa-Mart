@@ -1,10 +1,7 @@
 package ganada.obj.product;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import ganada.core.*;
 import ganada.obj.product.ProductImage;
@@ -62,25 +59,23 @@ public class ProductImageDao extends DAO {
      *            상품코드
      * @return 상품코드로 조회한 색상별 이미지
      */
-    public Map<String, ProductImage> mapColorImg(String pd_code) {
+    public Map<String, List<ProductImage>> mapColorImg(String pd_code) {
         DB db = new DB();
-        Map<String, ProductImage> imgPerColor = new HashMap<String, ProductImage>();
-        try {
-            db.S("*", "product_image", "pd_code=?").var(pd_code).exe();
-            while (db.next()) {
-                ProductImage cur = new ProductImage();
-                for (Method m : t.setter()) {
-                    Object value = cVO(m.getParameterTypes()[0], db.getString(cName(m)));
-                    m.invoke(cur, value);
-                }
-                imgPerColor.put(cur.getC_code(), cur);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            db.finalize();
+        Map<String, List<ProductImage>> rst = new HashMap<String, List<ProductImage>>();
+        List<ProductImage> allList = (List<ProductImage>) search("pd_code", pd_code);
+        Set<String> colorList = new HashSet<String>();
+        for (ProductImage cur : allList) {
+            colorList.add(cur.getC_code());
         }
-        return imgPerColor;
+        for (String cur : colorList) {
+            List<ProductImage> curList = new ArrayList<ProductImage>();
+            for (ProductImage img : allList) {
+                if (img.getC_code().equals(cur))
+                    curList.add(img);
+            }
+            rst.put(cur, curList);
+        }
+        return rst;
     }
 
 }

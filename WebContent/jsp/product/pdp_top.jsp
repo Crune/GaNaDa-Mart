@@ -1,10 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="prd" value="${curProduct.product}"/>
+<c:set var="cat1" value="${curProduct.catalogUpUp}"/>
+<c:set var="cat2" value="${curProduct.catalogUp}"/>
+<c:set var="cat3" value="${curProduct.catalog}"/>
+<c:set var="reviews" value="${curProduct.reviews}"/>
+<c:set var="colos" value="${curProduct.colos}"/>
+<c:set var="images" value="${curProduct.images}"/>
+<c:set var="stocks" value="${curProduct.stocks}"/>
+<c:set var="infos" value="${curProduct.infos}"/>
 <div class="Pdp">
 	<div class="content" id="goodsContent" style="display: block">
 		<div class="loc-box">
-			<span> <a href="/type.gnd?code={분류코드명}">{상위분류}</a>
-			</span> <span> &nbsp;&gt;&nbsp; <a href="/type.gnd?code={분류코드명}">${pdp_catalog.cat_name}</a>
+			<span> <a href="/type.gnd?code=${cat1.cat_code}">${cat1.cat_name}</a>
+			</span> <span> &nbsp;&gt;&nbsp; <a href="/type.gnd?code=${cat2.cat_code}">${cat2.cat_name}</a>
+			</span> <span> &nbsp;&gt;&nbsp; <a href="/type.gnd?code=${cat3.cat_code}">${cat3.cat_name}</a>
 			</span>
 		</div>
 		<div class="item-box clx">
@@ -13,11 +24,12 @@
 			</div>
 			<div class="right">
 				<div class="info">
-					<div class="tit">${curProduct.getProduct().getPd_name()}</div>
+					<div class="tit">${prd.getPd_name()}</div>
 					<!-- 카테고리 -->
-					<div class="loc">{한줄설명}</div>
+					<div class="loc">${curProduct.getTypeText()}</div>
 					<div class="price">
-						<span id="itemOriAmtArea" class="ori_price" style="display: none;">{원래가격}원</span> <span id="itemPriceArea">${curProduct.getProduct().getPd_price()}원</span>
+						<span id="itemOriAmtArea" class="ori_price" style="display: none;">{원래가격}원</span>
+						<span id="itemPriceArea"><fmt:formatNumber value="${prd.getPd_price()}"/>원</span>
 					</div>
 					<div class="ra">
 						<div class="star">
@@ -25,7 +37,7 @@
 								<span class="rating"> <span style="width: 64px;">{평가점수}</span>
 								</span>
 							</a>
-							<strong>({평가갯수})</strong>
+							<strong>(${curProduct.getReviews().size()})</strong>
 						</div>
 					</div>
 					<div class="line"></div>
@@ -54,18 +66,21 @@
 				<div class="box">
 					<div id="selectOptionValue" class="color-code">
 						<div class="fll">
-							<span>{현재색상명}</span>
+							<span>${curProduct.getColos().get(0).getC_name()}</span>
 						</div>
 						<div class="flr">
-							{현재색상코드_한글} #<span>&nbsp;{현재색상코드}</span>
+							${curProduct.getColos().get(0).getC_name()} #<span>&nbsp;${curProduct.getColos().get(0).getC_code()}</span>
 						</div>
 					</div>
 					<div id="colorList" class="item-list">
 						<!-- 색상 목록 시작 -->
 						<ul class="item clx">
-							<li><a href="#" class="on" title="704943-005">
-									<img src="{이미지주소}" alt="" onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'">
+						<c:forEach var="color" items="${curProduct.getColos()}">
+							<c:set var="imgUrl" value="/img/product/${curProduct.getImages().get(color.getC_code()).get(0).getIm_name()}"/>
+							<li><a href="#" class="on" title="${color.getC_code()}">
+									<img src="${imgUrl}" alt="" onerror="this.src='${pageContext.request.contextPath}/img/no-img/50x50.gif'" width="50" height="50">
 								</a></li>
+						</c:forEach>
 						</ul>
 						<!-- 색상 목록 종료 -->
 					</div>
@@ -80,23 +95,12 @@
 								<div class="bg">
 									<span class="arr"></span>
 									<ul id="sizeList" class="clx">
-										<li><a href="#" title="240@NK31068567120" class="out">240</a></li>
-										<li><a href="#" title="245@NK31068567121" class="out">245</a></li>
-										<li><a href="#" title="250@NK31068567122">250</a></li>
-										<li><a href="#" title="255@NK31068567123">255</a></li>
-										<li><a href="#" title="260@NK31068567124">260</a></li>
-										<li><a href="#" title="265@NK31068567125">265</a></li>
-										<li><a href="#" title="270@NK31068567126">270</a></li>
-										<li><a href="#" title="275@NK31068567127">275</a></li>
-										<li><a href="#" title="280@NK31068567128">280</a></li>
-										<li><a href="#" title="285@NK31068567129">285</a></li>
-										<li><a href="#" title="290@NK31068567130">290</a></li>
-										<li><a href="#" title="295@NK31068567131">295</a></li>
-										<li><a href="#" title="300@NK31068567132">300</a></li>
-										<li><a href="#" title="305@NK31068567133" class="out">305</a></li>
-										<li><a href="#" title="310@NK31068567134" class="out">310</a></li>
-										<li><a href="#" title="320@NK31068567135" class="out">320</a></li>
-										<li><a href="#" title="330@NK31068567136" class="out">330</a></li>
+										<c:forEach var="color" items="${colos}">
+											<c:set var="stock" value="${stocks.get(color.c_code)}"/>
+											<c:forEach var="curStock" items="${stock}">
+												<li><a href="#" title="SZ${curStock.pd_size}@CC${color.c_code}" <c:if test="${curStock.amount<1}"> class="out"</c:if>>${curStock.pd_size}</a></li>
+											</c:forEach>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>
@@ -112,16 +116,12 @@
 							<div class="quantity-list" style="display: none;">
 								<div class="bg">
 									<ul id="qtyList">
-										<li><a href="#" title="1" class="out">1</a></li>
-										<li><a href="#" title="2" class="out">2</a></li>
-										<li><a href="#" title="3" class="out">3</a></li>
-										<li><a href="#" title="4" class="out">4</a></li>
-										<li><a href="#" title="5" class="out">5</a></li>
-										<li><a href="#" title="6" class="out">6</a></li>
-										<li><a href="#" title="7" class="out">7</a></li>
-										<li><a href="#" title="8" class="out">8</a></li>
-										<li><a href="#" title="9" class="out">9</a></li>
-										<li><a href="#" title="10" class="out">10</a></li>
+										<c:set var="stock" value="${stocks.get(colos.get(0).c_code)}"/>
+										<c:forEach var="curStock" items="${stock}">
+											<c:forEach var="curAmount" begin="1" end="10">
+												<li><a href="#" title="${curAmount}" <c:if test="${curStock.amount<curAmount}"> class="out"</c:if>>${curAmount}</a></li>
+											</c:forEach>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>

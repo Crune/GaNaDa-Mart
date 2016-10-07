@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GaNaDa-Mart:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/GaNaDa_Mart_Web</output-path>
+    <root id="archive" name="GaNaDa-Mart_Web.war">
+      <element id="artifact" artifact-name="GaNaDa-Mart:Web exploded" />
+    </root>
+  </artifact>
+</component>

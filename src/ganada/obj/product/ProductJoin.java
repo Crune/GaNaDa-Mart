@@ -19,13 +19,15 @@ public class ProductJoin {
 	
 
     private Product product; // 상품 명 및 가격
-    private ProductCatalog catalog; // 분류 정보    
+    private ProductCatalog catalog; // 분류 정보
+	private ProductCatalog catalogUp; // 분류 정보
+	private ProductCatalog catalogUpUp; // 분류 정보
 
     private List<ProductReview> reviews; // 상품 리뷰
     
     private List<ProductColor> colos; // 색상명(및 코드) 목록
-    private Map<String,ProductImage> images; // 색상별 이미지 목록
-    private Map<String, Stock> stocks; // 색상별 재고 목록
+    private Map<String, List<ProductImage>> images; // 색상별 이미지 목록
+    private Map<String, List<Stock>> stocks; // 색상별 재고 목록
     
     private List<ProductInfo> infos; // 추가설명 목록
 
@@ -41,6 +43,8 @@ public class ProductJoin {
         try {
         	product = (Product) pDao.select(pd_code);
         	catalog = (ProductCatalog) catDao.select(product.getMenu_code());
+			catalogUp = (ProductCatalog) catDao.select(catalog.getCat_upper());
+			catalogUpUp = (ProductCatalog) catDao.select(catalogUp.getCat_upper());
 
             reviews = (List<ProductReview>) rDao.search("PD_CODE", pd_code); // 상품 리뷰
             
@@ -53,6 +57,11 @@ public class ProductJoin {
             e.printStackTrace();
         }
     }
+
+    public String getTypeText() {
+    	String rst = catalogUpUp.getCat_name()+"&nbsp;&nbsp;&nbsp;"+catalogUp.getCat_name()+"&nbsp;&nbsp;&nbsp;"+catalog.getCat_name();
+		return rst;
+	}
 
 	public Product getProduct() {
 		return product;
@@ -68,6 +77,22 @@ public class ProductJoin {
 
 	public void setCatalog(ProductCatalog catalog) {
 		this.catalog = catalog;
+	}
+
+	public ProductCatalog getCatalogUp() {
+		return catalogUp;
+	}
+
+	public void setCatalogUp(ProductCatalog catalogUp) {
+		this.catalogUp = catalogUp;
+	}
+
+	public ProductCatalog getCatalogUpUp() {
+		return catalogUpUp;
+	}
+
+	public void setCatalogUpUp(ProductCatalog catalogUpUp) {
+		this.catalogUpUp = catalogUpUp;
 	}
 
 	public List<ProductReview> getReviews() {
@@ -86,19 +111,19 @@ public class ProductJoin {
 		this.colos = colos;
 	}
 
-	public Map<String, ProductImage> getImages() {
+	public Map<String, List<ProductImage>> getImages() {
 		return images;
 	}
 
-	public void setImages(Map<String, ProductImage> images) {
+	public void setImages(Map<String, List<ProductImage>> images) {
 		this.images = images;
 	}
 
-	public Map<String, Stock> getStocks() {
+	public Map<String, List<Stock>> getStocks() {
 		return stocks;
 	}
 
-	public void setStocks(Map<String, Stock> stocks) {
+	public void setStocks(Map<String, List<Stock>> stocks) {
 		this.stocks = stocks;
 	}
 

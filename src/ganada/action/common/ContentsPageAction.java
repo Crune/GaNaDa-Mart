@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ganada.core.Action;
-import ganada.obj.*;
 import ganada.obj.common.BannerHTML;
 import ganada.obj.common.BannerHTMLDao;
 import ganada.obj.common.ContentsPage;
