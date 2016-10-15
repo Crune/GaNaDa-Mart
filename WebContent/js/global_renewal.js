@@ -194,7 +194,7 @@ $(function(){
 	});
 
 
-	/* 151117 추가 및 수정 */	
+	/* 151117 추가 및 수정 */
 	/*
 	151117 삭제
 	$('.global_sect_field').on('focusout', function(){

@@ -5,6 +5,7 @@ public class ProductCatalog {
     private String cat_name;
     private String cat_info;
     private String cat_upper;
+
     
     public String getCat_code() {
         return cat_code;

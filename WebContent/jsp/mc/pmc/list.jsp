@@ -6,9 +6,8 @@
 	function move(menu, get) {
 		window.location = './mc.gnd?menu=' + menu + '&' + get;
 	}
-	function delProduct(prdName) {
-		moveConfirm('delete.gnd', 'pd_code=${pd.getPd_code()}', '정말 ' + prdName
-				+ '을/를 삭제하시겠습니까?');
+	function delProduct(code, name) {
+		moveConfirm('delete.gnd', 'pd_code='+code, '정말 상품 '+code+'번 \''+name+'\'을/를 삭제하시겠습니까?');
 	}
 	function moveConfirm(url, get, msg) {
 		var returnValue = confirm(msg);
@@ -67,7 +66,7 @@
 						<button class="btn btn-default"
 							onclick="javascript:move('stock','pd_code=${pd.getPd_code()}')">재고</button>
 						<button class="btn btn-default"
-							onclick="javascript:delProduct('상품 ${pd.getPd_code()}번 \'${pd.getPd_name()}\'')">삭제</button>
+							onclick="javascript:delProduct('${pd.getPd_code()}', '${pd.getPd_name()}')">삭제</button>
 					</div>
 				</td>
 			</tr>

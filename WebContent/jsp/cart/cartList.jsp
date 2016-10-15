@@ -142,6 +142,8 @@
 	  var cartForm  = $("#cartForm");
 	  
 	  cartForm.find("#cart_ids").val(cart_idArr.join(','));
+
+	  $(location).attr('href',"<%=root%>/order.gnd?cart_ids=${itemList.get(0)}");
 	  
   }
 	 

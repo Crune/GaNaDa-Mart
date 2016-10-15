@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ganada.action.common.SuperAction;
+import ganada.core.DB;
 import ganada.core.NULL;
 import ganada.obj.member.Account;
+import ganada.obj.payment.CartDao;
 
 public class ChkLoginAjaxAction implements SuperAction {
     
@@ -20,23 +22,26 @@ public class ChkLoginAjaxAction implements SuperAction {
         String memberCode="000000000000000", memberName="guest", cartId="0", cartCount="0", tk= "짤";
                 
         String loginId = (String) session.getAttribute("loginId");
-        
-        //ystem.out.println("ChkLoginAjaxAction.executeAction.loginId="+loginId);        
+
 
         if (loginId == null || account == null) {
             loginId = "guest";
-        } else {            
+        } else {
             mile = (double) NULL.R(account.getMile(), mile);
-            memberCode = (String) NULL.R(account.getCode(), memberCode);
-            memberName = (String) NULL.R(account.getName(), memberName);
-            
-            cartId = (String) NULL.R(session.getAttribute("cartId"), cartId);
-            cartCount = (String) NULL.R(session.getAttribute("cartCount"), "1");
+            memberCode = account.getCode();
+            memberName = account.getName();
+
+            CartDao cartDao = CartDao.getInstance();
+            try {
+                int count = cartDao.getCart(loginId).size();
+                cartCount = count+"";
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         String result = loginId+tk+cartCount+tk+mile+tk+memberCode+tk+memberName+tk;
         session.setAttribute("ajaxStr", result);
-        
-        System.out.println("\t-login. "+result);
+        DB.OUTLN("\t-login. "+result);
         
         return "/jsp/template/ajax.jsp";
     }

@@ -38,26 +38,26 @@
 					window.location.href = "/pdp.gnd?code=" + code;
 				}
 			</script>
-<c:forEach begin="1" end="4" var="pd_code">
-			<li class="global_gridwall_col">
-				<div class="global_gridwall_container">
-					<a href="#" onclick="javascript:fn_showGoodsDetail(${pd_code}); return false;" class="global_gridwall_img" id="A_NK31073834_843975-001_A">
-						<img id="_NK31073834_843975-001_" src="http://image.nike.co.kr/goods/31/07/38/34/843975_COL_843975-001_180.png" alt="나이키 에어 줌 스트롱">
-					</a>
-					<div class="global_gridwall_item">
-						<div class="gridwall_customization_opt">
-							<div class="gridwall_item_soldout">
-								3
-								<span>컬러</span>
+			<c:forEach begin="1" end="4" var="pd_code">
+				<li class="global_gridwall_col">
+					<div class="global_gridwall_container">
+						<a href="#" onclick="javascript:fn_showGoodsDetail(${pd_code}); return false;" class="global_gridwall_img" id="A_NK31073834_843975-001_A">
+							<img id="_NK31073834_843975-001_" src="http://image.nike.co.kr/goods/31/07/38/34/843975_COL_843975-001_180.png" alt="나이키 에어 줌 스트롱">
+						</a>
+						<div class="global_gridwall_item">
+							<div class="gridwall_customization_opt">
+								<div class="gridwall_item_soldout">
+									3
+									<span>컬러</span>
+								</div>
 							</div>
+							<span class="gridwall_item_title">나이키 에어 줌 스트롱</span>
+							<span class="gridwall-item__subtitle">WOMEN 신발 트레이닝 &amp; 짐</span>
+							<span class="gridwall-item__price"> 139,000원 </span>
 						</div>
-						<span class="gridwall_item_title">나이키 에어 줌 스트롱</span>
-						<span class="gridwall-item__subtitle">WOMEN 신발 트레이닝 &amp; 짐</span>
-						<span class="gridwall-item__price"> 139,000원 </span>
 					</div>
-				</div>
-			</li>
-</c:forEach>
+				</li>
+			</c:forEach>
 		</ul>
 		<!-- LIST PAGE 이미지 로딩 부분 추가 Start -->
 		<ul id="goodsListLoadingImg" class="goodsListLoadingImg" style="display: none;">
