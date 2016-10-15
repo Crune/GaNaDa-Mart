@@ -120,7 +120,7 @@
 						  
 					    </th>
 	                    <td>
-				          <p>한슬기님께서 보유하고 계신 프로모션 코드내역입니다. 사용을 원하실 경우 라디오박스를 선택해 주세요.</p>
+				          <p>가나다님께서 보유하고 계신 프로모션 코드내역입니다. 사용을 원하실 경우 라디오박스를 선택해 주세요.</p>
 					      <p>
 					        <label class="hidden" for="couponRadio0">나이키닷컴 웰컴 쿠폰</label>
 					        <input type="radio" name="couponPromotionNo" id="couponRadio0" onclick="fn_setCouponPrc('11', '02', '10000', '0', '20615721');" value="485">
@@ -152,12 +152,12 @@
 					   <tr>
 						 <th scope="row">주문고객 정보</th>
 						 <td>
-						   <strong>한슬기</strong> 고객님  (보내시는분 :<span id="span_ord_man_nm" style="display:">한슬기</span>
-									<input type="hidden" id="senderName" name="senderName" value="한슬기">
+						   <strong>가나다</strong> 고객님  (보내시는분 :<span id="span_ord_man_nm" style="display:">가나다</span>
+									<input type="hidden" id="senderName" name="senderName" value="가나다">
 									<a href="javascript:fn_orderer_mod();"><img src="<%=root%>/img/cart/btn_ne04.gif" class="vm" alt="수정"></a>
-									)  &nbsp;&nbsp; 010-2594-3879&nbsp;&nbsp;|&nbsp;&nbsp;shancoco@naver.com
+									)  &nbsp;&nbsp; 010-0000-0000&nbsp;&nbsp;|&nbsp;&nbsp;ganada@kh.co.kr
 									<input type="hidden" id="mod_type" value="read">
-									<input type="hidden" name="ordererName" id="ord_man_nm" value="한슬기" class="txt" style="width:87px;">
+									<input type="hidden" name="ordererName" id="ord_man_nm" value="가나다" class="txt" style="width:87px;">
 									<input type="hidden" name="cellSectionNo" value="010">
 									<input type="hidden" id="cell_no_2" name="cellTelephoneExchangeNo" value="2594">
 									<input type="hidden" name="cellEndNo" value="3879">

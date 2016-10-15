@@ -223,7 +223,7 @@
 								</strong>
 	 						    <span>COLOR : ${vo.item_cl}</span>
 								<span>SIZE : ${vo.item_size}</span>
-								 <img src="<%=root%>/img/cart/btn_option.gif" alt="옵션변경">
+								
 	                       </div>   
 					   </td>
 					   <td class="lns03">
