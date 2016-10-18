@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script language="JavaScript">
-
-</script>
 <form name=colorListForm action="./colorUpdate.gnd" method="post" onSubmit="return checkItColor()">
    <table>
 	   	<c:forEach var="i" items="${cList }">
